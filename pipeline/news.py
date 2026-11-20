@@ -156,6 +156,12 @@ def facts_missing(summary: str, source_text: str) -> list[str]:
             missing.append(fact)
 
     for version in _VERSION.findall(summary):
+        # Vietnamese writes 1,000 as "1.000"; accept a thousands figure the source writes as
+        # "1,000" or "1000" (found in the first real run, 2026-11-20).
+        if re.fullmatch(r"\d{1,3}(?:\.\d{3})+", version) and (
+            version.replace(".", ",") in source_text or version.replace(".", "") in source_text
+        ):
+            continue
         need(version)
     for model in _MODEL.findall(summary):
         need(re.sub(r"\s+", " ", model))

@@ -210,7 +210,8 @@ class FetchTest(unittest.TestCase):
 class SafetyNetTest(unittest.TestCase):
     SOURCE = (
         "Claude Code 2.1.329: Added a `/tasks` row; fixed `--resume`. Claude Opus 4.6 is faster. "
-        "Set CLAUDE_CODE_FOO_BAR=1. Pricing is $5 per hour. Shipped on November 17, 2026."
+        "Set CLAUDE_CODE_FOO_BAR=1. Pricing is $5 per hour. Shipped on November 17, 2026. "
+        "Up to 1,000 requests a minute."
     )
 
     def test_faithful_summaries_pass(self):
@@ -220,6 +221,7 @@ class SafetyNetTest(unittest.TestCase):
             "Phát hành ngày 17/11/2026.",
             "Phát hành ngày 17 tháng 11.",
             "See https://platform.claude.com/docs/en/thing for details.",
+            "Giới hạn 1.000 yêu cầu mỗi phút.",  # Vietnamese thousands, source writes 1,000
         ]:
             with self.subTest(summary=summary):
                 self.assertEqual(news.facts_missing(summary, self.SOURCE), [])
