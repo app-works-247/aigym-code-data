@@ -1,6 +1,7 @@
 # Thiết kế database: AIGym Code (giai đoạn 3)
 
 > Trạng thái: ✅ **ĐÃ DUYỆT** (2026-11-19) · Lập ngày 2026-11-19 · Áp dụng cho repo `aigym-code-data` (pipeline).
+> **Đã triển khai trên Neon 2026-11-20:** project `aigym-code` (`green-snow-92815253`), AWS us-east-1, **Postgres 18**, nhánh `production`, database `neondb`; đã chạy migration 0001–0003.
 > Khi được duyệt, phần SQL ở mục 3 sẽ trở thành file `pipeline/migrations/0001_init.sql`.
 
 ## 1. Database này dùng để làm gì
@@ -255,7 +256,10 @@ Bảng `schema_migrations` do script migration tự tạo (mục 5).
 | `pipeline_rw` | Các job GitHub Actions hằng ngày | `SELECT`, `INSERT`, `UPDATE`, `DELETE` trên các bảng; **không** được tạo hay xóa bảng |
 | `readonly` | Kiểm tra tay, viết báo cáo | Chỉ `SELECT` |
 
-- Chuỗi kết nối của từng role nằm trong GitHub Secrets: `DATABASE_URL` cho `pipeline_rw` và `DATABASE_URL_MIGRATE` cho owner. Không bao giờ nằm trong code hay log.
+- Chuỗi kết nối của từng role nằm trong GitHub Secrets: `DATABASE_URL` cho `pipeline_rw` và `DATABASE_URL_MIGRATE` cho owner. Không bao giờ nằm trong code hay log. Trên máy chủ sở hữu, cả ba (thêm `DATABASE_URL_READONLY`) nằm trong `.env`.
+- **Cách tạo (đã làm 2026-11-20):** migration `0003_roles.sql` tạo `pipeline_rw` và `readonly` ở dạng `NOLOGIN`, không mật khẩu, rồi cấp quyền. Repo công khai vì thế không chứa bí mật nào. Sau đó owner chạy một lần, ngoài git: `ALTER ROLE pipeline_rw LOGIN PASSWORD '<mật khẩu ngẫu nhiên 32 byte>'` (tương tự cho `readonly`). Mật khẩu do máy tạo và ghi thẳng vào `.env`, không hiện ra màn hình.
+- **Đổi mật khẩu:** chạy lại `ALTER ROLE … PASSWORD` bằng kết nối owner, rồi cập nhật `.env` và GitHub Secrets.
+- **Đã kiểm chứng trên Neon (2026-11-20):** `pipeline_rw` thêm, sửa, xóa dòng được; không tạo, sửa, xóa, `TRUNCATE` bảng được; không ghi được `schema_migrations`. `readonly` chỉ `SELECT`. Test `PostgresTest.test_roles_can_do_only_their_job` kiểm tra lại điều này mỗi lần CI chạy.
 - Repo `aigym-code-data` là repo công khai. Vì vậy workflow chạy migration chỉ chạy tay (`workflow_dispatch`) và chỉ đọc được `DATABASE_URL_MIGRATE` qua GitHub Environment có bật bước duyệt.
 
 ## 5. Migration (thay đổi cấu trúc database)
@@ -270,7 +274,7 @@ Bảng `schema_migrations` do script migration tự tạo (mục 5).
 
 | Lớp | Cách làm | Ghi chú |
 |---|---|---|
-| 1. Khôi phục theo thời điểm của Neon | Có sẵn | ⚠️ Chưa xác minh được thời hạn ở gói miễn phí; kiểm tra khi tạo project ở P0 |
+| 1. Khôi phục theo thời điểm của Neon | Có sẵn | ✅ Xác minh 2026-11-20: project `aigym-code` (gói miễn phí) giữ **6 giờ** (`history_retention_seconds` = 21600). Chỉ đủ để sửa lỗi vừa xảy ra; lớp 2 là lớp bảo vệ chính |
 | 2. `pg_dump` hằng tuần | Job trong `weekly.yml` → **mã hóa bằng mật khẩu** (lưu trong GitHub Secrets) → lưu thành artifact của GitHub Actions, giữ 90 ngày | Bắt buộc mã hóa vì repo công khai. Dữ liệu chỉ là thông tin công khai, nhưng không có lý do để ai cũng tải được |
 | 3. Dữ liệu dựng lại được | Mất database vẫn chạy lại được discover và refresh. Thứ không lấy lại được là **lịch sử star mỗi ngày** và các bản tóm tắt (tốn tiền tạo lại) | Đây là lý do cần lớp 2 |
 

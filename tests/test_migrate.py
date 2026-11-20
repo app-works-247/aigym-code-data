@@ -151,6 +151,57 @@ class PostgresTest(unittest.TestCase):
             conn.execute("DELETE FROM repos WHERE id = 1")
             self.assertEqual(conn.execute("SELECT count(*) FROM repo_snapshots").fetchone()[0], 0)
 
+    def test_roles_can_do_only_their_job(self):
+
+        db = migrate.PsycopgDatabase(self.url)
+        try:
+            migrate.run(db, migrate.load_migrations())
+        finally:
+            db.close()
+        check_role_rights(self, self.url)
+
+
+def check_role_rights(test: unittest.TestCase, url: str) -> None:
+    """pipeline_rw writes rows but never structure; readonly only reads. Leaves no trace."""
+    import psycopg
+
+    denied = psycopg.errors.InsufficientPrivilege
+    insert_repo = (
+        "INSERT INTO repos (id, node_id, owner, name, created_at, stars, forks) "
+        "VALUES (-1, 'R_test', 'role-test', 'role-test', now(), 1, 1)"
+    )
+    with psycopg.connect(url) as conn:  # one transaction, rolled back at the end
+        conn.execute("SET ROLE pipeline_rw")
+        conn.execute(insert_repo)
+        conn.execute("UPDATE repos SET stars = 2 WHERE id = -1")
+        test.assertEqual(conn.execute("SELECT stars FROM repos WHERE id = -1").fetchone()[0], 2)
+        conn.execute("INSERT INTO pipeline_runs (job) VALUES ('nightly')")  # needs the sequence
+        conn.execute("DELETE FROM repos WHERE id = -1")
+        conn.rollback()
+    forbidden_for_rw = [
+        "CREATE TABLE nope (x int)",
+        "DROP TABLE repos",
+        "ALTER TABLE repos ADD COLUMN nope int",
+        "INSERT INTO schema_migrations (version, name, checksum) "
+        "VALUES ('9999', 'x', repeat('a', 64))",
+        "TRUNCATE repos",
+    ]
+    forbidden_for_readonly = [insert_repo, "DELETE FROM categories", "CREATE TABLE nope (x int)"]
+    for role, statements in (
+        ("pipeline_rw", forbidden_for_rw),
+        ("readonly", forbidden_for_readonly),
+    ):
+        for sql in statements:
+            with test.subTest(role=role, sql=sql[:30]), psycopg.connect(url) as conn:
+                conn.execute(f"SET ROLE {role}")
+                with test.assertRaises(denied):
+                    conn.execute(sql)
+                conn.rollback()
+    with psycopg.connect(url) as conn:
+        conn.execute("SET ROLE readonly")
+        test.assertEqual(conn.execute("SELECT count(*) FROM categories").fetchone()[0], 9)
+        conn.rollback()
+
 
 if __name__ == "__main__":
     unittest.main()
