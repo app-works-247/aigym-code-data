@@ -7,6 +7,7 @@ sets `reviewed: true`. Tests check that every entry still exists in the docs.
 
 from __future__ import annotations
 
+import hashlib
 import re
 from dataclasses import asdict, dataclass, field
 from datetime import date
@@ -47,11 +48,20 @@ class Entry:
     scope: str | None = None  # settings only: which files the key goes in
     since: str | None = None  # first Claude Code version, when known
     lessons: list[str] = field(default_factory=list)
+    # Fingerprint of the docs row the summary was written from (docs_watch.py). A change
+    # means the docs changed and the summary needs another look.
+    docs_hash: str | None = None
 
 
 def make_id(group: str, name: str) -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
     return f"{group}-{slug}"[:80].rstrip("-")
+
+
+def docs_hash(item: DocItem) -> str:
+    """12 hex characters over what the docs say about one item."""
+    text = "\n".join([item.syntax, item.docs_text, *(f"{k}: {v}" for k, v in item.extra)])
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:12]
 
 
 def entry_from_doc(item: DocItem, summary: dict[str, str], today: date) -> Entry:
@@ -67,6 +77,7 @@ def entry_from_doc(item: DocItem, summary: dict[str, str], today: date) -> Entry
         verified_at=today.isoformat(),
         example=example.strip("`") if example else None,
         scope=extra.get("Scope"),
+        docs_hash=docs_hash(item),
     )
 
 

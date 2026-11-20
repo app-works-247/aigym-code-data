@@ -10,6 +10,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 3d43299cfe92
 - id: commands-advisor
   group: commands
   name: /advisor
@@ -20,6 +21,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 0f5a3541ded0
 - id: commands-agents
   group: commands
   name: /agents
@@ -30,6 +32,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 07d06d9a98a5
 - id: commands-artifact-capabilities
   group: commands
   name: /artifact-capabilities
@@ -40,6 +43,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c5f826d17781
 - id: commands-artifact-diagramming
   group: commands
   name: /artifact-diagramming
@@ -50,6 +54,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 164b085b7175
 - id: commands-artifacts
   group: commands
   name: /artifacts
@@ -60,6 +65,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: db912dbfd285
 - id: commands-auto-mode-setup
   group: commands
   name: /auto-mode-setup
@@ -70,6 +76,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 4e7eef23c056
 - id: commands-autocompact
   group: commands
   name: /autocompact
@@ -80,6 +87,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: b1c68267aa92
 - id: commands-autofix-pr
   group: commands
   name: /autofix-pr
@@ -90,6 +98,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 733ebdf54bf7
 - id: commands-background
   group: commands
   name: /background
@@ -100,6 +109,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 89aa71e47540
 - id: commands-batch
   group: commands
   name: /batch
@@ -110,6 +120,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7b399f75449c
 - id: commands-branch
   group: commands
   name: /branch
@@ -120,6 +131,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c169096b0976
 - id: commands-btw
   group: commands
   name: /btw
@@ -130,6 +142,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: befe24fc2aa3
 - id: commands-bug
   group: commands
   name: /bug
@@ -140,6 +153,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: bc8029f7c394
 - id: commands-cd
   group: commands
   name: /cd
@@ -150,6 +164,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 80117f6d73d4
 - id: commands-chrome
   group: commands
   name: /chrome
@@ -160,6 +175,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2a4f3bd8789f
 - id: commands-claude-api
   group: commands
   name: /claude-api
@@ -170,6 +186,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2bb8fbee77ad
 - id: commands-claude-in-chrome
   group: commands
   name: /claude-in-chrome
@@ -180,6 +197,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2be5cbbb7a31
 - id: commands-clear
   group: commands
   name: /clear
@@ -190,6 +208,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a3abcd62ec5e
 - id: commands-code-review
   group: commands
   name: /code-review
@@ -201,6 +220,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cfc91987a75a
 - id: commands-color
   group: commands
   name: /color
@@ -211,6 +231,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8641892c6af4
 - id: commands-compact
   group: commands
   name: /compact
@@ -221,6 +242,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a9d2c6f98ac4
 - id: commands-config
   group: commands
   name: /config
@@ -231,6 +253,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5b2cdca2e130
 - id: commands-context
   group: commands
   name: /context
@@ -241,6 +264,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a47efa2540f2
 - id: commands-copy
   group: commands
   name: /copy
@@ -251,6 +275,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5ac4971829b9
 - id: commands-cost
   group: commands
   name: /cost
@@ -261,6 +286,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 93560f9521d2
 - id: commands-dataviz
   group: commands
   name: /dataviz
@@ -273,6 +299,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 6f67920ae55c
 - id: commands-debug
   group: commands
   name: /debug
@@ -283,6 +310,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 25e400d707c3
 - id: commands-deep-research
   group: commands
   name: /deep-research
@@ -295,6 +323,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5acf3e5cf36f
 - id: commands-design
   group: commands
   name: /design
@@ -307,6 +336,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 74dd2ba1dc29
 - id: commands-design-login
   group: commands
   name: /design-login
@@ -317,6 +347,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2f51fd7a2790
 - id: commands-design-sync
   group: commands
   name: /design-sync
@@ -329,6 +360,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c9a6f8e1a76b
 - id: commands-desktop
   group: commands
   name: /desktop
@@ -339,6 +371,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c01cbab98868
 - id: commands-diff
   group: commands
   name: /diff
@@ -349,6 +382,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e08515d56433
 - id: commands-doctor
   group: commands
   name: /doctor
@@ -360,6 +394,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a469c1a05600
 - id: commands-effort
   group: commands
   name: /effort
@@ -370,6 +405,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: b93818f314e9
 - id: commands-exit
   group: commands
   name: /exit
@@ -380,6 +416,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7c84b80ffdc5
 - id: commands-export
   group: commands
   name: /export
@@ -390,6 +427,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c5c57a7ec5ff
 - id: commands-fast
   group: commands
   name: /fast
@@ -400,6 +438,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 342cef8dd95a
 - id: commands-feedback
   group: commands
   name: /feedback
@@ -410,6 +449,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8d8795db7591
 - id: commands-fewer-permission-prompts
   group: commands
   name: /fewer-permission-prompts
@@ -420,6 +460,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c678fdba1576
 - id: commands-focus
   group: commands
   name: /focus
@@ -430,6 +471,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c5eb3595cce9
 - id: commands-fork
   group: commands
   name: /fork
@@ -440,6 +482,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: afa3e21e1041
 - id: commands-goal
   group: commands
   name: /goal
@@ -450,6 +493,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c7e3d024d7c6
 - id: commands-heapdump
   group: commands
   name: /heapdump
@@ -460,6 +504,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e0ccf86cba6f
 - id: commands-help
   group: commands
   name: /help
@@ -470,6 +515,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 99d8984c9fa1
 - id: commands-hooks
   group: commands
   name: /hooks
@@ -480,6 +526,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8b8a4cc22897
 - id: commands-ide
   group: commands
   name: /ide
@@ -490,6 +537,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2a710fc2edde
 - id: commands-import
   group: commands
   name: /import
@@ -501,6 +549,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7a331933dcc1
 - id: commands-init
   group: commands
   name: /init
@@ -511,6 +560,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 720e80c3503b
 - id: commands-insights
   group: commands
   name: /insights
@@ -523,6 +573,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: f9837d1104f0
 - id: commands-install-github-app
   group: commands
   name: /install-github-app
@@ -535,6 +586,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: af30d388329d
 - id: commands-install-slack-app
   group: commands
   name: /install-slack-app
@@ -545,6 +597,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 89478282eea5
 - id: commands-keybindings
   group: commands
   name: /keybindings
@@ -555,6 +608,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a10d26d951bc
 - id: commands-list-agents
   group: commands
   name: /list-agents
@@ -567,6 +621,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 3b2ed9c6dd55
 - id: commands-login
   group: commands
   name: /login
@@ -577,6 +632,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: dbd97a117b7f
 - id: commands-logout
   group: commands
   name: /logout
@@ -587,6 +643,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 44a81be5ed6b
 - id: commands-loop
   group: commands
   name: /loop
@@ -599,6 +656,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 708d3c31e074
 - id: commands-mcp
   group: commands
   name: /mcp
@@ -610,6 +668,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e0881fd6691a
 - id: commands-memory
   group: commands
   name: /memory
@@ -620,6 +679,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 3ac8489a7d91
 - id: commands-mobile
   group: commands
   name: /mobile
@@ -630,6 +690,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 9d599ecaf0f8
 - id: commands-model
   group: commands
   name: /model
@@ -642,6 +703,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 833c4f662280
 - id: commands-output-style
   group: commands
   name: /output-style
@@ -652,6 +714,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 4ff0d5c70063
 - id: commands-passes
   group: commands
   name: /passes
@@ -662,6 +725,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: b5b60f4e2024
 - id: commands-permissions
   group: commands
   name: /permissions
@@ -674,6 +738,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2c482b5ba92f
 - id: commands-plan
   group: commands
   name: /plan
@@ -685,6 +750,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c8fc869b4a8c
 - id: commands-plugin
   group: commands
   name: /plugin
@@ -697,6 +763,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cc6b8558ce6e
 - id: commands-plugin-authoring
   group: commands
   name: /plugin-authoring
@@ -707,6 +774,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2eb3ed605efc
 - id: commands-powerup
   group: commands
   name: /powerup
@@ -717,6 +785,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 971c657f2100
 - id: commands-pr-comments
   group: commands
   name: /pr-comments
@@ -729,6 +798,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: fd3abf21eced
 - id: commands-privacy-settings
   group: commands
   name: /privacy-settings
@@ -740,6 +810,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 6df40f62ba33
 - id: commands-radio
   group: commands
   name: /radio
@@ -750,6 +821,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7025354a312a
 - id: commands-rate-limit-options
   group: commands
   name: /rate-limit-options
@@ -762,6 +834,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2a8dbfe3ba42
 - id: commands-recap
   group: commands
   name: /recap
@@ -772,6 +845,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 85006b117791
 - id: commands-release-notes
   group: commands
   name: /release-notes
@@ -782,6 +856,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 0221df52e6df
 - id: commands-reload-plugins
   group: commands
   name: /reload-plugins
@@ -792,6 +867,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8f8a5db3de2e
 - id: commands-reload-skills
   group: commands
   name: /reload-skills
@@ -802,6 +878,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 603fe9b18ac6
 - id: commands-remote-control
   group: commands
   name: /remote-control
@@ -812,6 +889,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: c438679aaad4
 - id: commands-remote-env
   group: commands
   name: /remote-env
@@ -822,6 +900,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cc2fa05df4ec
 - id: commands-rename
   group: commands
   name: /rename
@@ -832,6 +911,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5770d45d117a
 - id: commands-restart
   group: commands
   name: /restart
@@ -842,6 +922,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: d95c895da4da
 - id: commands-resume
   group: commands
   name: /resume
@@ -853,6 +934,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: f70234cc3a31
 - id: commands-review
   group: commands
   name: /review
@@ -864,6 +946,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8b82ad4c05e6
 - id: commands-rewind
   group: commands
   name: /rewind
@@ -874,6 +957,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2f271148cb4e
 - id: commands-run
   group: commands
   name: /run
@@ -884,6 +968,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: afe61e686e1b
 - id: commands-run-skill-generator
   group: commands
   name: /run-skill-generator
@@ -896,6 +981,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 111424bb8ef1
 - id: commands-sandbox
   group: commands
   name: /sandbox
@@ -906,6 +992,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: b5059e4e8479
 - id: commands-schedule
   group: commands
   name: /schedule
@@ -916,6 +1003,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 6be70ab89a77
 - id: commands-scroll-speed
   group: commands
   name: /scroll-speed
@@ -926,6 +1014,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 63b8f00fac5d
 - id: commands-security-review
   group: commands
   name: /security-review
@@ -938,6 +1027,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: afcbab9f7787
 - id: commands-setup-bedrock
   group: commands
   name: /setup-bedrock
@@ -948,6 +1038,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: afa4142b661e
 - id: commands-setup-vertex
   group: commands
   name: /setup-vertex
@@ -958,6 +1049,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a0deb3cfe360
 - id: commands-simplify
   group: commands
   name: /simplify
@@ -968,6 +1060,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ae104bf9e251
 - id: commands-skill-doctor
   group: commands
   name: /skill-doctor
@@ -978,6 +1071,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cab5e950bc23
 - id: commands-skills
   group: commands
   name: /skills
@@ -988,6 +1082,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 4d9a4f574df4
 - id: commands-slides
   group: commands
   name: /slides
@@ -998,6 +1093,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 14bada100de0
 - id: commands-stats
   group: commands
   name: /stats
@@ -1008,6 +1104,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ef3863be64a2
 - id: commands-status
   group: commands
   name: /status
@@ -1018,6 +1115,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 70cf4f2da645
 - id: commands-statusline
   group: commands
   name: /statusline
@@ -1028,6 +1126,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 1774a0f3f9b1
 - id: commands-stickers
   group: commands
   name: /stickers
@@ -1038,6 +1137,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: dfa7cdc7847d
 - id: commands-stop
   group: commands
   name: /stop
@@ -1050,6 +1150,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 464216c54f2a
 - id: commands-subtask
   group: commands
   name: /subtask
@@ -1062,6 +1163,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 19f1211199b7
 - id: commands-tasks
   group: commands
   name: /tasks
@@ -1072,6 +1174,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: f9a52d8043d5
 - id: commands-team-onboarding
   group: commands
   name: /team-onboarding
@@ -1083,6 +1186,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 0d59f9c92e9a
 - id: commands-teleport
   group: commands
   name: /teleport
@@ -1093,6 +1197,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cc944674ef80
 - id: commands-terminal-setup
   group: commands
   name: /terminal-setup
@@ -1104,6 +1209,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: cbe63b9627f6
 - id: commands-theme
   group: commands
   name: /theme
@@ -1115,6 +1221,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 251f7b8254ba
 - id: commands-tui
   group: commands
   name: /tui
@@ -1126,6 +1233,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a50b975c89ab
 - id: commands-ultraplan
   group: commands
   name: /ultraplan
@@ -1136,6 +1244,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 559517a17383
 - id: commands-ultrareview
   group: commands
   name: /ultrareview
@@ -1147,6 +1256,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a2069b6d439f
 - id: commands-update-config
   group: commands
   name: /update-config
@@ -1157,6 +1267,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2705a70d2dc3
 - id: commands-upgrade
   group: commands
   name: /upgrade
@@ -1167,6 +1278,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e834de3c30f5
 - id: commands-usage
   group: commands
   name: /usage
@@ -1177,6 +1289,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 3476f09baf17
 - id: commands-usage-credits
   group: commands
   name: /usage-credits
@@ -1187,6 +1300,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 9426e7a3611b
 - id: commands-verify
   group: commands
   name: /verify
@@ -1197,6 +1311,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 3686f436b0fe
 - id: commands-vim
   group: commands
   name: /vim
@@ -1207,6 +1322,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 94fe82ce4b7a
 - id: commands-voice
   group: commands
   name: /voice
@@ -1217,6 +1333,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: d0491a82812b
 - id: commands-web-setup
   group: commands
   name: /web-setup
@@ -1227,6 +1344,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ac104fd06921
 - id: commands-workflow-authoring
   group: commands
   name: /workflow-authoring
@@ -1237,6 +1355,7 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 144e25b5bd8f
 - id: commands-workflows
   group: commands
   name: /workflows
@@ -1247,3 +1366,4 @@
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: bbd9e481a7a1

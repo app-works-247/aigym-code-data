@@ -11,6 +11,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: bb33326ff253
 - id: settings-agent
   group: settings
   name: agent
@@ -22,6 +23,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 19dc9dc0f785
 - id: settings-agentpushnotifenabled
   group: settings
   name: agentPushNotifEnabled
@@ -33,6 +35,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: fca6bfa0f32a
 - id: settings-allowallclaudeaimcps
   group: settings
   name: allowAllClaudeAiMcps
@@ -44,6 +47,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 6314d0aeef5f
 - id: settings-allowclaudeinchromewithmanagedmcp
   group: settings
   name: allowClaudeInChromeWithManagedMcp
@@ -55,6 +59,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 7a6ce813e3c1
 - id: settings-allowedchannelplugins
   group: settings
   name: allowedChannelPlugins
@@ -66,6 +71,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 259abba31a83
 - id: settings-allowedhttphookurls
   group: settings
   name: allowedHttpHookUrls
@@ -77,6 +83,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a2d057ee8319
 - id: settings-allowedmcpservers
   group: settings
   name: allowedMcpServers
@@ -88,6 +95,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 08b7e101607b
 - id: settings-allowedproviders
   group: settings
   name: allowedProviders
@@ -99,6 +107,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: d4e5508e7623
 - id: settings-allowmanagedhooksonly
   group: settings
   name: allowManagedHooksOnly
@@ -110,6 +119,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 210b254cb9e1
 - id: settings-allowmanagedmcpserversonly
   group: settings
   name: allowManagedMcpServersOnly
@@ -121,6 +131,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 5908a243bedd
 - id: settings-allowmanagedpermissionrulesonly
   group: settings
   name: allowManagedPermissionRulesOnly
@@ -132,6 +143,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: edadbf5b58d7
 - id: settings-alwaysthinkingenabled
   group: settings
   name: alwaysThinkingEnabled
@@ -143,6 +155,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 6af801917219
 - id: settings-apikeyhelper
   group: settings
   name: apiKeyHelper
@@ -154,6 +167,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3aee062acb65
 - id: settings-appendplugins
   group: settings
   name: appendPlugins
@@ -165,6 +179,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: b7d6dfbaa84d
 - id: settings-askuserquestiontimeout
   group: settings
   name: askUserQuestionTimeout
@@ -176,6 +191,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: a32e6cac58f8
 - id: settings-attribution
   group: settings
   name: attribution
@@ -187,6 +203,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ea2e7a2758f2
 - id: settings-attribution-commit
   group: settings
   name: attribution.commit
@@ -198,6 +215,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0e9e2aa9b70a
 - id: settings-attribution-pr
   group: settings
   name: attribution.pr
@@ -209,6 +227,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: bf37fbcc1df3
 - id: settings-attribution-sessionurl
   group: settings
   name: attribution.sessionUrl
@@ -220,6 +239,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 638588262a2c
 - id: settings-autocompactenabled
   group: settings
   name: autoCompactEnabled
@@ -231,6 +251,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a91edc5da103
 - id: settings-autocompactwindow
   group: settings
   name: autoCompactWindow
@@ -242,6 +263,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 358471dfb04c
 - id: settings-autoconnectide
   group: settings
   name: autoConnectIde
@@ -253,6 +275,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: bf6f7a1486c5
 - id: settings-autocontinueatusagelimit
   group: settings
   name: autoContinueAtUsageLimit
@@ -264,6 +287,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: ca1520dfe21b
 - id: settings-autoinstallideextension
   group: settings
   name: autoInstallIdeExtension
@@ -275,6 +299,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: ed3ba536762c
 - id: settings-automemorydirectory
   group: settings
   name: autoMemoryDirectory
@@ -286,6 +311,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 08bb6fdbf051
 - id: settings-automemoryenabled
   group: settings
   name: autoMemoryEnabled
@@ -297,6 +323,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: e0030bb95bdb
 - id: settings-automode
   group: settings
   name: autoMode
@@ -308,6 +335,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: a7783dba004e
 - id: settings-automode-classifyallshell
   group: settings
   name: autoMode.classifyAllShell
@@ -320,6 +348,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 4255f2a1e215
 - id: settings-autoscrollenabled
   group: settings
   name: autoScrollEnabled
@@ -331,6 +360,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 95220f08ccc9
 - id: settings-autoupdateschannel
   group: settings
   name: autoUpdatesChannel
@@ -342,6 +372,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a372f00b8366
 - id: settings-availablemodels
   group: settings
   name: availableModels
@@ -353,6 +384,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: cbc8d3993b2c
 - id: settings-availablemodelsmatch
   group: settings
   name: availableModelsMatch
@@ -364,6 +396,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: e94843b7abd3
 - id: settings-awaysummaryenabled
   group: settings
   name: awaySummaryEnabled
@@ -375,6 +408,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 464beb038452
 - id: settings-awsauthrefresh
   group: settings
   name: awsAuthRefresh
@@ -386,6 +420,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0a0affc38cb2
 - id: settings-awscredentialexport
   group: settings
   name: awsCredentialExport
@@ -397,6 +432,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0b2f8b8e1b38
 - id: settings-axscreenreader
   group: settings
   name: axScreenReader
@@ -408,6 +444,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 5c2b86ab0312
 - id: settings-basheditdiffenabled
   group: settings
   name: bashEditDiffEnabled
@@ -419,6 +456,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 1b9c252f77c7
 - id: settings-bashoutputmaxchars
   group: settings
   name: bashOutputMaxChars
@@ -430,6 +468,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 974ada70143f
 - id: settings-blockedmarketplaces
   group: settings
   name: blockedMarketplaces
@@ -441,6 +480,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 9c7174d5d051
 - id: settings-browserexternalpagetools
   group: settings
   name: browserExternalPageTools
@@ -452,6 +492,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 4330ee5a4078
 - id: settings-channelsenabled
   group: settings
   name: channelsEnabled
@@ -463,6 +504,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: ae65a64c34a3
 - id: settings-claudeinchromedefaultenabled
   group: settings
   name: claudeInChromeDefaultEnabled
@@ -474,6 +516,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: 78f68b4b5ab7
 - id: settings-claudemd
   group: settings
   name: claudeMd
@@ -485,6 +528,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 308ada67cc7c
 - id: settings-claudemdexcludes
   group: settings
   name: claudeMdExcludes
@@ -496,6 +540,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 8df9a3972800
 - id: settings-cleanupperioddays
   group: settings
   name: cleanupPeriodDays
@@ -507,6 +552,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: d1a12c3d988f
 - id: settings-companyannouncements
   group: settings
   name: companyAnnouncements
@@ -518,6 +564,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 83cc599d70b1
 - id: settings-copyfullresponse
   group: settings
   name: copyFullResponse
@@ -529,6 +576,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: f2bd176d88b5
 - id: settings-copyonselect
   group: settings
   name: copyOnSelect
@@ -540,6 +588,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: e16f5be6b854
 - id: settings-crosssessioninbound
   group: settings
   name: crossSessionInbound
@@ -552,6 +601,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 475864575f75
 - id: settings-defaultshell
   group: settings
   name: defaultShell
@@ -563,6 +613,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1aca6521a83b
 - id: settings-defaulttoagentsview
   group: settings
   name: defaultToAgentsView
@@ -575,6 +626,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: dc9c8bd294a7
 - id: settings-deniedmcpservers
   group: settings
   name: deniedMcpServers
@@ -586,6 +638,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1f3169d07988
 - id: settings-deniedmodels
   group: settings
   name: deniedModels
@@ -597,6 +650,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 438757c8b405
 - id: settings-desktopsessioncleanupperioddays
   group: settings
   name: desktopSessionCleanupPeriodDays
@@ -608,6 +662,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 8f636488d954
 - id: settings-dialogexpiry
   group: settings
   name: dialogExpiry
@@ -620,6 +675,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 44ae23154bca
 - id: settings-difftool
   group: settings
   name: diffTool
@@ -631,6 +687,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: bf6806916e3d
 - id: settings-disableagentview
   group: settings
   name: disableAgentView
@@ -642,6 +699,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 478a4fe152d2
 - id: settings-disableallhooks
   group: settings
   name: disableAllHooks
@@ -653,6 +711,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: d24de3128199
 - id: settings-disableartifact
   group: settings
   name: disableArtifact
@@ -664,6 +723,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 06a3d6bc7170
 - id: settings-disableautomode
   group: settings
   name: disableAutoMode
@@ -675,6 +735,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0cc114bd29dc
 - id: settings-disablebrowserexternalnavigation
   group: settings
   name: disableBrowserExternalNavigation
@@ -686,6 +747,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 333d04ab86bb
 - id: settings-disablebundledskills
   group: settings
   name: disableBundledSkills
@@ -697,6 +759,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 08541027a835
 - id: settings-disableclaudeaiconnectors
   group: settings
   name: disableClaudeAiConnectors
@@ -708,6 +771,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: '994885846592'
 - id: settings-disablecommandpluginsources
   group: settings
   name: disableCommandPluginSources
@@ -719,6 +783,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 01349e1d4395
 - id: settings-disabledeeplinkregistration
   group: settings
   name: disableDeepLinkRegistration
@@ -730,6 +795,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: fa3d7da26c70
 - id: settings-disabledesktoplocalsessions
   group: settings
   name: disableDesktopLocalSessions
@@ -741,6 +807,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: fc390dd7837f
 - id: settings-disabledmcpjsonservers
   group: settings
   name: disabledMcpjsonServers
@@ -752,6 +819,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 679b98819532
 - id: settings-disablemobilesimulatortools
   group: settings
   name: disableMobileSimulatorTools
@@ -763,6 +831,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 6e4bcf71f0fb
 - id: settings-disableremotecontrol
   group: settings
   name: disableRemoteControl
@@ -774,6 +843,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: f64abb167011
 - id: settings-disableremotepreviewscripts
   group: settings
   name: disableRemotePreviewScripts
@@ -785,6 +855,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 3efe80a7b71d
 - id: settings-disablesideloadflags
   group: settings
   name: disableSideloadFlags
@@ -796,6 +867,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 3668e71aa402
 - id: settings-disableskillshellexecution
   group: settings
   name: disableSkillShellExecution
@@ -807,6 +879,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: b8f40a5c222b
 - id: settings-disableworkflows
   group: settings
   name: disableWorkflows
@@ -818,6 +891,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a4b3b120af68
 - id: settings-editormode
   group: settings
   name: editorMode
@@ -829,6 +903,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 12138043997a
 - id: settings-effortlevel
   group: settings
   name: effortLevel
@@ -840,6 +915,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 80588a60b145
 - id: settings-emojicompletionenabled
   group: settings
   name: emojiCompletionEnabled
@@ -851,6 +927,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0ee3c75a6402
 - id: settings-enableallprojectmcpservers
   group: settings
   name: enableAllProjectMcpServers
@@ -862,6 +939,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 628d9bda6e23
 - id: settings-enableartifact
   group: settings
   name: enableArtifact
@@ -873,6 +951,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 73bf358f79d9
 - id: settings-enabledmcpjsonservers
   group: settings
   name: enabledMcpjsonServers
@@ -884,6 +963,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: f8efe66921b5
 - id: settings-enabledplugins
   group: settings
   name: enabledPlugins
@@ -895,6 +975,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5e3ea82387c8
 - id: settings-enableworkflows
   group: settings
   name: enableWorkflows
@@ -906,6 +987,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 7d3578343e1c
 - id: settings-enforceavailablemodels
   group: settings
   name: enforceAvailableModels
@@ -917,6 +999,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ea6d8ebc0342
 - id: settings-env
   group: settings
   name: env
@@ -928,6 +1011,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 550c80871071
 - id: settings-externaleditorcontext
   group: settings
   name: externalEditorContext
@@ -939,6 +1023,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: af1f5a06d949
 - id: settings-extraknownmarketplaces
   group: settings
   name: extraKnownMarketplaces
@@ -950,6 +1035,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 02df39237ca8
 - id: settings-fallbackmodel
   group: settings
   name: fallbackModel
@@ -961,6 +1047,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 04350502b439
 - id: settings-fastmode
   group: settings
   name: fastMode
@@ -972,6 +1059,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0e4a544b5e44
 - id: settings-fastmodepersessionoptin
   group: settings
   name: fastModePerSessionOptIn
@@ -983,6 +1071,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3cbdb0f40dea
 - id: settings-feedbackdrafts
   group: settings
   name: feedbackDrafts
@@ -994,6 +1083,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 8a435a595b00
 - id: settings-feedbacksurveyrate
   group: settings
   name: feedbackSurveyRate
@@ -1005,6 +1095,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 99b0400c9c32
 - id: settings-filecheckpointingenabled
   group: settings
   name: fileCheckpointingEnabled
@@ -1016,6 +1107,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: cd371dc1d57e
 - id: settings-filesuggestion
   group: settings
   name: fileSuggestion
@@ -1027,6 +1119,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: b41925048967
 - id: settings-footerlinksregexes
   group: settings
   name: footerLinksRegexes
@@ -1038,6 +1131,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: d6735bb467ff
 - id: settings-forcelogingatewayurl
   group: settings
   name: forceLoginGatewayUrl
@@ -1049,6 +1143,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 071bdea7ac5f
 - id: settings-forceloginmethod
   group: settings
   name: forceLoginMethod
@@ -1060,6 +1155,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c8c2afea9a69
 - id: settings-forceloginorguuid
   group: settings
   name: forceLoginOrgUUID
@@ -1071,6 +1167,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0ed8bcb937b1
 - id: settings-forceremotesettingsrefresh
   group: settings
   name: forceRemoteSettingsRefresh
@@ -1082,6 +1179,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 02130b405b21
 - id: settings-gatewayinternalnetworks
   group: settings
   name: gatewayInternalNetworks
@@ -1093,6 +1191,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 4a54b2168c40
 - id: settings-gcpauthrefresh
   group: settings
   name: gcpAuthRefresh
@@ -1104,6 +1203,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 18184bf8786b
 - id: settings-hooks
   group: settings
   name: hooks
@@ -1115,6 +1215,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 179a0bd015db
 - id: settings-httphookallowedenvvars
   group: settings
   name: httpHookAllowedEnvVars
@@ -1126,6 +1227,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: efd853ce0b72
 - id: settings-idlecompaction
   group: settings
   name: idleCompaction
@@ -1137,6 +1239,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a3c3923a6db9
 - id: settings-includecoauthoredby
   group: settings
   name: includeCoAuthoredBy
@@ -1148,6 +1251,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 8cfbd42ad7bb
 - id: settings-includegitinstructions
   group: settings
   name: includeGitInstructions
@@ -1159,6 +1263,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1987369fc754
 - id: settings-inputneedednotifenabled
   group: settings
   name: inputNeededNotifEnabled
@@ -1170,6 +1275,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1a261e7d3b36
 - id: settings-isolatepeermachines
   group: settings
   name: isolatePeerMachines
@@ -1181,6 +1287,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 924e1c48df21
 - id: settings-keybindingflavor
   group: settings
   name: keybindingFlavor
@@ -1192,6 +1299,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3d4164c6edc9
 - id: settings-language
   group: settings
   name: language
@@ -1203,6 +1311,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: db6b2d04423b
 - id: settings-leftarrowopensagents
   group: settings
   name: leftArrowOpensAgents
@@ -1214,6 +1323,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: af30b5f2dda2
 - id: settings-managedmcpservers
   group: settings
   name: managedMcpServers
@@ -1225,6 +1335,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 9f7b2430b6e8
 - id: settings-managedsourcesbehavior
   group: settings
   name: managedSourcesBehavior
@@ -1236,6 +1347,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: f5b78f284dcf
 - id: settings-maxeffortlevel
   group: settings
   name: maxEffortLevel
@@ -1247,6 +1359,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: e29b6d660fc8
 - id: settings-maxprosewidth
   group: settings
   name: maxProseWidth
@@ -1258,6 +1371,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 9c65fccf4327
 - id: settings-minimumversion
   group: settings
   name: minimumVersion
@@ -1269,6 +1383,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 97c82013bb75
 - id: settings-model
   group: settings
   name: model
@@ -1280,6 +1395,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 083c27aef4bc
 - id: settings-modeloverrides
   group: settings
   name: modelOverrides
@@ -1291,6 +1407,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5855d57a0af0
 - id: settings-modelpicker
   group: settings
   name: modelPicker
@@ -1302,6 +1419,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: b707914d5776
 - id: settings-modelpricing
   group: settings
   name: modelPricing
@@ -1313,6 +1431,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 796f1a866de6
 - id: settings-modelsettings
   group: settings
   name: modelSettings
@@ -1324,6 +1443,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 36fa9364e59b
 - id: settings-otelheadershelper
   group: settings
   name: otelHeadersHelper
@@ -1335,6 +1455,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 78fca9f819ab
 - id: settings-outputstyle
   group: settings
   name: outputStyle
@@ -1346,6 +1467,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 04c878627b69
 - id: settings-parentsettingsbehavior
   group: settings
   name: parentSettingsBehavior
@@ -1357,6 +1479,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 3afc7ee4cf17
 - id: settings-permissionexplainerenabled
   group: settings
   name: permissionExplainerEnabled
@@ -1368,6 +1491,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: 81b45c1e6784
 - id: settings-permissions
   group: settings
   name: permissions
@@ -1379,6 +1503,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c6ac07134d8b
 - id: settings-permissions-additionaldirectories
   group: settings
   name: permissions.additionalDirectories
@@ -1390,6 +1515,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c78b1afc8e66
 - id: settings-permissions-allow
   group: settings
   name: permissions.allow
@@ -1401,6 +1527,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ad1cb4b955a4
 - id: settings-permissions-ask
   group: settings
   name: permissions.ask
@@ -1412,6 +1539,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 2fe940f993eb
 - id: settings-permissions-blockreadsoutsideworkingdirectories
   group: settings
   name: permissions.blockReadsOutsideWorkingDirectories
@@ -1423,6 +1551,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 7d2bc3db37d0
 - id: settings-permissions-blockwritesoutsideworkingdirectories
   group: settings
   name: permissions.blockWritesOutsideWorkingDirectories
@@ -1436,6 +1565,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 77b7f4233c85
 - id: settings-permissions-defaultmode
   group: settings
   name: permissions.defaultMode
@@ -1447,6 +1577,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: e0704160174c
 - id: settings-permissions-deny
   group: settings
   name: permissions.deny
@@ -1458,6 +1589,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: dffb3cbf45c1
 - id: settings-permissions-denyinsteadofprompting
   group: settings
   name: permissions.denyInsteadOfPrompting
@@ -1469,6 +1601,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: fbd35276f218
 - id: settings-permissions-disablebypasspermissionsmode
   group: settings
   name: permissions.disableBypassPermissionsMode
@@ -1480,6 +1613,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 761c8c2e0af2
 - id: settings-plansdirectory
   group: settings
   name: plansDirectory
@@ -1491,6 +1625,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 529fab528f04
 - id: settings-pluginconfigs
   group: settings
   name: pluginConfigs
@@ -1502,6 +1637,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 97dd28614d9b
 - id: settings-pluginsuggestionmarketplaces
   group: settings
   name: pluginSuggestionMarketplaces
@@ -1513,6 +1649,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 34ba265d6910
 - id: settings-plugintrustmessage
   group: settings
   name: pluginTrustMessage
@@ -1524,6 +1661,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 6d44b463a46b
 - id: settings-policyhelper
   group: settings
   name: policyHelper
@@ -1535,6 +1673,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 8388ad11bb6c
 - id: settings-policyhelper-path
   group: settings
   name: policyHelper.path
@@ -1546,6 +1685,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: c378721671c5
 - id: settings-policyhelper-refreshintervalms
   group: settings
   name: policyHelper.refreshIntervalMs
@@ -1557,6 +1697,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 54d5c964edb3
 - id: settings-policyhelper-timeoutms
   group: settings
   name: policyHelper.timeoutMs
@@ -1568,6 +1709,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 9ba922e42be3
 - id: settings-preferrednotifchannel
   group: settings
   name: preferredNotifChannel
@@ -1579,6 +1721,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ee868940ac55
 - id: settings-prefersreducedmotion
   group: settings
   name: prefersReducedMotion
@@ -1590,6 +1733,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: cf721ff1bb53
 - id: settings-prependplugins
   group: settings
   name: prependPlugins
@@ -1601,6 +1745,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 107b211c3e5c
 - id: settings-processwrapper
   group: settings
   name: processWrapper
@@ -1612,6 +1757,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 35959a236744
 - id: settings-promptcachettl
   group: settings
   name: promptCacheTtl
@@ -1623,6 +1769,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0ffffd96cba1
 - id: settings-promptsuggestionenabled
   group: settings
   name: promptSuggestionEnabled
@@ -1634,6 +1781,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5f787726254b
 - id: settings-prstatusfooterenabled
   group: settings
   name: prStatusFooterEnabled
@@ -1646,6 +1794,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: d31f8716de8d
 - id: settings-prurltemplate
   group: settings
   name: prUrlTemplate
@@ -1657,6 +1806,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 60b96d7db2ec
 - id: settings-remote-defaultenvironmentid
   group: settings
   name: remote.defaultEnvironmentId
@@ -1668,6 +1818,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 2bf49ef46213
 - id: settings-remotecontrolatstartup
   group: settings
   name: remoteControlAtStartup
@@ -1679,6 +1830,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 04052247bdf3
 - id: settings-requiredmaximumversion
   group: settings
   name: requiredMaximumVersion
@@ -1690,6 +1842,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 01499a019e46
 - id: settings-requiredminimumversion
   group: settings
   name: requiredMinimumVersion
@@ -1701,6 +1854,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 11c7f62c0ea6
 - id: settings-respectgitignore
   group: settings
   name: respectGitignore
@@ -1712,6 +1866,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ed942d897c8e
 - id: settings-respondtobashcommands
   group: settings
   name: respondToBashCommands
@@ -1723,6 +1878,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: aeb427ee9c46
 - id: settings-sandbox
   group: settings
   name: sandbox
@@ -1734,6 +1890,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 2800dd5c9caa
 - id: settings-sandbox-allowappleevents
   group: settings
   name: sandbox.allowAppleEvents
@@ -1745,6 +1902,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 04b3c6c1f186
 - id: settings-sandbox-allownestedusernamespaces
   group: settings
   name: sandbox.allowNestedUserNamespaces
@@ -1756,6 +1914,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 7fbd2d3eb1d8
 - id: settings-sandbox-allowunsandboxedcommands
   group: settings
   name: sandbox.allowUnsandboxedCommands
@@ -1767,6 +1926,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 27416a7888f6
 - id: settings-sandbox-autoallowbashifsandboxed
   group: settings
   name: sandbox.autoAllowBashIfSandboxed
@@ -1778,6 +1938,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 9c53bc44469f
 - id: settings-sandbox-bwrappath
   group: settings
   name: sandbox.bwrapPath
@@ -1789,6 +1950,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: bc3b8ff9111a
 - id: settings-sandbox-credentials
   group: settings
   name: sandbox.credentials
@@ -1800,6 +1962,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 75e9f1302c7f
 - id: settings-sandbox-credentials-allowplaintextinject
   group: settings
   name: sandbox.credentials.allowPlaintextInject
@@ -1811,6 +1974,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 130bf0933442
 - id: settings-sandbox-credentials-awspairs
   group: settings
   name: sandbox.credentials.awsPairs
@@ -1822,6 +1986,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 0d2f64a54e99
 - id: settings-sandbox-credentials-envvars
   group: settings
   name: sandbox.credentials.envVars
@@ -1833,6 +1998,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 60b97527cd6d
 - id: settings-sandbox-credentials-files
   group: settings
   name: sandbox.credentials.files
@@ -1844,6 +2010,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: f065b81d7c51
 - id: settings-sandbox-credentials-sigv4
   group: settings
   name: sandbox.credentials.sigv4
@@ -1855,6 +2022,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 07ad21eefbde
 - id: settings-sandbox-enabled
   group: settings
   name: sandbox.enabled
@@ -1866,6 +2034,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 6edf2af9130e
 - id: settings-sandbox-enableweakernestedsandbox
   group: settings
   name: sandbox.enableWeakerNestedSandbox
@@ -1877,6 +2046,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 21eff862ed40
 - id: settings-sandbox-enableweakernetworkisolation
   group: settings
   name: sandbox.enableWeakerNetworkIsolation
@@ -1888,6 +2058,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 351ddbfde0a3
 - id: settings-sandbox-excludedcommands
   group: settings
   name: sandbox.excludedCommands
@@ -1899,6 +2070,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 09329af15f2a
 - id: settings-sandbox-failifunavailable
   group: settings
   name: sandbox.failIfUnavailable
@@ -1910,6 +2082,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 19b148d2361e
 - id: settings-sandbox-filesystem
   group: settings
   name: sandbox.filesystem
@@ -1921,6 +2094,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: fa71b5e4e235
 - id: settings-sandbox-filesystem-allowmanagedreadpathsonly
   group: settings
   name: sandbox.filesystem.allowManagedReadPathsOnly
@@ -1932,6 +2106,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 23cf1f3b0bdb
 - id: settings-sandbox-filesystem-allowread
   group: settings
   name: sandbox.filesystem.allowRead
@@ -1943,6 +2118,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c950f8174711
 - id: settings-sandbox-filesystem-allowwrite
   group: settings
   name: sandbox.filesystem.allowWrite
@@ -1954,6 +2130,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 7b1ae87a393f
 - id: settings-sandbox-filesystem-denyread
   group: settings
   name: sandbox.filesystem.denyRead
@@ -1965,6 +2142,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: da3c9ead7b6c
 - id: settings-sandbox-filesystem-denywrite
   group: settings
   name: sandbox.filesystem.denyWrite
@@ -1976,6 +2154,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 43fecdb3a025
 - id: settings-sandbox-filesystem-disabled
   group: settings
   name: sandbox.filesystem.disabled
@@ -1987,6 +2166,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: a3c872153121
 - id: settings-sandbox-ignoreviolations
   group: settings
   name: sandbox.ignoreViolations
@@ -1998,6 +2178,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c61029338a86
 - id: settings-sandbox-network
   group: settings
   name: sandbox.network
@@ -2009,6 +2190,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 88de46ed86af
 - id: settings-sandbox-network-allowallunixsockets
   group: settings
   name: sandbox.network.allowAllUnixSockets
@@ -2020,6 +2202,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a868af07862e
 - id: settings-sandbox-network-alloweddomains
   group: settings
   name: sandbox.network.allowedDomains
@@ -2031,6 +2214,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3e893eb44777
 - id: settings-sandbox-network-allowlocalbinding
   group: settings
   name: sandbox.network.allowLocalBinding
@@ -2042,6 +2226,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 265c9e6a589a
 - id: settings-sandbox-network-allowmachlookup
   group: settings
   name: sandbox.network.allowMachLookup
@@ -2053,6 +2238,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: eb7e947bcc8d
 - id: settings-sandbox-network-allowmanageddomainsonly
   group: settings
   name: sandbox.network.allowManagedDomainsOnly
@@ -2064,6 +2250,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 9c3fc65ad76e
 - id: settings-sandbox-network-allowunixsockets
   group: settings
   name: sandbox.network.allowUnixSockets
@@ -2075,6 +2262,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3fbda1a85f48
 - id: settings-sandbox-network-denieddomains
   group: settings
   name: sandbox.network.deniedDomains
@@ -2086,6 +2274,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5fbed38783f9
 - id: settings-sandbox-network-httpproxyport
   group: settings
   name: sandbox.network.httpProxyPort
@@ -2097,6 +2286,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: eca4d5e32658
 - id: settings-sandbox-network-socksproxyport
   group: settings
   name: sandbox.network.socksProxyPort
@@ -2108,6 +2298,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: f6a6c5f6976e
 - id: settings-sandbox-network-strictallowlist
   group: settings
   name: sandbox.network.strictAllowlist
@@ -2119,6 +2310,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 6721c4824e11
 - id: settings-sandbox-network-tlsterminate
   group: settings
   name: sandbox.network.tlsTerminate
@@ -2130,6 +2322,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 000858bd9d1a
 - id: settings-sandbox-ripgrep
   group: settings
   name: sandbox.ripgrep
@@ -2141,6 +2334,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 9171b1be9685
 - id: settings-sandbox-socatpath
   group: settings
   name: sandbox.socatPath
@@ -2152,6 +2346,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: d65aaec24145
 - id: settings-showclearcontextonplanaccept
   group: settings
   name: showClearContextOnPlanAccept
@@ -2163,6 +2358,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 2614b22a8582
 - id: settings-showthinkingsummaries
   group: settings
   name: showThinkingSummaries
@@ -2174,6 +2370,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5d7a82991d68
 - id: settings-showturnduration
   group: settings
   name: showTurnDuration
@@ -2185,6 +2382,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 4cea515b38f8
 - id: settings-skilllistingbudgetfraction
   group: settings
   name: skillListingBudgetFraction
@@ -2196,6 +2394,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: d97036cc5338
 - id: settings-skilllistingmaxdescchars
   group: settings
   name: skillListingMaxDescChars
@@ -2207,6 +2406,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 5c6616643cfd
 - id: settings-skilloverrides
   group: settings
   name: skillOverrides
@@ -2218,6 +2418,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ea00c8c3988c
 - id: settings-skipautopermissionprompt
   group: settings
   name: skipAutoPermissionPrompt
@@ -2230,6 +2431,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 4346e38f2117
 - id: settings-skipdangerousmodepermissionprompt
   group: settings
   name: skipDangerousModePermissionPrompt
@@ -2241,6 +2443,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User, local, or managed
+  docs_hash: 576d46438706
 - id: settings-skipwebfetchpreflight
   group: settings
   name: skipWebFetchPreflight
@@ -2252,6 +2455,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 480603aebf7a
 - id: settings-spellcheck
   group: settings
   name: spellcheck
@@ -2263,6 +2467,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 4fcc565ab8bb
 - id: settings-spinnertipsenabled
   group: settings
   name: spinnerTipsEnabled
@@ -2274,6 +2479,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 160199ec4ae6
 - id: settings-spinnertipsoverride
   group: settings
   name: spinnerTipsOverride
@@ -2285,6 +2491,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 503f05f0f25b
 - id: settings-spinnerverbs
   group: settings
   name: spinnerVerbs
@@ -2296,6 +2503,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 92c36fd5e4dc
 - id: settings-sshconfigs
   group: settings
   name: sshConfigs
@@ -2307,6 +2515,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: c69d4637db7d
 - id: settings-sshhostallowlist
   group: settings
   name: sshHostAllowlist
@@ -2318,6 +2527,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 50bfe1dd3896
 - id: settings-sshhostcommands
   group: settings
   name: sshHostCommands
@@ -2329,6 +2539,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 5d5be4877a26
 - id: settings-statusline
   group: settings
   name: statusLine
@@ -2340,6 +2551,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ed5bbc5f6dc4
 - id: settings-strictknownmarketplaces
   group: settings
   name: strictKnownMarketplaces
@@ -2351,6 +2563,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: a44c5bcf8159
 - id: settings-strictpluginonlycustomization
   group: settings
   name: strictPluginOnlyCustomization
@@ -2362,6 +2575,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: df7ca3b10ed6
 - id: settings-strictpluginonlycustomization-agents
   group: settings
   name: strictPluginOnlyCustomization.agents
@@ -2373,6 +2587,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 4da8ac75de0b
 - id: settings-strictpluginonlycustomization-hooks
   group: settings
   name: strictPluginOnlyCustomization.hooks
@@ -2384,6 +2599,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 7ad7684dde85
 - id: settings-strictpluginonlycustomization-mcp
   group: settings
   name: strictPluginOnlyCustomization.mcp
@@ -2395,6 +2611,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 171e03fefd38
 - id: settings-strictpluginonlycustomization-skills
   group: settings
   name: strictPluginOnlyCustomization.skills
@@ -2406,6 +2623,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 10d117e9990c
 - id: settings-subagentpromptcachettl
   group: settings
   name: subagentPromptCacheTtl
@@ -2417,6 +2635,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: ab371c3895f3
 - id: settings-switchmodelsonflag
   group: settings
   name: switchModelsOnFlag
@@ -2428,6 +2647,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 3c521376b780
 - id: settings-syncclaudeaiplugins
   group: settings
   name: syncClaudeAiPlugins
@@ -2439,6 +2659,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User, local, or managed
+  docs_hash: fe4c80de6916
 - id: settings-syncclaudeaiskills
   group: settings
   name: syncClaudeAiSkills
@@ -2450,6 +2671,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User, local, or managed
+  docs_hash: eb01753d8ea7
 - id: settings-syntaxhighlightingdisabled
   group: settings
   name: syntaxHighlightingDisabled
@@ -2461,6 +2683,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 819bb57f2225
 - id: settings-taskoutputmaxchars
   group: settings
   name: taskOutputMaxChars
@@ -2472,6 +2695,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: e61aced098f0
 - id: settings-teammatedefaultmodel
   group: settings
   name: teammateDefaultModel
@@ -2483,6 +2707,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Global config
+  docs_hash: e05be0815933
 - id: settings-teammatemode
   group: settings
   name: teammateMode
@@ -2494,6 +2719,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: fff8798fe1c0
 - id: settings-terminalprogressbarenabled
   group: settings
   name: terminalProgressBarEnabled
@@ -2505,6 +2731,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: be0e764f792f
 - id: settings-terminaltitlefromrename
   group: settings
   name: terminalTitleFromRename
@@ -2516,6 +2743,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0fb0fa378061
 - id: settings-theme
   group: settings
   name: theme
@@ -2527,6 +2755,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: d22bb25e764b
 - id: settings-timeformat
   group: settings
   name: timeFormat
@@ -2538,6 +2767,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: bf47c6a7055c
 - id: settings-timezone
   group: settings
   name: timeZone
@@ -2549,6 +2779,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: a014da76ece3
 - id: settings-tui
   group: settings
   name: tui
@@ -2560,6 +2791,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 8c9fd242f01e
 - id: settings-ultracode
   group: settings
   name: ultracode
@@ -2571,6 +2803,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 48c7f7dab88f
 - id: settings-useautomodeduringplan
   group: settings
   name: useAutoModeDuringPlan
@@ -2583,6 +2816,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User, local, or managed
+  docs_hash: 26fb5f69fa34
 - id: settings-verbose
   group: settings
   name: verbose
@@ -2594,6 +2828,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 78239eb9f4bc
 - id: settings-viewmode
   group: settings
   name: viewMode
@@ -2605,6 +2840,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1b8d0dad2cef
 - id: settings-viminsertmoderemaps
   group: settings
   name: vimInsertModeRemaps
@@ -2616,6 +2852,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User or managed
+  docs_hash: 81348ba2add4
 - id: settings-voice
   group: settings
   name: voice
@@ -2627,6 +2864,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 1a8a73d779c1
 - id: settings-voiceenabled
   group: settings
   name: voiceEnabled
@@ -2638,6 +2876,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: f573632c5500
 - id: settings-wheelscrollaccelerationenabled
   group: settings
   name: wheelScrollAccelerationEnabled
@@ -2649,6 +2888,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 0fa631b1ec2e
 - id: settings-workflowkeywordtriggerenabled
   group: settings
   name: workflowKeywordTriggerEnabled
@@ -2660,6 +2900,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: eba7cd45f240
 - id: settings-workflowsizeguideline
   group: settings
   name: workflowSizeGuideline
@@ -2671,6 +2912,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 8a724e3dee28
 - id: settings-worktree
   group: settings
   name: worktree
@@ -2682,6 +2924,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: 6a2e21bab7ff
 - id: settings-worktree-baseref
   group: settings
   name: worktree.baseRef
@@ -2693,6 +2936,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: b151b05b277f
 - id: settings-worktree-bgisolation
   group: settings
   name: worktree.bgIsolation
@@ -2705,6 +2949,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: b4af770e27c1
 - id: settings-worktree-location
   group: settings
   name: worktree.location
@@ -2716,6 +2961,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: User
+  docs_hash: dd2f7b944e48
 - id: settings-worktree-sparsepaths
   group: settings
   name: worktree.sparsePaths
@@ -2727,6 +2973,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: e01e3edc2b86
 - id: settings-worktree-symlinkdirectories
   group: settings
   name: worktree.symlinkDirectories
@@ -2738,6 +2985,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Any file
+  docs_hash: c0db30fd0464
 - id: settings-wslinheritswindowssettings
   group: settings
   name: wslInheritsWindowsSettings
@@ -2749,3 +2997,4 @@
   verified_at: '2026-11-20'
   reviewed: false
   scope: Managed
+  docs_hash: 9089a408801b

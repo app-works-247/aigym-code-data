@@ -62,6 +62,14 @@ The Postgres test in `tests/test_migrate.py` runs only when `TEST_DATABASE_URL` 
 
 `/v1/status.json` is a Cloudflare Pages Function (`functions/`), tested with `node --test functions/status.test.mjs`.
 
+## Docs watch
+
+`.github/workflows/docs-watch.yml` runs every day at 05:15 UTC: `python -m pipeline docs-watch` re-reads the five docs pages behind `content/reference/`. New items get an AI draft, items gone from the docs are removed, and items whose docs row changed (each entry keeps a `docs_hash` of the row it was written from) go back to `reviewed: false`. When anything changed the job opens or updates one pull request, `docs-watch`, with the list as its body. Nothing is deployed until it is merged. The repository setting *Actions → General → Allow GitHub Actions to create and approve pull requests* must be on.
+
+## Privacy and support pages
+
+`deploy/privacy/` and `deploy/support/` are copied into the site on every deploy and served at `/privacy/` and `/support/` (App Store links).
+
 ## Layout
 
 ```

@@ -11,6 +11,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --add-dir ../apps ../lib
+  docs_hash: a908b78fc8ce
 - id: cli-advisor
   group: cli
   name: --advisor
@@ -22,6 +23,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --advisor opus
+  docs_hash: cbbc7e401ae9
 - id: cli-agent
   group: cli
   name: --agent
@@ -33,6 +35,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --agent my-custom-agent
+  docs_hash: 8f555409b3b0
 - id: cli-agents
   group: cli
   name: --agents
@@ -44,6 +47,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --agents '{"reviewer":{"description":"Reviews code","prompt":"You are a code reviewer"}}'
+  docs_hash: 98cb5e69cc40
 - id: cli-allow-dangerously-skip-permissions
   group: cli
   name: --allow-dangerously-skip-permissions
@@ -55,6 +59,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --permission-mode default --allow-dangerously-skip-permissions
+  docs_hash: 155ffad439fd
 - id: cli-allowedtools
   group: cli
   name: --allowedTools
@@ -66,6 +71,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: '"Bash(git log *)" "Bash(git diff *)" "Read"'
+  docs_hash: fd8bc58f9ec8
 - id: cli-append-subagent-system-prompt
   group: cli
   name: --append-subagent-system-prompt
@@ -77,6 +83,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --append-subagent-system-prompt "Cite file paths in every answer" "query"
+  docs_hash: b34fd2d7161e
 - id: cli-append-subagent-system-prompt-file
   group: cli
   name: --append-subagent-system-prompt-file
@@ -88,6 +95,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --append-subagent-system-prompt-file ./subagent-rules.txt "query"
+  docs_hash: 323ff1be30f3
 - id: cli-append-system-prompt
   group: cli
   name: --append-system-prompt
@@ -99,6 +107,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --append-system-prompt "Always use TypeScript"
+  docs_hash: 451427c3b3f4
 - id: cli-append-system-prompt-file
   group: cli
   name: --append-system-prompt-file
@@ -110,6 +119,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --append-system-prompt-file ./extra-rules.txt
+  docs_hash: 45e6715c2590
 - id: cli-autocompact
   group: cli
   name: --autocompact
@@ -121,6 +131,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --autocompact 500k
+  docs_hash: 990b5e876040
 - id: cli-ax-screen-reader
   group: cli
   name: --ax-screen-reader
@@ -132,6 +143,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --ax-screen-reader
+  docs_hash: 7e174e644326
 - id: cli-bare
   group: cli
   name: --bare
@@ -143,6 +155,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --bare -p "query"
+  docs_hash: 8ba81b4fdfc6
 - id: cli-betas
   group: cli
   name: --betas
@@ -154,6 +167,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --betas interleaved-thinking
+  docs_hash: 618f96574bd6
 - id: cli-bg
   group: cli
   name: --bg
@@ -165,6 +179,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --bg "investigate the flaky test"
+  docs_hash: b6d7818d1d8c
 - id: cli-channels
   group: cli
   name: --channels
@@ -176,6 +191,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --channels plugin:my-notifier@my-marketplace
+  docs_hash: a54032c1564f
 - id: cli-chrome
   group: cli
   name: --chrome
@@ -187,6 +203,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --chrome
+  docs_hash: 2e6fd90b2cec
 - id: cli-cloud
   group: cli
   name: --cloud
@@ -198,6 +215,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --cloud "Fix the login bug"
+  docs_hash: 9d5bf7bb637a
 - id: cli-continue
   group: cli
   name: --continue
@@ -209,6 +227,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --continue
+  docs_hash: 0d3e68893008
 - id: cli-correlation-id
   group: cli
   name: --correlation-id
@@ -220,6 +239,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "Run the build" --environment ccpool_abc123 --correlation-id build-4821
+  docs_hash: 9fafe29e6087
 - id: cli-dangerously-load-development-channels
   group: cli
   name: --dangerously-load-development-channels
@@ -231,6 +251,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --dangerously-load-development-channels server:webhook
+  docs_hash: 96a14c01270e
 - id: cli-dangerously-skip-permissions
   group: cli
   name: --dangerously-skip-permissions
@@ -242,6 +263,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --dangerously-skip-permissions
+  docs_hash: cca1abd2bf50
 - id: cli-debug
   group: cli
   name: --debug
@@ -253,6 +275,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --debug='mcp,startup'
+  docs_hash: 5ccffd741554
 - id: cli-debug-file
   group: cli
   name: --debug-file
@@ -264,6 +287,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --debug-file /tmp/claude-debug.log
+  docs_hash: 4c69a1ab9d41
 - id: cli-desktop
   group: cli
   name: --desktop
@@ -275,6 +299,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --desktop
+  docs_hash: 7467c33ddf7f
 - id: cli-disable-slash-commands
   group: cli
   name: --disable-slash-commands
@@ -286,6 +311,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --disable-slash-commands
+  docs_hash: d5c7d0af95ac
 - id: cli-disallowedtools
   group: cli
   name: --disallowedTools
@@ -297,6 +323,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: '"Bash(git log *)" "Bash(git diff *)" "Edit"'
+  docs_hash: 660e208bf961
 - id: cli-effort
   group: cli
   name: --effort
@@ -308,6 +335,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --effort high
+  docs_hash: 752bbd264236
 - id: cli-enable-auto-mode
   group: cli
   name: --enable-auto-mode
@@ -319,6 +347,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --permission-mode auto
+  docs_hash: b11b9b511fb2
 - id: cli-environment
   group: cli
   name: --environment
@@ -330,6 +359,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "Fix the login bug" --environment ccpool_abc123
+  docs_hash: b2eab8b7dbc7
 - id: cli-exclude-dynamic-system-prompt-sections
   group: cli
   name: --exclude-dynamic-system-prompt-sections
@@ -341,6 +371,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --exclude-dynamic-system-prompt-sections "query"
+  docs_hash: deac798aa774
 - id: cli-exec
   group: cli
   name: --exec
@@ -352,6 +383,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --bg --exec 'pytest -x'
+  docs_hash: d1d68ee674ec
 - id: cli-fallback-model
   group: cli
   name: --fallback-model
@@ -363,6 +395,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --fallback-model sonnet,haiku
+  docs_hash: 2bb8b0a76ec7
 - id: cli-fork-session
   group: cli
   name: --fork-session
@@ -374,6 +407,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --resume abc123 --fork-session
+  docs_hash: 168bad4f2c70
 - id: cli-forward-subagent-text
   group: cli
   name: --forward-subagent-text
@@ -385,6 +419,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --output-format stream-json --verbose --forward-subagent-text "query"
+  docs_hash: e6550855c460
 - id: cli-from-pr
   group: cli
   name: --from-pr
@@ -396,6 +431,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --from-pr 123
+  docs_hash: 1c97935c9663
 - id: cli-ide
   group: cli
   name: --ide
@@ -407,6 +443,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --ide
+  docs_hash: bb6519d12546
 - id: cli-include-hook-events
   group: cli
   name: --include-hook-events
@@ -418,6 +455,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --output-format stream-json --verbose --include-hook-events "query"
+  docs_hash: 73bde0b535d4
 - id: cli-include-partial-messages
   group: cli
   name: --include-partial-messages
@@ -429,6 +467,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --output-format stream-json --verbose --include-partial-messages "query"
+  docs_hash: 9d59239a2192
 - id: cli-init
   group: cli
   name: --init
@@ -440,6 +479,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --init "query"
+  docs_hash: 2ebdfd7e1564
 - id: cli-init-only
   group: cli
   name: --init-only
@@ -451,6 +491,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --init-only
+  docs_hash: 0d5d9efdc72e
 - id: cli-input-format
   group: cli
   name: --input-format
@@ -462,6 +503,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --input-format stream-json --output-format stream-json --verbose
+  docs_hash: 8620ac19f428
 - id: cli-json-schema
   group: cli
   name: --json-schema
@@ -474,6 +516,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --json-schema '{"type":"object","properties":{...}}' "query"
+  docs_hash: f0bb828a8ee9
 - id: cli-maintenance
   group: cli
   name: --maintenance
@@ -485,6 +528,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --maintenance "query"
+  docs_hash: c496c0dae5e0
 - id: cli-max-budget-usd
   group: cli
   name: --max-budget-usd
@@ -496,6 +540,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --max-budget-usd 5.00 "query"
+  docs_hash: ffda4c41f4fc
 - id: cli-max-turns
   group: cli
   name: --max-turns
@@ -507,6 +552,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --max-turns 3 "query"
+  docs_hash: 5cdeebd801c9
 - id: cli-mcp-config
   group: cli
   name: --mcp-config
@@ -518,6 +564,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --mcp-config ./mcp.json
+  docs_hash: ab2fd24ddca5
 - id: cli-metadata
   group: cli
   name: --metadata
@@ -530,6 +577,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "Run the build" --environment ccpool_abc123 --metadata size=large
+  docs_hash: c7cbff15731c
 - id: cli-model
   group: cli
   name: --model
@@ -541,6 +589,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --model claude-sonnet-5
+  docs_hash: c0a4a23ff74a
 - id: cli-name
   group: cli
   name: --name
@@ -552,6 +601,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -n "my-feature-work"
+  docs_hash: 9ef24e6495a1
 - id: cli-no-chrome
   group: cli
   name: --no-chrome
@@ -563,6 +613,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --no-chrome
+  docs_hash: 44a2a4f47550
 - id: cli-no-session-persistence
   group: cli
   name: --no-session-persistence
@@ -574,6 +625,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --no-session-persistence "query"
+  docs_hash: 61d92863eaf2
 - id: cli-output-format
   group: cli
   name: --output-format
@@ -585,6 +637,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "query" --output-format json
+  docs_hash: b319e53f95af
 - id: cli-permission-mode
   group: cli
   name: --permission-mode
@@ -596,6 +649,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --permission-mode plan
+  docs_hash: 7d0cfa0e70fe
 - id: cli-permission-prompt-tool
   group: cli
   name: --permission-prompt-tool
@@ -607,6 +661,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --mcp-config ./mcp.json --permission-prompt-tool mcp__permissions__approve "query"
+  docs_hash: 1e1ca924019b
 - id: cli-permission-prompts
   group: cli
   name: --permission-prompts
@@ -619,6 +674,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --permission-prompts none "query"
+  docs_hash: 5f7fd28ff8e2
 - id: cli-plugin-dir
   group: cli
   name: --plugin-dir
@@ -630,6 +686,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --plugin-dir ./my-plugin
+  docs_hash: ff6f0ececaee
 - id: cli-plugin-url
   group: cli
   name: --plugin-url
@@ -641,6 +698,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --plugin-url https://example.com/plugin.zip
+  docs_hash: 971e62a26f5c
 - id: cli-print
   group: cli
   name: --print
@@ -652,6 +710,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "query"
+  docs_hash: 7bcf44eddbf1
 - id: cli-prompt-suggestions
   group: cli
   name: --prompt-suggestions
@@ -663,6 +722,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --prompt-suggestions --output-format stream-json --verbose "query"
+  docs_hash: 456a8c584156
 - id: cli-ref
   group: cli
   name: --ref
@@ -674,6 +734,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "Run the smoke test" --environment ccpool_abc123 --ref main
+  docs_hash: 564c61841233
 - id: cli-remote
   group: cli
   name: --remote
@@ -685,6 +746,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --remote "Fix the login bug"
+  docs_hash: 095ded2e8a3b
 - id: cli-remote-control
   group: cli
   name: --remote-control
@@ -698,6 +760,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --remote-control "My Project"
+  docs_hash: 8f367afa005a
 - id: cli-remote-control-session-name-prefix
   group: cli
   name: --remote-control-session-name-prefix
@@ -709,6 +772,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude remote-control --remote-control-session-name-prefix dev-box
+  docs_hash: 9adf973f3c06
 - id: cli-replay-user-messages
   group: cli
   name: --replay-user-messages
@@ -720,6 +784,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p --input-format stream-json --output-format stream-json --verbose --replay-user-messages
+  docs_hash: d808986f7199
 - id: cli-restricted
   group: cli
   name: --restricted
@@ -733,6 +798,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --restricted -p "query"
+  docs_hash: 6e91707166b8
 - id: cli-resume
   group: cli
   name: --resume
@@ -746,6 +812,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --resume auth-refactor
+  docs_hash: a1e24c14dc89
 - id: cli-safe-mode
   group: cli
   name: --safe-mode
@@ -757,6 +824,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --safe-mode
+  docs_hash: f742d7af85ec
 - id: cli-session-id
   group: cli
   name: --session-id
@@ -768,6 +836,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --session-id "550e8400-e29b-41d4-a716-446655440000"
+  docs_hash: 9dd917016fc1
 - id: cli-setting-sources
   group: cli
   name: --setting-sources
@@ -779,6 +848,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --setting-sources user,project
+  docs_hash: 17c4f0eac91f
 - id: cli-settings
   group: cli
   name: --settings
@@ -790,6 +860,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --settings ./settings.json
+  docs_hash: 04c90689a90c
 - id: cli-strict-mcp-config
   group: cli
   name: --strict-mcp-config
@@ -802,6 +873,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --strict-mcp-config --mcp-config ./mcp.json
+  docs_hash: 5cd019c68e5d
 - id: cli-system-prompt
   group: cli
   name: --system-prompt
@@ -813,6 +885,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --system-prompt "You are a Python expert"
+  docs_hash: 28fee0d85906
 - id: cli-system-prompt-file
   group: cli
   name: --system-prompt-file
@@ -824,6 +897,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --system-prompt-file ./custom-prompt.txt
+  docs_hash: 3d0320439a72
 - id: cli-system-prompt-snapshot
   group: cli
   name: --system-prompt-snapshot
@@ -836,6 +910,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --system-prompt-snapshot off
+  docs_hash: b40f008e603e
 - id: cli-teammate-mode
   group: cli
   name: --teammate-mode
@@ -847,6 +922,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --teammate-mode auto
+  docs_hash: 7b27b4c2f117
 - id: cli-teleport
   group: cli
   name: --teleport
@@ -858,6 +934,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --teleport
+  docs_hash: 58f602b60b91
 - id: cli-tmux
   group: cli
   name: --tmux
@@ -869,6 +946,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -w feature-auth --tmux
+  docs_hash: cd718acc6623
 - id: cli-tools
   group: cli
   name: --tools
@@ -880,6 +958,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --tools "Bash,Edit,Read"
+  docs_hash: 38b131667062
 - id: cli-verbose
   group: cli
   name: --verbose
@@ -891,6 +970,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude --verbose
+  docs_hash: b223855d20bd
 - id: cli-version
   group: cli
   name: --version
@@ -902,6 +982,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -v
+  docs_hash: 639c7b34d5f1
 - id: cli-worktree
   group: cli
   name: --worktree
@@ -914,6 +995,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -w feature-auth
+  docs_hash: ed037c6d894f
 - id: cli-claude
   group: cli
   name: claude
@@ -925,6 +1007,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude
+  docs_hash: 387cd9e7a382
 - id: cli-claude-query
   group: cli
   name: claude "query"
@@ -936,6 +1019,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude "explain this project"
+  docs_hash: 5c3f75287f52
 - id: cli-claude-c
   group: cli
   name: claude -c
@@ -947,6 +1031,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -c
+  docs_hash: 12317ee0fe83
 - id: cli-claude-c-p-query
   group: cli
   name: claude -c -p "query"
@@ -958,6 +1043,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -c -p "Check for type errors"
+  docs_hash: 93f9bea3b556
 - id: cli-claude-p-query
   group: cli
   name: claude -p "query"
@@ -969,6 +1055,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -p "explain this function"
+  docs_hash: c9c52ad12bbd
 - id: cli-claude-r-session-query
   group: cli
   name: claude -r "<session>" "query"
@@ -980,6 +1067,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude -r "auth-refactor" "Finish this PR"
+  docs_hash: 47d54d3a34ef
 - id: cli-claude-agents
   group: cli
   name: claude agents
@@ -991,6 +1079,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude agents --json
+  docs_hash: 39591ee877f3
 - id: cli-claude-attach-id-name
   group: cli
   name: claude attach <id|name>
@@ -1002,6 +1091,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude attach 7c5dcf5d
+  docs_hash: d45307cfb203
 - id: cli-claude-auth-login
   group: cli
   name: claude auth login
@@ -1013,6 +1103,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude auth login --console
+  docs_hash: cb309b1e6381
 - id: cli-claude-auth-logout
   group: cli
   name: claude auth logout
@@ -1024,6 +1115,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude auth logout
+  docs_hash: c75ebdb3f95d
 - id: cli-claude-auth-status
   group: cli
   name: claude auth status
@@ -1035,6 +1127,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude auth status
+  docs_hash: 86e7e53e73be
 - id: cli-claude-auto-mode-defaults
   group: cli
   name: claude auto-mode defaults
@@ -1046,6 +1139,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude auto-mode defaults --label 'Git Destructive'
+  docs_hash: 549fe5e74645
 - id: cli-claude-auto-mode-reset
   group: cli
   name: claude auto-mode reset
@@ -1057,6 +1151,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude auto-mode reset --yes
+  docs_hash: 606684f93d1d
 - id: cli-claude-daemon-logs
   group: cli
   name: claude daemon logs
@@ -1068,6 +1163,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude daemon logs
+  docs_hash: 3b4f3a3a9e69
 - id: cli-claude-daemon-run
   group: cli
   name: claude daemon run
@@ -1079,6 +1175,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude daemon run
+  docs_hash: 3cc8783ac6fa
 - id: cli-claude-daemon-status
   group: cli
   name: claude daemon status
@@ -1090,6 +1187,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude daemon status
+  docs_hash: 0242e9cdebc5
 - id: cli-claude-daemon-stop-any
   group: cli
   name: claude daemon stop --any
@@ -1101,6 +1199,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude daemon stop --any --keep-workers
+  docs_hash: 2b8e8fb71a8a
 - id: cli-claude-doctor
   group: cli
   name: claude doctor
@@ -1112,6 +1211,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude doctor
+  docs_hash: 045c648ed2ec
 - id: cli-claude-gateway
   group: cli
   name: claude gateway
@@ -1123,6 +1223,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude gateway --config gateway.yaml
+  docs_hash: 387decf09625
 - id: cli-claude-import-source
   group: cli
   name: claude import [source]
@@ -1134,6 +1235,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude import codex --dry-run
+  docs_hash: 4805f0cda2e0
 - id: cli-claude-install-version
   group: cli
   name: claude install [version]
@@ -1145,6 +1247,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude install stable
+  docs_hash: b4a580b290cc
 - id: cli-claude-logs-id-name
   group: cli
   name: claude logs <id|name>
@@ -1156,6 +1259,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude logs 7c5dcf5d
+  docs_hash: d8493defc2cb
 - id: cli-claude-mcp
   group: cli
   name: claude mcp
@@ -1167,6 +1271,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: See the Claude Code MCP documentation.
+  docs_hash: 903f146d5705
 - id: cli-claude-mcp-login-name
   group: cli
   name: claude mcp login <name>
@@ -1178,6 +1283,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude mcp login sentry
+  docs_hash: 7a2dc9f897f3
 - id: cli-claude-mcp-logout-name
   group: cli
   name: claude mcp logout <name>
@@ -1189,6 +1295,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude mcp logout sentry
+  docs_hash: 8cef5ba34fe9
 - id: cli-claude-plugin
   group: cli
   name: claude plugin
@@ -1200,6 +1307,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude plugin install code-review@claude-plugins-official
+  docs_hash: 8f7cf07bc3ce
 - id: cli-claude-purge-path
   group: cli
   name: claude purge [path]
@@ -1211,6 +1319,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude purge ~/work/repo --dry-run
+  docs_hash: 9fbfa92b6067
 - id: cli-claude-remote-control
   group: cli
   name: claude remote-control
@@ -1222,6 +1331,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude remote-control --name "My Project"
+  docs_hash: 126c4d52026d
 - id: cli-claude-respawn-id
   group: cli
   name: claude respawn <id>
@@ -1233,6 +1343,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude respawn 7c5dcf5d
+  docs_hash: 737bd9e7ff9c
 - id: cli-claude-rm-id
   group: cli
   name: claude rm <id>
@@ -1244,6 +1355,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude rm 7c5dcf5d
+  docs_hash: 6223bd9435c0
 - id: cli-claude-self-hosted-runner
   group: cli
   name: claude self-hosted-runner
@@ -1255,6 +1367,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude self-hosted-runner setup
+  docs_hash: 230dd4da79c6
 - id: cli-claude-setup-token
   group: cli
   name: claude setup-token
@@ -1266,6 +1379,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude setup-token
+  docs_hash: 2dbdbf6c5040
 - id: cli-claude-stop-id
   group: cli
   name: claude stop <id>
@@ -1277,6 +1391,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude stop 7c5dcf5d
+  docs_hash: ae1c5540df37
 - id: cli-claude-ultrareview-target
   group: cli
   name: claude ultrareview [target]
@@ -1289,6 +1404,7 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude ultrareview 1234 --json
+  docs_hash: 80bcf1b31855
 - id: cli-claude-update
   group: cli
   name: claude update
@@ -1300,3 +1416,4 @@
   verified_at: '2026-11-20'
   reviewed: false
   example: claude update
+  docs_hash: 0d573d85451d

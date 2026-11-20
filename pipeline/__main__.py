@@ -1,7 +1,7 @@
 """Command line entry point: `python -m pipeline <command>`.
 
 Commands: check-env, seeds-check, migrate, discover, classify, export, load, refresh, nightly,
-official, enrich, enrich-trial, reference-check, reference-draft.
+official, enrich, enrich-trial, reference-check, reference-draft, docs-watch.
 Still to come: the LLM step of classify.
 """
 
@@ -376,6 +376,44 @@ def _cmd_reference_draft(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_docs_watch(args: argparse.Namespace) -> int:
+    """Compare content/reference with the docs; write the report used as the PR body."""
+    from datetime import UTC, datetime
+
+    from pipeline import docs, docs_watch, enrich, reference, reference_draft
+    from pipeline.discover import stderr_log
+    from pipeline.llm import make_provider
+
+    today = datetime.now(UTC).date()
+    provider = None
+    if not args.no_draft:
+        try:
+            provider = make_provider(enrich.load_config(), dict(os.environ))
+        except Exception as err:  # names what is missing, never a key value
+            stderr_log(f"new items will not be drafted: {err}")
+
+    def draft(items):
+        return reference_draft.draft(provider, items, today, stderr_log)
+
+    reports = []
+    for group in sorted(_REFERENCE_GROUPS):
+        doc_items = docs.items(group, docs.fetch(docs.GROUPS[group].page))
+        entries, report = docs_watch.watch(
+            group, reference.load(group), doc_items, today, draft if provider else None
+        )
+        reference.save(group, entries)
+        reports.append(report)
+        stderr_log(
+            f"{group}: {len(report.changed)} changed, {len(report.added)} added, "
+            f"{len(report.not_drafted)} not drafted, {len(report.removed)} removed, "
+            f"{report.baselined} baselined"
+        )
+    Path(args.report).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.report).write_text(docs_watch.markdown(reports, today), encoding="utf-8")
+    print(json.dumps({"needs_review": any(r.needs_review for r in reports)}))
+    return 0
+
+
 def _cmd_enrich_trial(args: argparse.Namespace) -> int:
     """Compare models on a sample of active repos. Writes JSON only, never the database."""
     import random
@@ -559,6 +597,11 @@ def build_parser() -> argparse.ArgumentParser:
     rdr.add_argument("--group", required=True, choices=sorted(_REFERENCE_GROUPS))
     rdr.add_argument("--limit", type=int, help="draft at most N items")
     rdr.set_defaults(func=_cmd_reference_draft)
+
+    dw = sub.add_parser("docs-watch", help="sync content/reference with the docs, write a report")
+    dw.add_argument("--report", default="out/docs-watch.md", help="markdown report (PR body)")
+    dw.add_argument("--no-draft", action="store_true", help="never call the AI")
+    dw.set_defaults(func=_cmd_docs_watch)
 
     enr = sub.add_parser("enrich", help="write summaries for active repos that have none")
     enr.add_argument("--limit", type=int, default=50)

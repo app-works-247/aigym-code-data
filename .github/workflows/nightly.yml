@@ -43,8 +43,8 @@ jobs:
           python -m pipeline nightly --out site/v1 \
             ${{ inputs.skip_discover && '--no-discover' || '' }}
 
-      - name: Add Pages headers
-        run: cp deploy/_headers site/_headers
+      - name: Add Pages headers, privacy and support pages
+        run: cp -R deploy/. site/
 
       - uses: actions/setup-node@v4
         with:

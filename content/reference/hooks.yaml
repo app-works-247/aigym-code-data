@@ -10,6 +10,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: bd315308cada
 - id: hooks-cwdchanged
   group: hooks
   name: CwdChanged
@@ -22,6 +23,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 973070e44a08
 - id: hooks-directoryadded
   group: hooks
   name: DirectoryAdded
@@ -34,6 +36,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5ee1f5c04255
 - id: hooks-elicitation
   group: hooks
   name: Elicitation
@@ -44,6 +47,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a54b2f8afdf1
 - id: hooks-elicitationresult
   group: hooks
   name: ElicitationResult
@@ -54,6 +58,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 0cc378420154
 - id: hooks-filechanged
   group: hooks
   name: FileChanged
@@ -64,6 +69,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 322ac00d9cc1
 - id: hooks-instructionsloaded
   group: hooks
   name: InstructionsLoaded
@@ -75,6 +81,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7c187efad2ad
 - id: hooks-messagedisplay
   group: hooks
   name: MessageDisplay
@@ -85,6 +92,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 94635c85b438
 - id: hooks-notification
   group: hooks
   name: Notification
@@ -95,6 +103,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: fe3835d9b45b
 - id: hooks-permissiondenied
   group: hooks
   name: PermissionDenied
@@ -107,6 +116,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 82c5324fd0d3
 - id: hooks-permissionrequest
   group: hooks
   name: PermissionRequest
@@ -117,6 +127,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e8329ac6e521
 - id: hooks-postcompact
   group: hooks
   name: PostCompact
@@ -127,6 +138,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 89d79ee01220
 - id: hooks-postmodelswitch
   group: hooks
   name: PostModelSwitch
@@ -138,6 +150,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7872d1001c01
 - id: hooks-posttoolbatch
   group: hooks
   name: PostToolBatch
@@ -149,6 +162,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 820cdb03eebf
 - id: hooks-posttooluse
   group: hooks
   name: PostToolUse
@@ -159,6 +173,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8f5e8721aaed
 - id: hooks-posttoolusefailure
   group: hooks
   name: PostToolUseFailure
@@ -169,6 +184,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 320cb01cbfea
 - id: hooks-precompact
   group: hooks
   name: PreCompact
@@ -179,6 +195,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: a77f287c55e3
 - id: hooks-premodelswitch
   group: hooks
   name: PreModelSwitch
@@ -189,6 +206,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7024d2775636
 - id: hooks-pretooluse
   group: hooks
   name: PreToolUse
@@ -199,6 +217,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 1d7807c79da0
 - id: hooks-sessionend
   group: hooks
   name: SessionEnd
@@ -209,6 +228,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ebac53493c40
 - id: hooks-sessionstart
   group: hooks
   name: SessionStart
@@ -219,6 +239,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 538e258f1f54
 - id: hooks-setup
   group: hooks
   name: Setup
@@ -231,6 +252,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 2e12ed8f3479
 - id: hooks-stop
   group: hooks
   name: Stop
@@ -241,6 +263,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 923b7a47dea3
 - id: hooks-stopfailure
   group: hooks
   name: StopFailure
@@ -251,6 +274,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 516c99dc8441
 - id: hooks-subagentstart
   group: hooks
   name: SubagentStart
@@ -261,6 +285,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: e445d5b61a1f
 - id: hooks-subagentstop
   group: hooks
   name: SubagentStop
@@ -271,6 +296,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 8927a03a126a
 - id: hooks-taskcompleted
   group: hooks
   name: TaskCompleted
@@ -281,6 +307,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 7960c2cc2238
 - id: hooks-taskcreated
   group: hooks
   name: TaskCreated
@@ -291,6 +318,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: f288d7d61579
 - id: hooks-teammateidle
   group: hooks
   name: TeammateIdle
@@ -301,6 +329,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 91450dab7223
 - id: hooks-userpromptexpansion
   group: hooks
   name: UserPromptExpansion
@@ -313,6 +342,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 64cb6b5a47ad
 - id: hooks-userpromptsubmit
   group: hooks
   name: UserPromptSubmit
@@ -324,6 +354,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ea446aacb71e
 - id: hooks-worktreecreate
   group: hooks
   name: WorktreeCreate
@@ -336,6 +367,7 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: 5212e492501f
 - id: hooks-worktreeremove
   group: hooks
   name: WorktreeRemove
@@ -346,3 +378,4 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+  docs_hash: ed85838bb553

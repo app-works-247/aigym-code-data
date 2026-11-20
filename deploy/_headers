@@ -1,3 +1,11 @@
 /v1/*
   Cache-Control: public, max-age=300
   Access-Control-Allow-Origin: *
+
+/privacy/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
+
+/support/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff

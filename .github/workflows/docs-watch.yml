@@ -1,0 +1,58 @@
+name: docs-watch
+
+# PLAN.md 8.4 and 12.2: compare content/reference with the official Claude Code docs every day.
+# When something changed, open (or update) one pull request for the owner to read and merge.
+# Nothing is deployed from here: the app only sees changes after the merge.
+on:
+  schedule:
+    - cron: "15 5 * * *" # 05:15 UTC = 12:15 in Vietnam
+  workflow_dispatch:
+
+permissions:
+  contents: write # push the docs-watch branch
+  pull-requests: write # open or update the pull request
+
+concurrency:
+  group: docs-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install
+        run: pip install -e .
+
+      - name: Compare with the docs
+        env:
+          # Drafts summaries for new items. Without it new items are listed, not drafted.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m pipeline docs-watch --report out/docs-watch.md
+
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- content/reference; then
+            echo "The docs did not change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c docs-watch
+          git add content/reference
+          git commit -m "docs-watch: reference changes found on $(date -u +%F)"
+          # One branch, one pull request: a later run replaces an unmerged earlier one.
+          git push --force origin docs-watch
+          state=$(gh pr view docs-watch --json state --jq .state 2>/dev/null || true)
+          if [ "$state" = "OPEN" ]; then
+            gh pr edit docs-watch --body-file out/docs-watch.md
+          else
+            gh pr create --head docs-watch --base main \
+              --title "Docs changed: review reference entries" --body-file out/docs-watch.md
+          fi
