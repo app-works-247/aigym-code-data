@@ -283,12 +283,13 @@ def _cmd_nightly(args: argparse.Namespace) -> int:
     url = _require_env("DATABASE_URL")
     client = GitHubClient(token=_require_env("GITHUB_TOKEN"))
     config = enrich.load_config()
-    provider = None
+    provider, skipped = None, None
     if args.enrich_limit > 0:
         try:
             provider = make_provider(config, dict(os.environ))
         except Exception as err:  # no AI key: run everything else, skip summaries
-            stderr_log(f"summaries skipped: {err}")
+            skipped = str(err)[:200]  # names what is missing, never a key value
+            stderr_log(f"summaries skipped: {skipped}")
     stats = nightly.run(
         lambda: db.connect(url),
         client,
@@ -300,6 +301,7 @@ def _cmd_nightly(args: argparse.Namespace) -> int:
         enrich_limit=args.enrich_limit,
         max_readme_chars=int(config["max_readme_chars"]),
         log=stderr_log,
+        summaries_skipped=skipped,
     )
     print(json.dumps(stats, ensure_ascii=False, sort_keys=True))
     return 0
@@ -471,17 +473,19 @@ def _cmd_official(args: argparse.Namespace) -> int:
     from pipeline.llm import make_provider
 
     url = _require_env("DATABASE_URL")
-    provider = None
+    provider, skipped = None, None
     try:
         provider = make_provider(enrich.load_config(), dict(os.environ))
-    except Exception as err:
-        stderr_log(f"news summaries skipped: {err}")
+    except Exception as err:  # the message names what is missing, never a key value
+        skipped = str(err)[:200]
+        stderr_log(f"news summaries skipped: {skipped}")
     stats = nightly.run_official(
         lambda: db.connect(url),
         GitHubClient(token=_require_env("GITHUB_TOKEN")),
         Path(args.out),
         provider=provider,
         log=stderr_log,
+        summaries_skipped=skipped,
     )
     print(json.dumps(stats, ensure_ascii=False, sort_keys=True))
     return 0

@@ -26,7 +26,7 @@ jobs:
       - name: Install
         run: pip install -e .
 
-      - name: Run the nightly job
+      - name: Run the official job
         env:
           # The workflow's own short-lived token: enough for search, trees and GraphQL on
           # public repos, so no personal token is stored in this public repo.

@@ -204,10 +204,11 @@ def run_official(
     provider=None,
     now: datetime | None = None,
     log: Callable[[str], None] = print,
+    summaries_skipped: str | None = None,
 ) -> dict:
     """The 3-hourly job (official.yml): news first, then re-export everything."""
     now = now or datetime.now(UTC)
-    stats: dict = {}
+    stats: dict = {"summaries_skipped": summaries_skipped} if summaries_skipped else {}
     run_id = in_transaction(connect, db.start_run, "official")
     try:
         stats.update(news_step(connect, client, provider, now, log))
@@ -238,10 +239,11 @@ def run(
     do_news: bool = True,
     now: datetime | None = None,
     log: Callable[[str], None] = print,
+    summaries_skipped: str | None = None,
 ) -> dict:
     """`connect` returns a new database connection each time it is called."""
     now = now or datetime.now(UTC)
-    stats: dict = {}
+    stats: dict = {"summaries_skipped": summaries_skipped} if summaries_skipped else {}
     run_id = in_transaction(connect, db.start_run, "nightly")
     try:
         stats["excluded"] = in_transaction(connect, db.apply_exclusions, seeds)
