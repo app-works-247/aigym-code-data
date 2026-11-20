@@ -10,8 +10,16 @@ Output: categories with source and confidence (the `repo_categories` table), war
 - hidden : only a generic topic (MCP, agent-skills) and no evidence. Not shown, no LLM cost.
 
 Confidence: evidence in the repo's own content scores >= ACTIVE_CONFIDENCE; topics alone score
-below it. Files under a root `.claude/` folder are usually a project's own developer setup,
-so they only count as strong evidence when the repo is also tagged as Claude-related.
+below it. What counts as "the repo's own content" was tightened after the 100-repo hand check
+of 2026-11-20 (content/radar-handcheck-2026-11-20.json), which found tools and apps listed as
+skill packs because of files they keep for their own use:
+- files in hidden tool folders (.claude/, .agents/, .cursor/…) are a project's own setup: weak;
+- SKILL.md counts only where a repo ships skills (root, <dir>/SKILL.md, or a skills/ folder
+  near the top), and plugin manifests only near the top, not deep inside app resources;
+- an MCP server that also bundles a SKILL.md stays an MCP server;
+- a repo outside the Claude topics must say "skill" in its name or description for its
+  SKILL.md to count, so libraries that merely ship one stay off the Radar;
+- courses and tutorials about Claude go to "learn".
 """
 
 from __future__ import annotations
@@ -104,6 +112,31 @@ _DOT_CLAUDE_HOOK_SCRIPT_RE = re.compile(r"^\.claude/hooks/.+\.(sh|py|js|ts)$")
 _AGENT_FILE_RE = re.compile(r"(^|/)agents/[^/]+\.md$")
 _COMMAND_FILE_RE = re.compile(r"(^|/)commands/.+\.md$")
 _AWESOME_ON_TOPIC = ("claude", "mcp", "skill", "subagent", "plugin")
+CONFIG_CONFIDENCE = 0.6  # a project's own setup in a hidden folder: left to the LLM step
+NESTED_CONFIDENCE = 0.5  # deep inside product code (docs/, packages/, apps/…)
+_SHIPPED_SKILL_RE = re.compile(r"^(?:(?:[^/]+/){0,2}skills/[^/]+/|[^/]+/)?SKILL\.md$")
+# Top-level folders that hold a product's docs, apps or research, never the skills it ships.
+_NOT_SHIPPING = frozenset(
+    {
+        "docs",
+        "doc",
+        "documentation",
+        "website",
+        "site",
+        "apps",
+        "app",
+        "packages",
+        "integrations",
+        "adapters",
+        "evaluation",
+        "evals",
+        "benchmarks",
+        "research",
+        "public",
+    }
+)
+_COURSE_RE = re.compile(r"\b(course|masterclass|tutorial|workshop|bootcamp|cookbook)s?\b")
+_MCP_NAME_RE = re.compile(r"(^|[^a-z])mcp([^a-z]|$)")
 _TEMPLATE_WORDS_RE = re.compile(r"\b(templates?|rules|examples?|starter|boilerplate)\b")
 
 
@@ -236,13 +269,21 @@ def _in_tool_config(path: str) -> bool:
     return any(p.startswith(".") and p != ".claude-plugin" for p in _parts(path)[:-1])
 
 
+def _shallow_manifest(path: str) -> bool:
+    """A .claude-plugin folder at most two levels down (root, <dir>/, plugins/<name>/)."""
+    parts = _parts(path)
+    return ".claude-plugin" in parts and parts.index(".claude-plugin") <= 2
+
+
 def _tree_matches(paths: list[str], claude_related: bool) -> list[Match]:
     paths = [p for p in paths if not _ignored(p)]
     out: list[Match] = []
     is_plugin_repo = any(
-        p.endswith((".claude-plugin/plugin.json", ".claude-plugin/marketplace.json")) for p in paths
+        p.endswith((".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"))
+        and _shallow_manifest(p)
+        for p in paths
     )
-    config = 0.85 if claude_related else 0.4  # a project's own dev setup is weak evidence
+    config = CONFIG_CONFIDENCE
 
     def split(found: list[str]) -> tuple[list[str], list[str]]:
         return [p for p in found if not _in_tool_config(p)], [
@@ -253,15 +294,24 @@ def _tree_matches(paths: list[str], claude_related: bool) -> list[Match]:
         return _parts(found[0])[0] + "/"
 
     own, conf = split([p for p in paths if PurePosixPath(p).name == "SKILL.md"])
-    if own:
-        out.append(Match("skills", "tree", 0.95, f"{len(own)} SKILL.md, e.g. {own[0]}"))
+    shipped = [p for p in own if _SHIPPED_SKILL_RE.match(p) and _parts(p)[0] not in _NOT_SHIPPING]
+    if shipped:
+        out.append(Match("skills", "tree", 0.95, f"{len(shipped)} SKILL.md, e.g. {shipped[0]}"))
+    elif own:
+        out.append(Match("skills", "tree", NESTED_CONFIDENCE, f"SKILL.md deep in {own[0]}"))
     elif conf:
         out.append(Match("skills", "tree", config, f"{len(conf)} SKILL.md under {where(conf)}"))
 
     manifests = [p for p in paths if p.endswith(".claude-plugin/plugin.json")]
     markets = [p for p in paths if p.endswith(".claude-plugin/marketplace.json")]
-    if manifests or markets:
-        out.append(Match("plugins", "tree", 0.95, (markets or manifests)[0]))
+    found_manifests = markets + manifests
+    shallow = [p for p in found_manifests if _shallow_manifest(p)]
+    if shallow:
+        out.append(Match("plugins", "tree", 0.95, shallow[0]))
+    elif found_manifests:
+        out.append(
+            Match("plugins", "tree", NESTED_CONFIDENCE, f"manifest deep in {found_manifests[0]}")
+        )
 
     own, conf = split([p for p in paths if _AGENT_FILE_RE.search(p)])
     if is_plugin_repo and own:
@@ -283,6 +333,7 @@ def _tree_matches(paths: list[str], claude_related: bool) -> list[Match]:
         if PurePosixPath(p).name == "hooks.json" or _DOT_CLAUDE_HOOK_SCRIPT_RE.match(p)
     ]
     own, conf = split(hook_files)
+    own = [p for p in own if len(_parts(p)) <= 4 and _parts(p)[0] not in _NOT_SHIPPING]
     if own and (is_plugin_repo or claude_related):
         out.append(Match("hooks", "tree", 0.85, own[0]))
     elif conf:
@@ -310,6 +361,13 @@ def _metadata_matches(repo: dict) -> tuple[list[Match], bool]:
         out.append(Match("learn", "topic", 0.9 if on_topic else 0.6, "awesome list"))
     if "claude.md" in text and _TEMPLATE_WORDS_RE.search(text):
         out.append(Match("templates", "topic", 0.8, "CLAUDE.md templates in name/description"))
+    claude_related = is_claude_related(repo)
+    if claude_related and _COURSE_RE.search(text):
+        out.append(Match("learn", "topic", 0.9, "course or tutorial in name/description"))
+    mcp_topics = {t for t, slug in TOPIC_CATEGORIES.items() if slug == "mcp"} | {"mcp"}
+    if _MCP_NAME_RE.search(name) and topics & mcp_topics:
+        # Named and tagged as an MCP server: that is what it is, even when it also ships a plugin.
+        out.append(Match("mcp", "topic", 0.96, "MCP in the name and an MCP topic"))
     return out, is_awesome
 
 
@@ -357,6 +415,24 @@ def classify(
         if match.slug == "learn" and not (claude_related or found):
             continue  # an awesome list about something else
         _add(found, match)
+
+    name = (repo.get("name") or "").lower()
+    text = f"{name} {(repo.get('description') or '').lower()}"
+    mcp = found.get("mcp")
+    if mcp and mcp.source == "deps" and (_MCP_NAME_RE.search(name) or "mcp server" in text):
+        # An MCP server that also bundles a SKILL.md is still first of all an MCP server.
+        found["mcp"] = Match("mcp", "deps", 0.97, mcp.evidence)
+    skills = found.get("skills")
+    if (
+        skills
+        and skills.confidence >= ACTIVE_CONFIDENCE
+        and not claude_related
+        and "skill" not in text
+    ):
+        # A library outside the Claude topics that happens to ship a SKILL.md.
+        found["skills"] = Match(
+            "skills", skills.source, NESTED_CONFIDENCE, skills.evidence + " (not a skill pack)"
+        )
 
     # Ties go to the more specific category, in the app's chip order (skills before plugins).
     categories = sorted(found.values(), key=lambda m: (-m.confidence, BY_SLUG[m.slug].sort_order))

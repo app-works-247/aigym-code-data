@@ -232,9 +232,13 @@ def _cmd_load(args: argparse.Namespace) -> int:
 
     candidates = json.loads(Path(args.candidates).read_text(encoding="utf-8"))["repos"]
     with db.connect(_require_env("DATABASE_URL")) as conn:
-        inserted, updated, skipped = db.upsert_repos(conn, candidates)
-        conn.commit()
-        print(f"repos: {inserted} new, {updated} updated, {len(skipped)} skipped (name clash)")
+        if args.classification_only:
+            # Keep the numbers refresh wrote; discover output may be hours or days old.
+            print("repos: left as they are (--classification-only)")
+        else:
+            inserted, updated, skipped = db.upsert_repos(conn, candidates)
+            conn.commit()
+            print(f"repos: {inserted} new, {updated} updated, {len(skipped)} skipped (name clash)")
         if args.classified:
             ids = {f"{c['owner']}/{c['name']}".lower(): c["id"] for c in candidates}
             results = json.loads(Path(args.classified).read_text(encoding="utf-8"))
@@ -501,6 +505,11 @@ def build_parser() -> argparse.ArgumentParser:
     load = sub.add_parser("load", help="store discover/classify JSON in the database")
     load.add_argument("--candidates", required=True, help="JSON written by discover")
     load.add_argument("--classified", help="JSON written by classify")
+    load.add_argument(
+        "--classification-only",
+        action="store_true",
+        help="store only the classification; never overwrite repo numbers",
+    )
     load.set_defaults(func=_cmd_load)
 
     ref = sub.add_parser("refresh", help="update numbers of all tracked repos and snapshot")

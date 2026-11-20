@@ -47,4 +47,11 @@ code_search:
 exclude:
   repos:       # "owner/name"
     - google-gemini/gemini-cli    # Google's own coding agent CLI (2026-11-20)
+    # Decision 25, 100-repo hand check 2026-11-20: products whose main part is not a Claude
+    # extension, even though they ship a skill or plugin.
+    - n8n-io/n8n                  # workflow automation platform
+    - nousresearch/hermes-agent   # a separate AI agent product
+    - bibinprathap/veritasgraph   # GraphRAG framework
+    - usefluid/fluidui            # React component library
+    - ystemsrx/sql-to-er          # SQL to ER diagram web tool
   owners: []   # "owner"

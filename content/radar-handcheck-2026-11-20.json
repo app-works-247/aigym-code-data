@@ -1,0 +1,647 @@
+{
+ "checked_by": "Claude (owner delegated the hand check, 2026-11-20)",
+ "labels": {
+  "prime-radiant-inc/iterative-development": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "aph199686/zhangyi-studio": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Claudate/project-multilevel-index": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins",
+    "hooks",
+    "commands"
+   ]
+  },
+  "mtarcure/claude-vibe-squad": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills",
+    "subagents"
+   ]
+  },
+  "likaku/Mck-ppt-design-skill": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "selfishprimate/seekter": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "tools"
+   ]
+  },
+  "vibeeval/vibecosystem": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "guzhezao/ai-content-skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "borski/travel-hacking-toolkit": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "epoko77-ai/design-diversity": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "LilMGenius/paperthin": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "rtuin/mcp-mermaid-validator": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "googlarz/finance-assistant": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "mcp"
+   ]
+  },
+  "theaiautomators/claude-code-agentic-rag-masterclass": {
+   "relevant": true,
+   "primary": [
+    "learn"
+   ]
+  },
+  "feicaiclub/video-spec-builder": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Win-Hao/knowledge-video": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "mongodb-js/mongodb-mcp-server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "ai-sns/ai-sns": {
+   "relevant": false,
+   "primary": []
+  },
+  "trailofbits/skills-curated": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "bruc3van/bruce-doc-converter": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "cyanheads/pubmed-mcp-server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "adamjgmiller/adamsreview": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "commands",
+    "hooks"
+   ]
+  },
+  "wzyn20051216/ros-robotics-skill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Misaka-Mikoto-Tech/agent-skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "23blocks-OS/ai-maestro": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "tools"
+   ]
+  },
+  "frankxai/awesome-motion-design-agent-skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "learn",
+    "plugins"
+   ]
+  },
+  "vultuk/claude-code-web": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "kar2phi/video-lens": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "alexyc9381/hiring-panel-skill": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "nateherkai/AIS-OS": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "templates"
+   ]
+  },
+  "AojdevStudio/Finance-Guru": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "Kuddev/pebrel": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "ferdinandobons/startup-skill": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "wibus-wee/cradle-app": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "hustcc/mcp-echarts": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "gensecaihq/pfsense-mcp-server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "phazurlabs/sumi": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "danielsogl/lighthouse-mcp-server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "FerroxLabs/ijfw": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "ldayton/Dippy": {
+   "relevant": true,
+   "primary": [
+    "hooks",
+    "tools"
+   ]
+  },
+  "matsuikentaro1/humanizer_academic": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "sendbird/cc-plugin-codex": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins",
+    "tools"
+   ]
+  },
+  "nicosuave/comradex": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "tmck-code/yet-another-statusline": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "tools",
+    "skills"
+   ]
+  },
+  "richnologies/ngx-stripe": {
+   "relevant": false,
+   "primary": []
+  },
+  "img2threejs/img2threejs": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "babamba2/superclaude-for-sap": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "mitsuhiko/vibe-minisentry": {
+   "relevant": false,
+   "primary": []
+  },
+  "riffpad/riffpad": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "liyupi/yupi-skill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "sonpiaz/watch-cli": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins",
+    "mcp",
+    "tools"
+   ]
+  },
+  "zhouwei713/luobo-ppt": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "sparfenyuk/mcp-telegram": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "leepokai/jev-guard": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "hooks"
+   ]
+  },
+  "Ar9av/obsidian-wiki": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "forcewake/hermes-conductor": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "tools"
+   ]
+  },
+  "sterlingcrispin/claude_slash_commands": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "commands"
+   ]
+  },
+  "achiya-automation/safari-mcp": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "brycewang-stanford/Auto-Empirical-Research-Skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "learn"
+   ]
+  },
+  "paulmil11/decks": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "AIPMAndy/goskill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "kv0906/pm-kit": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "avirtual/clodex": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "naodeng/awesome-qa-skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "learn"
+   ]
+  },
+  "VapiAI/skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "irahardianto/awesome-agv": {
+   "relevant": true,
+   "primary": [
+    "learn",
+    "templates"
+   ]
+  },
+  "dceoy/speckit-agent-skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "artemchuikin/youtube-skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "useFluid/fluidui": {
+   "relevant": false,
+   "primary": []
+  },
+  "davidliuk/graph-of-skills": {
+   "relevant": false,
+   "primary": []
+  },
+  "Aperivue/medsci-skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "3x-haust/oh-my-design": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "dkmaker/mcp-rest-api": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "DAAF-Contribution-Community/daaf": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "templates",
+    "tools"
+   ]
+  },
+  "rtk-ai/rtk": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "NVIDIA-AI-IOT/DeepStream_Coding_Agent": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "aAAaqwq/AGI-Super-Team": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "keboola/mcp-server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "mariourquia/cre-skills-plugin": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "earlyaidopters/claudeclaw": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "KKKKhazix/agent-autoloop": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "tools"
+   ]
+  },
+  "alima-max/prototype-to-figma-skill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "bibinprathap/VeritasGraph": {
+   "relevant": false,
+   "primary": []
+  },
+  "Kevin7Qi/codex-collab": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "hufeng173/kunpeng-skill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "nexscope-ai/eCommerce-Skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "alchaincyf/elon-musk-skill": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Abilityai/cornelius": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "templates"
+   ]
+  },
+  "mikehasa/agentacct": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "withzombies/hyperpowers": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "airmang/python-hwpx-automation": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "AlphaGBM/skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Wh0am123/MCP-Kali-Server": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "gnurio/porter-strategy-skills": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "plugins"
+   ]
+  },
+  "blacktop/mcp-tts": {
+   "relevant": true,
+   "primary": [
+    "mcp"
+   ]
+  },
+  "arvindrk/extract-design-system": {
+   "relevant": true,
+   "primary": [
+    "skills",
+    "mcp"
+   ]
+  },
+  "superagents-lab/xcode27-skills": {
+   "relevant": true,
+   "primary": [
+    "skills"
+   ]
+  },
+  "Brads3290/cclogviewer": {
+   "relevant": true,
+   "primary": [
+    "tools"
+   ]
+  },
+  "AgriciDaniel/pya": {
+   "relevant": true,
+   "primary": [
+    "plugins",
+    "skills"
+   ]
+  },
+  "ystemsrx/sql-to-ER": {
+   "relevant": false,
+   "primary": []
+  }
+ }
+}

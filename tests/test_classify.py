@@ -35,9 +35,20 @@ def slugs(result, min_conf=0.0):
 
 class TreeRulesTest(unittest.TestCase):
     def test_skill_collection_is_active_even_with_generic_topic(self):
-        r = run(repo(["agent-skills"]), ["skills/pdf/SKILL.md", "skills/docx/SKILL.md"])
+        r = run(
+            repo(["agent-skills"], description="Agent skills for PDF and Word files"),
+            ["skills/pdf/SKILL.md", "skills/docx/SKILL.md"],
+        )
         self.assertEqual(r.status, "active")
         self.assertIn("skills", slugs(r, classify.ACTIVE_CONFIDENCE))
+
+    def test_library_that_ships_a_skill_is_not_a_skill_pack(self):
+        # Hand check 2026-11-20: ngx-stripe, an Angular wrapper with one SKILL.md.
+        r = run(
+            repo(["agent-skills"], name="ngx-stripe", description="Angular wrapper for StripeJS"),
+            ["skills/ngx-stripe/SKILL.md", "src/index.ts"],
+        )
+        self.assertEqual(r.status, "hidden")
 
     def test_plugin_marketplace_with_agents_commands_hooks(self):
         paths = [
@@ -61,11 +72,41 @@ class TreeRulesTest(unittest.TestCase):
         self.assertEqual(r.status, "hidden")
         self.assertTrue(all(m.confidence < classify.ACTIVE_CONFIDENCE for m in r.categories))
 
-    def test_dot_claude_content_counts_for_claude_tagged_repo(self):
-        paths = [".claude/agents/a.md", ".claude/agents/b.md"]
+    def test_dot_claude_content_goes_to_the_llm_even_for_claude_tagged_repos(self):
+        # Hand check 2026-11-20: tools such as rtk keep skills and agents in .claude/ for their
+        # own development; that alone does not make them a skill pack.
+        paths = [".claude/agents/a.md", ".claude/agents/b.md", ".claude/skills/x/SKILL.md"]
         r = run(repo(["claude-code"]), paths)
-        self.assertEqual(r.status, "active")
-        self.assertIn("subagents", slugs(r, classify.ACTIVE_CONFIDENCE))
+        self.assertEqual(r.status, "pending")
+        self.assertIn("subagents", slugs(r))
+
+    def test_skill_files_deep_in_product_code_are_weak(self):
+        for path in [
+            "docs/skills/runtime/SKILL.md",
+            "packages/design-system/SKILL.md",
+            "apps/landing/public/SKILL.md",
+        ]:
+            with self.subTest(path=path):
+                self.assertEqual(run(repo(["claude-code"]), [path]).status, "pending")
+        for path in [
+            "SKILL.md",
+            "writer/SKILL.md",
+            "skills/a/SKILL.md",
+            "plugins/p/skills/a/SKILL.md",
+        ]:
+            with self.subTest(path=path):
+                self.assertEqual(run(repo(["claude-code"]), [path]).status, "active")
+
+    def test_hooks_file_deep_in_app_resources_is_weak(self):
+        # Hand check 2026-11-20: a terminal app that bundles prompt suggestions with a hooks.json.
+        deep = "app/res/prompt-suggestions/claude/hooks/hooks.json"
+        self.assertEqual(run(repo(["claude-code"]), [deep]).status, "pending")
+        self.assertEqual(run(repo(["claude-code"]), ["hooks/hooks.json"]).status, "active")
+
+    def test_plugin_manifest_deep_in_app_resources_is_weak(self):
+        deep = "app/res/prompts/claude/.claude-plugin/plugin.json"
+        self.assertEqual(run(repo(["claude-code"]), [deep]).status, "pending")
+        self.assertEqual(run(repo([]), ["plugins/x/.claude-plugin/plugin.json"]).status, "active")
 
     def test_other_tools_config_folders_are_weak_too(self):
         # Found live: a CLI keeps its own skills in .gemini/skills/; that is not a skill pack.
@@ -74,6 +115,33 @@ class TreeRulesTest(unittest.TestCase):
         self.assertEqual(r.status, "hidden")
         self.assertTrue(any("SKILL.md under .gemini/" in m.evidence for m in r.categories))
         self.assertTrue(all(m.confidence < classify.ACTIVE_CONFIDENCE for m in r.categories))
+
+    def test_mcp_server_with_a_bundled_skill_stays_an_mcp_server(self):
+        # Hand check 2026-11-20: mongodb-mcp-server, keboola/mcp-server, mcp-tts.
+        deps = {"package.json": json.dumps({"dependencies": {"@modelcontextprotocol/sdk": "1"}})}
+        r = run(
+            repo(["mcp-server"], name="mongodb-mcp-server", description="MCP server for MongoDB"),
+            ["package.json", "skills/migrate/SKILL.md"],
+            deps,
+        )
+        self.assertEqual(r.categories[0].slug, "mcp")
+
+    def test_mcp_name_and_topic_without_a_known_sdk(self):
+        # Hand check 2026-11-20: pubmed-mcp-server uses its own framework, not the SDK.
+        r = run(repo(["mcp-server"], name="pubmed-mcp-server"), ["src/index.ts"])
+        self.assertEqual(r.status, "active")
+        self.assertEqual(r.categories[0].slug, "mcp")
+
+    def test_course_about_claude_is_learning_material(self):
+        r = run(
+            repo(
+                ["claude-code"],
+                name="claude-code-rag-masterclass",
+                description="An 8-module course",
+            ),
+            [".claude/commands/a.md", ".claude/commands/b.md"],
+        )
+        self.assertEqual((r.status, r.categories[0].slug), ("active", "learn"))
 
     def test_tie_goes_to_the_more_specific_category(self):
         # Found live: anthropics/skills ships SKILL.md files inside a plugin marketplace.
