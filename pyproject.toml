@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# Only `pipeline` is a Python package; content/ and docs/ are data
+packages = ["pipeline"]
+
+[tool.setuptools.package-data]
+pipeline = ["seeds.yaml", "sources.yaml", "migrations/*.sql"]
+
+[project]
+name = "aigym-code-data"
+version = "0.0.1"
+description = "Data pipeline for AIGym Code: Radar, news, releases and reference for the Claude ecosystem"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+  "pyyaml>=6.0",
+  "psycopg[binary]>=3.2",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.8"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/F: errors · I: import order · UP: modern syntax · B: likely bugs
+select = ["E", "F", "I", "UP", "B"]

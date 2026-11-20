@@ -1,0 +1,50 @@
+# Radar discovery seeds (PLAN.md 6.1 and 6.3). Edit this file to change what discover
+# searches for; no code change needed. `python -m pipeline seeds-check` validates it.
+#
+# Topic sizes measured 2026-11-20 (public repos, >= 50 stars, not fork, not archived):
+#   claude-code 5356 · mcp-server 2263 · agent-skills 1991 · model-context-protocol 1347
+#   claude-skills 849 · claude-code-plugin 496 · claude-code-skills 223 · mcp-servers 123
+#   claude-code-plugins 52 · claude-code-hooks 41 · claude-mcp 24 · claude-agents 14
+#   claude-subagents 9
+# Left out on purpose because they are mostly outside the Claude ecosystem or far too broad:
+#   mcp 5116 · claude 3068 · anthropic-claude 105 · subagents 90
+
+version: 1
+
+# A repo needs at least this many stars to enter the Radar.
+min_stars: 50
+
+# Searched as `topic:<name>`.
+topics:
+  - claude-code
+  - claude-code-plugin
+  - claude-code-plugins
+  - claude-code-hooks
+  - claude-code-skills
+  - claude-skills
+  - agent-skills
+  - claude-agents
+  - claude-subagents
+  - mcp-server
+  - mcp-servers
+  - model-context-protocol
+  - claude-mcp
+
+# Searched in repo name and description, for repos that use no topic.
+keywords:
+  - '"claude code"'
+
+# GitHub code search, weekly (needs a token). Finds repos that contain the files
+# themselves without any topic. Used by the weekly job, not by nightly discover.
+code_search:
+  - filename:SKILL.md
+  - path:.claude-plugin filename:plugin.json
+  - path:.claude-plugin filename:marketplace.json
+
+# Never list these, e.g. after an owner asks to be removed. Use lowercase.
+# Decision 24: products outside the Claude ecosystem go here even when they use MCP or
+# ship skills, because classify cannot tell an MCP client from an MCP server.
+exclude:
+  repos:       # "owner/name"
+    - google-gemini/gemini-cli    # Google's own coding agent CLI (2026-11-20)
+  owners: []   # "owner"

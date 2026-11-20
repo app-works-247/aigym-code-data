@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+dist/
+*.egg-info/
+
+# Cloudflare Worker (P2)
+node_modules/
+.wrangler/
+.dev.vars
+
+# Database dumps must never be committed (backups are encrypted CI artifacts)
+*.dump
+*.sql.gz
+
+# Export output (deployed to Cloudflare Pages, never committed)
+/out/
