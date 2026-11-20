@@ -1,0 +1,324 @@
+# Hook events: names and links from hooks in the official
+# Claude Code docs; descriptions are our own words. Set reviewed: true after reading.
+- id: hooks-configchange
+  group: hooks
+  name: ConfigChange
+  syntax: ConfigChange
+  summary:
+    vi: Chạy mỗi khi có tệp cấu hình bị thay đổi trong suốt session.
+    en: Executes whenever any configuration file gets modified in the middle of a session.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-cwdchanged
+  group: hooks
+  name: CwdChanged
+  syntax: CwdChanged
+  summary:
+    vi: Chạy khi thư mục làm việc thay đổi, ví dụ qua lệnh cd, hỗ trợ quản trị môi trường với các công
+      cụ như direnv.
+    en: Triggers whenever the working directory changes, such as after executing a cd command, aiding
+      tools like direnv.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-directoryadded
+  group: hooks
+  name: DirectoryAdded
+  syntax: DirectoryAdded
+  summary:
+    vi: Chạy khi thêm thư mục làm việc giữa session qua /add-dir hoặc yêu cầu điều khiển register_repo_root
+      của SDK.
+    en: Triggers upon adding a working directory mid-session with /add-dir or the register_repo_root SDK
+      control request.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-elicitation
+  group: hooks
+  name: Elicitation
+  syntax: Elicitation
+  summary:
+    vi: Chạy khi một MCP server yêu cầu người dùng nhập liệu trong một tool call.
+    en: Triggers when an MCP server asks for user input during a tool call.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-elicitationresult
+  group: hooks
+  name: ElicitationResult
+  syntax: ElicitationResult
+  summary:
+    vi: Chạy sau khi người dùng phản hồi MCP elicitation và trước lúc gửi lại server.
+    en: Fires after the user answers an MCP elicitation and before returning the response to the server.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-filechanged
+  group: hooks
+  name: FileChanged
+  syntax: FileChanged
+  summary:
+    vi: Chạy khi tệp đang theo dõi bị thay đổi trên đĩa, sử dụng trường matcher để lọc tên tệp.
+    en: Fires when a monitored file updates on disk, using the matcher field to define targeted file names.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-instructionsloaded
+  group: hooks
+  name: InstructionsLoaded
+  syntax: InstructionsLoaded
+  summary:
+    vi: Chạy khi nạp các tệp CLAUDE.md hoặc .claude/rules/*.md vào context lúc khởi động hoặc nạp động
+      trong session.
+    en: Runs upon loading CLAUDE.md or .claude/rules/*.md files at startup or lazily during a session.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-messagedisplay
+  group: hooks
+  name: MessageDisplay
+  syntax: MessageDisplay
+  summary:
+    vi: Chạy trong lúc nội dung tin nhắn của assistant đang được hiển thị.
+    en: Executes while the assistant message text is being rendered on screen.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-notification
+  group: hooks
+  name: Notification
+  syntax: Notification
+  summary:
+    vi: Chạy mỗi khi Claude Code phát ra một thông báo.
+    en: Fires whenever Claude Code emits an alert or message.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-permissiondenied
+  group: hooks
+  name: PermissionDenied
+  syntax: PermissionDenied
+  summary:
+    vi: Chạy khi auto mode từ chối gọi tool, cho phép thử lại qua hookSpecificOutput.retry nếu classifier
+      có kết luận.
+    en: Fires when auto mode rejects a tool call, allowing retry requests via hookSpecificOutput.retry
+      when a classifier verdict exists.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-permissionrequest
+  group: hooks
+  name: PermissionRequest
+  syntax: PermissionRequest
+  summary:
+    vi: Chạy khi một lượt gọi tool cần đưa ra quyết định cấp quyền.
+    en: Triggers when an invoked tool requires an approval decision.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-postcompact
+  group: hooks
+  name: PostCompact
+  syntax: PostCompact
+  summary:
+    vi: Chạy sau khi quá trình nén context hoàn tất.
+    en: Executes after context compaction finishes.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-postmodelswitch
+  group: hooks
+  name: PostModelSwitch
+  syntax: PostModelSwitch
+  summary:
+    vi: Chạy sau khi model của session thay đổi, gồm cả lúc Claude Code tự khôi phục khi tiếp tục session.
+    en: Fires after the session model changes, including automatic adjustments like restoring a model
+      on resume.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-posttoolbatch
+  group: hooks
+  name: PostToolBatch
+  syntax: PostToolBatch
+  summary:
+    vi: Chạy khi toàn bộ một đợt gọi tool song song hoàn tất, trước lượt gọi model tiếp theo.
+    en: Runs after an entire batch of parallel tool calls completes and before invoking the next model
+      call.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-posttooluse
+  group: hooks
+  name: PostToolUse
+  syntax: PostToolUse
+  summary:
+    vi: Chạy ngay sau khi một lệnh gọi tool kết thúc thành công.
+    en: Fires right after a tool call completes successfully.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-posttoolusefailure
+  group: hooks
+  name: PostToolUseFailure
+  syntax: PostToolUseFailure
+  summary:
+    vi: Chạy ngay sau khi một lượt gọi tool gặp lỗi.
+    en: Triggers right after a tool call encounters an error.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-precompact
+  group: hooks
+  name: PreCompact
+  syntax: PreCompact
+  summary:
+    vi: Chạy trước khi quá trình nén context diễn ra.
+    en: Executes before context compaction starts.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-premodelswitch
+  group: hooks
+  name: PreModelSwitch
+  syntax: PreModelSwitch
+  summary:
+    vi: Chạy trước khi thực hiện chuyển đổi model được yêu cầu và có thể chặn việc này.
+    en: Runs before applying a requested model change and can prevent the switch.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-pretooluse
+  group: hooks
+  name: PreToolUse
+  syntax: PreToolUse
+  summary:
+    vi: Chạy trước khi một lệnh gọi tool thực thi và có thể chặn lệnh đó.
+    en: Triggers prior to running a tool call and can prevent its execution.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-sessionend
+  group: hooks
+  name: SessionEnd
+  syntax: SessionEnd
+  summary:
+    vi: Chạy khi một session kết thúc.
+    en: Fires when a session finishes.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-sessionstart
+  group: hooks
+  name: SessionStart
+  syntax: SessionStart
+  summary:
+    vi: Chạy khi bắt đầu một session mới hoặc tiếp tục lại session cũ.
+    en: Runs when starting a brand new session or resuming an existing one.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-stop
+  group: hooks
+  name: Stop
+  syntax: Stop
+  summary:
+    vi: Chạy khi Claude đã hoàn tất câu trả lời của mình.
+    en: Triggers once Claude has completed generating its full response.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-stopfailure
+  group: hooks
+  name: StopFailure
+  syntax: StopFailure
+  summary:
+    vi: Chạy khi lượt tương tác kết thúc do gặp lỗi API.
+    en: Fires when an ongoing turn stops abruptly due to an API error.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-subagentstart
+  group: hooks
+  name: SubagentStart
+  syntax: SubagentStart
+  summary:
+    vi: Chạy khi một subagent mới được sinh ra và bắt đầu hoạt động.
+    en: Triggers whenever a new subagent is created and started.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-subagentstop
+  group: hooks
+  name: SubagentStop
+  syntax: SubagentStop
+  summary:
+    vi: Chạy khi một subagent kết thúc quá trình làm việc.
+    en: Triggers when an active subagent concludes its execution.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-taskcompleted
+  group: hooks
+  name: TaskCompleted
+  syntax: TaskCompleted
+  summary:
+    vi: Chạy trong lúc một task đang được đánh dấu là hoàn thành.
+    en: Executes while a task is being updated to completed status.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-taskcreated
+  group: hooks
+  name: TaskCreated
+  syntax: TaskCreated
+  summary:
+    vi: Chạy trong lúc một task đang được tạo qua TaskCreate.
+    en: Fires while a task is being generated through TaskCreate.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-teammateidle
+  group: hooks
+  name: TeammateIdle
+  syntax: TeammateIdle
+  summary:
+    vi: Chạy ngay trước khi một thành viên trong nhóm agent chuyển sang trạng thái nhàn rỗi.
+    en: Runs right before an agent team teammate enters an idle state.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-userpromptsubmit
+  group: hooks
+  name: UserPromptSubmit
+  syntax: UserPromptSubmit
+  summary:
+    vi: Chạy trước khi Claude xử lý prompt gửi lên, bao gồm cả các lượt do Claude Code tự khởi xướng.
+    en: Fires prior to Claude handling a submitted prompt, including turns initiated automatically by
+      Claude Code.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-worktreecreate
+  group: hooks
+  name: WorktreeCreate
+  syntax: WorktreeCreate
+  summary:
+    vi: 'Chạy khi tạo worktree qua --worktree, isolation: "worktree", hoặc cho session chạy ngầm nhằm
+      thay thế hành vi git mặc định.'
+    en: 'Runs when creating a worktree through --worktree, isolation: "worktree", or for background sessions
+      to substitute default git actions.'
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: hooks-worktreeremove
+  group: hooks
+  name: WorktreeRemove
+  syntax: WorktreeRemove
+  summary:
+    vi: Chạy khi xóa một worktree đã được tạo bởi hook WorktreeCreate.
+    en: Runs when deleting a worktree generated by a WorktreeCreate hook.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
