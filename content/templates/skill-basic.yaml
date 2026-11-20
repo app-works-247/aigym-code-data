@@ -1,0 +1,47 @@
+id: skill-basic
+kind: skill
+title:
+  vi: SKILL.md đầu tiên
+  en: A first SKILL.md
+summary:
+  vi: Khung một skill của dự án. Claude đọc phần description để tự quyết định khi nào dùng skill, nên hãy viết rõ skill làm gì và những câu yêu cầu nào nên kích hoạt nó. Bạn cũng gọi tay được bằng /tên-skill.
+  en: Skeleton of a project skill. Claude reads the description to decide on its own when to use the skill, so say clearly what it does and which requests should trigger it. You can also run it yourself with /skill-name.
+docs: https://code.claude.com/docs/en/skills
+checked_with: "2.1.329"
+lessons: ["3.3"]
+placeholders:
+  - key: skill_name
+    vi: Tên skill, viết thường nối bằng gạch ngang; cũng là tên thư mục
+    en: Skill name in lowercase with hyphens; also the folder name
+    sample: write-release-notes
+  - key: what_it_does
+    vi: Một câu nói skill làm gì
+    en: One sentence on what the skill does
+    sample: Drafts release notes from the commits since the last tag
+  - key: when_to_use
+    vi: Những yêu cầu nên kích hoạt skill
+    en: Requests that should trigger the skill
+    sample: the user asks for release notes, a changelog entry or what changed since the last version
+files:
+  - path: .claude/skills/{{skill_name}}/SKILL.md
+    content: |
+      ---
+      name: {{skill_name}}
+      description: {{what_it_does}}. Use when {{when_to_use}}.
+      ---
+
+      # {{skill_name}}
+
+      ## Steps
+      1. Find the last release tag: `git describe --tags --abbrev=0`.
+      2. List the commits since then: `git log <tag>..HEAD --oneline`.
+      3. Group them under Added, Changed and Fixed. Skip merge commits and chores.
+      4. Write one line per change, in plain words a user would understand.
+
+      ## Output
+      A Markdown list under a `## <next version>` heading. Ask for the version number if it is
+      not obvious from the tags.
+
+      ## Rules
+      - Never invent a change that is not in the commit list.
+      - Mention breaking changes first, marked **Breaking**.

@@ -1,0 +1,54 @@
+id: claude-md-python
+kind: claude_md
+title:
+  vi: CLAUDE.md cho dự án Python
+  en: CLAUDE.md for a Python project
+summary:
+  vi: Chỉ dẫn cho Claude về môi trường ảo, cách chạy test, lint và quy ước kiểu dữ liệu trong một dự án Python. Đổi lệnh cho đúng công cụ bạn dùng (uv, pip, poetry).
+  en: Tells Claude which virtual environment to use, how to run tests and lint, and the typing conventions of a Python project. Change the commands to match your tools (uv, pip, poetry).
+docs: https://code.claude.com/docs/en/memory
+checked_with: "2.1.329"
+lessons: ["2.1"]
+placeholders:
+  - key: project_name
+    vi: Tên dự án
+    en: Project name
+    sample: billing-service
+  - key: python_version
+    vi: Phiên bản Python dự án yêu cầu
+    en: Python version the project requires
+    sample: "3.12"
+  - key: package_dir
+    vi: Thư mục package chính
+    en: Main package folder
+    sample: billing
+files:
+  - path: CLAUDE.md
+    content: |
+      # {{project_name}}
+
+      Python {{python_version}}, managed with uv. Always run tools through `uv run` so the
+      project's virtual environment is used.
+
+      ## Commands
+      - Install: `uv sync`
+      - Test all: `uv run pytest`
+      - Test one: `uv run pytest tests/test_x.py::test_name -x`
+      - Lint and format: `uv run ruff check --fix . && uv run ruff format .`
+      - Types: `uv run mypy {{package_dir}}`
+
+      Before saying a task is done, run ruff, mypy and the tests that cover what you changed.
+
+      ## Layout
+      - Code: `{{package_dir}}/`. Tests: `tests/`, mirroring the package structure.
+      - Configuration comes from environment variables read in `{{package_dir}}/config.py` only.
+
+      ## Conventions
+      - Type hints on every public function; no bare `except:`.
+      - Prefer dataclasses or pydantic models over loose dicts.
+      - Use `logging`, not `print`, outside scripts.
+      - New dependencies go in `pyproject.toml` via `uv add`; explain why in your reply.
+
+      ## Do not
+      - Touch `.venv/`, migrations that already ran, or files listed in `.gitignore`.
+      - Commit `.env` or print secret values.

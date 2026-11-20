@@ -1,0 +1,35 @@
+id: mcp-github
+kind: mcp
+title:
+  vi: MCP server GitHub
+  en: GitHub MCP server
+summary:
+  vi: Nối Claude Code với MCP server từ xa của GitHub để đọc issue, pull request và review ngay trong phiên làm việc. Token đọc từ biến môi trường nên file .mcp.json commit chung cho cả team được.
+  en: Connects Claude Code to GitHub's remote MCP server to read issues, pull requests and reviews inside a session. The token comes from an environment variable, so the .mcp.json file can be committed for the whole team.
+docs: https://code.claude.com/docs/en/mcp
+checked_with: "2.1.329"
+lessons: ["5.2"]
+placeholders: []
+notes:
+  vi:
+    - Tạo fine-grained token tại github.com/settings/personal-access-tokens, chỉ cấp quyền cho các repo cần dùng.
+    - Đặt token vào biến môi trường `GITHUB_MCP_PAT` trên máy mỗi người, ví dụ trong ~/.zshrc. Không ghi token vào file.
+    - Mở Claude Code, chạy `/mcp`, chấp nhận server của project và kiểm tra có dấu tích.
+  en:
+    - Create a fine-grained token at github.com/settings/personal-access-tokens with access only to the repos you need.
+    - Put it in the `GITHUB_MCP_PAT` environment variable on each machine, for example in ~/.zshrc. Never write the token into a file.
+    - Start Claude Code, run `/mcp`, approve the project server and check it shows a tick.
+files:
+  - path: .mcp.json
+    content: |
+      {
+        "mcpServers": {
+          "github": {
+            "type": "http",
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+              "Authorization": "Bearer ${GITHUB_MCP_PAT}"
+            }
+          }
+        }
+      }

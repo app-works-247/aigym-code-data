@@ -1,0 +1,63 @@
+id: hook-protect-env
+kind: hook
+title:
+  vi: Bảo vệ file .env
+  en: Protect .env files
+summary:
+  vi: Hai lớp giữ bí mật trong .env khỏi Claude. Quy tắc deny trong permissions chặn các công cụ đọc và sửa những file bí mật thường gặp (.env, .env.local, .env.production…); hook chặn thêm các lệnh Bash nhắc tới chúng như cat hay source. File .env.example vẫn đọc được.
+  en: Two layers that keep the secrets in .env away from Claude. Deny rules in permissions stop the file tools from reading or editing the usual secret files (.env, .env.local, .env.production…); the hook also blocks Bash commands that mention them, such as cat or source. .env.example stays readable.
+docs: https://code.claude.com/docs/en/permissions
+checked_with: "2.1.329"
+lessons: ["7.1"]
+placeholders: []
+notes:
+  vi:
+    - Cần cài jq. Chạy `chmod +x .claude/hooks/protect-env.sh` một lần.
+    - Không lớp nào chặn được tuyệt đối, ví dụ một script tự đọc .env bên trong. Đừng để bí mật thật của production trên máy dev.
+    - Nếu `.claude/settings.json` đã có `permissions` hoặc `hooks`, hãy gộp vào thay vì ghi đè.
+    - "Quy tắc deny luôn thắng allow, nên không dùng `Read(./.env.*)`: nó chặn cả .env.example. Thêm tên file bí mật khác của bạn vào danh sách deny."
+  en:
+    - Needs jq. Run `chmod +x .claude/hooks/protect-env.sh` once.
+    - Neither layer is absolute; a script that reads .env internally still can. Keep real production secrets off developer machines.
+    - If `.claude/settings.json` already has `permissions` or `hooks`, merge these in instead of replacing it.
+    - "Deny always wins over allow, so `Read(./.env.*)` is avoided: it would block .env.example too. Add your other secret file names to the deny list."
+files:
+  - path: .claude/hooks/protect-env.sh
+    content: |
+      #!/bin/bash
+      # Blocks Bash commands that touch a .env file (but not .env.example). Exit 2 = block.
+      cmd=$(jq -r '.tool_input.command // empty')
+      [ -z "$cmd" ] && exit 0
+      cleaned=$(echo "$cmd" | sed -E 's/\.env\.(example|sample|template)//g')
+      if echo "$cleaned" | grep -Eq '(^|[[:space:]/"'\''=<>])\.env([.][A-Za-z0-9_-]+)?([[:space:]"'\'';|&>]|$)'; then
+        echo "Blocked: this command touches a .env file, which holds secrets. Use .env.example to see which variables exist." >&2
+        exit 2
+      fi
+      exit 0
+  - path: .claude/settings.json
+    content: |
+      {
+        "permissions": {
+          "deny": [
+            "Read(./.env)",
+            "Read(./**/.env)",
+            "Read(./.env.local)",
+            "Read(./.env.*.local)",
+            "Read(./.env.production)",
+            "Read(./.env.development)"
+          ]
+        },
+        "hooks": {
+          "PreToolUse": [
+            {
+              "matcher": "Bash",
+              "hooks": [
+                {
+                  "type": "command",
+                  "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/protect-env.sh"
+                }
+              ]
+            }
+          ]
+        }
+      }

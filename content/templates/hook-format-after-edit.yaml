@@ -1,0 +1,55 @@
+id: hook-format-after-edit
+kind: hook
+title:
+  vi: Hook tự định dạng code sau khi sửa file
+  en: Hook that formats code after each edit
+summary:
+  vi: Mỗi lần Claude sửa hoặc tạo file, hook chạy công cụ định dạng phù hợp với đuôi file (Prettier, Ruff, gofmt). Code luôn đúng định dạng mà không cần nhắc trong prompt.
+  en: Every time Claude edits or creates a file, the hook runs the formatter that fits its extension (Prettier, Ruff, gofmt), so code stays formatted without asking in the prompt.
+docs: https://code.claude.com/docs/en/hooks-guide
+checked_with: "2.1.329"
+lessons: ["6.1"]
+placeholders: []
+notes:
+  vi:
+    - Cần cài jq và các công cụ định dạng bạn dùng. Thiếu công cụ nào thì đuôi file đó được bỏ qua.
+    - Chạy `chmod +x .claude/hooks/format-file.sh` một lần.
+    - Nếu `.claude/settings.json` đã có khóa `hooks`, hãy gộp mục `PostToolUse` vào, đừng ghi đè cả file.
+  en:
+    - Needs jq and the formatters you use. Extensions whose formatter is missing are skipped.
+    - Run `chmod +x .claude/hooks/format-file.sh` once.
+    - If `.claude/settings.json` already has a `hooks` key, merge the `PostToolUse` entry instead of replacing the file.
+files:
+  - path: .claude/hooks/format-file.sh
+    content: |
+      #!/bin/bash
+      # Formats the file Claude just wrote. Reads the hook input (JSON) on stdin.
+      file=$(jq -r '.tool_input.file_path // empty')
+      [ -z "$file" ] || [ ! -f "$file" ] && exit 0
+
+      run() { command -v "$1" >/dev/null 2>&1 && "$@" >/dev/null 2>&1; }
+
+      case "$file" in
+        *.ts|*.tsx|*.js|*.jsx|*.json|*.css|*.md) run npx --no-install prettier --write "$file" ;;
+        *.py) run ruff format "$file" ;;
+        *.go) run gofmt -w "$file" ;;
+        *.swift) run swift-format --in-place "$file" ;;
+      esac
+      exit 0  # never block: a formatting problem must not stop Claude's work
+  - path: .claude/settings.json
+    content: |
+      {
+        "hooks": {
+          "PostToolUse": [
+            {
+              "matcher": "Edit|Write",
+              "hooks": [
+                {
+                  "type": "command",
+                  "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format-file.sh"
+                }
+              ]
+            }
+          ]
+        }
+      }

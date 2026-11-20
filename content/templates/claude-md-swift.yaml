@@ -1,0 +1,49 @@
+id: claude-md-swift
+kind: claude_md
+title:
+  vi: CLAUDE.md cho app iOS viết bằng Swift
+  en: CLAUDE.md for an iOS app in Swift
+summary:
+  vi: Chỉ dẫn cho Claude về cách build và test app iOS từ dòng lệnh bằng xcodebuild, cùng quy ước SwiftUI và concurrency. Đổi tên scheme và máy giả lập cho đúng project của bạn.
+  en: Tells Claude how to build and test an iOS app from the command line with xcodebuild, plus SwiftUI and concurrency conventions. Change the scheme and simulator to match your project.
+docs: https://code.claude.com/docs/en/memory
+checked_with: "2.1.329"
+lessons: ["2.1"]
+placeholders:
+  - key: app_name
+    vi: Tên app
+    en: App name
+    sample: Pantry
+  - key: scheme
+    vi: Tên scheme trong Xcode
+    en: Xcode scheme name
+    sample: Pantry
+  - key: simulator
+    vi: Tên máy giả lập để chạy test (xem bằng `xcrun simctl list devices`)
+    en: Simulator to test on (list them with `xcrun simctl list devices`)
+    sample: iPhone 17
+files:
+  - path: CLAUDE.md
+    content: |
+      # {{app_name}}
+
+      iOS app in Swift and SwiftUI.
+
+      ## Commands
+      - Build: `xcodebuild -scheme {{scheme}} -destination 'platform=iOS Simulator,name={{simulator}}' build`
+      - Test: `xcodebuild -scheme {{scheme}} -destination 'platform=iOS Simulator,name={{simulator}}' test`
+      - Lint: `swiftlint`
+
+      Build and run the tests before saying a task is done. If the build fails, read the first
+      error in the log, not the last.
+
+      ## Conventions
+      - SwiftUI views stay small; move logic into `@Observable` models.
+      - Mark UI code `@MainActor`; use `async`/`await`, not completion handlers.
+      - No force unwraps (`!`) outside tests; handle the nil case.
+      - User-facing text goes through the String Catalog (`Localizable.xcstrings`).
+
+      ## Do not
+      - Edit `*.xcodeproj` / `project.pbxproj` by hand unless asked; describe the change instead.
+      - Change signing, bundle identifiers or entitlements.
+      - Add a Swift package without saying why.

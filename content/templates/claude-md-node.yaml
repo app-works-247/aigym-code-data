@@ -1,0 +1,54 @@
+id: claude-md-node
+kind: claude_md
+title:
+  vi: CLAUDE.md cho dự án Node.js và TypeScript
+  en: CLAUDE.md for a Node.js and TypeScript project
+summary:
+  vi: Bộ chỉ dẫn ngắn cho Claude về lệnh build, test, lint và quy ước code của một dự án TypeScript. Thay các chỗ {{…}} bằng lệnh và thư mục thật của bạn rồi xóa mục không dùng.
+  en: Short instructions telling Claude how to build, test and lint a TypeScript project and which conventions to follow. Replace the {{…}} spots with your real commands and folders, then delete what you do not use.
+docs: https://code.claude.com/docs/en/memory
+checked_with: "2.1.329"
+lessons: ["2.1"]
+placeholders:
+  - key: project_name
+    vi: Tên dự án
+    en: Project name
+    sample: checkout-api
+  - key: package_manager
+    vi: Trình quản lý gói bạn dùng (npm, pnpm, yarn hoặc bun)
+    en: The package manager you use (npm, pnpm, yarn or bun)
+    sample: pnpm
+  - key: source_dir
+    vi: Thư mục chứa mã nguồn
+    en: Folder that holds the source code
+    sample: src
+files:
+  - path: CLAUDE.md
+    content: |
+      # {{project_name}}
+
+      TypeScript on Node.js. Package manager: {{package_manager}} (never mix in another one).
+
+      ## Commands
+      - Install: `{{package_manager}} install`
+      - Type check: `{{package_manager}} run typecheck`
+      - Test all: `{{package_manager}} test`
+      - Test one file: `{{package_manager}} test -- path/to/file.test.ts`
+      - Lint and format: `{{package_manager}} run lint --fix`
+
+      Run the type check and the tests for the files you touched before saying a task is done.
+
+      ## Layout
+      - Source lives in `{{source_dir}}/`; tests sit next to the code as `*.test.ts`.
+      - Shared types go in `{{source_dir}}/types/`. Do not redefine a type that already exists there.
+
+      ## Conventions
+      - `strict` TypeScript: no `any`, no `@ts-ignore`. Use `unknown` and narrow it.
+      - Named exports only; no default exports.
+      - Use `async`/`await`, never raw `.then()` chains.
+      - Errors: throw `Error` subclasses with a clear message; never swallow an error silently.
+
+      ## Do not
+      - Edit generated files under `dist/` or anything ignored by git.
+      - Add a dependency without saying why in your reply.
+      - Commit `.env` files or print secrets.

@@ -1,0 +1,61 @@
+id: claude-md-monorepo
+kind: claude_md
+title:
+  vi: CLAUDE.md cho monorepo
+  en: CLAUDE.md for a monorepo
+summary:
+  vi: CLAUDE.md gốc cho monorepo nhiều package. File gốc chỉ nói những gì chung cho cả repo; mỗi package có CLAUDE.md riêng, Claude chỉ đọc khi làm việc trong package đó nên không tốn context.
+  en: Root CLAUDE.md for a monorepo with several packages. The root file covers only what is shared; each package keeps its own CLAUDE.md, which Claude reads only when it works there, so context stays small.
+docs: https://code.claude.com/docs/en/memory
+checked_with: "2.1.329"
+lessons: ["2.2"]
+placeholders:
+  - key: repo_name
+    vi: Tên monorepo
+    en: Monorepo name
+    sample: acme-platform
+  - key: workspace_tool
+    vi: Công cụ quản lý workspace (pnpm, turbo, nx…)
+    en: Workspace tool (pnpm, turbo, nx…)
+    sample: pnpm
+  - key: package
+    vi: Tên một package (lặp lại file thứ hai cho từng package)
+    en: Name of one package (repeat the second file for each package)
+    sample: ui-kit
+files:
+  - path: CLAUDE.md
+    content: |
+      # {{repo_name}}
+
+      Monorepo managed with {{workspace_tool}} workspaces.
+
+      ## Layout
+      - `apps/`: deployable apps. `packages/`: shared libraries.
+      - Each app or package has its own `CLAUDE.md` with its commands; read it before working there.
+
+      ## Commands (from the repo root)
+      - Install everything: `{{workspace_tool}} install`
+      - Run one package's tests: `{{workspace_tool}} --filter <package> test`
+      - Affected packages only: `{{workspace_tool}} --filter "...[origin/main]" test`
+
+      Test only what you changed and what depends on it; the full suite is for CI.
+
+      ## Rules that apply everywhere
+      - A package may import another only through its public entry point, never a deep path.
+      - Changing a shared package means checking every app that uses it.
+      - One concern per pull request; do not mix a refactor with a feature.
+
+      ## Do not
+      - Edit lockfiles by hand.
+      - Change CI files under `.github/` unless asked.
+  - path: packages/{{package}}/CLAUDE.md
+    content: |
+      # {{package}}
+
+      What this package does in one sentence.
+
+      ## Commands
+      - Test: `{{workspace_tool}} --filter {{package}} test`
+
+      ## Notes
+      - Public entry point: `src/index.ts`. Everything else is internal.

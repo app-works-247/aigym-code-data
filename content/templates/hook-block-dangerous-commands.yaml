@@ -1,0 +1,58 @@
+id: hook-block-dangerous-commands
+kind: hook
+title:
+  vi: Hook chặn lệnh shell nguy hiểm
+  en: Hook that blocks dangerous shell commands
+summary:
+  vi: Trước khi Claude chạy một lệnh Bash, hook kiểm tra lệnh đó và chặn các mẫu nguy hiểm như xóa đệ quy ở thư mục gốc, force push, chạy script tải từ mạng hay xóa bảng database. Claude nhận lý do bị chặn để đổi cách làm.
+  en: Before Claude runs a Bash command, the hook checks it and blocks dangerous patterns such as recursive deletes at the root, force pushes, piping a download into a shell or dropping database tables. Claude is told why so it can change course.
+docs: https://code.claude.com/docs/en/hooks-guide
+checked_with: "2.1.329"
+lessons: ["6.2"]
+placeholders: []
+notes:
+  vi:
+    - Cần cài jq. Chạy `chmod +x .claude/hooks/block-dangerous.sh` một lần.
+    - Hook chỉ là một lớp an toàn, không bắt được mọi cách viết lệnh. Với những gì tuyệt đối không được làm, thêm quy tắc `deny` trong permissions.
+    - Sửa danh sách mẫu trong script cho hợp với dự án của bạn.
+  en:
+    - Needs jq. Run `chmod +x .claude/hooks/block-dangerous.sh` once.
+    - A hook is one safety layer and cannot catch every way to write a command. For things that must never happen, add `deny` rules in permissions as well.
+    - Adjust the pattern list in the script to your project.
+files:
+  - path: .claude/hooks/block-dangerous.sh
+    content: |
+      #!/bin/bash
+      # Blocks risky Bash commands before they run. Exit 2 = block; stderr goes back to Claude.
+      cmd=$(jq -r '.tool_input.command // empty')
+      [ -z "$cmd" ] && exit 0
+
+      deny() {
+        echo "Blocked by .claude/hooks/block-dangerous.sh: $1. Ask the user to run it themselves if it is really needed." >&2
+        exit 2
+      }
+
+      echo "$cmd" | grep -Eq 'rm[[:space:]]+-[a-zA-Z]*r[a-zA-Z]*f?[a-zA-Z]*[[:space:]]+(/|~|\$HOME)([[:space:]]|$)' && deny "recursive delete of / or the home folder"
+      # --force-with-lease is the safe variant and stays allowed.
+      echo "$cmd" | grep -Eq 'git[[:space:]]+push.*([[:space:]]--force([[:space:]]|$)|[[:space:]]-f([[:space:]]|$)|[[:space:]]\+[^[:space:]])' && deny "force push"
+      echo "$cmd" | grep -Eq '(curl|wget)[^|]*\|[[:space:]]*(sudo[[:space:]]+)?(ba|z)?sh' && deny "piping a download into a shell"
+      echo "$cmd" | grep -Eiq 'drop[[:space:]]+(table|database)' && deny "dropping a table or database"
+      echo "$cmd" | grep -Eq 'git[[:space:]]+reset[[:space:]]+--hard' && deny "git reset --hard discards work"
+      exit 0
+  - path: .claude/settings.json
+    content: |
+      {
+        "hooks": {
+          "PreToolUse": [
+            {
+              "matcher": "Bash",
+              "hooks": [
+                {
+                  "type": "command",
+                  "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-dangerous.sh"
+                }
+              ]
+            }
+          ]
+        }
+      }

@@ -1,0 +1,34 @@
+id: mcp-filesystem
+kind: mcp
+title:
+  vi: MCP server filesystem
+  en: Filesystem MCP server
+summary:
+  vi: MCP server chính thức cho phép đọc và ghi file trong các thư mục bạn chỉ định. Claude Code vốn đã đọc được file trong project, nên mẫu này chủ yếu dùng để học cách cấu hình một MCP server chạy cục bộ; muốn thêm thư mục khác thì /add-dir thường là đủ.
+  en: The official MCP server that reads and writes files inside the folders you name. Claude Code already reads project files, so this template is mostly for learning how a local MCP server is configured; to add another folder, /add-dir is usually enough.
+docs: https://code.claude.com/docs/en/mcp
+checked_with: "2.1.329"
+lessons: ["5.1"]
+placeholders:
+  - key: folder
+    vi: Thư mục server được phép truy cập (đường dẫn tuyệt đối)
+    en: Folder the server may access (absolute path)
+    sample: /Users/you/notes
+notes:
+  vi:
+    - Cần Node.js để chạy npx.
+    - Server chỉ truy cập được các thư mục liệt kê trong args; thêm đường dẫn nếu cần nhiều thư mục.
+  en:
+    - Needs Node.js for npx.
+    - The server can only reach the folders listed in args; add more paths if you need them.
+files:
+  - path: .mcp.json
+    content: |
+      {
+        "mcpServers": {
+          "filesystem": {
+            "command": "npx",
+            "args": ["-y", "@modelcontextprotocol/server-filesystem", "{{folder}}"]
+          }
+        }
+      }

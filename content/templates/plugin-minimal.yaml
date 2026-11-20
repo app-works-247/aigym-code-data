@@ -1,0 +1,45 @@
+id: plugin-minimal
+kind: plugin
+title:
+  vi: Plugin tối giản
+  en: A minimal plugin
+summary:
+  vi: Bộ khung nhỏ nhất của một plugin Claude Code, gồm file manifest và một skill. Dùng để đóng gói các skill, subagent hay hook của team rồi chia sẻ qua marketplace.
+  en: The smallest Claude Code plugin skeleton, a manifest and one skill. Use it to package your team's skills, subagents or hooks and share them through a marketplace.
+docs: https://code.claude.com/docs/en/plugins/manifest-reference
+checked_with: "2.1.329"
+lessons: ["8.1"]
+placeholders:
+  - key: plugin_name
+    vi: Tên plugin, viết thường nối bằng gạch ngang
+    en: Plugin name in lowercase with hyphens
+    sample: team-toolkit
+  - key: author
+    vi: Tên tác giả hoặc team
+    en: Author or team name
+    sample: Acme Platform Team
+notes:
+  vi:
+    - Thử plugin cục bộ bằng `claude --plugin-dir ./{{plugin_name}}`, rồi gọi skill bằng /{{plugin_name}}:hello.
+    - Thêm subagent vào thư mục `agents/`, hook vào `hooks/hooks.json`; Claude Code tự tìm theo bố cục chuẩn.
+  en:
+    - Try it locally with `claude --plugin-dir ./{{plugin_name}}`, then run the skill with /{{plugin_name}}:hello.
+    - Add subagents under `agents/` and hooks in `hooks/hooks.json`; Claude Code finds them through the standard layout.
+files:
+  - path: "{{plugin_name}}/.claude-plugin/plugin.json"
+    content: |
+      {
+        "name": "{{plugin_name}}",
+        "version": "0.1.0",
+        "description": "Shared skills for our team",
+        "author": { "name": "{{author}}" }
+      }
+  - path: "{{plugin_name}}/skills/hello/SKILL.md"
+    content: |
+      ---
+      name: hello
+      description: Checks that the {{plugin_name}} plugin is installed. Use when the user asks whether the team plugin works.
+      ---
+
+      Reply with one line: "{{plugin_name}} is installed", followed by the list of skills this
+      plugin provides.

@@ -1,0 +1,32 @@
+id: mcp-postgres
+kind: mcp
+title:
+  vi: MCP server cho PostgreSQL (chỉ đọc)
+  en: PostgreSQL MCP server (read-only)
+summary:
+  vi: Cho Claude truy vấn database PostgreSQL qua DBHub, một MCP server chạy cục bộ bằng npx. Dùng một user database chỉ có quyền đọc để Claude không thể sửa dữ liệu.
+  en: Lets Claude query a PostgreSQL database through DBHub, a local MCP server started with npx. Use a database user that can only read, so Claude cannot change data.
+docs: https://code.claude.com/docs/en/mcp
+checked_with: "2.1.329"
+lessons: ["5.2"]
+placeholders: []
+notes:
+  vi:
+    - Tạo một user chỉ có quyền SELECT trong database, rồi đặt chuỗi kết nối của user đó vào biến môi trường `POSTGRES_READONLY_DSN`.
+    - Cần Node.js để chạy npx.
+    - Không trỏ vào database production nếu dữ liệu có thông tin cá nhân; dùng bản sao đã ẩn dữ liệu.
+  en:
+    - Create a database user with SELECT rights only and put its connection string in the `POSTGRES_READONLY_DSN` environment variable.
+    - Needs Node.js for npx.
+    - Do not point it at a production database that holds personal data; use a masked copy.
+files:
+  - path: .mcp.json
+    content: |
+      {
+        "mcpServers": {
+          "postgres": {
+            "command": "npx",
+            "args": ["-y", "@bytebase/dbhub", "--dsn", "${POSTGRES_READONLY_DSN}"]
+          }
+        }
+      }

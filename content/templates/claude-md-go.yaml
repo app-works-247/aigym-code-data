@@ -1,0 +1,50 @@
+id: claude-md-go
+kind: claude_md
+title:
+  vi: CLAUDE.md cho dự án Go
+  en: CLAUDE.md for a Go project
+summary:
+  vi: Chỉ dẫn cho Claude về cách build, test, kiểm tra code và xử lý lỗi theo phong cách Go. Phù hợp dịch vụ backend hoặc công cụ dòng lệnh viết bằng Go.
+  en: Tells Claude how to build, test and vet the code and how errors are handled in Go style. Fits a backend service or a command-line tool written in Go.
+docs: https://code.claude.com/docs/en/memory
+checked_with: "2.1.329"
+lessons: ["2.1"]
+placeholders:
+  - key: project_name
+    vi: Tên dự án
+    en: Project name
+    sample: ledger
+  - key: module_path
+    vi: Đường dẫn module trong go.mod
+    en: Module path from go.mod
+    sample: github.com/acme/ledger
+files:
+  - path: CLAUDE.md
+    content: |
+      # {{project_name}}
+
+      Go module `{{module_path}}`.
+
+      ## Commands
+      - Build: `go build ./...`
+      - Test all: `go test ./...`
+      - Test one package with the race detector: `go test -race ./internal/store/...`
+      - Vet and lint: `go vet ./... && golangci-lint run`
+      - Format: `gofmt -w .` (done automatically by most editors; still run it)
+
+      Run build, vet and the tests of the packages you touched before saying a task is done.
+
+      ## Layout
+      - `cmd/<name>/main.go`: entry points only, no logic.
+      - `internal/`: application code, not importable from outside the module.
+      - Table-driven tests in `*_test.go` next to the code.
+
+      ## Conventions
+      - Return errors, do not panic; wrap with `fmt.Errorf("doing x: %w", err)`.
+      - Pass `context.Context` as the first argument to anything that does I/O.
+      - Keep interfaces small and define them where they are used.
+      - No global mutable state; inject dependencies through constructors.
+
+      ## Do not
+      - Edit generated files (`*.pb.go`, `*_gen.go`); change the source and regenerate.
+      - Add a module without explaining why; run `go mod tidy` after any change.
