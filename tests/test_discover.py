@@ -168,6 +168,28 @@ class GitHubClientTest(unittest.TestCase):
         self.client(Scripted([err, err, ok()])).get("/x")
         self.assertEqual(self.slept, [2.0, 4.0])
 
+    def test_network_errors_are_retried(self):
+        import urllib.error
+
+        from pipeline import github
+
+        calls = []
+
+        def flaky_urlopen(request, timeout):
+            calls.append(1)
+            raise urllib.error.URLError("timed out")
+
+        original = github.urllib.request.urlopen
+        github.urllib.request.urlopen = flaky_urlopen
+        try:
+            resp = github.urllib_transport("https://api.github.com/x", {})
+        finally:
+            github.urllib.request.urlopen = original
+        self.assertEqual(resp.status, github.NETWORK_ERROR_STATUS)
+
+        self.client(Scripted([resp, resp, ok()])).get("/x")
+        self.assertEqual(self.slept, [2.0, 4.0])
+
     def test_permission_error_is_not_retried_and_hides_token(self):
         denied = Response(403, {"x-ratelimit-remaining": "4000"}, b'{"message":"Forbidden"}')
         transport = Scripted([denied])

@@ -19,6 +19,7 @@ USER_AGENT = "aigym-code-data"
 SEARCH_PAGE_SIZE = 100
 SEARCH_RESULT_CAP = 1000  # GitHub never returns more than this for one search query
 MAX_FILE_BYTES = 200_000  # dependency files are small; never hold a huge file in memory
+NETWORK_ERROR_STATUS = 599  # not a real HTTP status: the request never got an answer
 
 _MAX_RETRIES = 4
 _MAX_SLEEP_SECONDS = 900
@@ -49,6 +50,9 @@ def urllib_transport(url: str, headers: Mapping[str, str]) -> Response:
             )
     except urllib.error.HTTPError as err:
         return Response(err.code, {k.lower(): v for k, v in err.headers.items()}, err.read())
+    except (urllib.error.URLError, TimeoutError, ConnectionError) as err:
+        # Timeouts and dropped connections are retried like a server error.
+        return Response(NETWORK_ERROR_STATUS, {}, str(err).encode())
 
 
 class GitHubClient:

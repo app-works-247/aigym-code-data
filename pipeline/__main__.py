@@ -133,12 +133,18 @@ def _cmd_discover(args: argparse.Namespace) -> int:
     return 0
 
 
+def _write_json_atomic(path: Path, data: object) -> None:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, path)  # a crash mid-write never leaves a half-written file
+
+
 def _cmd_classify(args: argparse.Namespace) -> int:
     from collections import Counter
 
     from pipeline import classify
     from pipeline.discover import stderr_log
-    from pipeline.github import GitHubClient
+    from pipeline.github import GitHubClient, GitHubError
 
     repos = json.loads(Path(args.input).read_text(encoding="utf-8"))["repos"]
     if args.repo:
@@ -146,19 +152,45 @@ def _cmd_classify(args: argparse.Namespace) -> int:
         repos = [r for r in repos if f"{r['owner']}/{r['name']}".lower() in wanted]
     if args.limit:
         repos = repos[: args.limit]
+
+    out = Path(args.out)
+    done: dict[str, dict] = {}
+    if out.exists():  # resume: repos already in the file are not fetched again
+        done = {r["full_name"].lower(): r for r in json.loads(out.read_text(encoding="utf-8"))}
+        stderr_log(f"resuming: {len(done)} repos already classified in {out}")
+    todo = [r for r in repos if f"{r['owner']}/{r['name']}".lower() not in done]
+
     client = GitHubClient(token=os.environ.get("GITHUB_TOKEN"))
-    results = []
-    for i, repo in enumerate(repos, 1):
-        paths, deps, truncated = classify.gather_signals(client, repo)
+    errors = consecutive = 0
+    for i, repo in enumerate(todo, 1):
+        name = f"{repo['owner']}/{repo['name']}"
+        try:
+            paths, deps, truncated = classify.gather_signals(client, repo)
+        except GitHubError as err:
+            errors += 1
+            consecutive += 1
+            stderr_log(f"[{i}/{len(todo)}] {name}: skipped, {err} (retried on the next run)")
+            if consecutive >= 20:
+                stderr_log("20 errors in a row: stopping; progress is saved")
+                break
+            continue
+        consecutive = 0
         result = classify.classify(repo, paths, deps, truncated)
-        results.append(classify.to_dict(result))
-        stderr_log(f"[{i}/{len(repos)}] {result.full_name}: {result.status} ({result.reason})")
-    Path(args.out).write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
+        done[name.lower()] = classify.to_dict(result)
+        stderr_log(f"[{i}/{len(todo)}] {name}: {result.status} ({result.reason})")
+        if i % args.save_every == 0:
+            _write_json_atomic(out, list(done.values()))
+    _write_json_atomic(out, list(done.values()))
+
+    results = list(done.values())
     status = Counter(r["status"] for r in results)
     slugs = Counter(c["slug"] for r in results if r["status"] == "active" for c in r["categories"])
-    stderr_log(f"{len(results)} repos, {client.request_count} requests: {dict(status)}")
+    stderr_log(
+        f"{len(results)} repos in {out} ({client.request_count} requests this run, "
+        f"{errors} skipped): {dict(status)}"
+    )
     stderr_log(f"active categories: {dict(slugs)}")
-    return 0
+    return 1 if consecutive >= 20 else 0
 
 
 def _cmd_export(args: argparse.Namespace) -> int:
@@ -200,6 +232,9 @@ def build_parser() -> argparse.ArgumentParser:
     cls.add_argument("--out", required=True, help="write results to this JSON file")
     cls.add_argument("--limit", type=int, help="only the first N repos (most stars first)")
     cls.add_argument("--repo", action="append", metavar="OWNER/NAME", help="only these repos")
+    cls.add_argument(
+        "--save-every", type=int, default=100, help="save progress every N repos (default 100)"
+    )
     cls.set_defaults(func=_cmd_classify)
 
     exp = sub.add_parser("export", help="write /v1 Radar JSON from discover + classify output")
