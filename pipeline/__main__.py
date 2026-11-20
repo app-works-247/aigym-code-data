@@ -1,7 +1,7 @@
 """Command line entry point: `python -m pipeline <command>`.
 
-Commands: check-env, seeds-check, migrate, discover, classify, export, load, refresh, nightly.
-Still to come in P1: the LLM step of classify and enrich.
+Commands: check-env, seeds-check, migrate, discover, classify, export, load, refresh, nightly,
+enrich-trial. Still to come in P1: the LLM step of classify and storing summaries.
 """
 
 from __future__ import annotations
@@ -288,6 +288,93 @@ def _cmd_nightly(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_enrich_trial(args: argparse.Namespace) -> int:
+    """Compare models on a sample of active repos. Writes JSON only, never the database."""
+    import random
+    import time
+
+    from pipeline import db, enrich
+    from pipeline.discover import stderr_log
+    from pipeline.github import GitHubClient
+    from pipeline.llm import GeminiProvider
+
+    config = enrich.load_config()
+    with db.connect(_require_env("DATABASE_URL")) as conn:
+        rows = conn.execute(
+            """
+            SELECT r.owner, r.name, r.description, r.topics, r.stars,
+                   ARRAY(SELECT rc.slug FROM repo_categories rc
+                         WHERE rc.repo_id = r.id AND rc.confidence >= 0.8
+                         ORDER BY rc.confidence DESC, rc.slug)
+            FROM repos r WHERE r.status = 'active' ORDER BY r.id
+            """
+        ).fetchall()
+    repos = [
+        dict(owner=o, name=n, description=d, topics=list(t), stars=s, categories=list(c))
+        for o, n, d, t, s, c in rows
+        if c
+    ]
+    rng = random.Random(args.seed)
+    rng.shuffle(repos)
+    by_primary: dict[str, list[dict]] = {}
+    for repo in repos:
+        by_primary.setdefault(repo["categories"][0], []).append(repo)
+    sample: list[dict] = []
+    while len(sample) < min(args.sample, len(repos)):  # round-robin across categories
+        for group in by_primary.values():
+            if group and len(sample) < args.sample:
+                sample.append(group.pop())
+
+    providers = [
+        GeminiProvider(
+            _require_env("GEMINI_API_KEY"),
+            model,
+            min_interval=float(config.get("min_seconds_between_calls", 0)),
+        )
+        for model in args.models.split(",")
+    ]
+    seconds = {p.model: 0.0 for p in providers}
+    client = GitHubClient(token=os.environ.get("GITHUB_TOKEN"))
+    results = []
+    for i, repo in enumerate(sample, 1):
+        name = f"{repo['owner']}/{repo['name']}"
+        readme = enrich.fetch_readme(client, repo["owner"], repo["name"])
+        entry = {**repo, "readme_chars": len(readme.text) if readme else 0, "models": {}}
+        if readme is None:
+            entry["error"] = "no README"
+            results.append(entry)
+            continue
+        entry["installs"] = enrich.extract_installs(readme.text)
+        entry["needs_token"] = enrich.needs_token(readme.text)
+        for provider in providers:
+            start = time.monotonic()
+            try:
+                out = enrich.enrich(provider, repo, readme, config["max_readme_chars"])
+                entry["models"][provider.model] = {"summary": out.summary, "use_when": out.use_when}
+            except enrich.EnrichError as err:
+                entry["models"][provider.model] = {"error": str(err)[:300]}
+            seconds[provider.model] += time.monotonic() - start
+        results.append(entry)
+        ok = sum(1 for m in entry["models"].values() if "summary" in m)
+        stderr_log(f"[{i}/{len(sample)}] {name}: {ok}/{len(providers)} models ok")
+    usage = {
+        p.model: {
+            "calls": p.calls,
+            "input_tokens": p.input_tokens,
+            "output_tokens": p.output_tokens,
+            "seconds": round(seconds[p.model], 1),
+            "ok": sum(1 for r in results if "summary" in r["models"].get(p.model, {})),
+        }
+        for p in providers
+    }
+    Path(args.out).write_text(
+        json.dumps({"usage": usage, "repos": results}, ensure_ascii=False, indent=1),
+        encoding="utf-8",
+    )
+    print(json.dumps(usage, indent=1))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m pipeline", description=__doc__)
     parser.add_argument("--version", action="version", version=f"aigym-code-data {__version__}")
@@ -341,6 +428,13 @@ def build_parser() -> argparse.ArgumentParser:
     nig.add_argument("--no-discover", action="store_true", help="skip GitHub search")
     nig.add_argument("--classify-limit", type=int, default=500, help="new repos per night")
     nig.set_defaults(func=_cmd_nightly)
+
+    tri = sub.add_parser("enrich-trial", help="compare summary models on sample repos (JSON)")
+    tri.add_argument("--models", required=True, help="comma-separated exact model names")
+    tri.add_argument("--sample", type=int, default=50)
+    tri.add_argument("--seed", type=int, default=20261120)
+    tri.add_argument("--out", required=True)
+    tri.set_defaults(func=_cmd_enrich_trial)
     return parser
 
 

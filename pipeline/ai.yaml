@@ -1,0 +1,14 @@
+# Which AI model writes the Radar summaries (PLAN.md 6.6, owner decision 4: chosen after a
+# 50-repo trial). Change provider or model here; no code change needed.
+# Every summary stored in repo_i18n records the provider and the exact model that wrote it.
+
+version: 1
+
+provider: gemini            # gemini (anthropic is added once a Claude key exists)
+model: gemini-3.8-flash     # exact model, never an alias like gemini-flash-latest
+
+# README text sent to the model is cut to this many characters (about 8K tokens).
+max_readme_chars: 30000
+
+# Free tiers limit requests per minute; stay under it instead of hitting 429s.
+min_seconds_between_calls: 4
