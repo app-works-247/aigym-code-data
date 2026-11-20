@@ -67,4 +67,4 @@ docs/json-v1.md      the static JSON the app reads (fields and rules)
 
 ## Vietnamese summary
 
-Repo công khai chứa pipeline dữ liệu cho app AIGym Code: Radar repo, tin Hôm nay và Tra cứu Claude Code. Mã theo giấy phép MIT. Không chứa bài học (bài học nằm ở repo riêng tư).
+Repo công khai chứa pipeline dữ liệu cho app AIGym Code: Radar repo, tin Hôm nay và Tra cứu Claude Code. Mã theo giấy phép MIT.
