@@ -193,8 +193,9 @@ Facts:
 Output:
 - title_en, title_vi: at most 90 characters, plain, no trailing period.
 - summary_en, summary_vi: for a news item, 2 or 3 short sentences (at most 320 characters).
-  For a release (a changelog section), exactly 3 lines separated by a newline, each one the
-  most notable change for developers (at most 110 characters each), no bullets.
+  For a release (a changelog section), one line per notable change for developers, at most 3
+  lines, separated by a newline (at most 110 characters each), no bullets. A section with one
+  change gets one line; never pad or repeat.
 - tags: 1 to 3 of claude-code, api-sdk, model, mcp, skills-plugins, anthropic.
 - importance 0-3: 3 = new model, breaking change, price change or a deprecation developers must
   act on; 2 = notable new feature; 1 = small improvement or fix; 0 = not about building with
@@ -250,7 +251,7 @@ def summarise(provider: Provider, title: str, kind: str, excerpt: str) -> Summar
         problems += [
             f"{lang}: {m}" for m in facts_missing(f"{titles[lang]}\n{texts[lang]}", source)
         ]
-        if len(texts[lang]) > len(excerpt) + 40:
+        if len(texts[lang]) > len(source) + 40:
             problems.append(f"{lang}: summary longer than the source")
     return Summary(titles, texts, tags, importance, check_passed=not problems, problems=problems)
 

@@ -278,6 +278,25 @@ class SummariseTest(unittest.TestCase):
         self.assertFalse(s.check_passed)
         self.assertTrue(any("/loop" in p for p in s.problems))
 
+    def test_a_one_line_release_may_have_a_one_line_summary(self):
+        short = {
+            **GOOD,
+            "summary_en": "Bug fixes and reliability improvements",
+            "summary_vi": "Sửa lỗi và cải thiện độ tin cậy",
+            "title_en": "Claude Code 2.1.308",
+            "title_vi": "Claude Code 2.1.308",
+        }
+        source = "- Bug fixes and reliability improvements"
+        s = news.summarise(Provider([short]), "Claude Code 2.1.308", "release", source)
+        self.assertTrue(s.check_passed, s.problems)
+        padded = {
+            **short,
+            "summary_vi": "Sửa lỗi\nCải thiện độ tin cậy\nSửa lỗi và cải thiện độ "
+            "tin cậy trong Claude Code 2.1.308 cho mọi người dùng",
+        }
+        s = news.summarise(Provider([padded]), "Claude Code 2.1.308", "release", source)
+        self.assertIn("vi: summary longer than the source", s.problems)
+
     def test_empty_answers_raise(self):
         with self.assertRaises(LLMError):
             news.summarise(Provider([{**GOOD, "title_vi": ""}]), "t", "news", "source text")

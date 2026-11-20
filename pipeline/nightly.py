@@ -162,6 +162,7 @@ def news_step(
         "news_failed_sources": [r.source_id for r in runs if not r.ok],
     }
     summarised = title_only = failed = 0
+    rejected: dict[str, list[str]] = {}
     if provider is not None and summary_limit > 0:
         for nid, title, excerpt, dedup, tags in in_transaction(
             connect, news.pending, summary_limit
@@ -178,8 +179,11 @@ def news_step(
             summarised += 1
             title_only += 0 if result.check_passed else 1
             if not result.check_passed:
+                rejected[nid] = result.problems[:3]
                 log(f"news: {nid} title only, safety net: {result.problems[:3]}")
     stats.update(news_summarised=summarised, news_title_only=title_only, news_summary_failed=failed)
+    if rejected:  # kept in pipeline_runs.stats so a hand check can see why
+        stats["news_rejected"] = rejected
     return stats
 
 
