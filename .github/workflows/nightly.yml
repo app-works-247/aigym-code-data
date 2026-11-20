@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: nightly
+  group: data-deploy
   cancel-in-progress: false
 
 jobs:

@@ -1,0 +1,66 @@
+# News sources for the Today tab (PLAN.md 3.1 and 8.2). Official sources only in app version 1
+# (12.2); Hacker News comes later. Set enabled: false to turn a source off without code changes.
+# Checked by hand on 2026-11-20: every enabled URL answered 200 in the format its kind expects.
+
+version: 1
+
+# How far back the first run looks. Later runs only add what is new.
+backfill_days: 30
+
+# Anthropic posts many company stories; only those that mention one of these reach the app.
+# Generic words such as "model", "API" or "developer" are left out on purpose: nearly every
+# Anthropic post uses them (found while testing, 2026-11-20).
+dev_keywords:
+  - Claude Code
+  - Claude API
+  - Claude Developer Platform
+  - SDK
+  - Agent SDK
+  - MCP
+  - Model Context Protocol
+  - Skills
+  - plugin
+  - Opus
+  - Sonnet
+  - Haiku
+  - Fable
+  - context window
+  - tool use
+
+sources:
+  - id: claude-code-changelog
+    kind: changelog          # "## <version>" sections; dates from GitHub Releases of the repo
+    url: https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md
+    releases_repo: anthropics/claude-code
+    tags: [claude-code]
+    enabled: true
+
+  - id: claude-api-release-notes
+    kind: dated_markdown     # "### <Month D, YYYY>" sections
+    url: https://platform.claude.com/docs/en/release-notes/overview.md
+    page_url: https://platform.claude.com/docs/en/release-notes/overview
+    tags: [api-sdk]
+    enabled: true
+
+  - id: anthropic-news
+    kind: sitemap            # no RSS (/news/rss.xml is 404); new URLs in the sitemap are new posts
+    url: https://www.anthropic.com/sitemap.xml
+    include: ['^https://www\.anthropic\.com/(news|engineering)/[^/]+$']
+    filter_keywords: true
+    tags: [anthropic]
+    enabled: true
+
+  - id: mcp-blog
+    kind: rss
+    url: https://blog.modelcontextprotocol.io/index.xml
+    tags: [mcp]
+    enabled: true
+
+  - id: claude-blog
+    kind: sitemap
+    url: https://claude.com/sitemap.xml
+    include: ['^https://claude\.com/blog/[^/]+$']
+    tags: [anthropic]
+    # 2026-11-20: claude.com has no /blog; its sitemap lists marketing articles and connector
+    # pages, not developer news.
+    enabled: false

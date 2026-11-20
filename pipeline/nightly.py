@@ -15,7 +15,8 @@ from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 
-from pipeline import classify, db, discover, enrich, export, refresh
+from pipeline import classify, db, discover, enrich, export, news, refresh
+from pipeline import news_sources as ns
 from pipeline.classify import Match, Result
 from pipeline.github import GitHubClient, GitHubError
 from pipeline.seeds import Seeds
@@ -128,6 +129,101 @@ def enrich_new(
     }
 
 
+def news_step(
+    connect: Callable,
+    client: GitHubClient,
+    provider,
+    now: datetime,
+    log: Callable[[str], None],
+    summary_limit: int = 30,
+    fetch_text: Callable[[str], str] = ns.fetch_text,
+) -> dict:
+    """Fetch official news, store what is new, summarise pending items (PLAN.md 8.2)."""
+    config = ns.load_config()
+
+    def releases(repo: str) -> list[dict]:
+        return client.get(f"/repos/{repo}/releases", {"per_page": 30})
+
+    def prepare(conn):
+        news.sync_sources(conn, config)
+        return news.known_urls(conn)
+
+    known = in_transaction(connect, prepare)
+    fresh, ignored, runs = news.fetch_new(config, known, fetch_text, releases, now, log)
+
+    def store(conn):
+        added = news.store_items(conn, fresh, "pending")
+        news.store_items(conn, ignored, "hidden")
+        news.record_runs(conn, runs, now)
+        return added
+
+    stats = {
+        "news_new": in_transaction(connect, store),
+        "news_failed_sources": [r.source_id for r in runs if not r.ok],
+    }
+    summarised = title_only = failed = 0
+    if provider is not None and summary_limit > 0:
+        for nid, title, excerpt, dedup, tags in in_transaction(
+            connect, news.pending, summary_limit
+        ):
+            try:
+                result = news.summarise(provider, title, "release" if dedup else "news", excerpt)
+            except Exception as err:  # quota or a bad answer: the item stays pending for later
+                failed += 1
+                log(f"news: {nid} not summarised: {err}")
+                if failed >= 3:
+                    break
+                continue
+            in_transaction(connect, news.save_summary, nid, result, provider, list(tags))
+            summarised += 1
+            title_only += 0 if result.check_passed else 1
+            if not result.check_passed:
+                log(f"news: {nid} title only, safety net: {result.problems[:3]}")
+    stats.update(news_summarised=summarised, news_title_only=title_only, news_summary_failed=failed)
+    return stats
+
+
+def export_all(connect: Callable, out_dir: Path, now: datetime) -> dict:
+    """Radar, reference, templates and news from the database, as one site (Pages replaces the
+    whole site on every deploy, so every job writes every file)."""
+    records, skipped = in_transaction(connect, db.records_for_export, now.date())
+    docs = export.build(records, now=now)
+    stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    docs.update(export.reference_docs(stamp))
+    trending = docs["trending.json"]["items"]
+    docs.update(in_transaction(connect, news.news_docs, stamp, trending))
+    export.write(docs, out_dir)
+    return {"exported": len(records), "export_files": len(docs), "export_skipped": len(skipped)}
+
+
+def run_official(
+    connect: Callable,
+    client: GitHubClient,
+    out_dir: Path,
+    *,
+    provider=None,
+    now: datetime | None = None,
+    log: Callable[[str], None] = print,
+) -> dict:
+    """The 3-hourly job (official.yml): news first, then re-export everything."""
+    now = now or datetime.now(UTC)
+    stats: dict = {}
+    run_id = in_transaction(connect, db.start_run, "official")
+    try:
+        stats.update(news_step(connect, client, provider, now, log))
+        stats.update(export_all(connect, out_dir, now))
+        stats["github_requests"] = client.request_count
+        in_transaction(connect, db.finish_run, run_id, True, stats)
+        return stats
+    except Exception as err:
+        stats["error"] = "".join(traceback.format_exception_only(err)).strip()[:500]
+        try:
+            in_transaction(connect, db.finish_run, run_id, False, stats)
+        except Exception as log_err:
+            log(f"could not record the failed run: {log_err}")
+        raise
+
+
 def run(
     connect: Callable,
     client: GitHubClient,
@@ -139,6 +235,7 @@ def run(
     provider=None,
     enrich_limit: int = 150,
     max_readme_chars: int = 30000,
+    do_news: bool = True,
     now: datetime | None = None,
     log: Callable[[str], None] = print,
 ) -> dict:
@@ -180,12 +277,12 @@ def run(
             stats.update(enrich_new(connect, client, provider, enrich_limit, max_readme_chars, log))
             log(f"enrich: {stats['enriched']} summaries")
 
-        records, skipped = in_transaction(connect, db.records_for_export, now.date())
-        docs = export.build(records, now=now)
-        docs.update(export.reference_docs(now.strftime("%Y-%m-%dT%H:%M:%SZ")))
-        export.write(docs, out_dir)
-        stats.update(exported=len(records), export_files=len(docs), export_skipped=len(skipped))
-        log(f"export: {len(records)} repos, {len(docs)} files")
+        if do_news:
+            stats.update(news_step(connect, client, provider, now, log))
+            log(f"news: {stats['news_new']} new, {stats['news_summarised']} summarised")
+
+        stats.update(export_all(connect, out_dir, now))
+        log(f"export: {stats['exported']} repos, {stats['export_files']} files")
 
         stats["github_requests"] = client.request_count
         in_transaction(connect, db.finish_run, run_id, True, stats)

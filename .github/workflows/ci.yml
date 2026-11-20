@@ -36,5 +36,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Check seeds and migrations
         run: python -m pipeline seeds-check && python -m pipeline migrate --check
+      - name: Status function tests
+        run: node --test functions/status.test.mjs
       - name: Smoke test CLI
         run: python -m pipeline --version

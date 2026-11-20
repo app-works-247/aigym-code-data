@@ -198,7 +198,14 @@ class NightlyDatabaseTest(unittest.TestCase):
 
         try:
             return nightly.run(
-                connect, client, self.seeds, out, now=now, provider=provider, log=lambda m: None
+                connect,
+                client,
+                self.seeds,
+                out,
+                now=now,
+                provider=provider,
+                do_news=False,  # news has its own tests; never reach real sites from CI
+                log=lambda m: None,
             )
         finally:
             # No connection may be left open: Neon would drop it while GitHub work runs.

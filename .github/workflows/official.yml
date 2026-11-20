@@ -1,0 +1,65 @@
+name: official
+
+# PLAN.md 6.10: official news every 3 hours, then the whole site is exported and deployed.
+# Runs only on schedule or by hand, never on pull requests, so forks never see the secrets.
+on:
+  schedule:
+    - cron: "30 */3 * * *" # every 3 hours, half past, away from the nightly run
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: data-deploy
+  cancel-in-progress: false
+
+jobs:
+  official:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install
+        run: pip install -e .
+
+      - name: Run the nightly job
+        env:
+          # The workflow's own short-lived token: enough for search, trees and GraphQL on
+          # public repos, so no personal token is stored in this public repo.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Summaries (pipeline/ai.yaml). Without it the job skips summaries and does the rest.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python -m pipeline official --out site/v1
+
+      - name: Add Pages headers
+        run: cp deploy/_headers site/_headers
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_SEND_METRICS: "false"
+        run: >
+          npx --yes wrangler@4.165.0 pages deploy site
+          --project-name aigym-code --branch main --commit-dirty=true
+
+      - name: Check the live data matches this run
+        run: |
+          expected=$(python -c "import json; print(json.load(open('site/v1/meta.json'))['updated_at'])")
+          for i in 1 2 3 4 5 6; do
+            live=$(curl -fsS "https://aigym-code.pages.dev/v1/meta.json?check=$GITHUB_RUN_ID" \
+              | python -c "import json,sys; print(json.load(sys.stdin)['updated_at'])") || live=""
+            echo "expected $expected, live $live"
+            [ "$live" = "$expected" ] && exit 0
+            sleep 20
+          done
+          echo "Live meta.json does not show this run's data" && exit 1

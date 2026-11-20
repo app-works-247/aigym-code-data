@@ -1,7 +1,8 @@
 """Command line entry point: `python -m pipeline <command>`.
 
 Commands: check-env, seeds-check, migrate, discover, classify, export, load, refresh, nightly,
-enrich-trial. Still to come in P1: the LLM step of classify and storing summaries.
+official, enrich, enrich-trial, reference-check, reference-draft.
+Still to come: the LLM step of classify.
 """
 
 from __future__ import annotations
@@ -463,6 +464,29 @@ def _cmd_enrich_trial(args: argparse.Namespace) -> int:
 _REFERENCE_GROUPS = ("commands", "cli", "settings", "hooks", "env")
 
 
+def _cmd_official(args: argparse.Namespace) -> int:
+    from pipeline import db, enrich, nightly
+    from pipeline.discover import stderr_log
+    from pipeline.github import GitHubClient
+    from pipeline.llm import make_provider
+
+    url = _require_env("DATABASE_URL")
+    provider = None
+    try:
+        provider = make_provider(enrich.load_config(), dict(os.environ))
+    except Exception as err:
+        stderr_log(f"news summaries skipped: {err}")
+    stats = nightly.run_official(
+        lambda: db.connect(url),
+        GitHubClient(token=_require_env("GITHUB_TOKEN")),
+        Path(args.out),
+        provider=provider,
+        log=stderr_log,
+    )
+    print(json.dumps(stats, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m pipeline", description=__doc__)
     parser.add_argument("--version", action="version", version=f"aigym-code-data {__version__}")
@@ -535,6 +559,10 @@ def build_parser() -> argparse.ArgumentParser:
     enr = sub.add_parser("enrich", help="write summaries for active repos that have none")
     enr.add_argument("--limit", type=int, default=50)
     enr.set_defaults(func=_cmd_enrich)
+
+    off = sub.add_parser("official", help="news from official sources + full export (3-hourly)")
+    off.add_argument("--out", required=True, help="export folder, e.g. site/v1")
+    off.set_defaults(func=_cmd_official)
 
     tri = sub.add_parser("enrich-trial", help="compare summary models on sample repos (JSON)")
     tri.add_argument("--models", required=True, help="comma-separated exact model names")
