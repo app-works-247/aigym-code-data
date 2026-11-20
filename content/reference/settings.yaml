@@ -1,0 +1,2751 @@
+# Settings: names and links from settings-reference in the official
+# Claude Code docs; descriptions are our own words. Set reviewed: true after reading.
+- id: settings-advisormodel
+  group: settings
+  name: advisorModel
+  syntax: advisorModel
+  summary:
+    vi: Chọn model sẽ phản hồi mỗi khi Claude tham vấn công cụ advisor.
+    en: Selects the model to use whenever Claude consults the advisor tool.
+  docs: https://code.claude.com/docs/en/settings-reference#advisormodel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-agent
+  group: settings
+  name: agent
+  syntax: agent
+  summary:
+    vi: Khởi động mỗi session dưới dạng một subagent cụ thể với prompt, công cụ và model riêng.
+    en: Launches each session as a designated subagent using its prompt, tools, and model.
+  docs: https://code.claude.com/docs/en/settings-reference#agent
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-agentpushnotifenabled
+  group: settings
+  name: agentPushNotifEnabled
+  syntax: agentPushNotifEnabled
+  summary:
+    vi: Cho phép Claude chủ động gửi thông báo đẩy đến điện thoại của bạn.
+    en: Permits Claude to send mobile push notifications at its discretion.
+  docs: https://code.claude.com/docs/en/settings-reference#agentpushnotifenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-allowallclaudeaimcps
+  group: settings
+  name: allowAllClaudeAiMcps
+  syntax: allowAllClaudeAiMcps
+  summary:
+    vi: Tải các kết nối claude.ai tự động lấy về song song với file managed-mcp.json đã triển khai.
+    en: Imports auto-retrieved claude.ai connectors together with a deployed managed-mcp.json.
+  docs: https://code.claude.com/docs/en/settings-reference#allowallclaudeaimcps
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowclaudeinchromewithmanagedmcp
+  group: settings
+  name: allowClaudeInChromeWithManagedMcp
+  syntax: allowClaudeInChromeWithManagedMcp
+  summary:
+    vi: Cho phép server Claude in Chrome tích hợp sẵn hoạt động cùng với managed-mcp.json.
+    en: Enables the integrated Claude in Chrome server to operate alongside managed-mcp.json.
+  docs: https://code.claude.com/docs/en/settings-reference#allowclaudeinchromewithmanagedmcp
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowedchannelplugins
+  group: settings
+  name: allowedChannelPlugins
+  syntax: allowedChannelPlugins
+  summary:
+    vi: Ghi đè danh sách cho phép mặc định gồm các plugin kênh có quyền đẩy tin nhắn.
+    en: Overrides the built-in permit list of channel plugins authorized to dispatch messages.
+  docs: https://code.claude.com/docs/en/settings-reference#allowedchannelplugins
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowedhttphookurls
+  group: settings
+  name: allowedHttpHookUrls
+  syntax: allowedHttpHookUrls
+  summary:
+    vi: Giới hạn các địa chỉ URL mà HTTP hook được phép gửi yêu cầu tới.
+    en: Restricts the destination web addresses that HTTP hooks are permitted to call.
+  docs: https://code.claude.com/docs/en/settings-reference#allowedhttphookurls
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-allowedmcpservers
+  group: settings
+  name: allowedMcpServers
+  syntax: allowedMcpServers
+  summary:
+    vi: Quy định danh sách các MCP server được phép mà người dùng có thể thêm.
+    en: Defines an approved list specifying which MCP servers users may configure.
+  docs: https://code.claude.com/docs/en/settings-reference#allowedmcpservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-allowedproviders
+  group: settings
+  name: allowedProviders
+  syntax: allowedProviders
+  summary:
+    vi: Giới hạn danh sách các nhà cung cấp API mà thiết bị được phép sử dụng.
+    en: Constrains which API providers the current system is authorized to contact.
+  docs: https://code.claude.com/docs/en/settings-reference#allowedproviders
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowmanagedhooksonly
+  group: settings
+  name: allowManagedHooksOnly
+  syntax: allowManagedHooksOnly
+  summary:
+    vi: Chỉ thực thi các hook do tổ chức của bạn phân phối.
+    en: Executes exclusively the hooks distributed by your organization.
+  docs: https://code.claude.com/docs/en/settings-reference#allowmanagedhooksonly
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowmanagedmcpserversonly
+  group: settings
+  name: allowManagedMcpServersOnly
+  syntax: allowManagedMcpServersOnly
+  summary:
+    vi: Chỉ áp dụng duy nhất danh sách MCP server được phép từ cấu hình quản lý.
+    en: Enforces the managed MCP permit list as the sole active policy.
+  docs: https://code.claude.com/docs/en/settings-reference#allowmanagedmcpserversonly
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-allowmanagedpermissionrulesonly
+  group: settings
+  name: allowManagedPermissionRulesOnly
+  syntax: allowManagedPermissionRulesOnly
+  summary:
+    vi: Chỉ chấp nhận các quy tắc phân quyền bắt nguồn từ cấu hình quản lý.
+    en: Restricts valid permission rules to those defined in managed settings.
+  docs: https://code.claude.com/docs/en/settings-reference#allowmanagedpermissionrulesonly
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-alwaysthinkingenabled
+  group: settings
+  name: alwaysThinkingEnabled
+  syntax: alwaysThinkingEnabled
+  summary:
+    vi: Tắt tính năng suy nghĩ mở rộng trong toàn bộ các session.
+    en: Deactivates extended thinking capabilities across all sessions.
+  docs: https://code.claude.com/docs/en/settings-reference#alwaysthinkingenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-apikeyhelper
+  group: settings
+  name: apiKeyHelper
+  syntax: apiKeyHelper
+  summary:
+    vi: Chạy lệnh riêng của bạn để tạo thông tin xác thực API.
+    en: Executes a custom shell command to supply API authentication credentials.
+  docs: https://code.claude.com/docs/en/settings-reference#apikeyhelper
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-appendplugins
+  group: settings
+  name: appendPlugins
+  syntax: appendPlugins
+  summary:
+    vi: Chạy các bản mod của tổ chức ngay sau mỗi bản mod do người dùng cài đặt.
+    en: Applies organizational modifications following every user-added modification.
+  docs: https://code.claude.com/docs/en/settings-reference#appendplugins
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-askuserquestiontimeout
+  group: settings
+  name: askUserQuestionTimeout
+  syntax: askUserQuestionTimeout
+  summary:
+    vi: Tự động tiếp tục khi câu hỏi không nhận được phản hồi sau một khoảng thời gian chờ.
+    en: Proceeds automatically when a prompt awaiting user input stays idle too long.
+  docs: https://code.claude.com/docs/en/settings-reference#askuserquestiontimeout
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-attribution
+  group: settings
+  name: attribution
+  syntax: attribution
+  summary:
+    vi: Tùy biến nội dung ghi nhận nguồn mà Claude Code đính kèm vào commit và pull request.
+    en: Modifies the attribution text appended by Claude Code to commits and pull requests.
+  docs: https://code.claude.com/docs/en/settings-reference#attribution
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-attribution-commit
+  group: settings
+  name: attribution.commit
+  syntax: attribution.commit
+  summary:
+    vi: Thay đổi hoặc ẩn đoạn trailer mà Claude Code thêm vào commit.
+    en: Adjusts or suppresses the trailer lines Claude Code places in commits.
+  docs: https://code.claude.com/docs/en/settings-reference#attribution.commit
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-attribution-pr
+  group: settings
+  name: attribution.pr
+  syntax: attribution.pr
+  summary:
+    vi: Sửa đổi hoặc ẩn dòng ghi chú nguồn trong phần mô tả pull request.
+    en: Edits or removes the credit notice inserted into pull request descriptions.
+  docs: https://code.claude.com/docs/en/settings-reference#attribution.pr
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-attribution-sessionurl
+  group: settings
+  name: attribution.sessionUrl
+  syntax: attribution.sessionUrl
+  summary:
+    vi: Loại bỏ liên kết session claude.ai khỏi các commit từ cloud và Remote Control.
+    en: Removes the claude.ai session link from commits made via cloud or Remote Control.
+  docs: https://code.claude.com/docs/en/settings-reference#attribution.sessionurl
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-autocompactenabled
+  group: settings
+  name: autoCompactEnabled
+  syntax: autoCompactEnabled
+  summary:
+    vi: Bật hoặc tắt tính năng tự động nén context.
+    en: Toggles automated compaction functionality on or off.
+  docs: https://code.claude.com/docs/en/settings-reference#autocompactenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-autocompactwindow
+  group: settings
+  name: autoCompactWindow
+  syntax: autoCompactWindow
+  summary:
+    vi: Đặt mức độ đầy của context để Claude Code bắt đầu thực hiện nén.
+    en: Configures context fullness threshold required to trigger Claude Code compaction.
+  docs: https://code.claude.com/docs/en/settings-reference#autocompactwindow
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-autoconnectide
+  group: settings
+  name: autoConnectIde
+  syntax: autoConnectIde
+  summary:
+    vi: Tự động kết nối tới IDE VS Code hoặc JetBrains đang mở từ terminal bên ngoài.
+    en: Links to an active VS Code or JetBrains environment directly from outside terminals.
+  docs: https://code.claude.com/docs/en/settings-reference#autoconnectide
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-autocontinueatusagelimit
+  group: settings
+  name: autoContinueAtUsageLimit
+  syntax: autoContinueAtUsageLimit
+  summary:
+    vi: Duy trì session hiện tại và tự chạy tiếp tác vụ khi hạn mức claude.ai được đặt lại.
+    en: Pauses within the session and resumes tasks once claude.ai usage limits refresh.
+  docs: https://code.claude.com/docs/en/settings-reference#autocontinueatusagelimit
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-autoinstallideextension
+  group: settings
+  name: autoInstallIdeExtension
+  syntax: autoInstallIdeExtension
+  summary:
+    vi: Cho phép lệnh /ide tự cài đặt extension cho IDE từ terminal bên ngoài.
+    en: Allows the /ide command to set up the editor extension via an external terminal.
+  docs: https://code.claude.com/docs/en/settings-reference#autoinstallideextension
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-automemorydirectory
+  group: settings
+  name: autoMemoryDirectory
+  syntax: autoMemoryDirectory
+  summary:
+    vi: Chỉ định thư mục tùy chọn để lưu trữ auto memory.
+    en: Specifies a custom directory for saving auto memory.
+  docs: https://code.claude.com/docs/en/settings-reference#automemorydirectory
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-automemoryenabled
+  group: settings
+  name: autoMemoryEnabled
+  syntax: autoMemoryEnabled
+  summary:
+    vi: Bật hoặc tắt tính năng auto memory.
+    en: Toggles the auto memory feature on or off.
+  docs: https://code.claude.com/docs/en/settings-reference#automemoryenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-automode
+  group: settings
+  name: autoMode
+  syntax: autoMode
+  summary:
+    vi: Thiết lập các quy tắc cho phép và từ chối cho bộ phân loại auto mode.
+    en: Configures custom allow and deny rules for the auto mode classifier.
+  docs: https://code.claude.com/docs/en/settings-reference#automode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-automode-classifyallshell
+  group: settings
+  name: autoMode.classifyAllShell
+  syntax: autoMode.classifyAllShell
+  summary:
+    vi: Chuyển mọi lệnh shell qua bộ phân loại auto mode, kể cả lệnh khớp quy tắc cho phép cụ thể.
+    en: Evaluates every shell command with the auto mode classifier, including commands covered by specific
+      allow rules.
+  docs: https://code.claude.com/docs/en/settings-reference#automode.classifyallshell
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-autoscrollenabled
+  group: settings
+  name: autoScrollEnabled
+  syntax: autoScrollEnabled
+  summary:
+    vi: Tự động cuộn xuống dưới cùng để theo dõi nội dung mới khi hiển thị toàn màn hình.
+    en: Scrolls down automatically to track incoming output during fullscreen rendering.
+  docs: https://code.claude.com/docs/en/settings-reference#autoscrollenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-autoupdateschannel
+  group: settings
+  name: autoUpdatesChannel
+  syntax: autoUpdatesChannel
+  summary:
+    vi: Chuyển kênh cập nhật sang bản phát hành ổn định thay vì latest.
+    en: Switches the update stream from latest to the stable release track.
+  docs: https://code.claude.com/docs/en/settings-reference#autoupdateschannel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-availablemodels
+  group: settings
+  name: availableModels
+  syntax: availableModels
+  summary:
+    vi: Giới hạn danh sách model mà người dùng có thể chọn.
+    en: Limits the selection of models that users can choose.
+  docs: https://code.claude.com/docs/en/settings-reference#availablemodels
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-availablemodelsmatch
+  group: settings
+  name: availableModelsMatch
+  syntax: availableModelsMatch
+  summary:
+    vi: Giới hạn từng model ID trong availableModels chỉ chấp nhận đúng phiên bản được chỉ định.
+    en: Restricts each model ID in availableModels strictly to its exact specified version.
+  docs: https://code.claude.com/docs/en/settings-reference#availablemodelsmatch
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-awaysummaryenabled
+  group: settings
+  name: awaySummaryEnabled
+  syntax: awaySummaryEnabled
+  summary:
+    vi: Tắt phần tóm tắt session hiển thị khi bạn quay lại terminal.
+    en: Disables the session overview displayed upon returning to the terminal.
+  docs: https://code.claude.com/docs/en/settings-reference#awaysummaryenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-awsauthrefresh
+  group: settings
+  name: awsAuthRefresh
+  syntax: awsAuthRefresh
+  summary:
+    vi: Chạy lệnh tùy chỉnh để làm mới thông tin xác thực Bedrock đã hết hạn trong .aws.
+    en: Executes a custom command to renew expired Bedrock credentials stored in .aws.
+  docs: https://code.claude.com/docs/en/settings-reference#awsauthrefresh
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-awscredentialexport
+  group: settings
+  name: awsCredentialExport
+  syntax: awsCredentialExport
+  summary:
+    vi: Cung cấp thông tin xác thực Bedrock dưới dạng JSON từ lệnh tùy chỉnh.
+    en: Provides Bedrock credentials formatted as JSON using a custom command.
+  docs: https://code.claude.com/docs/en/settings-reference#awscredentialexport
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-axscreenreader
+  group: settings
+  name: axScreenReader
+  syntax: axScreenReader
+  summary:
+    vi: Xuất nội dung hiển thị tương thích tốt hơn với trình đọc màn hình.
+    en: Formats console output for compatibility with screen readers.
+  docs: https://code.claude.com/docs/en/settings-reference#axscreenreader
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-basheditdiffenabled
+  group: settings
+  name: bashEditDiffEnabled
+  syntax: bashEditDiffEnabled
+  summary:
+    vi: Ghi lại các tệp bị thay đổi khi chạy lệnh Bash trong mọi chế độ phân quyền.
+    en: Tracks modified files during Bash command execution across all permission modes.
+  docs: https://code.claude.com/docs/en/settings-reference#basheditdiffenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-bashoutputmaxchars
+  group: settings
+  name: bashOutputMaxChars
+  syntax: bashOutputMaxChars
+  summary:
+    vi: Đặt số ký tự tối đa của đầu ra lệnh thành công được chuyển trực tiếp cho Claude.
+    en: Controls the maximum characters of successful command output passed inline to Claude.
+  docs: https://code.claude.com/docs/en/settings-reference#bashoutputmaxchars
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-blockedmarketplaces
+  group: settings
+  name: blockedMarketplaces
+  syntax: blockedMarketplaces
+  summary:
+    vi: Chặn các nguồn marketplace cho plugin trong tổ chức của bạn.
+    en: Disallows specific plugin marketplace sources across an organization.
+  docs: https://code.claude.com/docs/en/settings-reference#blockedmarketplaces
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-browserexternalpagetools
+  group: settings
+  name: browserExternalPageTools
+  syntax: browserExternalPageTools
+  summary:
+    vi: Ngăn các công cụ của Claude hoạt động trên trang bên ngoài ở khung Browser máy tính.
+    en: Prevents tools from running on external websites inside the desktop Browser pane.
+  docs: https://code.claude.com/docs/en/settings-reference#browserexternalpagetools
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-channelsenabled
+  group: settings
+  name: channelsEnabled
+  syntax: channelsEnabled
+  summary:
+    vi: Cho phép sử dụng channels trong tổ chức của bạn.
+    en: Permits the use of channels within your organization.
+  docs: https://code.claude.com/docs/en/settings-reference#channelsenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-claudeinchromedefaultenabled
+  group: settings
+  name: claudeInChromeDefaultEnabled
+  syntax: claudeInChromeDefaultEnabled
+  summary:
+    vi: Tự động bật tích hợp Chrome khi bắt đầu session trên CLI tương tác và extension VS Code.
+    en: Activates Chrome integration at session launch across both interactive CLI and VS Code extension.
+  docs: https://code.claude.com/docs/en/settings-reference#claudeinchromedefaultenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-claudemd
+  group: settings
+  name: claudeMd
+  syntax: claudeMd
+  summary:
+    vi: Đưa hướng dẫn CLAUDE.md cấp tổ chức vào từ cấu hình quản lý.
+    en: Applies organization-level CLAUDE.md guidelines through managed configuration settings.
+  docs: https://code.claude.com/docs/en/settings-reference#claudemd
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-claudemdexcludes
+  group: settings
+  name: claudeMdExcludes
+  syntax: claudeMdExcludes
+  summary:
+    vi: Bỏ qua các tệp CLAUDE.md được chỉ định khi nạp memory.
+    en: Omits designated CLAUDE.md files during memory loading.
+  docs: https://code.claude.com/docs/en/settings-reference#claudemdexcludes
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-cleanupperioddays
+  group: settings
+  name: cleanupPeriodDays
+  syntax: cleanupPeriodDays
+  summary:
+    vi: Quy định số ngày Claude Code lưu bản ghi trước khi xóa.
+    en: Defines the number of days Claude Code retains transcripts prior to removal.
+  docs: https://code.claude.com/docs/en/settings-reference#cleanupperioddays
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-companyannouncements
+  group: settings
+  name: companyAnnouncements
+  syntax: companyAnnouncements
+  summary:
+    vi: Hiển thị thông báo của tổ chức khi khởi động.
+    en: Displays corporate notices whenever the application launches.
+  docs: https://code.claude.com/docs/en/settings-reference#companyannouncements
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-copyfullresponse
+  group: settings
+  name: copyFullResponse
+  syntax: copyFullResponse
+  summary:
+    vi: Cấu hình /copy sao chép toàn bộ phản hồi mà không hiển thị bộ chọn.
+    en: Configures /copy to capture the entire answer directly without presenting a picker.
+  docs: https://code.claude.com/docs/en/settings-reference#copyfullresponse
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-copyonselect
+  group: settings
+  name: copyOnSelect
+  syntax: copyOnSelect
+  summary:
+    vi: Tắt tính năng tự động sao chép văn bản chọn bằng chuột khi render toàn màn hình và agent view.
+    en: Disables auto-copying highlighted mouse selections in fullscreen rendering and agent view.
+  docs: https://code.claude.com/docs/en/settings-reference#copyonselect
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-crosssessioninbound
+  group: settings
+  name: crossSessionInbound
+  syntax: crossSessionInbound
+  summary:
+    vi: Thiết lập việc Claude Code chuyển tiếp tin nhắn từ session khác, chỉ thông báo hay từ chối chúng.
+    en: Configures whether incoming messages from other sessions are received, notified, or rejected by
+      Claude Code.
+  docs: https://code.claude.com/docs/en/settings-reference#crosssessioninbound
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-defaultshell
+  group: settings
+  name: defaultShell
+  syntax: defaultShell
+  summary:
+    vi: Chọn Bash hoặc PowerShell để chạy các lệnh shell có tiền tố !.
+    en: Selects Bash or PowerShell to execute shell instructions prefixed with !.
+  docs: https://code.claude.com/docs/en/settings-reference#defaultshell
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-defaulttoagentsview
+  group: settings
+  name: defaultToAgentsView
+  syntax: defaultToAgentsView
+  summary:
+    vi: Mở agent view thay vì cuộc hội thoại mới khi khởi chạy claude không kèm đối số.
+    en: Launches the agent view rather than starting a fresh discussion when executing claude without
+      inputs.
+  docs: https://code.claude.com/docs/en/settings-reference#defaulttoagentsview
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-deniedmcpservers
+  group: settings
+  name: deniedMcpServers
+  syntax: deniedMcpServers
+  summary:
+    vi: Chặn các MCP server chỉ định theo URL, lệnh hoặc tên.
+    en: Restricts designated MCP servers based on their address, launch command, or identifier.
+  docs: https://code.claude.com/docs/en/settings-reference#deniedmcpservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-deniedmodels
+  group: settings
+  name: deniedModels
+  syntax: deniedModels
+  summary:
+    vi: Chặn các model cụ thể, kể cả những model được availableModels cho phép.
+    en: Disallows designated models regardless of whether availableModels includes them.
+  docs: https://code.claude.com/docs/en/settings-reference#deniedmodels
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-desktopsessioncleanupperioddays
+  group: settings
+  name: desktopSessionCleanupPeriodDays
+  syntax: desktopSessionCleanupPeriodDays
+  summary:
+    vi: Đặt số ngày tối đa lưu giữ transcript của Claude Desktop và Cowork.
+    en: Specifies the maximum retention timeframe in days for Cowork and Claude Desktop transcripts.
+  docs: https://code.claude.com/docs/en/settings-reference#desktopsessioncleanupperioddays
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-dialogexpiry
+  group: settings
+  name: dialogExpiry
+  syntax: dialogExpiry
+  summary:
+    vi: Đặt thời gian Claude Code chờ phản hồi từ Remote Control hoặc SDK host trước khi hủy dialog.
+    en: Configures the duration Claude Code awaits responses from an SDK host or Remote Control before
+      aborting prompts.
+  docs: https://code.claude.com/docs/en/settings-reference#dialogexpiry
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-difftool
+  group: settings
+  name: diffTool
+  syntax: diffTool
+  summary:
+    vi: Chọn hiển thị thay đổi file bằng diff viewer của VS Code, JetBrains hay giữ trong terminal.
+    en: Selects whether file modifications appear inside JetBrains, VS Code, or remain within the terminal.
+  docs: https://code.claude.com/docs/en/settings-reference#difftool
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-disableagentview
+  group: settings
+  name: disableAgentView
+  syntax: disableAgentView
+  summary:
+    vi: Tắt agent view và các agent chạy nền.
+    en: Deactivates both the agent view interface and tasks running in the background.
+  docs: https://code.claude.com/docs/en/settings-reference#disableagentview
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableallhooks
+  group: settings
+  name: disableAllHooks
+  syntax: disableAllHooks
+  summary:
+    vi: Vô hiệu hóa đồng thời các hook, status line tùy biến và gợi ý file với @.
+    en: Simultaneously turns off hooks, custom @ file suggestions, and custom status lines.
+  docs: https://code.claude.com/docs/en/settings-reference#disableallhooks
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableartifact
+  group: settings
+  name: disableArtifact
+  syntax: disableArtifact
+  summary:
+    vi: Tùy chọn đã lỗi thời; dùng enableArtifact để tắt công cụ Artifact.
+    en: Marks the obsolete setting superseded by enableArtifact for deactivating the Artifact feature.
+  docs: https://code.claude.com/docs/en/settings-reference#disableartifact
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableautomode
+  group: settings
+  name: disableAutoMode
+  syntax: disableAutoMode
+  summary:
+    vi: Loại bỏ auto mode khỏi chu kỳ chuyển đổi chế độ cấp quyền.
+    en: Excludes auto mode from selectable permission cycles.
+  docs: https://code.claude.com/docs/en/settings-reference#disableautomode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disablebrowserexternalnavigation
+  group: settings
+  name: disableBrowserExternalNavigation
+  syntax: disableBrowserExternalNavigation
+  summary:
+    vi: Giới hạn ngăn Browser trên bản desktop chỉ ở localhost cho cả người dùng và Claude.
+    en: Restricts navigation within the desktop Browser pane strictly to localhost for users and Claude.
+  docs: https://code.claude.com/docs/en/settings-reference#disablebrowserexternalnavigation
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disablebundledskills
+  group: settings
+  name: disableBundledSkills
+  syntax: disableBundledSkills
+  summary:
+    vi: Tắt các skill và workflow được đóng gói sẵn trong Claude Code.
+    en: Disables built-in skills along with workflows shipped natively with Claude Code.
+  docs: https://code.claude.com/docs/en/settings-reference#disablebundledskills
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableclaudeaiconnectors
+  group: settings
+  name: disableClaudeAiConnectors
+  syntax: disableClaudeAiConnectors
+  summary:
+    vi: Ngăn Claude Code tải các connector từ claude.ai.
+    en: Halts retrieval of claude.ai connectors by Claude Code.
+  docs: https://code.claude.com/docs/en/settings-reference#disableclaudeaiconnectors
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disablecommandpluginsources
+  group: settings
+  name: disableCommandPluginSources
+  syntax: disableCommandPluginSources
+  summary:
+    vi: Chặn các plugin được cài đặt bằng cách chạy lệnh khai báo từ marketplace.
+    en: Prevents installation of plugins executed via marketplace command declarations.
+  docs: https://code.claude.com/docs/en/settings-reference#disablecommandpluginsources
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disabledeeplinkregistration
+  group: settings
+  name: disableDeepLinkRegistration
+  syntax: disableDeepLinkRegistration
+  summary:
+    vi: Ngăn Claude Code đăng ký URL scheme claude-cli://.
+    en: Prevents Claude Code from binding the claude-cli:// URI scheme.
+  docs: https://code.claude.com/docs/en/settings-reference#disabledeeplinkregistration
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disabledesktoplocalsessions
+  group: settings
+  name: disableDesktopLocalSessions
+  syntax: disableDesktopLocalSessions
+  summary:
+    vi: Tắt session Desktop Code chạy cục bộ trên thiết bị, giữ lại kết nối SSH và đám mây.
+    en: Stops on-device Desktop Code sessions while preserving cloud and SSH connections.
+  docs: https://code.claude.com/docs/en/settings-reference#disabledesktoplocalsessions
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disabledmcpjsonservers
+  group: settings
+  name: disabledMcpjsonServers
+  syntax: disabledMcpjsonServers
+  summary:
+    vi: Từ chối các server được chỉ định trong file .mcp.json của dự án.
+    en: Disallows designated entries declared inside a project-level .mcp.json.
+  docs: https://code.claude.com/docs/en/settings-reference#disabledmcpjsonservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disablemobilesimulatortools
+  group: settings
+  name: disableMobileSimulatorTools
+  syntax: disableMobileSimulatorTools
+  summary:
+    vi: Vô hiệu hóa các công cụ của Claude trong ngăn iOS Simulator trên desktop.
+    en: Disables Claude tools residing within the desktop app iOS Simulator section.
+  docs: https://code.claude.com/docs/en/settings-reference#disablemobilesimulatortools
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disableremotecontrol
+  group: settings
+  name: disableRemoteControl
+  syntax: disableRemoteControl
+  summary:
+    vi: Tắt tính năng Remote Control ở mọi vị trí có thể khởi chạy.
+    en: Suppresses Remote Control initialization across every launch point.
+  docs: https://code.claude.com/docs/en/settings-reference#disableremotecontrol
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableremotepreviewscripts
+  group: settings
+  name: disableRemotePreviewScripts
+  syntax: disableRemotePreviewScripts
+  summary:
+    vi: Tắt script trong bản xem trước HTML ở ngăn Browser đối với session SSH và WSL trên desktop.
+    en: Prevents script execution within HTML previews in the Browser pane during WSL and SSH sessions.
+  docs: https://code.claude.com/docs/en/settings-reference#disableremotepreviewscripts
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disablesideloadflags
+  group: settings
+  name: disableSideloadFlags
+  syntax: disableSideloadFlags
+  summary:
+    vi: Chặn các flag dòng lệnh dùng để tải ngoài plugin, subagent và MCP server.
+    en: Disallows command-line arguments that inject external plugins, MCP servers, or subagents.
+  docs: https://code.claude.com/docs/en/settings-reference#disablesideloadflags
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-disableskillshellexecution
+  group: settings
+  name: disableSkillShellExecution
+  syntax: disableSkillShellExecution
+  summary:
+    vi: Ngăn các skill và lệnh tùy biến thực thi mã shell trực tiếp.
+    en: Blocks inline shell invocations initiated by custom commands and skills.
+  docs: https://code.claude.com/docs/en/settings-reference#disableskillshellexecution
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-disableworkflows
+  group: settings
+  name: disableWorkflows
+  syntax: disableWorkflows
+  summary:
+    vi: Tắt workflow động cho mọi người; dùng enableWorkflows để tự bật cho bản thân.
+    en: Deactivates dynamic workflows globally while individual users can turn them on via enableWorkflows.
+  docs: https://code.claude.com/docs/en/settings-reference#disableworkflows
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-editormode
+  group: settings
+  name: editorMode
+  syntax: editorMode
+  summary:
+    vi: Bật phím tắt vim ngay trong prompt nhập liệu.
+    en: Enables vim navigation keys within the interactive input field.
+  docs: https://code.claude.com/docs/en/settings-reference#editormode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-effortlevel
+  group: settings
+  name: effortLevel
+  syntax: effortLevel
+  summary:
+    vi: Thiết lập mức độ nỗ lực mặc định cho các model chưa có cấu hình riêng.
+    en: Configures a baseline effort level for models lacking their own stored setting.
+  docs: https://code.claude.com/docs/en/settings-reference#effortlevel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-emojicompletionenabled
+  group: settings
+  name: emojiCompletionEnabled
+  syntax: emojiCompletionEnabled
+  summary:
+    vi: 'Tắt tính năng tự động hoàn tất và thay thế emoji dạng :shortcode: trong prompt.'
+    en: 'Disables :shortcode: emoji auto-completions and replacements within prompt text.'
+  docs: https://code.claude.com/docs/en/settings-reference#emojicompletionenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enableallprojectmcpservers
+  group: settings
+  name: enableAllProjectMcpServers
+  syntax: enableAllProjectMcpServers
+  summary:
+    vi: Tự động phê duyệt mọi server trong tệp .mcp.json của dự án mà không cần hỏi lại.
+    en: Automatically accepts each server defined in project .mcp.json files without asking.
+  docs: https://code.claude.com/docs/en/settings-reference#enableallprojectmcpservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enableartifact
+  group: settings
+  name: enableArtifact
+  syntax: enableArtifact
+  summary:
+    vi: Vô hiệu hóa công cụ Artifact vĩnh viễn nếu có bất kỳ tệp cấu hình nào đặt là false.
+    en: Deactivates the Artifact tool permanently if any configuration file sets it to false.
+  docs: https://code.claude.com/docs/en/settings-reference#enableartifact
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enabledmcpjsonservers
+  group: settings
+  name: enabledMcpjsonServers
+  syntax: enabledMcpjsonServers
+  summary:
+    vi: Cấp quyền hoạt động cho các server chỉ định trong tệp .mcp.json của dự án.
+    en: Grants authorization to selected servers listed in the project .mcp.json file.
+  docs: https://code.claude.com/docs/en/settings-reference#enabledmcpjsonservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enabledplugins
+  group: settings
+  name: enabledPlugins
+  syntax: enabledPlugins
+  summary:
+    vi: Bật hoặc tắt từng plugin theo từng phạm vi cấu hình cụ thể.
+    en: Toggles specific plugins at different configuration scopes.
+  docs: https://code.claude.com/docs/en/settings-reference#enabledplugins
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enableworkflows
+  group: settings
+  name: enableWorkflows
+  syntax: enableWorkflows
+  summary:
+    vi: Bật hoặc tắt dynamic workflow thay cho thiết lập mặc định của gói tài khoản.
+    en: Overrides your plan default to activate or deactivate dynamic workflows.
+  docs: https://code.claude.com/docs/en/settings-reference#enableworkflows
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-enforceavailablemodels
+  group: settings
+  name: enforceAvailableModels
+  syntax: enforceAvailableModels
+  summary:
+    vi: Giới hạn tùy chọn Default trong /model vào danh sách cho phép của availableModels.
+    en: Restricts the /model Default selection to models allowed in availableModels.
+  docs: https://code.claude.com/docs/en/settings-reference#enforceavailablemodels
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-env
+  group: settings
+  name: env
+  syntax: env
+  summary:
+    vi: Thiết lập các biến môi trường áp dụng cho mỗi session cùng tiến trình con.
+    en: Defines environment variables applied to each session and all of its child processes.
+  docs: https://code.claude.com/docs/en/settings-reference#env
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-externaleditorcontext
+  group: settings
+  name: externalEditorContext
+  syntax: externalEditorContext
+  summary:
+    vi: Chèn phản hồi gần nhất của Claude dưới dạng comment khi nhấn Ctrl+G để chỉnh sửa.
+    en: Inserts the latest response from Claude as commented text upon pressing Ctrl+G.
+  docs: https://code.claude.com/docs/en/settings-reference#externaleditorcontext
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-extraknownmarketplaces
+  group: settings
+  name: extraKnownMarketplaces
+  syntax: extraKnownMarketplaces
+  summary:
+    vi: Đăng ký thêm các marketplace cho một repo hoặc một tổ chức.
+    en: Registers custom marketplaces scoped to an organization or a repo.
+  docs: https://code.claude.com/docs/en/settings-reference#extraknownmarketplaces
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-fallbackmodel
+  group: settings
+  name: fallbackModel
+  syntax: fallbackModel
+  summary:
+    vi: Chỉ định các model dự phòng để thay thế khi model chính bị quá tải.
+    en: Specifies alternate models to take over whenever the primary model is overloaded.
+  docs: https://code.claude.com/docs/en/settings-reference#fallbackmodel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-fastmode
+  group: settings
+  name: fastMode
+  syntax: fastMode
+  summary:
+    vi: Bật fast mode cho các session có hỗ trợ tính năng này.
+    en: Enables fast mode across sessions that support it.
+  docs: https://code.claude.com/docs/en/settings-reference#fastmode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-fastmodepersessionoptin
+  group: settings
+  name: fastModePerSessionOptIn
+  syntax: fastModePerSessionOptIn
+  summary:
+    vi: Yêu cầu người dùng tự bật fast mode cho từng session riêng biệt.
+    en: Forces users to manually activate fast mode for every new session.
+  docs: https://code.claude.com/docs/en/settings-reference#fastmodepersessionoptin
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-feedbackdrafts
+  group: settings
+  name: feedbackDrafts
+  syntax: feedbackDrafts
+  summary:
+    vi: Kiểm soát việc Claude có xếp hàng các bản nháp phản hồi để bạn xem lại không.
+    en: Determines if Claude stages draft feedback for user inspection.
+  docs: https://code.claude.com/docs/en/settings-reference#feedbackdrafts
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-feedbacksurveyrate
+  group: settings
+  name: feedbackSurveyRate
+  syntax: feedbackSurveyRate
+  summary:
+    vi: Thay đổi tần suất hiển thị khảo sát đánh giá chất lượng session.
+    en: Adjusts the frequency of prompts asking for session quality evaluations.
+  docs: https://code.claude.com/docs/en/settings-reference#feedbacksurveyrate
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-filecheckpointingenabled
+  group: settings
+  name: fileCheckpointingEnabled
+  syntax: fileCheckpointingEnabled
+  summary:
+    vi: Bật hoặc tắt tính năng lưu bản chụp tệp phục vụ cho lệnh /rewind.
+    en: Controls whether file snapshots used by /rewind are captured.
+  docs: https://code.claude.com/docs/en/settings-reference#filecheckpointingenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-filesuggestion
+  group: settings
+  name: fileSuggestion
+  syntax: fileSuggestion
+  summary:
+    vi: Dùng lệnh tùy chỉnh để cung cấp gợi ý tự động hoàn thành tệp cho ký tự @.
+    en: Uses a custom command to populate file autocompletion for the @ symbol.
+  docs: https://code.claude.com/docs/en/settings-reference#filesuggestion
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-footerlinksregexes
+  group: settings
+  name: footerLinksRegexes
+  syntax: footerLinksRegexes
+  summary:
+    vi: Biến định danh issue hoặc review ở output thành liên kết bấm được dưới ô nhập.
+    en: Converts review or issue identifiers in output into clickable footer links.
+  docs: https://code.claude.com/docs/en/settings-reference#footerlinksregexes
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-forcelogingatewayurl
+  group: settings
+  name: forceLoginGatewayUrl
+  syntax: forceLoginGatewayUrl
+  summary:
+    vi: Thiết lập địa chỉ URL của gateway dùng khi kết nối ở màn hình đăng nhập.
+    en: Specifies the target gateway address used during the login flow.
+  docs: https://code.claude.com/docs/en/settings-reference#forcelogingatewayurl
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-forceloginmethod
+  group: settings
+  name: forceLoginMethod
+  syntax: forceLoginMethod
+  summary:
+    vi: 'Chỉ cho phép đăng nhập theo một cách: tài khoản claude.ai, Claude Console hoặc qua cloud gateway.'
+    en: 'Limits sign-in to a single method: a claude.ai account, the Claude Console, or a cloud gateway.'
+  docs: https://code.claude.com/docs/en/settings-reference#forceloginmethod
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-forceloginorguuid
+  group: settings
+  name: forceLoginOrgUUID
+  syntax: forceLoginOrgUUID
+  summary:
+    vi: Cố định đăng nhập claude.ai theo tổ chức và chỉ có hiệu lực qua managed settings.
+    en: Binds claude.ai sign-ins to an organization identifier via managed settings.
+  docs: https://code.claude.com/docs/en/settings-reference#forceloginorguuid
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-forceremotesettingsrefresh
+  group: settings
+  name: forceRemoteSettingsRefresh
+  syntax: forceRemoteSettingsRefresh
+  summary:
+    vi: Tạm dừng khởi động cho đến khi tải xong cấu hình mới quản lý từ máy chủ.
+    en: Halts the startup process until updated managed settings are downloaded.
+  docs: https://code.claude.com/docs/en/settings-reference#forceremotesettingsrefresh
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-gatewayinternalnetworks
+  group: settings
+  name: gatewayInternalNetworks
+  syntax: gatewayInternalNetworks
+  summary:
+    vi: Cho phép lệnh /login truy cập cloud gateway trên dải IPv4 công cộng dùng nội bộ.
+    en: Permits /login to access cloud gateways hosted on internal public IPv4 ranges.
+  docs: https://code.claude.com/docs/en/settings-reference#gatewayinternalnetworks
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-gcpauthrefresh
+  group: settings
+  name: gcpAuthRefresh
+  syntax: gcpAuthRefresh
+  summary:
+    vi: Thực thi lệnh riêng của bạn để làm mới chứng thực Google Cloud.
+    en: Executes a tailored command to renew Google Cloud authentication tokens.
+  docs: https://code.claude.com/docs/en/settings-reference#gcpauthrefresh
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-hooks
+  group: settings
+  name: hooks
+  syntax: hooks
+  summary:
+    vi: Chạy các lệnh tùy chỉnh vào những thời điểm trong vòng đời Claude Code.
+    en: Executes custom commands at specific stages of the Claude Code lifecycle.
+  docs: https://code.claude.com/docs/en/settings-reference#hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-httphookallowedenvvars
+  group: settings
+  name: httpHookAllowedEnvVars
+  syntax: httpHookAllowedEnvVars
+  summary:
+    vi: Giới hạn các biến môi trường mà HTTP hook có thể đưa vào header.
+    en: Restricts the environment variables that HTTP hooks may insert into headers.
+  docs: https://code.claude.com/docs/en/settings-reference#httphookallowedenvvars
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-idlecompaction
+  group: settings
+  name: idleCompaction
+  syntax: idleCompaction
+  summary:
+    vi: Ngăn Claude Code tự động nén đoạn hội thoại dài khi bạn rời đi.
+    en: Prevents Claude Code from automatically compacting an inactive chat session.
+  docs: https://code.claude.com/docs/en/settings-reference#idlecompaction
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-includecoauthoredby
+  group: settings
+  name: includeCoAuthoredBy
+  syntax: includeCoAuthoredBy
+  summary:
+    vi: Đã lỗi thời và thay bằng attribution để ẩn hoặc sửa ghi nhận commit và PR.
+    en: Controls commit and PR attribution, but is deprecated in favor of attribution.
+  docs: https://code.claude.com/docs/en/settings-reference#includecoauthoredby
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-includegitinstructions
+  group: settings
+  name: includeGitInstructions
+  syntax: includeGitInstructions
+  summary:
+    vi: Loại bỏ các hướng dẫn commit và PR mặc định khỏi context của Claude.
+    en: Omits default instructions for commits and PRs from the context.
+  docs: https://code.claude.com/docs/en/settings-reference#includegitinstructions
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-inputneedednotifenabled
+  group: settings
+  name: inputNeededNotifEnabled
+  syntax: inputNeededNotifEnabled
+  summary:
+    vi: Gửi push notification khi Claude đang chờ bạn phản hồi.
+    en: Sends a push alert whenever Claude needs your response to continue.
+  docs: https://code.claude.com/docs/en/settings-reference#inputneedednotifenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-isolatepeermachines
+  group: settings
+  name: isolatePeerMachines
+  syntax: isolatePeerMachines
+  summary:
+    vi: Hỏi ý kiến bạn trước khi Claude nhắn tin tới session trên máy khác.
+    en: Prompts for confirmation before Claude communicates with sessions on other devices.
+  docs: https://code.claude.com/docs/en/settings-reference#isolatepeermachines
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-keybindingflavor
+  group: settings
+  name: keybindingFlavor
+  syntax: keybindingFlavor
+  summary:
+    vi: Đã lỗi thời và vô hiệu do phím tắt sửa từ luôn theo chuẩn readline.
+    en: Has no effect because text navigation shortcuts permanently use readline style.
+  docs: https://code.claude.com/docs/en/settings-reference#keybindingflavor
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-language
+  group: settings
+  name: language
+  syntax: language
+  summary:
+    vi: Yêu cầu Claude phản hồi bằng một ngôn ngữ khác ngoài tiếng Anh.
+    en: Instructs Claude to write replies using a language besides English.
+  docs: https://code.claude.com/docs/en/settings-reference#language
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-leftarrowopensagents
+  group: settings
+  name: leftArrowOpensAgents
+  syntax: leftArrowOpensAgents
+  summary:
+    vi: Tắt phím tắt ← chuyển session xuống nền và mở giao diện agent.
+    en: Disables using the left arrow key to open agent view and background the session.
+  docs: https://code.claude.com/docs/en/settings-reference#leftarrowopensagents
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-managedmcpservers
+  group: settings
+  name: managedMcpServers
+  syntax: managedMcpServers
+  summary:
+    vi: Cung cấp MCP server từ xa cho mọi người dùng cùng với server riêng của họ.
+    en: Supplies remote MCP servers to all users in addition to their own servers.
+  docs: https://code.claude.com/docs/en/settings-reference#managedmcpservers
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-managedsourcesbehavior
+  group: settings
+  name: managedSourcesBehavior
+  syntax: managedSourcesBehavior
+  summary:
+    vi: Kết hợp mọi managed source được triển khai thay vì chỉ dùng nguồn ưu tiên nhất.
+    en: Combines all deployed managed sources instead of picking only the top one.
+  docs: https://code.claude.com/docs/en/settings-reference#managedsourcesbehavior
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-maxeffortlevel
+  group: settings
+  name: maxEffortLevel
+  syntax: maxEffortLevel
+  summary:
+    vi: Giới hạn mức effort tối đa cho từng model hoặc mọi model trên mọi provider.
+    en: Sets an upper bound for effort level globally or per model across all providers.
+  docs: https://code.claude.com/docs/en/settings-reference#maxeffortlevel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-maxprosewidth
+  group: settings
+  name: maxProseWidth
+  syntax: maxProseWidth
+  summary:
+    vi: Giới hạn độ rộng văn bản phản hồi của Claude khi dùng terminal lớn.
+    en: Restricts the text line width of Claude's output on wider terminal screens.
+  docs: https://code.claude.com/docs/en/settings-reference#maxprosewidth
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-minimumversion
+  group: settings
+  name: minimumVersion
+  syntax: minimumVersion
+  summary:
+    vi: Chặn tự động cập nhật cài đặt bất kỳ phiên bản nào thấp hơn mức chỉ định.
+    en: Prevents the updater from installing any release older than specified.
+  docs: https://code.claude.com/docs/en/settings-reference#minimumversion
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-model
+  group: settings
+  name: model
+  syntax: model
+  summary:
+    vi: Chọn model mà Claude Code sẽ dùng khi bắt đầu khởi chạy.
+    en: Specifies the initial model Claude Code uses upon launch.
+  docs: https://code.claude.com/docs/en/settings-reference#model
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-modeloverrides
+  group: settings
+  name: modelOverrides
+  syntax: modelOverrides
+  summary:
+    vi: Ánh xạ model ID sang ID của provider bạn dùng, chẳng hạn Bedrock ARN.
+    en: Translates standard model IDs into custom provider IDs like Bedrock ARNs.
+  docs: https://code.claude.com/docs/en/settings-reference#modeloverrides
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-modelpicker
+  group: settings
+  name: modelPicker
+  syntax: modelPicker
+  summary:
+    vi: Tùy chọn danh sách, thứ tự và nhãn hiển thị cho các model trong /model.
+    en: Customizes the model choices, order, and labels shown in the /model menu.
+  docs: https://code.claude.com/docs/en/settings-reference#modelpicker
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-modelpricing
+  group: settings
+  name: modelPricing
+  syntax: modelPricing
+  summary:
+    vi: Báo cáo chi phí theo mức giá hợp đồng của tổ chức thay vì giá niêm yết.
+    en: Calculates usage expenses using negotiated organization rates instead of standard prices.
+  docs: https://code.claude.com/docs/en/settings-reference#modelpricing
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-modelsettings
+  group: settings
+  name: modelSettings
+  syntax: modelSettings
+  summary:
+    vi: Lưu mức effort, cửa sổ auto-compact riêng hoặc giới hạn effort theo model.
+    en: Configures effort limits, effort values, or auto-compaction rules per model.
+  docs: https://code.claude.com/docs/en/settings-reference#modelsettings
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-otelheadershelper
+  group: settings
+  name: otelHeadersHelper
+  syntax: otelHeadersHelper
+  summary:
+    vi: Chạy lệnh tùy biến để tự động làm mới các OpenTelemetry header.
+    en: Executes a custom command to produce dynamic OpenTelemetry headers.
+  docs: https://code.claude.com/docs/en/settings-reference#otelheadershelper
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-outputstyle
+  group: settings
+  name: outputStyle
+  syntax: outputStyle
+  summary:
+    vi: Điều chỉnh vai trò, giọng văn và định dạng phản hồi của Claude.
+    en: Adjusts Claude's persona, tone, and formatting through an output style.
+  docs: https://code.claude.com/docs/en/settings-reference#outputstyle
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-parentsettingsbehavior
+  group: settings
+  name: parentSettingsBehavior
+  syntax: parentSettingsBehavior
+  summary:
+    vi: Áp dụng hoặc bỏ qua các ràng buộc từ IDE hoặc SDK khi dùng managed settings.
+    en: Controls whether constraints from host IDEs or SDKs apply to managed settings.
+  docs: https://code.claude.com/docs/en/settings-reference#parentsettingsbehavior
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-permissionexplainerenabled
+  group: settings
+  name: permissionExplainerEnabled
+  syntax: permissionExplainerEnabled
+  summary:
+    vi: Đã bị xóa ở v2.1.257 cùng với phím tắt Ctrl+E giải thích lệnh shell.
+    en: Was removed in v2.1.257 alongside the Ctrl+E shell prompt explanation shortcut.
+  docs: https://code.claude.com/docs/en/settings-reference#permissionexplainerenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-permissions
+  group: settings
+  name: permissions
+  syntax: permissions
+  summary:
+    vi: Thiết lập quy tắc allow, ask, deny và chế độ permission mặc định.
+    en: Defines allow, ask, and deny policies along with the default access mode.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-additionaldirectories
+  group: settings
+  name: permissions.additionalDirectories
+  syntax: permissions.additionalDirectories
+  summary:
+    vi: Cấp quyền cho Claude truy cập tệp ở các thư mục nằm ngoài thư mục hiện tại.
+    en: Grants Claude access to files located in extra folders beyond the active workspace.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.additionaldirectories
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-allow
+  group: settings
+  name: permissions.allow
+  syntax: permissions.allow
+  summary:
+    vi: Cho phép chạy các công cụ được chỉ định mà không cần hiển thị prompt xác nhận.
+    en: Permits specified tools to run automatically without requesting user confirmation.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.allow
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-ask
+  group: settings
+  name: permissions.ask
+  syntax: permissions.ask
+  summary:
+    vi: Hiển thị prompt xác nhận trước khi thực thi các công cụ được liệt kê.
+    en: Requests user confirmation whenever the specified tools are invoked.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.ask
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-blockreadsoutsideworkingdirectories
+  group: settings
+  name: permissions.blockReadsOutsideWorkingDirectories
+  syntax: permissions.blockReadsOutsideWorkingDirectories
+  summary:
+    vi: Chặn các công cụ tệp đọc dữ liệu ngoài thư mục làm việc trong mọi chế độ phân quyền.
+    en: Prevents file tools from reading content beyond the working directories across all modes.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.blockreadsoutsideworkingdirectories
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-blockwritesoutsideworkingdirectories
+  group: settings
+  name: permissions.blockWritesOutsideWorkingDirectories
+  syntax: permissions.blockWritesOutsideWorkingDirectories
+  summary:
+    vi: Ngăn Write, Edit và NotebookEdit sửa đổi tệp ngoài thư mục làm việc ở mọi chế độ, trừ một số tệp
+      của Claude Code.
+    en: Forbids Write, Edit, and NotebookEdit tools from modifying paths outside work directories, except
+      certain internal files.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.blockwritesoutsideworkingdirectories
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-defaultmode
+  group: settings
+  name: permissions.defaultMode
+  syntax: permissions.defaultMode
+  summary:
+    vi: Đặt chế độ phân quyền mặc định áp dụng cho các session mới.
+    en: Configures the initial permission mode applied when starting a new session.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.defaultmode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-deny
+  group: settings
+  name: permissions.deny
+  syntax: permissions.deny
+  summary:
+    vi: Chặn việc sử dụng các công cụ được liệt kê, bao gồm thao tác đọc các tệp chứa secret.
+    en: Prohibits the execution of designated tools, such as reading files containing secrets.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.deny
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-permissions-denyinsteadofprompting
+  group: settings
+  name: permissions.denyInsteadOfPrompting
+  syntax: permissions.denyInsteadOfPrompting
+  summary:
+    vi: Từ chối các lệnh gọi công cụ cần chờ prompt xác nhận để duy trì session tự động.
+    en: Rejects tool invocations that require prompts to maintain unattended session progress.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.denyinsteadofprompting
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-permissions-disablebypasspermissionsmode
+  group: settings
+  name: permissions.disableBypassPermissionsMode
+  syntax: permissions.disableBypassPermissionsMode
+  summary:
+    vi: Ngăn chặn người dùng chuyển sang chế độ bypassPermissions.
+    en: Restricts users from enabling the bypassPermissions mode.
+  docs: https://code.claude.com/docs/en/settings-reference#permissions.disablebypasspermissionsmode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-plansdirectory
+  group: settings
+  name: plansDirectory
+  syntax: plansDirectory
+  summary:
+    vi: Chọn thư mục lưu trữ các tệp kế hoạch do chế độ plan mode tạo ra.
+    en: Designates the directory where plan mode stores generated plan files.
+  docs: https://code.claude.com/docs/en/settings-reference#plansdirectory
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-pluginconfigs
+  group: settings
+  name: pluginConfigs
+  syntax: pluginConfigs
+  summary:
+    vi: Lưu trữ các câu trả lời đã nhập trong hộp thoại cấu hình plugin.
+    en: Saves user inputs provided during a plugin configuration dialog.
+  docs: https://code.claude.com/docs/en/settings-reference#pluginconfigs
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-pluginsuggestionmarketplaces
+  group: settings
+  name: pluginSuggestionMarketplaces
+  syntax: pluginSuggestionMarketplaces
+  summary:
+    vi: Chọn các marketplace được phép gợi ý cài đặt plugin trong /plugin.
+    en: Specifies which marketplaces can display plugin installation suggestions inside /plugin.
+  docs: https://code.claude.com/docs/en/settings-reference#pluginsuggestionmarketplaces
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-plugintrustmessage
+  group: settings
+  name: pluginTrustMessage
+  syntax: pluginTrustMessage
+  summary:
+    vi: Bổ sung nội dung tùy chỉnh vào thông báo cảnh báo độ tin cậy của plugin.
+    en: Appends custom wording to the security warning displayed for plugin trust.
+  docs: https://code.claude.com/docs/en/settings-reference#plugintrustmessage
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-policyhelper
+  group: settings
+  name: policyHelper
+  syntax: policyHelper
+  summary:
+    vi: Chạy một tệp thực thi khi khởi động để tính toán các cài đặt quản trị.
+    en: Executes a binary upon startup to calculate managed settings.
+  docs: https://code.claude.com/docs/en/settings-reference#policyhelper
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-policyhelper-path
+  group: settings
+  name: policyHelper.path
+  syntax: policyHelper.path
+  summary:
+    vi: Chỉ định đường dẫn tệp thực thi hỗ trợ mà Claude Code sẽ gọi.
+    en: Specifies the path to the executable helper invoked by Claude Code.
+  docs: https://code.claude.com/docs/en/settings-reference#policyhelper.path
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-policyhelper-refreshintervalms
+  group: settings
+  name: policyHelper.refreshIntervalMs
+  syntax: policyHelper.refreshIntervalMs
+  summary:
+    vi: Chạy lại công cụ hỗ trợ theo chu kỳ định kỳ dưới nền.
+    en: Periodically executes the helper program in the background at a defined interval.
+  docs: https://code.claude.com/docs/en/settings-reference#policyhelper.refreshintervalms
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-policyhelper-timeoutms
+  group: settings
+  name: policyHelper.timeoutMs
+  syntax: policyHelper.timeoutMs
+  summary:
+    vi: Xác định khoảng thời gian Claude Code chờ đợi phản hồi từ helper.
+    en: Specifies the maximum time Claude Code will wait for helper responses.
+  docs: https://code.claude.com/docs/en/settings-reference#policyhelper.timeoutms
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-preferrednotifchannel
+  group: settings
+  name: preferredNotifChannel
+  syntax: preferredNotifChannel
+  summary:
+    vi: Chọn chuông terminal hoặc thông báo desktop để báo hiệu khi hoàn thành tác vụ.
+    en: Selects either a desktop notification or a terminal bell to signal completed tasks.
+  docs: https://code.claude.com/docs/en/settings-reference#preferrednotifchannel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-prefersreducedmotion
+  group: settings
+  name: prefersReducedMotion
+  syntax: prefersReducedMotion
+  summary:
+    vi: Giảm bớt hoặc tắt hẳn hiệu ứng động như spinner, chữ lấp lánh và nhấp nháy.
+    en: Limits or disables visual animations such as spinners, flashes, and shimmers.
+  docs: https://code.claude.com/docs/en/settings-reference#prefersreducedmotion
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-prependplugins
+  group: settings
+  name: prependPlugins
+  syntax: prependPlugins
+  summary:
+    vi: Chạy các bản chỉnh sửa của tổ chức trước mọi plugin do người dùng cài đặt.
+    en: Executes organizational modifications ahead of any plugins installed by users.
+  docs: https://code.claude.com/docs/en/settings-reference#prependplugins
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-processwrapper
+  group: settings
+  name: processWrapper
+  syntax: processWrapper
+  summary:
+    vi: Khởi chạy các tiến trình nền của Claude Code qua trình bao doanh nghiệp trên macOS và Linux.
+    en: Launches background processes of Claude Code via an enterprise wrapper on Linux and macOS.
+  docs: https://code.claude.com/docs/en/settings-reference#processwrapper
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-promptcachettl
+  group: settings
+  name: promptCacheTtl
+  syntax: promptCacheTtl
+  summary:
+    vi: Thiết lập thời gian tồn tại của bộ nhớ đệm prompt cho cuộc trò chuyện chính.
+    en: Configures how long prompt cache entries persist for the primary conversation.
+  docs: https://code.claude.com/docs/en/settings-reference#promptcachettl
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-promptsuggestionenabled
+  group: settings
+  name: promptSuggestionEnabled
+  syntax: promptSuggestionEnabled
+  summary:
+    vi: Ẩn các gợi ý prompt làm mờ hiển thị bên trong ô nhập liệu.
+    en: Toggles visibility of grayed-out prompt recommendations shown in the input area.
+  docs: https://code.claude.com/docs/en/settings-reference#promptsuggestionenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-prstatusfooterenabled
+  group: settings
+  name: prStatusFooterEnabled
+  syntax: prStatusFooterEnabled
+  summary:
+    vi: Tắt huy hiệu trạng thái review PR ở chân trang prompt cùng tiến trình kiểm tra pull request liên
+      quan.
+    en: Disables the PR review status badge in the prompt footer and its underlying pull request check.
+  docs: https://code.claude.com/docs/en/settings-reference#prstatusfooterenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-prurltemplate
+  group: settings
+  name: prUrlTemplate
+  syntax: prUrlTemplate
+  summary:
+    vi: Điều hướng liên kết PR đến công cụ review mã nguồn nội bộ thay vì github.com.
+    en: Redirects pull request links to an in-house code review platform rather than github.com.
+  docs: https://code.claude.com/docs/en/settings-reference#prurltemplate
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-remote-defaultenvironmentid
+  group: settings
+  name: remote.defaultEnvironmentId
+  syntax: remote.defaultEnvironmentId
+  summary:
+    vi: Chọn ID môi trường cloud mặc định khi chạy lệnh claude --cloud.
+    en: Selects the default cloud environment ID used when running claude --cloud.
+  docs: https://code.claude.com/docs/en/settings-reference#remote.defaultenvironmentid
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-remotecontrolatstartup
+  group: settings
+  name: remoteControlAtStartup
+  syntax: remoteControlAtStartup
+  summary:
+    vi: Tự động kết nối Remote Control mỗi khi session khởi động.
+    en: Establishes a Remote Control connection automatically at session launch.
+  docs: https://code.claude.com/docs/en/settings-reference#remotecontrolatstartup
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-requiredmaximumversion
+  group: settings
+  name: requiredMaximumVersion
+  syntax: requiredMaximumVersion
+  summary:
+    vi: Chặn khởi động nếu phiên bản hiện tại cao hơn mức tổ chức cho phép.
+    en: Prevents startup if the installed version exceeds the organization limit.
+  docs: https://code.claude.com/docs/en/settings-reference#requiredmaximumversion
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-requiredminimumversion
+  group: settings
+  name: requiredMinimumVersion
+  syntax: requiredMinimumVersion
+  summary:
+    vi: Chặn khởi động nếu phiên bản hiện tại thấp hơn yêu cầu của tổ chức.
+    en: Prevents startup if the installed version is below organization requirements.
+  docs: https://code.claude.com/docs/en/settings-reference#requiredminimumversion
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-respectgitignore
+  group: settings
+  name: respectGitignore
+  syntax: respectGitignore
+  summary:
+    vi: Ẩn các tệp nằm trong .gitignore khỏi bộ chọn tệp @.
+    en: Excludes items listed in .gitignore from appearing in the @ file selector.
+  docs: https://code.claude.com/docs/en/settings-reference#respectgitignore
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-respondtobashcommands
+  group: settings
+  name: respondToBashCommands
+  syntax: respondToBashCommands
+  summary:
+    vi: Kiểm soát việc Claude có phản hồi sau khi chạy lệnh shell ! hay không.
+    en: Controls whether Claude replies after executing a ! shell command.
+  docs: https://code.claude.com/docs/en/settings-reference#respondtobashcommands
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox
+  group: settings
+  name: sandbox
+  syntax: sandbox
+  summary:
+    vi: Cô lập lệnh Bash khỏi hệ thống tệp và mạng trên macOS, Linux và WSL2.
+    en: Separates Bash executions from network and disk resources on supported OSes.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-allowappleevents
+  group: settings
+  name: sandbox.allowAppleEvents
+  syntax: sandbox.allowAppleEvents
+  summary:
+    vi: Cho phép các lệnh trong sandbox gửi Apple Events trên macOS.
+    en: Permits sandboxed processes to dispatch Apple Events on macOS.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.allowappleevents
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-allownestedusernamespaces
+  group: settings
+  name: sandbox.allowNestedUserNamespaces
+  syntax: sandbox.allowNestedUserNamespaces
+  summary:
+    vi: Cho phép lệnh trong sandbox tạo user namespace trên Linux và WSL2.
+    en: Enables creation of user namespaces inside sandboxes on Linux and WSL2.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.allownestedusernamespaces
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-allowunsandboxedcommands
+  group: settings
+  name: sandbox.allowUnsandboxedCommands
+  syntax: sandbox.allowUnsandboxedCommands
+  summary:
+    vi: Thiết lập quyền cho Claude thử lại lệnh bị chặn bên ngoài sandbox.
+    en: Configures whether Claude may execute blocked commands without sandboxing.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.allowunsandboxedcommands
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-autoallowbashifsandboxed
+  group: settings
+  name: sandbox.autoAllowBashIfSandboxed
+  syntax: sandbox.autoAllowBashIfSandboxed
+  summary:
+    vi: Chạy các lệnh trong sandbox mà không cần hiển thị prompt xin phép.
+    en: Executes sandboxed commands immediately without asking for confirmation.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.autoallowbashifsandboxed
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-bwrappath
+  group: settings
+  name: sandbox.bwrapPath
+  syntax: sandbox.bwrapPath
+  summary:
+    vi: Chỉ định đường dẫn đến tệp thực thi bubblewrap nằm ngoài PATH.
+    en: Specifies a custom location for the bubblewrap executable.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.bwrappath
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-sandbox-credentials
+  group: settings
+  name: sandbox.credentials
+  syntax: sandbox.credentials
+  summary:
+    vi: Ẩn hoặc che giấu các tệp và biến thông tin xác thực trong sandbox.
+    en: Conceals or obfuscates secret variables and files within the sandbox.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-credentials-allowplaintextinject
+  group: settings
+  name: sandbox.credentials.allowPlaintextInject
+  syntax: sandbox.credentials.allowPlaintextInject
+  summary:
+    vi: Cho phép gửi thông tin xác thực đã che tới dịch vụ HTTP trên mạng tin cậy.
+    en: Authorizes sending masked secrets to unencrypted HTTP targets on test nets.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.allowplaintextinject
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-credentials-awspairs
+  group: settings
+  name: sandbox.credentials.awsPairs
+  syntax: sandbox.credentials.awsPairs
+  summary:
+    vi: Liên kết các biến khóa AWS tùy chỉnh thành một cặp để ký lại yêu cầu.
+    en: Associates custom AWS key variables into a unified pair for signing.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.awspairs
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-credentials-envvars
+  group: settings
+  name: sandbox.credentials.envVars
+  syntax: sandbox.credentials.envVars
+  summary:
+    vi: Xóa hoặc che các biến môi trường cụ thể bên trong sandbox.
+    en: Removes or masks selected environment variables in the sandboxed runtime.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.envvars
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-credentials-files
+  group: settings
+  name: sandbox.credentials.files
+  syntax: sandbox.credentials.files
+  summary:
+    vi: Chặn hoặc che quyền đọc các tệp thông tin xác thực trong sandbox.
+    en: Restricts or disguises access to credential files from within the sandbox.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.files
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-credentials-sigv4
+  group: settings
+  name: sandbox.credentials.sigv4
+  syntax: sandbox.credentials.sigv4
+  summary:
+    vi: Quy định cho qua hoặc chặn các yêu cầu AWS dạng streaming, presigned, SigV4A.
+    en: Governs handling for streaming, presigned, or SigV4A AWS network calls.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.sigv4
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-enabled
+  group: settings
+  name: sandbox.enabled
+  syntax: sandbox.enabled
+  summary:
+    vi: Bật tính năng sandbox cho lệnh Bash trên macOS, Linux và WSL2.
+    en: Activates Bash command isolation on macOS, Linux, and WSL2 environments.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.enabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-enableweakernestedsandbox
+  group: settings
+  name: sandbox.enableWeakerNestedSandbox
+  syntax: sandbox.enableWeakerNestedSandbox
+  summary:
+    vi: Cho phép khởi chạy Linux sandbox bên trong unprivileged container.
+    en: Allows running the Linux sandbox mechanism inside unprivileged containers.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.enableweakernestedsandbox
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-enableweakernetworkisolation
+  group: settings
+  name: sandbox.enableWeakerNetworkIsolation
+  syntax: sandbox.enableWeakerNetworkIsolation
+  summary:
+    vi: Cho phép gh, gcloud và terraform xác thực TLS qua proxy trên macOS.
+    en: Permits tools like gh and terraform to validate TLS through macOS proxies.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.enableweakernetworkisolation
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-excludedcommands
+  group: settings
+  name: sandbox.excludedCommands
+  syntax: sandbox.excludedCommands
+  summary:
+    vi: Liệt kê các lệnh mà Claude Code được phép thực thi ngoài sandbox.
+    en: Lists specific commands that Claude Code is permitted to run unsandboxed.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.excludedcommands
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-failifunavailable
+  group: settings
+  name: sandbox.failIfUnavailable
+  syntax: sandbox.failIfUnavailable
+  summary:
+    vi: Dừng khởi động nếu không thể bật sandbox thay vì chạy không bảo vệ.
+    en: Halts launch instead of running unisolated when sandboxing cannot start.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.failifunavailable
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem
+  group: settings
+  name: sandbox.filesystem
+  syntax: sandbox.filesystem
+  summary:
+    vi: Quản lý quyền đọc và ghi đường dẫn tệp cho các lệnh trong sandbox.
+    en: Manages read and write filesystem permissions granted to sandboxed tasks.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem-allowmanagedreadpathsonly
+  group: settings
+  name: sandbox.filesystem.allowManagedReadPathsOnly
+  syntax: sandbox.filesystem.allowManagedReadPathsOnly
+  summary:
+    vi: Ngăn nhà phát triển mở lại các đường dẫn đọc mà tổ chức đã cấm.
+    en: Prevents users from accessing read locations forbidden by organizational rule.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowmanagedreadpathsonly
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-sandbox-filesystem-allowread
+  group: settings
+  name: sandbox.filesystem.allowRead
+  syntax: sandbox.filesystem.allowRead
+  summary:
+    vi: Mở lại quyền đọc cho các vị trí vốn bị chặn bởi denyRead.
+    en: Restores read permissions for locations otherwise restricted by denyRead.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowread
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem-allowwrite
+  group: settings
+  name: sandbox.filesystem.allowWrite
+  syntax: sandbox.filesystem.allowWrite
+  summary:
+    vi: Cấp quyền ghi vào các đường dẫn chỉ định cho lệnh chạy trong sandbox.
+    en: Grants write permissions to specific locations for sandboxed commands.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowwrite
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem-denyread
+  group: settings
+  name: sandbox.filesystem.denyRead
+  syntax: sandbox.filesystem.denyRead
+  summary:
+    vi: Ngăn các lệnh trong sandbox đọc dữ liệu từ các đường dẫn cụ thể.
+    en: Prevents sandboxed commands from accessing specific paths for reading.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.denyread
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem-denywrite
+  group: settings
+  name: sandbox.filesystem.denyWrite
+  syntax: sandbox.filesystem.denyWrite
+  summary:
+    vi: Ngăn các lệnh trong sandbox ghi dữ liệu vào các đường dẫn cụ thể.
+    en: Prevents sandboxed commands from modifying specific paths.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.denywrite
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-filesystem-disabled
+  group: settings
+  name: sandbox.filesystem.disabled
+  syntax: sandbox.filesystem.disabled
+  summary:
+    vi: Tắt cô lập hệ thống tệp trong khi vẫn duy trì cô lập mạng.
+    en: Disables filesystem restrictions while preserving network sandboxing.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.disabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-ignoreviolations
+  group: settings
+  name: sandbox.ignoreViolations
+  syntax: sandbox.ignoreViolations
+  summary:
+    vi: Bỏ qua các báo cáo vi phạm đối với những đường dẫn mà lệnh dự kiến sẽ kiểm tra.
+    en: Suppresses violation alerts for paths that a command is anticipated to inspect.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.ignoreviolations
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network
+  group: settings
+  name: sandbox.network
+  syntax: sandbox.network
+  summary:
+    vi: Kiểm soát các host, cổng và socket mà lệnh trong sandbox có thể kết nối.
+    en: Manages accessible hosts, ports, and sockets for sandboxed executions.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-allowallunixsockets
+  group: settings
+  name: sandbox.network.allowAllUnixSockets
+  syntax: sandbox.network.allowAllUnixSockets
+  summary:
+    vi: Cho phép các lệnh trong sandbox kết nối tới mọi Unix socket.
+    en: Permits sandboxed processes to establish connections to any Unix socket.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowallunixsockets
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-alloweddomains
+  group: settings
+  name: sandbox.network.allowedDomains
+  syntax: sandbox.network.allowedDomains
+  summary:
+    vi: Cấp phép sẵn các domain để lệnh sandbox không hiện prompt xác nhận.
+    en: Whitelists domains in advance to avoid approval prompts during execution.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.alloweddomains
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-allowlocalbinding
+  group: settings
+  name: sandbox.network.allowLocalBinding
+  syntax: sandbox.network.allowLocalBinding
+  summary:
+    vi: Cho phép lệnh sandbox trên macOS lắng nghe cổng và kết nối localhost.
+    en: Enables port binding and localhost access for sandboxed tools on macOS.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowlocalbinding
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-allowmachlookup
+  group: settings
+  name: sandbox.network.allowMachLookup
+  syntax: sandbox.network.allowMachLookup
+  summary:
+    vi: Cho phép công cụ sandbox trên macOS kết nối với các dịch vụ XPC tương ứng.
+    en: Allows sandboxed macOS utilities to access their required XPC services.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowmachlookup
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-allowmanageddomainsonly
+  group: settings
+  name: sandbox.network.allowManagedDomainsOnly
+  syntax: sandbox.network.allowManagedDomainsOnly
+  summary:
+    vi: Giới hạn danh sách domain được phép chỉ theo các thiết lập được quản trị.
+    en: Restricts network destinations strictly to centrally managed entries.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowmanageddomainsonly
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-sandbox-network-allowunixsockets
+  group: settings
+  name: sandbox.network.allowUnixSockets
+  syntax: sandbox.network.allowUnixSockets
+  summary:
+    vi: Chỉ định các đường dẫn Unix socket mà lệnh sandbox trên macOS được dùng.
+    en: Specifies permitted Unix socket locations for sandboxed tools on macOS.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowunixsockets
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-denieddomains
+  group: settings
+  name: sandbox.network.deniedDomains
+  syntax: sandbox.network.deniedDomains
+  summary:
+    vi: Chặn các domain chỉ định kể cả khi khớp với wildcard được cho phép.
+    en: Prohibits access to selected domains even when matched by wildcards.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.denieddomains
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-httpproxyport
+  group: settings
+  name: sandbox.network.httpProxyPort
+  syntax: sandbox.network.httpProxyPort
+  summary:
+    vi: Điều hướng lưu lượng HTTP trong sandbox qua proxy riêng của bạn.
+    en: Directs sandbox HTTP traffic through a custom proxy server.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.httpproxyport
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-socksproxyport
+  group: settings
+  name: sandbox.network.socksProxyPort
+  syntax: sandbox.network.socksProxyPort
+  summary:
+    vi: Điều hướng lưu lượng SOCKS trong sandbox qua proxy riêng của bạn.
+    en: Directs sandbox SOCKS connections through a custom proxy server.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.socksproxyport
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sandbox-network-strictallowlist
+  group: settings
+  name: sandbox.network.strictAllowlist
+  syntax: sandbox.network.strictAllowlist
+  summary:
+    vi: Tự động từ chối các host ngoài danh sách cho phép thay vì hiện prompt.
+    en: Rejects unlisted hosts automatically without asking for user approval.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.strictallowlist
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-network-tlsterminate
+  group: settings
+  name: sandbox.network.tlsTerminate
+  syntax: sandbox.network.tlsTerminate
+  summary:
+    vi: Cho phép proxy sandbox ngắt TLS để đọc nội dung các yêu cầu HTTPS.
+    en: Enables the sandbox proxy to end TLS sessions to inspect HTTPS content.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.tlsterminate
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-ripgrep
+  group: settings
+  name: sandbox.ripgrep
+  syntax: sandbox.ripgrep
+  summary:
+    vi: Sử dụng tệp thực thi ripgrep riêng bên trong sandbox.
+    en: Configures a custom ripgrep executable to run inside the sandbox.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.ripgrep
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sandbox-socatpath
+  group: settings
+  name: sandbox.socatPath
+  syntax: sandbox.socatPath
+  summary:
+    vi: Chỉ định đường dẫn tệp thực thi socat nằm ngoài biến môi trường PATH.
+    en: Specifies a custom socat executable location outside system PATH.
+  docs: https://code.claude.com/docs/en/settings-reference#sandbox.socatpath
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-showclearcontextonplanaccept
+  group: settings
+  name: showClearContextOnPlanAccept
+  syntax: showClearContextOnPlanAccept
+  summary:
+    vi: Hiển thị tùy chọn xóa context trên màn hình chấp nhận plan.
+    en: Displays a choice to wipe context when accepting a proposed plan.
+  docs: https://code.claude.com/docs/en/settings-reference#showclearcontextonplanaccept
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-showthinkingsummaries
+  group: settings
+  name: showThinkingSummaries
+  syntax: showThinkingSummaries
+  summary:
+    vi: Hiển thị tóm tắt suy nghĩ của Claude thay vì thanh thu gọn mặc định.
+    en: Replaces the collapsed placeholder with summaries of Claude thought steps.
+  docs: https://code.claude.com/docs/en/settings-reference#showthinkingsummaries
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-showturnduration
+  group: settings
+  name: showTurnDuration
+  syntax: showTurnDuration
+  summary:
+    vi: Ẩn thời gian Cooked for hiển thị phía dưới mỗi phản hồi.
+    en: Suppresses the Cooked for execution time display below responses.
+  docs: https://code.claude.com/docs/en/settings-reference#showturnduration
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-skilllistingbudgetfraction
+  group: settings
+  name: skillListingBudgetFraction
+  syntax: skillListingBudgetFraction
+  summary:
+    vi: Điều chỉnh tỷ lệ context dành riêng cho danh sách skill.
+    en: Adjusts the portion of the context window dedicated to showing skills.
+  docs: https://code.claude.com/docs/en/settings-reference#skilllistingbudgetfraction
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-skilllistingmaxdescchars
+  group: settings
+  name: skillListingMaxDescChars
+  syntax: skillListingMaxDescChars
+  summary:
+    vi: Giới hạn độ dài ký tự tối đa cho phần mô tả của mỗi skill trong danh sách.
+    en: Sets the maximum character limit for individual skill descriptions.
+  docs: https://code.claude.com/docs/en/settings-reference#skilllistingmaxdescchars
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-skilloverrides
+  group: settings
+  name: skillOverrides
+  syntax: skillOverrides
+  summary:
+    vi: Ẩn hoặc thu gọn skill mà không cần chỉnh sửa tệp SKILL.md.
+    en: Hides or folds a skill without modifying its SKILL.md file.
+  docs: https://code.claude.com/docs/en/settings-reference#skilloverrides
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-skipautopermissionprompt
+  group: settings
+  name: skipAutoPermissionPrompt
+  syntax: skipAutoPermissionPrompt
+  summary:
+    vi: Bỏ qua thông báo hiển thị lần đầu khi bạn tự bật auto mode thay vì dùng mặc định.
+    en: Bypasses the initial notice displayed when manually enabling auto mode instead of relying on default
+      settings.
+  docs: https://code.claude.com/docs/en/settings-reference#skipautopermissionprompt
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-skipdangerousmodepermissionprompt
+  group: settings
+  name: skipDangerousModePermissionPrompt
+  syntax: skipDangerousModePermissionPrompt
+  summary:
+    vi: Bỏ qua hộp thoại xác nhận trước khi vào chế độ bypassPermissions.
+    en: Omits the confirmation step shown prior to entering bypassPermissions mode.
+  docs: https://code.claude.com/docs/en/settings-reference#skipdangerousmodepermissionprompt
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User, local, or managed
+- id: settings-skipwebfetchpreflight
+  group: settings
+  name: skipWebFetchPreflight
+  syntax: skipWebFetchPreflight
+  summary:
+    vi: Bỏ qua bước kiểm tra hostname của WebFetch khi không thể kết nối tới Anthropic.
+    en: Disables the WebFetch hostname verification step if Anthropic cannot be contacted.
+  docs: https://code.claude.com/docs/en/settings-reference#skipwebfetchpreflight
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-spellcheck
+  group: settings
+  name: spellcheck
+  syntax: spellcheck
+  summary:
+    vi: Gạch chân từ sai chính tả trong prompt bằng công cụ kiểm tra chính tả bạn cài đặt.
+    en: Highlights typing errors in prompt inputs using an external spell-checking tool you set up.
+  docs: https://code.claude.com/docs/en/settings-reference#spellcheck
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-spinnertipsenabled
+  group: settings
+  name: spinnerTipsEnabled
+  syntax: spinnerTipsEnabled
+  summary:
+    vi: Ẩn các mẹo hiển thị ở spinner trong khi Claude đang xử lý.
+    en: Controls whether advice shown in the waiting spinner is hidden while Claude executes tasks.
+  docs: https://code.claude.com/docs/en/settings-reference#spinnertipsenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-spinnertipsoverride
+  group: settings
+  name: spinnerTipsOverride
+  syntax: spinnerTipsOverride
+  summary:
+    vi: Bổ sung mẹo riêng vào danh sách chờ hoặc thay thế hoàn toàn các mẹo mặc định.
+    en: Supplies custom messages to augment or substitute the standard rotation of spinner tips.
+  docs: https://code.claude.com/docs/en/settings-reference#spinnertipsoverride
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-spinnerverbs
+  group: settings
+  name: spinnerVerbs
+  syntax: spinnerVerbs
+  summary:
+    vi: Thêm hoặc thay thế các động từ trạng thái hiển thị trong lúc xử lý turn.
+    en: Customizes or substitutes the status verbs displayed during an active turn.
+  docs: https://code.claude.com/docs/en/settings-reference#spinnerverbs
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-sshconfigs
+  group: settings
+  name: sshConfigs
+  syntax: sshConfigs
+  summary:
+    vi: Thêm các kết nối SSH vào bộ chọn môi trường trên Desktop.
+    en: Populates the Desktop environment picker with additional SSH connection options.
+  docs: https://code.claude.com/docs/en/settings-reference#sshconfigs
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-sshhostallowlist
+  group: settings
+  name: sshHostAllowlist
+  syntax: sshHostAllowlist
+  summary:
+    vi: Giới hạn các host mà phiên SSH trên Desktop được phép kết nối tới.
+    en: Restricts the destination hosts that Desktop SSH sessions are permitted to access.
+  docs: https://code.claude.com/docs/en/settings-reference#sshhostallowlist
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-sshhostcommands
+  group: settings
+  name: sshHostCommands
+  syntax: sshHostCommands
+  summary:
+    vi: Thêm vào bộ chọn môi trường Desktop các kết nối SSH lấy host từ một lệnh.
+    en: Inserts Desktop environment SSH entries whose target host is evaluated from a CLI command.
+  docs: https://code.claude.com/docs/en/settings-reference#sshhostcommands
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-statusline
+  group: settings
+  name: statusLine
+  syntax: statusLine
+  summary:
+    vi: Chạy lệnh tùy chỉnh của bạn để hiển thị dòng trạng thái phía dưới prompt.
+    en: Executes a custom CLI command to generate a status display beneath the prompt.
+  docs: https://code.claude.com/docs/en/settings-reference#statusline
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-strictknownmarketplaces
+  group: settings
+  name: strictKnownMarketplaces
+  syntax: strictKnownMarketplaces
+  summary:
+    vi: Quy định danh sách marketplace nguồn mà người dùng được phép thêm và cài đặt.
+    en: Restricts allowable marketplace locations from which users can discover and install extensions.
+  docs: https://code.claude.com/docs/en/settings-reference#strictknownmarketplaces
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-strictpluginonlycustomization
+  group: settings
+  name: strictPluginOnlyCustomization
+  syntax: strictPluginOnlyCustomization
+  summary:
+    vi: Chỉ nhận skill, agent, hook và MCP server từ plugin; bỏ qua các nguồn của người dùng và dự án.
+    en: Only plugins may supply skills, agents, hooks or MCP servers; user and project sources are ignored.
+  docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-strictpluginonlycustomization-agents
+  group: settings
+  name: strictPluginOnlyCustomization.agents
+  syntax: strictPluginOnlyCustomization.agents
+  summary:
+    vi: Chặn các agent được định nghĩa từ nguồn user và project.
+    en: Disallows agents supplied from project and user configurations.
+  docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.agents
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-strictpluginonlycustomization-hooks
+  group: settings
+  name: strictPluginOnlyCustomization.hooks
+  syntax: strictPluginOnlyCustomization.hooks
+  summary:
+    vi: Chặn các hook được định nghĩa từ nguồn user và project.
+    en: Disallows hooks supplied from project and user configurations.
+  docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.hooks
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-strictpluginonlycustomization-mcp
+  group: settings
+  name: strictPluginOnlyCustomization.mcp
+  syntax: strictPluginOnlyCustomization.mcp
+  summary:
+    vi: Chặn các MCP server khai báo từ nguồn user và project.
+    en: Disallows MCP servers defined within project and user scopes.
+  docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.mcp
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-strictpluginonlycustomization-skills
+  group: settings
+  name: strictPluginOnlyCustomization.skills
+  syntax: strictPluginOnlyCustomization.skills
+  summary:
+    vi: Chặn các skill khai báo từ nguồn user và project.
+    en: Disallows skills defined within project and user directories.
+  docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.skills
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed
+- id: settings-subagentpromptcachettl
+  group: settings
+  name: subagentPromptCacheTtl
+  syntax: subagentPromptCacheTtl
+  summary:
+    vi: Đặt thời gian sống cho prompt cache của subagent và các yêu cầu bên ngoài luồng chính.
+    en: Determines prompt cache duration for subagents and external secondary requests.
+  docs: https://code.claude.com/docs/en/settings-reference#subagentpromptcachettl
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-switchmodelsonflag
+  group: settings
+  name: switchModelsOnFlag
+  syntax: switchModelsOnFlag
+  summary:
+    vi: Tự động đổi model hoặc tạm dừng khi bộ phân loại an toàn gắn cờ yêu cầu.
+    en: Controls whether to alternate models or hold execution when safety filters flag a prompt.
+  docs: https://code.claude.com/docs/en/settings-reference#switchmodelsonflag
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-syncclaudeaiplugins
+  group: settings
+  name: syncClaudeAiPlugins
+  syntax: syncClaudeAiPlugins
+  summary:
+    vi: Ngừng tải các plugin kích hoạt từ tài khoản claude.ai và dừng tải thêm plugin mới.
+    en: Prevents pulling existing plugins from claude.ai and halts fetching newer ones.
+  docs: https://code.claude.com/docs/en/settings-reference#syncclaudeaiplugins
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User, local, or managed
+- id: settings-syncclaudeaiskills
+  group: settings
+  name: syncClaudeAiSkills
+  syntax: syncClaudeAiSkills
+  summary:
+    vi: Ngừng tải các skill kích hoạt từ tài khoản claude.ai và dừng tải thêm skill mới.
+    en: Prevents pulling existing skills from claude.ai and halts fetching newer ones.
+  docs: https://code.claude.com/docs/en/settings-reference#syncclaudeaiskills
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User, local, or managed
+- id: settings-syntaxhighlightingdisabled
+  group: settings
+  name: syntaxHighlightingDisabled
+  syntax: syntaxHighlightingDisabled
+  summary:
+    vi: Tắt tính năng làm nổi bật cú pháp trong diff và các khối code.
+    en: Disables colored code formatting across diffs and syntax-styled code blocks.
+  docs: https://code.claude.com/docs/en/settings-reference#syntaxhighlightingdisabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-taskoutputmaxchars
+  group: settings
+  name: taskOutputMaxChars
+  syntax: taskOutputMaxChars
+  summary:
+    vi: Đã bị xóa ở v2.1.277 cùng với công cụ TaskOutput mà nó giới hạn kích thước.
+    en: Designates an obsolete configuration dropped in v2.1.277 alongside the TaskOutput tool.
+  docs: https://code.claude.com/docs/en/settings-reference#taskoutputmaxchars
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-teammatedefaultmodel
+  group: settings
+  name: teammateDefaultModel
+  syntax: teammateDefaultModel
+  summary:
+    vi: Đã bị xóa ở v2.1.234; xem mục chỉ định teammates và model để biết cách chọn model.
+    en: Designates an obsolete setting eliminated in v2.1.234 for choosing teammate model configurations.
+  docs: https://code.claude.com/docs/en/settings-reference#teammatedefaultmodel
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Global config
+- id: settings-teammatemode
+  group: settings
+  name: teammateMode
+  syntax: teammateMode
+  summary:
+    vi: Chọn cách hiển thị các thành viên trong nhóm agent.
+    en: Selects the presentation style for members of an agent team.
+  docs: https://code.claude.com/docs/en/settings-reference#teammatemode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-terminalprogressbarenabled
+  group: settings
+  name: terminalProgressBarEnabled
+  syntax: terminalProgressBarEnabled
+  summary:
+    vi: Ẩn thanh tiến trình trên các terminal có hỗ trợ tính năng này.
+    en: Hides the progress indicator on compatible terminal emulators.
+  docs: https://code.claude.com/docs/en/settings-reference#terminalprogressbarenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-terminaltitlefromrename
+  group: settings
+  name: terminalTitleFromRename
+  syntax: terminalTitleFromRename
+  summary:
+    vi: Ngăn /rename và --name thay đổi tiêu đề tab terminal.
+    en: Prevents /rename and --name from modifying the title of the terminal tab.
+  docs: https://code.claude.com/docs/en/settings-reference#terminaltitlefromrename
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-theme
+  group: settings
+  name: theme
+  syntax: theme
+  summary:
+    vi: Chọn bảng màu giao diện có sẵn hoặc tùy chỉnh.
+    en: Selects a prebuilt or personalized color palette for the interface.
+  docs: https://code.claude.com/docs/en/settings-reference#theme
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-timeformat
+  group: settings
+  name: timeFormat
+  syntax: timeFormat
+  summary:
+    vi: Hiển thị thời gian trên giao diện theo định dạng 12 giờ, 24 giờ, UTC hoặc chuỗi strftime.
+    en: Formats interface timestamps using 12-hour, 24-hour, UTC, or a custom strftime string.
+  docs: https://code.claude.com/docs/en/settings-reference#timeformat
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-timezone
+  group: settings
+  name: timeZone
+  syntax: timeZone
+  summary:
+    vi: Hiển thị thời gian trên giao diện theo múi giờ khác thay vì múi giờ hệ thống.
+    en: Displays interface timestamps in a specified time zone instead of the system local zone.
+  docs: https://code.claude.com/docs/en/settings-reference#timezone
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-tui
+  group: settings
+  name: tui
+  syntax: tui
+  summary:
+    vi: Chọn bộ dựng giao diện terminal toàn màn hình hoặc kiểu cổ điển.
+    en: Selects either the fullscreen interface or the classic terminal output renderer.
+  docs: https://code.claude.com/docs/en/settings-reference#tui
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-ultracode
+  group: settings
+  name: ultracode
+  syntax: ultracode
+  summary:
+    vi: Khiến Claude tự động lên kế hoạch workflow cho từng tác vụ quan trọng mà không cần nhắc.
+    en: Instructs Claude to automatically outline a workflow for every major task.
+  docs: https://code.claude.com/docs/en/settings-reference#ultracode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-useautomodeduringplan
+  group: settings
+  name: useAutoModeDuringPlan
+  syntax: useAutoModeDuringPlan
+  summary:
+    vi: Cho phép bộ phân loại auto mode duyệt lệnh shell ở plan mode, hoặc hiện prompt hỏi nếu đặt false.
+    en: Enables the auto mode classifier to inspect plan-mode shell commands, or asks via prompts when
+      false.
+  docs: https://code.claude.com/docs/en/settings-reference#useautomodeduringplan
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User, local, or managed
+- id: settings-verbose
+  group: settings
+  name: verbose
+  syntax: verbose
+  summary:
+    vi: Hiển thị đầy đủ output của công cụ thay vì tóm tắt, trừ khi viewMode được chỉ định.
+    en: Prints complete tool execution details rather than shortened summaries unless viewMode is set.
+  docs: https://code.claude.com/docs/en/settings-reference#verbose
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-viewmode
+  group: settings
+  name: viewMode
+  syntax: viewMode
+  summary:
+    vi: Thiết lập mọi session khởi động ở chế độ xem default, verbose hoặc focus.
+    en: Configures initial sessions to open in default, verbose, or focus viewing modes.
+  docs: https://code.claude.com/docs/en/settings-reference#viewmode
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-viminsertmoderemaps
+  group: settings
+  name: vimInsertModeRemaps
+  syntax: vimInsertModeRemaps
+  summary:
+    vi: Gán tổ hợp phím kép ở chế độ INSERT như jj để thay thế cho phím Escape.
+    en: Assigns an INSERT-mode double-key shortcut like jj to trigger Escape.
+  docs: https://code.claude.com/docs/en/settings-reference#viminsertmoderemaps
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User or managed
+- id: settings-voice
+  group: settings
+  name: voice
+  syntax: voice
+  summary:
+    vi: Bật nhập liệu bằng giọng nói và chọn chế độ nhấn giữ hoặc chạm.
+    en: Activates spoken input and selects either hold-to-talk or tap-to-talk interaction.
+  docs: https://code.claude.com/docs/en/settings-reference#voice
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-voiceenabled
+  group: settings
+  name: voiceEnabled
+  syntax: voiceEnabled
+  summary:
+    vi: Bật nhập liệu bằng giọng nói theo định dạng phím đơn kiểu cũ.
+    en: Enables spoken dictation via the legacy single-key configuration format.
+  docs: https://code.claude.com/docs/en/settings-reference#voiceenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-wheelscrollaccelerationenabled
+  group: settings
+  name: wheelScrollAccelerationEnabled
+  syntax: wheelScrollAccelerationEnabled
+  summary:
+    vi: Tắt gia tốc cuộn chuột khi dùng bộ dựng toàn màn hình.
+    en: Disables mouse-wheel speed acceleration when using the fullscreen renderer.
+  docs: https://code.claude.com/docs/en/settings-reference#wheelscrollaccelerationenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-workflowkeywordtriggerenabled
+  group: settings
+  name: workflowKeywordTriggerEnabled
+  syntax: workflowKeywordTriggerEnabled
+  summary:
+    vi: Kiểm soát việc dùng từ khóa ultracode trong prompt để kích hoạt workflow hay không.
+    en: Controls whether including ultracode in a prompt automatically launches a workflow.
+  docs: https://code.claude.com/docs/en/settings-reference#workflowkeywordtriggerenabled
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-workflowsizeguideline
+  group: settings
+  name: workflowSizeGuideline
+  syntax: workflowSizeGuideline
+  summary:
+    vi: Đặt số lượng agent mục tiêu mà Claude hướng tới trong các dynamic workflow.
+    en: Defines the target number of agents Claude should aim for when generating workflows.
+  docs: https://code.claude.com/docs/en/settings-reference#workflowsizeguideline
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-worktree
+  group: settings
+  name: worktree
+  syntax: worktree
+  summary:
+    vi: Cấu hình cách Claude Code khởi tạo các git worktree.
+    en: Configures how Claude Code manages and provisions git worktrees.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-worktree-baseref
+  group: settings
+  name: worktree.baseRef
+  syntax: worktree.baseRef
+  summary:
+    vi: Tạo nhánh cho worktree mới từ nhánh mặc định trên remote hoặc từ HEAD cục bộ.
+    en: Determines whether new worktrees branch off the remote default branch or the local HEAD.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree.baseref
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-worktree-bgisolation
+  group: settings
+  name: worktree.bgIsolation
+  syntax: worktree.bgIsolation
+  summary:
+    vi: Cho phép các session chạy ngầm chỉnh sửa trực tiếp working copy mà không cần worktree.
+    en: Permits background sessions to directly alter the main working tree without creating a separate
+      worktree.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree.bgisolation
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-worktree-location
+  group: settings
+  name: worktree.location
+  syntax: worktree.location
+  summary:
+    vi: Chọn vị trí mà các session Desktop SSH tạo worktree trên máy chủ từ xa.
+    en: Specifies the path where Desktop SSH sessions establish their worktrees on the remote host.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree.location
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: User
+- id: settings-worktree-sparsepaths
+  group: settings
+  name: worktree.sparsePaths
+  syntax: worktree.sparsePaths
+  summary:
+    vi: Chỉ checkout các thư mục cần thiết trong từng worktree.
+    en: Restricts checkouts in each worktree to only the targeted folders.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree.sparsepaths
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-worktree-symlinkdirectories
+  group: settings
+  name: worktree.symlinkDirectories
+  syntax: worktree.symlinkDirectories
+  summary:
+    vi: Tạo symlink cho các thư mục lớn vào từng worktree thay vì sao chép dữ liệu.
+    en: Links bulky folders into worktrees via symlinks rather than making copies.
+  docs: https://code.claude.com/docs/en/settings-reference#worktree.symlinkdirectories
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Any file
+- id: settings-wslinheritswindowssettings
+  group: settings
+  name: wslInheritsWindowsSettings
+  syntax: wslInheritsWindowsSettings
+  summary:
+    vi: Cho phép WSL kế thừa các thiết lập quản trị từ chuỗi policy của Windows.
+    en: Allows WSL to load managed settings defined across the Windows policy hierarchy.
+  docs: https://code.claude.com/docs/en/settings-reference#wslinheritswindowssettings
+  verified_at: '2026-11-20'
+  reviewed: false
+  scope: Managed

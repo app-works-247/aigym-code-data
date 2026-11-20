@@ -1,0 +1,1249 @@
+# Slash commands: names and links from commands in the official
+# Claude Code docs; descriptions are our own words. Set reviewed: true after reading.
+- id: commands-add-dir
+  group: commands
+  name: /add-dir
+  syntax: /add-dir <path>
+  summary:
+    vi: Cấp quyền truy cập tệp cho một thư mục mới và chạy các DirectoryAdded hook.
+    en: Grants file access to an extra directory and triggers DirectoryAdded hooks.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-advisor
+  group: commands
+  name: /advisor
+  syntax: /advisor [model|off]
+  summary:
+    vi: Bật hoặc tắt model advisor thứ hai để nhận hướng dẫn trong các bước quan trọng.
+    en: Controls a secondary advisor model to obtain guidance during complex steps.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-agents
+  group: commands
+  name: /agents
+  syntax: /agents
+  summary:
+    vi: Hiển thị hướng dẫn tạo và quản lý subagent hoặc sửa thư mục cấu hình của chúng.
+    en: Shows instructions on managing subagents or editing their directories.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-artifact-capabilities
+  group: commands
+  name: /artifact-capabilities
+  syntax: /artifact-capabilities
+  summary:
+    vi: Tải tài liệu về các quyền hạn runtime và connector dùng cho artifact đã xuất bản.
+    en: Displays runtime capabilities and connectors available to published artifacts.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-artifact-diagramming
+  group: commands
+  name: /artifact-diagramming
+  syntax: /artifact-diagramming
+  summary:
+    vi: Tải hướng dẫn tạo biểu đồ inline SVG tương thích giao diện sáng tối trong artifact.
+    en: Loads guidance for creating clear, theme-compatible inline SVG diagrams.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-artifacts
+  group: commands
+  name: /artifacts
+  syntax: /artifacts
+  summary:
+    vi: Liệt kê các artifact để đính kèm vào session, mở trên trình duyệt hoặc sao chép link.
+    en: Browses personal or shared artifacts to attach, view in browser, or copy links.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-auto-mode-setup
+  group: commands
+  name: /auto-mode-setup
+  syntax: /auto-mode-setup
+  summary:
+    vi: Tạo bản nháp autoMode.environment từ dự án để kiểm tra và lưu vào user settings.
+    en: Generates and reviews autoMode.environment entries to save in user settings.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-autocompact
+  group: commands
+  name: /autocompact
+  syntax: /autocompact [auto|<tokens>]
+  summary:
+    vi: Thiết lập ngưỡng token trong context để Claude Code tự động compact.
+    en: Configures the token threshold that initiates automatic context compaction.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-autofix-pr
+  group: commands
+  name: /autofix-pr
+  syntax: /autofix-pr [prompt]
+  summary:
+    vi: Khởi chạy cloud session theo dõi PR hiện tại để tự động sửa lỗi CI hoặc góp ý.
+    en: Starts a cloud agent to monitor current PR activity and push corrective commits.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-background
+  group: commands
+  name: /background
+  syntax: /background [prompt]
+  summary:
+    vi: Đưa session hiện tại chạy ngầm dưới dạng agent và giải phóng terminal.
+    en: Detaches this session to keep running as a background agent, freeing the terminal; alias /bg.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-batch
+  group: commands
+  name: /batch
+  syntax: /batch <instruction>
+  summary:
+    vi: Chia việc lớn thành nhiều phần để các subagent xử lý song song trong worktree riêng.
+    en: Splits massive codebase tasks across parallel subagents in isolated worktrees.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-branch
+  group: commands
+  name: /branch
+  syntax: /branch [name]
+  summary:
+    vi: Tạo một nhánh mới từ hội thoại hiện tại để thử nghiệm mà không mất luồng cũ.
+    en: Forks the current chat into an alternate path while keeping the original safe.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-btw
+  group: commands
+  name: /btw
+  syntax: /btw [question]
+  summary:
+    vi: Hỏi phụ một câu bên lề mà không ghi thêm vào lịch sử hội thoại của session.
+    en: Asks a temporary query without recording it in the ongoing conversation history.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-bug
+  group: commands
+  name: /bug
+  syntax: /bug [report]
+  summary:
+    vi: Gửi báo cáo lỗi kèm lịch sử session đến Anthropic hoặc lưu vào file nội bộ.
+    en: Submits diagnostic data and session transcripts to report unexpected issues.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-cd
+  group: commands
+  name: /cd
+  syntax: /cd <path>
+  summary:
+    vi: Chuyển thư mục làm việc của session hiện tại nhưng vẫn giữ nguyên hội thoại.
+    en: Switches the current working folder while preserving the ongoing conversation.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-chrome
+  group: commands
+  name: /chrome
+  syntax: /chrome
+  summary:
+    vi: Cấu hình các thiết lập cho Claude in Chrome.
+    en: Configures options and preferences for Claude in Chrome.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-claude-api
+  group: commands
+  name: /claude-api
+  syntax: /claude-api [migrate|upgrade|api-version|managed-agents-onboard|managed-agents-secure|prompt-audit|cost-optimize|latency-optimize|build-eval|hillclimb|preserved-thinking-migration]
+  summary:
+    vi: Tải tài liệu tham khảo về Claude API và Managed Agents theo ngôn ngữ của dự án.
+    en: Retrieves Claude API reference docs and implementation advice for your project.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-claude-in-chrome
+  group: commands
+  name: /claude-in-chrome
+  syntax: /claude-in-chrome [task]
+  summary:
+    vi: Thực hiện tác vụ trên trình duyệt như kiểm thử web hay đọc log qua Claude in Chrome.
+    en: Directs browser operations such as form submission and testing via Chrome.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-clear
+  group: commands
+  name: /clear
+  syntax: /clear [name]
+  summary:
+    vi: Bắt đầu cuộc trò chuyện mới với context trống và lưu session cũ vào danh sách.
+    en: Wipes current context to initiate a brand-new conversation session.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-code-review
+  group: commands
+  name: /code-review
+  syntax: /code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default]
+    [pr#|branch|path]
+  summary:
+    vi: Soát lỗi logic trong diff hoặc PR, có tùy chọn tự sửa lỗi hoặc gửi nhận xét.
+    en: Scans targeted code or diffs for bugs with optional automated fixing and PR posts.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-color
+  group: commands
+  name: /color
+  syntax: /color [color|default]
+  summary:
+    vi: Đổi màu thanh prompt trong session hiện tại hoặc đồng bộ qua Remote Control.
+    en: Customizes the tint of the prompt line for the active terminal session.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-compact
+  group: commands
+  name: /compact
+  syntax: /compact [instructions]
+  summary:
+    vi: Tóm tắt lại toàn bộ trao đổi trước đó để giải phóng dung lượng context.
+    en: Condenses earlier conversation history into a summary to reclaim token space.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-config
+  group: commands
+  name: /config
+  syntax: /config [key=value ...]
+  summary:
+    vi: Mở bảng cài đặt hoặc gán trực tiếp giá trị cấu hình theo cặp key=value.
+    en: Updates preferences or opens the settings dashboard via key-value parameters.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-context
+  group: commands
+  name: /context
+  syntax: /context [all]
+  summary:
+    vi: Hiển thị mức chiếm dụng context dạng lưới màu kèm gợi ý tối ưu bộ nhớ.
+    en: Visualizes token consumption across the context window with optimization tips.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-copy
+  group: commands
+  name: /copy
+  syntax: /copy [N]
+  summary:
+    vi: Sao chép toàn bộ hoặc từng đoạn code của phản hồi gần nhất vào clipboard hoặc tệp.
+    en: Copies recent output snippets or the whole assistant message to the clipboard.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-cost
+  group: commands
+  name: /cost
+  syntax: /cost
+  summary:
+    vi: Hoạt động như một bí danh cho lệnh /usage.
+    en: Acts as an alias for the /usage command.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-dataviz
+  group: commands
+  name: /dataviz
+  syntax: /dataviz [request]
+  summary:
+    vi: Cung cấp hướng dẫn thiết kế biểu đồ và dashboard, lựa chọn bố cục, màu sắc theo vai trò và chuẩn
+      tiếp cận.
+    en: Provides design advice for charts and dashboards, choosing layouts, role-based colors, and accessibility
+      standards.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-debug
+  group: commands
+  name: /debug
+  syntax: /debug [description]
+  summary:
+    vi: Bật ghi log gỡ lỗi cho session hiện tại và phân tích log để chẩn đoán sự cố.
+    en: Activates debug logging for the active session and inspects logs to diagnose problems.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-deep-research
+  group: commands
+  name: /deep-research
+  syntax: /deep-research <question>
+  summary:
+    vi: Thực hiện tìm kiếm web đa luồng, đối chiếu nguồn thông tin và tổng hợp thành báo cáo có trích
+      dẫn.
+    en: Conducts multi-query web searches, verifies sources against each other, and produces a cited summary
+      report.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-design
+  group: commands
+  name: /design
+  syntax: /design [brief]
+  summary:
+    vi: Tạo bản vẽ UI và luồng màn hình dưới dạng artboard trên trình duyệt thông qua artifact của Claude
+      Design.
+    en: Generates visual UI designs and screen flows as editable browser artboards published to Claude
+      Design artifacts.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-design-login
+  group: commands
+  name: /design-login
+  syntax: /design-login
+  summary:
+    vi: Xác thực tài khoản claude.ai để cấp quyền đồng bộ design system cho /design-sync.
+    en: Authenticates your claude.ai credentials to permit design-system integration for /design-sync.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-design-sync
+  group: commands
+  name: /design-sync
+  syntax: /design-sync [hint]
+  summary:
+    vi: Chuyển đổi và tải design system bằng React từ repo lên Claude Design để tạo giao diện khớp thực
+      tế.
+    en: Transforms and uploads your repository's React components to Claude Design for generating accurate
+      mockups.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-desktop
+  group: commands
+  name: /desktop
+  syntax: /desktop
+  summary:
+    vi: Chuyển tiếp session hiện tại sang ứng dụng Claude Code Desktop.
+    en: Transfers your active session to the Claude Code Desktop application.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-diff
+  group: commands
+  name: /diff
+  syntax: /diff
+  summary:
+    vi: Hiển thị các thay đổi trong working tree, bao gồm cả những chỉnh sửa Claude đã tạo ra.
+    en: Displays uncommitted modifications in your working tree, including updates produced by Claude.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-doctor
+  group: commands
+  name: /doctor
+  syntax: /doctor [prompt-audit [path]]
+  summary:
+    vi: Kiểm tra môi trường, cấu hình và CLAUDE.md để phát hiện lỗi rồi đề xuất hướng khắc phục khi bạn
+      xác nhận.
+    en: Inspects your environment, configuration, and CLAUDE.md for issues, offering solutions upon approval.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-effort
+  group: commands
+  name: /effort
+  syntax: /effort [level|auto|status|ultracode [on|off]]
+  summary:
+    vi: Thiết lập mức độ xử lý, xem trạng thái hiện tại hoặc bật tắt ultracode cho session.
+    en: Configures reasoning effort, displays its status, or toggles ultracode for the session.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-exit
+  group: commands
+  name: /exit
+  syntax: /exit
+  summary:
+    vi: Thoát CLI hoặc ngắt kết nối khỏi session nền mà vẫn giữ nó tiếp tục chạy.
+    en: Closes the CLI or unlinks from a background session while leaving it active.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-export
+  group: commands
+  name: /export
+  syntax: /export [filename]
+  summary:
+    vi: Lưu lịch sử trò chuyện hiện tại thành văn bản thuần ra tập tin chỉ định hoặc qua hộp thoại.
+    en: Saves the active chat history as plain text directly to a target file or via an interactive dialog.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-fast
+  group: commands
+  name: /fast
+  syntax: /fast [on|off]
+  summary:
+    vi: Bật hoặc tắt fast mode, chuyển đổi trạng thái ngay cả khi câu trả lời đang được tạo.
+    en: Enables or disables fast mode, switching states immediately even while a reply is in progress.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-feedback
+  group: commands
+  name: /feedback
+  syntax: /feedback [report]
+  summary:
+    vi: Gửi phản hồi về Claude Code, mở hộp thoại báo cáo hoặc quản lý danh sách bản nháp có sẵn.
+    en: Submits feedback about Claude Code, opening a report dialog or letting you review queued drafts.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-fewer-permission-prompts
+  group: commands
+  name: /fewer-permission-prompts
+  syntax: /fewer-permission-prompts
+  summary:
+    vi: Quét nhật ký để tìm các thao tác chỉ đọc phổ biến rồi ghi danh sách cho phép vào .claude/settings.json.
+    en: Analyzes session logs for frequent read-only operations and saves an allowlist to .claude/settings.json.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-focus
+  group: commands
+  name: /focus
+  syntax: /focus
+  summary:
+    vi: Bật tắt giao diện rút gọn chỉ hiển thị prompt gần nhất, tóm tắt công cụ và câu trả lời cuối cùng.
+    en: Toggles a minimal view that keeps just the latest prompt, a short tool summary and the final answer.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-fork
+  group: commands
+  name: /fork
+  syntax: /fork [prompt]
+  summary:
+    vi: Nhân bản cuộc trò chuyện sang một session nền mới trong khi bạn vẫn tiếp tục làm việc tại đây.
+    en: Duplicates the present session into a separate background instance while maintaining your workflow.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-goal
+  group: commands
+  name: /goal
+  syntax: /goal [condition|clear]
+  summary:
+    vi: Thiết lập mục tiêu để Claude thực hiện qua nhiều lượt, xem mục tiêu hiện tại hoặc hủy bỏ sớm.
+    en: Defines an objective that Claude pursues across turns, shows the active target, or dismisses it.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-heapdump
+  group: commands
+  name: /heapdump
+  syntax: /heapdump
+  summary:
+    vi: Xuất snapshot bộ nhớ JavaScript và tệp phân tích chi tiết để điều tra sự cố tiêu tốn bộ nhớ.
+    en: Exports a JavaScript memory snapshot and diagnostic breakdown to inspect heavy RAM consumption.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-help
+  group: commands
+  name: /help
+  syntax: /help
+  summary:
+    vi: Hiển thị thông tin trợ giúp cùng danh sách các lệnh khả dụng.
+    en: Lists supported commands and general guidance for using the interface.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-hooks
+  group: commands
+  name: /hooks
+  syntax: /hooks
+  summary:
+    vi: Hiển thị các cấu hình hook đang được thiết lập.
+    en: Displays configured hooks currently set up in the environment.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-ide
+  group: commands
+  name: /ide
+  syntax: /ide
+  summary:
+    vi: Quản lý các tích hợp IDE và hiển thị trạng thái kết nối của chúng.
+    en: Controls integrations with code editors and reports their current connection state.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-import
+  group: commands
+  name: /import
+  syntax: /import [codex|gemini|cursor] [--dry-run] [--yes]
+  summary:
+    vi: Nhập cấu hình, MCP server và skill từ Codex, Gemini hoặc Cursor vào Claude Code.
+    en: Migrates external settings, MCP servers, and custom skills from Codex, Gemini, or Cursor into
+      Claude Code.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-init
+  group: commands
+  name: /init
+  syntax: /init
+  summary:
+    vi: Khởi tạo dự án với tệp hướng dẫn CLAUDE.md và tùy chọn thiết lập skill cùng cấu hình liên quan.
+    en: Sets up a project by creating a CLAUDE.md file and optionally configuring skills and preferences.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-insights
+  group: commands
+  name: /insights
+  syntax: /insights
+  summary:
+    vi: Tạo báo cáo HTML phân tích các session cục bộ gần đây về dự án làm việc, cách dùng Claude Code,
+      lỗi phát sinh và tính năng nên thử.
+    en: Produces an HTML report examining recent local sessions for project activity, Claude Code usage,
+      encountered issues, and recommended features.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-install-github-app
+  group: commands
+  name: /install-github-app
+  syntax: /install-github-app
+  summary:
+    vi: Hướng dẫn tích hợp Claude GitHub App vào repo github.com, hỗ trợ cấu hình thêm workflow và secret
+      cho GitHub Actions.
+    en: Guides the integration of the Claude GitHub App with a github.com repo, optionally configuring
+      GitHub Actions workflows and secrets.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-install-slack-app
+  group: commands
+  name: /install-slack-app
+  syntax: /install-slack-app
+  summary:
+    vi: Cài đặt Claude Slack app bằng cách mở trình duyệt để hoàn tất quy trình OAuth.
+    en: Installs the Claude Slack app by launching a browser to finish the OAuth authorization.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-keybindings
+  group: commands
+  name: /keybindings
+  syntax: /keybindings
+  summary:
+    vi: Mở tệp cấu hình phím tắt của bạn.
+    en: Opens your keyboard shortcuts configuration file.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-list-agents
+  group: commands
+  name: /list-agents
+  syntax: /list-agents
+  summary:
+    vi: Liệt kê các subagent, đồng đội trong nhóm agent và các session Claude Code có thể nhận tin nhắn
+      cùng tên gọi tương ứng.
+    en: Displays subagents, teammate agents, and reachable Claude Code sessions along with the names needed
+      to message them.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-login
+  group: commands
+  name: /login
+  syntax: /login
+  summary:
+    vi: Đăng nhập vào tài khoản Anthropic của bạn.
+    en: Signs in to your Anthropic account.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-logout
+  group: commands
+  name: /logout
+  syntax: /logout
+  summary:
+    vi: Đăng xuất khỏi tài khoản Anthropic của bạn.
+    en: Signs out of your Anthropic account.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-loop
+  group: commands
+  name: /loop
+  syntax: /loop [interval] [prompt]
+  summary:
+    vi: Chạy lặp lại một prompt khi session đang mở, tự điều chỉnh nhịp độ hoặc dùng prompt bảo trì nếu
+      bỏ qua tham số.
+    en: Runs a prompt repeatedly during an open session, using self-pacing or a maintenance prompt if
+      parameters are omitted.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-mcp
+  group: commands
+  name: /mcp
+  syntax: /mcp [reconnect (<server>|all)|enable|disable [<server>|all]]
+  summary:
+    vi: Quản lý kết nối MCP server và xác thực OAuth thông qua giao diện tương tác hoặc các lệnh phụ trực
+      tiếp.
+    en: Manages MCP server connections and OAuth authentication via an interactive menu or direct subcommands.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-memory
+  group: commands
+  name: /memory
+  syntax: /memory
+  summary:
+    vi: Chỉnh sửa các tệp CLAUDE.md, bật tắt auto memory và xem các mục ghi nhớ tự động.
+    en: Edits CLAUDE.md files, toggles auto memory, and displays auto memory entries.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-mobile
+  group: commands
+  name: /mobile
+  syntax: /mobile
+  summary:
+    vi: Hiển thị mã QR để tải ứng dụng di động Claude.
+    en: Displays a QR code for downloading the Claude mobile application.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-model
+  group: commands
+  name: /model
+  syntax: /model [model]
+  summary:
+    vi: Thay đổi AI model, điều chỉnh mức độ nỗ lực và đặt mặc định cho các session mới hoặc chỉ session
+      hiện tại.
+    en: Changes the AI model, adjusts effort levels, and sets the default for future sessions or current
+      session only.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-output-style
+  group: commands
+  name: /output-style
+  syntax: /output-style [style]
+  summary:
+    vi: Liệt kê các output style có sẵn hoặc chuyển sang một kiểu cụ thể.
+    en: Lists available output styles or switches the current output style.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-passes
+  group: commands
+  name: /passes
+  syntax: /passes
+  summary:
+    vi: Chia sẻ một tuần dùng miễn phí Claude Code với bạn bè nếu tài khoản của bạn đủ điều kiện.
+    en: Shares a free one-week access pass for Claude Code with friends if your account is eligible.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-permissions
+  group: commands
+  name: /permissions
+  syntax: /permissions
+  summary:
+    vi: Mở hộp thoại tương tác để quản lý các quy tắc phân quyền công cụ, phạm vi, thư mục làm việc và
+      chế độ tự động.
+    en: Opens an interactive dialog to configure tool permissions rules, scopes, working directories,
+      and auto mode settings.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-plan
+  group: commands
+  name: /plan
+  syntax: /plan [description]
+  summary:
+    vi: Vào chế độ lập kế hoạch từ prompt, có thể kèm mô tả tác vụ để bắt đầu ngay lập tức.
+    en: Enters plan mode directly from the prompt, optionally accepting an initial task description to
+      begin immediately.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-plugin
+  group: commands
+  name: /plugin
+  syntax: /plugin [subcommand]
+  summary:
+    vi: Quản lý plugin của Claude Code qua menu tương tác hoặc các lệnh con như list, install, enable
+      và disable.
+    en: Manages Claude Code plugins through an interactive menu or subcommands like list, install, enable,
+      and disable.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-plugin-authoring
+  group: commands
+  name: /plugin-authoring
+  syntax: /plugin-authoring
+  summary:
+    vi: Tải tài liệu tham khảo mà Claude dùng để viết mod.
+    en: Loads the reference materials used by Claude when developing a mod.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-powerup
+  group: commands
+  name: /powerup
+  syntax: /powerup
+  summary:
+    vi: Khám phá các tính năng của Claude Code qua những bài học tương tác ngắn kèm ảnh minh họa động.
+    en: Explores Claude Code features using brief interactive lessons and animated demonstrations.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-pr-comments
+  group: commands
+  name: /pr-comments
+  syntax: /pr-comments [PR]
+  summary:
+    vi: Lấy bình luận pull request trên GitHub qua gh CLI ở các bản trước v2.1.91, tự nhận diện theo nhánh
+      hoặc nhận URL hay số PR cụ thể.
+    en: Retrieves pull request comments via the gh CLI in versions before v2.1.91, auto-detecting the
+      branch PR or accepting a specific PR.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-privacy-settings
+  group: commands
+  name: /privacy-settings
+  syntax: /privacy-settings
+  summary:
+    vi: Cho phép người dùng gói Pro, Max và Ultra kiểm tra cũng như thay đổi các thiết lập quyền riêng
+      tư.
+    en: Lets Pro, Max, and Ultra subscribers inspect and modify their privacy preferences.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-radio
+  group: commands
+  name: /radio
+  syntax: /radio
+  summary:
+    vi: Mở đài lo-fi Claude FM trên trình duyệt hoặc in ra URL phát trực tiếp nếu không có trình duyệt.
+    en: Opens Claude FM lo-fi radio in a web browser or displays the stream URL if unavailable.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-rate-limit-options
+  group: commands
+  name: /rate-limit-options
+  syntax: /rate-limit-options
+  summary:
+    vi: Hiển thị các tùy chọn xử lý khi chạm giới hạn sử dụng, như tự động đợi tiếp tục, mua thêm credit
+      hoặc nâng cấp gói.
+    en: Displays choices to continue when usage limits are hit, such as waiting for a reset, adding credits,
+      or upgrading plans.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-recap
+  group: commands
+  name: /recap
+  syntax: /recap
+  summary:
+    vi: Tạo bản tóm tắt một dòng theo yêu cầu cho session hiện tại.
+    en: Produces a one-line summary of the active session on demand.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-release-notes
+  group: commands
+  name: /release-notes
+  syntax: /release-notes
+  summary:
+    vi: Hiển thị changelog và ghi chú phát hành trong bản ghi thông qua bộ chọn phiên bản tương tác.
+    en: Displays release notes or changelogs in the transcript through an interactive version selector.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-reload-plugins
+  group: commands
+  name: /reload-plugins
+  syntax: /reload-plugins [--force]
+  summary:
+    vi: Tải lại tất cả plugin đang hoạt động để áp dụng thay đổi mà không cần khởi động lại.
+    en: Reloads all active plugins without restarting to apply pending updates and reports errors.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-reload-skills
+  group: commands
+  name: /reload-skills
+  syntax: /reload-skills
+  summary:
+    vi: Quét lại các thư mục skill và lệnh để cập nhật thay đổi trên ổ đĩa mà không cần khởi động lại.
+    en: Rescans skill and command directories to detect added or modified skills without restarting.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-remote-control
+  group: commands
+  name: /remote-control
+  syntax: /remote-control
+  summary:
+    vi: Cho phép điều khiển phiên hiện tại từ xa thông qua claude.ai.
+    en: Enables the current session to be controlled remotely via claude.ai.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-remote-env
+  group: commands
+  name: /remote-env
+  syntax: /remote-env
+  summary:
+    vi: Chọn môi trường đám mây mặc định cho các cloud session được khởi chạy từ CLI.
+    en: Selects the default cloud environment used when launching cloud sessions from the CLI.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-rename
+  group: commands
+  name: /rename
+  syntax: /rename [name]
+  summary:
+    vi: Đổi tên phiên làm việc hiện tại hoặc tự động tạo tên dựa trên lịch sử hội thoại.
+    en: Renames the current session or automatically generates a title from conversation history.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-restart
+  group: commands
+  name: /restart
+  syntax: /restart
+  summary:
+    vi: Khởi động lại Claude Code và khôi phục phiên này để áp dụng bản cập nhật vừa cài.
+    en: Restarts Claude Code and resumes the active session to apply an installed update.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-resume
+  group: commands
+  name: /resume
+  syntax: /resume [session]
+  summary:
+    vi: Tiếp tục cuộc trò chuyện bằng ID hoặc tên, hoặc mở trình chọn để chuyển qua lại giữa các session.
+    en: Resumes a conversation using its identifier or name, or launches a selector to switch between
+      sessions.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-review
+  group: commands
+  name: /review
+  syntax: /review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--max-findings n|all|default]
+    [pr#|branch|path]
+  summary:
+    vi: Đánh giá diff hiện tại hoặc theo số PR, nhánh, đường dẫn tệp được chỉ định.
+    en: Reviews the current diff, a specified pull request, branch, or file path.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-rewind
+  group: commands
+  name: /rewind
+  syntax: /rewind
+  summary:
+    vi: Quay lui hội thoại và mã nguồn về mốc trước đó, hoặc tóm tắt từ một tin nhắn đã chọn.
+    en: Rolls back the conversation and code changes to an earlier state or summarizes from a message.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-run
+  group: commands
+  name: /run
+  syntax: /run
+  summary:
+    vi: Khởi chạy và điều khiển ứng dụng của dự án để kiểm tra thực tế các thay đổi.
+    en: Starts and controls your application to observe and verify changes directly.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-run-skill-generator
+  group: commands
+  name: /run-skill-generator
+  syntax: /run-skill-generator
+  summary:
+    vi: Tạo skill riêng cho project nhằm hướng dẫn /run và /verify cách biên dịch, khởi chạy và vận hành
+      ứng dụng trong môi trường sạch.
+    en: Creates a project skill that instructs /run and /verify on building, starting, and operating the
+      application in a fresh environment.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-sandbox
+  group: commands
+  name: /sandbox
+  syntax: /sandbox
+  summary:
+    vi: Bật hoặc tắt chế độ sandbox trên các nền tảng được hỗ trợ.
+    en: Toggles sandbox mode on compatible platforms.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-schedule
+  group: commands
+  name: /schedule
+  syntax: /schedule [description]
+  summary:
+    vi: Tạo, cập nhật, liệt kê hoặc chạy các tác vụ định kỳ trên cloud qua hội thoại.
+    en: Manages, configures, and inspects scheduled cloud tasks through a guided conversation.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-scroll-speed
+  group: commands
+  name: /scroll-speed
+  syntax: /scroll-speed
+  summary:
+    vi: Tùy chỉnh tốc độ cuộn chuột qua giao diện trực quan ở chế độ toàn màn hình.
+    en: Adjusts mouse wheel scrolling speed interactively in fullscreen mode.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-security-review
+  group: commands
+  name: /security-review
+  syntax: /security-review
+  summary:
+    vi: Kiểm tra diff giữa branch hiện tại và branch mặc định của origin để tìm các lỗ hổng bảo mật như
+      injection hay lộ dữ liệu.
+    en: Inspects branch diffs against origin's default branch to detect security issues like injection,
+      auth flaws, and exposed data.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-setup-bedrock
+  group: commands
+  name: /setup-bedrock
+  syntax: /setup-bedrock
+  summary:
+    vi: Mở trình hướng dẫn cài đặt xác thực, vùng và model cho Amazon Bedrock.
+    en: Launches a setup wizard to configure Amazon Bedrock credentials, regions, and models.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-setup-vertex
+  group: commands
+  name: /setup-vertex
+  syntax: /setup-vertex
+  summary:
+    vi: Mở trình hướng dẫn cấu hình xác thực, dự án, vùng và model cho Agent Platform của Google Cloud.
+    en: Launches a setup wizard to configure Google Cloud Agent Platform auth, projects, and models.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-simplify
+  group: commands
+  name: /simplify
+  syntax: /simplify [target]
+  summary:
+    vi: Dùng bốn subagent song song rà soát mã đã sửa để tối ưu hóa và tinh gọn.
+    en: Reviews modified code using parallel review agents to optimize and simplify implementations.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-skill-doctor
+  group: commands
+  name: /skill-doctor
+  syntax: /skill-doctor
+  summary:
+    vi: Hiển thị chi phí context và tần suất sử dụng của từng skill.
+    en: Displays context consumption and execution frequency for each registered skill.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-skills
+  group: commands
+  name: /skills
+  syntax: /skills
+  summary:
+    vi: Liệt kê các skill khả dụng, hỗ trợ lọc, sắp xếp theo token và chuyển đổi trạng thái hiển thị.
+    en: Lists and filters available skills, letting you adjust their visibility or sort by token size.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-slides
+  group: commands
+  name: /slides
+  syntax: /slides [brief]
+  summary:
+    vi: Tạo một bài thuyết trình dưới dạng artifact Claude Slides dựa trên mô tả yêu cầu.
+    en: Generates a presentation deck as a Claude Slides artifact based on a supplied brief.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-stats
+  group: commands
+  name: /stats
+  syntax: /stats
+  summary:
+    vi: Mở trực tiếp tab Stats trong giao diện theo dõi mức sử dụng.
+    en: Navigates directly to the Stats tab within the usage interface.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-status
+  group: commands
+  name: /status
+  syntax: /status
+  summary:
+    vi: Mở tab Status trong Settings để xem phiên bản, model, tài khoản và trạng thái kết nối.
+    en: Shows current version, model, account details, and session state on the Settings Status tab.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-statusline
+  group: commands
+  name: /statusline
+  syntax: /statusline
+  summary:
+    vi: Cấu hình dòng trạng thái của Claude Code theo mô tả hoặc tự đồng bộ từ shell prompt.
+    en: Customizes the status line layout manually or matches it automatically to your shell prompt.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-stickers
+  group: commands
+  name: /stickers
+  syntax: /stickers
+  summary:
+    vi: Kiểm tra tình trạng còn hàng của sticker Claude Code.
+    en: Checks the current availability of Claude Code stickers.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-stop
+  group: commands
+  name: /stop
+  syntax: /stop
+  summary:
+    vi: Dừng session chạy ngầm đang kết nối hoặc session được trả lời dạng peek, vẫn giữ lại transcript
+      và worktree.
+    en: Terminates the connected background session or a peeked target while retaining its transcript
+      and worktree.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-subtask
+  group: commands
+  name: /subtask
+  syntax: /subtask <task>
+  summary:
+    vi: Khởi tạo subagent chạy ngầm kế thừa toàn bộ hội thoại để giải quyết nhiệm vụ rồi trả kết quả về
+      session này.
+    en: Launches a background subagent with the current conversation history to handle a task and return
+      results here.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-tasks
+  group: commands
+  name: /tasks
+  syntax: /tasks
+  summary:
+    vi: Xem và quản lý các tác vụ chạy ngầm cùng các subagent đã kết thúc trong session hiện tại.
+    en: Displays and controls background operations and finished subagents in the active session.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-team-onboarding
+  group: commands
+  name: /team-onboarding
+  syntax: /team-onboarding
+  summary:
+    vi: Phân tích lịch sử dùng 30 ngày qua để tạo tài liệu markdown và liên kết chia sẻ giúp đồng đội
+      thiết lập nhanh.
+    en: Analyzes the last 30 days of activity to create a markdown setup guide and share link for teammates.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-teleport
+  group: commands
+  name: /teleport
+  syntax: /teleport
+  summary:
+    vi: Kéo một cloud session, branch và hội thoại về terminal cục bộ thông qua giao diện chọn.
+    en: Imports a cloud session, branch, and chat history into the local terminal via an interactive picker.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-terminal-setup
+  group: commands
+  name: /terminal-setup
+  syntax: /terminal-setup
+  summary:
+    vi: Thiết lập các tính năng cho terminal như phím tắt xuống dòng, tắt chuông báo hoặc quyền truy cập
+      clipboard.
+    en: Configures terminal-specific capabilities like newline shortcuts, alert sounds, or clipboard integration.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-theme
+  group: commands
+  name: /theme
+  syntax: /theme
+  summary:
+    vi: Thay đổi, tùy biến hoặc tạo theme màu mới gồm các bản sáng tối, daltonized và chuẩn màu ANSI.
+    en: Selects, customizes, or creates color schemes including dark, light, daltonized, and ANSI terminal
+      options.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-tui
+  group: commands
+  name: /tui
+  syntax: /tui [classic|fullscreen]
+  summary:
+    vi: Chuyển đổi giao diện terminal giữa classic và fullscreen hoặc hiển thị renderer đang hoạt động.
+    en: Switches the terminal interface between classic and fullscreen display modes or reports the current
+      one.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-ultraplan
+  group: commands
+  name: /ultraplan
+  syntax: /ultraplan <prompt>
+  summary:
+    vi: Lệnh lập kế hoạch cũ đã bị gỡ bỏ để chuyển sang dùng plan mode.
+    en: Deprecated planning command replaced by plan mode.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-ultrareview
+  group: commands
+  name: /ultrareview
+  syntax: /ultrareview [PR or branch]
+  summary:
+    vi: Gửi một PR hoặc nhánh đi soát lỗi kỹ trên cloud bằng nhiều agent; cách gọi chính là /code-review
+      ultra.
+    en: Sends a PR or branch for an in-depth cloud review by several agents; same as /code-review ultra.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-update-config
+  group: commands
+  name: /update-config
+  syntax: /update-config [request]
+  summary:
+    vi: Yêu cầu Claude cập nhật cấu hình mong muốn như hook hoặc biến môi trường vào tệp settings.json.
+    en: Instructs Claude to apply specific preferences, hooks, or environment variables to settings.json.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-upgrade
+  group: commands
+  name: /upgrade
+  syntax: /upgrade
+  summary:
+    vi: Mở trang nâng cấp gói dịch vụ trên trình duyệt hoặc in đường dẫn URL ra terminal.
+    en: Navigates to the plan upgrade screen in a browser or outputs the link directly to the console.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-usage
+  group: commands
+  name: /usage
+  syntax: /usage
+  summary:
+    vi: Hiển thị chi phí session, giới hạn gói đăng ký, số liệu hoạt động và chi tiêu qua gateway.
+    en: Presents consumption metrics, quota details, session expenses, and gateway spending reports.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-usage-credits
+  group: commands
+  name: /usage-credits
+  syntax: /usage-credits
+  summary:
+    vi: Mở trang quản lý mua thêm credit hoặc gửi yêu cầu cấp hạn mức tới admin của tổ chức.
+    en: Opens credit purchase settings or asks organization administrators to allocate more credits.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-verify
+  group: commands
+  name: /verify
+  syntax: /verify
+  summary:
+    vi: Xác minh các thay đổi mã nguồn bằng cách build và chạy ứng dụng trực tiếp thay vì chỉ test.
+    en: Validates modifications by compiling and executing the application directly to check behavior.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-vim
+  group: commands
+  name: /vim
+  syntax: /vim
+  summary:
+    vi: Lệnh cũ đã bị gỡ bỏ, thay thế bằng tùy chọn Editor mode bên trong /config.
+    en: Deprecated command superseded by the Editor mode option inside /config.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-voice
+  group: commands
+  name: /voice
+  syntax: /voice [hold|tap|off]
+  summary:
+    vi: Bật tắt hoặc chuyển đổi các chế độ nhập liệu bằng giọng nói.
+    en: Controls speech dictation features and switches between input behaviors.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-web-setup
+  group: commands
+  name: /web-setup
+  syntax: /web-setup
+  summary:
+    vi: Liên kết tài khoản GitHub cho các cloud session bằng thông tin xác thực từ gh CLI cục bộ.
+    en: Links cloud sessions to GitHub using authenticated credentials from the local gh CLI.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-workflow-authoring
+  group: commands
+  name: /workflow-authoring
+  syntax: /workflow-authoring
+  summary:
+    vi: Tải tài liệu tham khảo về API, mẫu thiết kế và ví dụ để viết dynamic workflow script.
+    en: Loads documentation, API details, and sample patterns for authoring dynamic workflow scripts.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false
+- id: commands-workflows
+  group: commands
+  name: /workflows
+  syntax: /workflows
+  summary:
+    vi: Mở màn hình theo dõi tiến độ workflow để quan sát, tạm dừng, tiếp tục hoặc lưu lại.
+    en: Displays an interface to track, halt, continue, or record workflow runs.
+  docs: https://code.claude.com/docs/en/commands
+  verified_at: '2026-11-20'
+  reviewed: false

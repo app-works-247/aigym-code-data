@@ -219,6 +219,18 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+- id: hooks-setup
+  group: hooks
+  name: Setup
+  syntax: Setup
+  summary:
+    vi: Chạy một lần để chuẩn bị môi trường khi khởi động bằng --init-only, hoặc --init/--maintenance
+      cùng -p (hợp với CI).
+    en: Fires once for preparation work when Claude Code starts with --init-only, or --init/--maintenance
+      in -p mode, e.g. in CI.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
 - id: hooks-stop
   group: hooks
   name: Stop
@@ -289,6 +301,18 @@
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false
+- id: hooks-userpromptexpansion
+  group: hooks
+  name: UserPromptExpansion
+  syntax: UserPromptExpansion
+  summary:
+    vi: Chạy khi một lệnh bạn gõ được mở rộng thành prompt, trước khi gửi cho Claude; có thể chặn việc
+      mở rộng đó.
+    en: Fires when a command you type is turned into a full prompt, before Claude sees it; it can stop
+      that from happening.
+  docs: https://code.claude.com/docs/en/hooks
+  verified_at: '2026-11-20'
+  reviewed: false
 - id: hooks-userpromptsubmit
   group: hooks
   name: UserPromptSubmit
@@ -305,10 +329,10 @@
   name: WorktreeCreate
   syntax: WorktreeCreate
   summary:
-    vi: 'Chạy khi tạo worktree qua --worktree, isolation: "worktree", hoặc cho session chạy ngầm nhằm
-      thay thế hành vi git mặc định.'
-    en: 'Runs when creating a worktree through --worktree, isolation: "worktree", or for background sessions
-      to substitute default git actions.'
+    vi: 'Chạy khi cần tạo worktree (--worktree, isolation: "worktree", session nền) và thay cách git tạo
+      mặc định.'
+    en: 'Fires when a worktree is needed (--worktree, isolation: "worktree", background sessions) and
+      replaces git''s own step.'
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
   reviewed: false

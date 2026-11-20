@@ -1,0 +1,1302 @@
+# CLI commands and flags: names and links from cli-reference in the official
+# Claude Code docs; descriptions are our own words. Set reviewed: true after reading.
+- id: cli-add-dir
+  group: cli
+  name: --add-dir
+  syntax: --add-dir
+  summary:
+    vi: Cấp quyền đọc và chỉnh sửa tệp cho Claude trong các thư mục bổ sung.
+    en: Grants Claude file read and write permissions in extra folders.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --add-dir ../apps ../lib
+- id: cli-advisor
+  group: cli
+  name: --advisor
+  syntax: --advisor <model>
+  summary:
+    vi: Bật công cụ advisor phía server cho session bằng alias hoặc ID model cụ thể.
+    en: Activates the server advisor feature for the session using a chosen model alias or identifier.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --advisor opus
+- id: cli-agent
+  group: cli
+  name: --agent
+  syntax: --agent
+  summary:
+    vi: Chỉ định một agent cụ thể áp dụng cho session hiện tại.
+    en: Selects a specific agent implementation for the current session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --agent my-custom-agent
+- id: cli-agents
+  group: cli
+  name: --agents
+  syntax: --agents
+  summary:
+    vi: Khai báo động các subagent tùy chỉnh thông qua chuỗi JSON hoặc đường dẫn tệp JSON.
+    en: Passes custom subagent specifications dynamically using raw JSON or a JSON file path.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --agents '{"reviewer":{"description":"Reviews code","prompt":"You are a code reviewer"}}'
+- id: cli-allow-dangerously-skip-permissions
+  group: cli
+  name: --allow-dangerously-skip-permissions
+  syntax: --allow-dangerously-skip-permissions
+  summary:
+    vi: Cho phép thêm bypassPermissions vào vòng lặp chuyển chế độ khi nhấn Shift+Tab.
+    en: Permits cycling into the bypassPermissions option during Shift+Tab mode changes.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --permission-mode default --allow-dangerously-skip-permissions
+- id: cli-allowedtools
+  group: cli
+  name: --allowedTools
+  syntax: --allowedTools
+  summary:
+    vi: Chỉ định danh sách công cụ được phép chạy tự động mà không cần hỏi quyền.
+    en: Specifies tools that can run automatically without prompting for authorization.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: '"Bash(git log *)" "Bash(git diff *)" "Read"'
+- id: cli-append-subagent-system-prompt
+  group: cli
+  name: --append-subagent-system-prompt
+  syntax: --append-subagent-system-prompt
+  summary:
+    vi: Nối thêm nội dung vào cuối system prompt của mọi subagent khi chạy không tương tác.
+    en: Adds extra instructions to the end of system prompts across all subagents in non-interactive runs.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --append-subagent-system-prompt "Cite file paths in every answer" "query"
+- id: cli-append-subagent-system-prompt-file
+  group: cli
+  name: --append-subagent-system-prompt-file
+  syntax: --append-subagent-system-prompt-file
+  summary:
+    vi: Đọc nội dung từ tệp để nối vào cuối system prompt của subagent khi chạy không tương tác.
+    en: Reads text from a file to append to subagent system prompts during non-interactive runs.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --append-subagent-system-prompt-file ./subagent-rules.txt "query"
+- id: cli-append-system-prompt
+  group: cli
+  name: --append-system-prompt
+  syntax: --append-system-prompt
+  summary:
+    vi: Nối thêm nội dung tùy chỉnh vào phần cuối của system prompt mặc định.
+    en: Adds user-defined instructions to the conclusion of the standard system prompt.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --append-system-prompt "Always use TypeScript"
+- id: cli-append-system-prompt-file
+  group: cli
+  name: --append-system-prompt-file
+  syntax: --append-system-prompt-file
+  summary:
+    vi: Tải nội dung từ tệp để nối thêm vào cuối system prompt mặc định.
+    en: Loads a file to attach its contents to the default system prompt.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --append-system-prompt-file ./extra-rules.txt
+- id: cli-autocompact
+  group: cli
+  name: --autocompact
+  syntax: --autocompact <auto|tokens>
+  summary:
+    vi: Thiết lập ngưỡng auto-compact cho session hiện tại mà không sửa cấu hình đã lưu.
+    en: Configures the auto-compact threshold for the active session without altering stored settings.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --autocompact 500k
+- id: cli-ax-screen-reader
+  group: cli
+  name: --ax-screen-reader
+  syntax: --ax-screen-reader
+  summary:
+    vi: Định dạng đầu ra dạng văn bản phẳng không trang trí để hỗ trợ screen reader.
+    en: Switches output to plain text without decorative formatting to aid screen reader software.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --ax-screen-reader
+- id: cli-bare
+  group: cli
+  name: --bare
+  syntax: --bare
+  summary:
+    vi: Tắt tự nhận diện hook, skill, plugin và MCP server để khởi động nhanh hơn.
+    en: Disables loading project configuration, hooks, plugins, and MCP servers for faster startup.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --bare -p "query"
+- id: cli-betas
+  group: cli
+  name: --betas
+  syntax: --betas
+  summary:
+    vi: Bổ sung các header beta vào yêu cầu API khi dùng API key.
+    en: Includes custom beta feature headers when dispatching API calls.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --betas interleaved-thinking
+- id: cli-bg
+  group: cli
+  name: --bg
+  syntax: --bg
+  summary:
+    vi: Khởi tạo session chạy ngầm và trả về quyền điều khiển ngay lập tức.
+    en: Spawns the agent as a background task and immediately returns control to the shell.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --bg "investigate the flaky test"
+- id: cli-channels
+  group: cli
+  name: --channels
+  syntax: --channels
+  summary:
+    vi: Lắng nghe thông báo kênh của MCP server từ các plugin được chỉ định trong session.
+    en: Listens for MCP server channel notifications from specified plugins during the session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --channels plugin:my-notifier@my-marketplace
+- id: cli-chrome
+  group: cli
+  name: --chrome
+  syntax: --chrome
+  summary:
+    vi: Bật tích hợp trình duyệt Chrome để tự động hóa và kiểm thử web.
+    en: Turns on Chrome integration to perform automated web actions and tests.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --chrome
+- id: cli-cloud
+  group: cli
+  name: --cloud
+  syntax: --cloud
+  summary:
+    vi: Tạo session cloud mới với mô tả tác vụ hoặc xếp hàng tin nhắn vào session có sẵn.
+    en: Starts a new cloud session with a prompt or pushes a message to an existing session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --cloud "Fix the login bug"
+- id: cli-continue
+  group: cli
+  name: --continue
+  syntax: --continue
+  summary:
+    vi: Khôi phục cuộc hội thoại gần nhất trong thư mục hiện tại.
+    en: Restores the latest conversation found in the current working directory.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --continue
+- id: cli-correlation-id
+  group: cli
+  name: --correlation-id
+  syntax: --correlation-id <id>
+  summary:
+    vi: Truyền mã định danh tới hook spawn-runner khi dùng cùng tùy chọn --environment.
+    en: Provides an identifier to the spawn-runner hook alongside the environment option.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "Run the build" --environment ccpool_abc123 --correlation-id build-4821
+- id: cli-dangerously-load-development-channels
+  group: cli
+  name: --dangerously-load-development-channels
+  syntax: --dangerously-load-development-channels
+  summary:
+    vi: Cho phép dùng các kênh chưa được phê duyệt để phát triển local sau khi xác nhận.
+    en: Permits unapproved channels for local development after interactive confirmation.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --dangerously-load-development-channels server:webhook
+- id: cli-dangerously-skip-permissions
+  group: cli
+  name: --dangerously-skip-permissions
+  syntax: --dangerously-skip-permissions
+  summary:
+    vi: Bỏ qua các yêu cầu xin quyền xác nhận trong suốt session.
+    en: Bypasses all permission confirmations throughout the session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --dangerously-skip-permissions
+- id: cli-debug
+  group: cli
+  name: --debug
+  syntax: --debug
+  summary:
+    vi: Kích hoạt chế độ debug với tùy chọn lọc danh mục cần xem hoặc loại trừ.
+    en: Activates debugging output with optional category inclusions or exclusions.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --debug='mcp,startup'
+- id: cli-debug-file
+  group: cli
+  name: --debug-file
+  syntax: --debug-file <path>
+  summary:
+    vi: Ghi log debug vào đường dẫn tệp chỉ định và tự động bật chế độ debug.
+    en: Directs debug output to a designated file and turns on debug mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --debug-file /tmp/claude-debug.log
+- id: cli-desktop
+  group: cli
+  name: --desktop
+  syntax: --desktop
+  summary:
+    vi: Mở ứng dụng Claude Desktop tại thư mục hiện tại mà không chạy trong terminal.
+    en: Launches the Claude Desktop application in this directory without running in terminal.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --desktop
+- id: cli-disable-slash-commands
+  group: cli
+  name: --disable-slash-commands
+  syntax: --disable-slash-commands
+  summary:
+    vi: Vô hiệu hóa toàn bộ skill và lệnh cho session này.
+    en: Deactivates all skills and slash commands for the active session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --disable-slash-commands
+- id: cli-disallowedtools
+  group: cli
+  name: --disallowedTools
+  syntax: --disallowedTools
+  summary:
+    vi: Thiết lập quy tắc chặn bằng cách ẩn công cụ hoặc ngăn các lệnh gọi khớp mẫu.
+    en: Sets tool restriction rules by hiding tools or blocking specific invocations.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: '"Bash(git log *)" "Bash(git diff *)" "Edit"'
+- id: cli-effort
+  group: cli
+  name: --effort
+  syntax: --effort
+  summary:
+    vi: Đặt mức độ effort suy nghĩ cho model của cuộc hội thoại chính.
+    en: Specifies the reasoning effort level applied to the primary conversation model.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --effort high
+- id: cli-enable-auto-mode
+  group: cli
+  name: --enable-auto-mode
+  syntax: --enable-auto-mode
+  summary:
+    vi: Đánh dấu cờ cũ đã bị gỡ bỏ và được thay thế bằng permission mode auto.
+    en: Indicates an obsolete flag replaced by auto permission mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --permission-mode auto
+- id: cli-environment
+  group: cli
+  name: --environment
+  syntax: --environment <environment-id>
+  summary:
+    vi: Khởi tạo session cloud chạy trên môi trường tự host với ID chỉ định.
+    en: Initializes a cloud session targeting the designated self-hosted runner pool.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "Fix the login bug" --environment ccpool_abc123
+- id: cli-exclude-dynamic-system-prompt-sections
+  group: cli
+  name: --exclude-dynamic-system-prompt-sections
+  syntax: --exclude-dynamic-system-prompt-sections
+  summary:
+    vi: Chuyển context người dùng sang prompt đầu tiên để tăng hiệu quả cache prompt.
+    en: Shifts per-user context to the initial user prompt to improve prompt caching.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --exclude-dynamic-system-prompt-sections "query"
+- id: cli-exec
+  group: cli
+  name: --exec
+  syntax: --exec
+  summary:
+    vi: Chạy lệnh shell dưới dạng tiến trình PTY nền thay vì mở session Claude.
+    en: Executes a shell command as a background PTY process instead of running Claude.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --bg --exec 'pytest -x'
+- id: cli-fallback-model
+  group: cli
+  name: --fallback-model
+  syntax: --fallback-model
+  summary:
+    vi: Thiết lập danh sách model dự phòng theo thứ tự khi model chính bị quá tải.
+    en: Configures ordered alternative models to handle outages of the primary model.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --fallback-model sonnet,haiku
+- id: cli-fork-session
+  group: cli
+  name: --fork-session
+  syntax: --fork-session
+  summary:
+    vi: Tạo ID session mới khi tiếp tục lại một cuộc trò chuyện thay vì dùng ID cũ.
+    en: Generates a fresh session ID when reopening an existing conversation.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --resume abc123 --fork-session
+- id: cli-forward-subagent-text
+  group: cli
+  name: --forward-subagent-text
+  syntax: --forward-subagent-text
+  summary:
+    vi: Truyền các khối văn bản và suy nghĩ của subagent vào luồng output.
+    en: Streams text and reasoning outputs from subagents into the main stream.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --output-format stream-json --verbose --forward-subagent-text "query"
+- id: cli-from-pr
+  group: cli
+  name: --from-pr
+  syntax: --from-pr
+  summary:
+    vi: Lọc danh sách chọn session theo các cuộc hội thoại gắn với pull request chỉ định.
+    en: Filters the session selector to conversations linked with a given pull request.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --from-pr 123
+- id: cli-ide
+  group: cli
+  name: --ide
+  syntax: --ide
+  summary:
+    vi: Tự động kết nối với IDE khi khởi động nếu chỉ có đúng một IDE hợp lệ.
+    en: Connects automatically to the IDE when a single valid instance is present.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --ide
+- id: cli-include-hook-events
+  group: cli
+  name: --include-hook-events
+  syntax: --include-hook-events
+  summary:
+    vi: Bổ sung các sự kiện vòng đời của hook vào luồng dữ liệu stream-json.
+    en: Streams hook lifecycle progress and responses in JSON streaming output.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --output-format stream-json --verbose --include-hook-events "query"
+- id: cli-include-partial-messages
+  group: cli
+  name: --include-partial-messages
+  syntax: --include-partial-messages
+  summary:
+    vi: Bao gồm các sự kiện streaming từng phần ở đầu ra khi dùng print mode với stream-json.
+    en: Outputs streaming events incrementally when running in print mode with stream-json output.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --output-format stream-json --verbose --include-partial-messages "query"
+- id: cli-init
+  group: cli
+  name: --init
+  syntax: --init
+  summary:
+    vi: Chạy các hook Setup có matcher init trước session trong chế độ print.
+    en: Triggers init Setup hooks prior to starting the session in print mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --init "query"
+- id: cli-init-only
+  group: cli
+  name: --init-only
+  syntax: --init-only
+  summary:
+    vi: Chạy các hook Setup và SessionStart rồi thoát mà không mở hội thoại.
+    en: Executes Setup and SessionStart hooks then immediately exits.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --init-only
+- id: cli-input-format
+  group: cli
+  name: --input-format
+  syntax: --input-format
+  summary:
+    vi: Chọn định dạng đầu vào cho print mode giữa text và stream-json.
+    en: Chooses the input format for print mode between text and stream-json.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --input-format stream-json --output-format stream-json --verbose
+- id: cli-json-schema
+  group: cli
+  name: --json-schema
+  syntax: --json-schema
+  summary:
+    vi: Xác thực đầu ra JSON khớp với một JSON Schema sau khi hoàn thành quy trình trong print mode.
+    en: Enforces output validation against a specified JSON Schema once agent execution finishes in print
+      mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --json-schema '{"type":"object","properties":{...}}' "query"
+- id: cli-maintenance
+  group: cli
+  name: --maintenance
+  syntax: --maintenance
+  summary:
+    vi: Chạy Setup hook có bộ khớp maintenance trước khi bắt đầu session trong print mode.
+    en: Triggers Setup hooks configured with the maintenance matcher prior to starting a print mode session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --maintenance "query"
+- id: cli-max-budget-usd
+  group: cli
+  name: --max-budget-usd
+  syntax: --max-budget-usd
+  summary:
+    vi: Dừng chạy print mode khi ước tính chi phí API đạt mức ngân sách chỉ định.
+    en: Halts print mode execution when client-side estimated API expenses reach the given dollar threshold.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --max-budget-usd 5.00 "query"
+- id: cli-max-turns
+  group: cli
+  name: --max-turns
+  syntax: --max-turns
+  summary:
+    vi: Giới hạn số lượt tương tác của agent trong print mode.
+    en: Restricts the total number of agent interaction turns allowed in print mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --max-turns 3 "query"
+- id: cli-mcp-config
+  group: cli
+  name: --mcp-config
+  syntax: --mcp-config
+  summary:
+    vi: Tải các MCP server từ file JSON hoặc chuỗi JSON được chỉ định.
+    en: Loads MCP servers from provided JSON configuration files or raw JSON strings.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --mcp-config ./mcp.json
+- id: cli-metadata
+  group: cli
+  name: --metadata
+  syntax: --metadata <key=value>
+  summary:
+    vi: Gán nhãn key-value cho session mới khi dùng với --environment để khớp với hook-label.
+    en: Applies key-value metadata tags to an environment-based session for matching orchestrator hook
+      labels.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "Run the build" --environment ccpool_abc123 --metadata size=large
+- id: cli-model
+  group: cli
+  name: --model
+  syntax: --model
+  summary:
+    vi: Chọn model cho session hiện tại bằng alias hoặc tên đầy đủ của model.
+    en: Selects the model for the session using a full identifier or an alias like sonnet or opus.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --model claude-sonnet-5
+- id: cli-name
+  group: cli
+  name: --name
+  syntax: --name
+  summary:
+    vi: Đặt tên hiển thị cho session xuất hiện trong /resume và tiêu đề terminal.
+    en: Assigns a custom title to the session for display in resume lists and the terminal bar.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -n "my-feature-work"
+- id: cli-no-chrome
+  group: cli
+  name: --no-chrome
+  syntax: --no-chrome
+  summary:
+    vi: Vô hiệu hóa tích hợp trình duyệt Chrome cho session này.
+    en: Turns off Chrome browser integration for the active session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --no-chrome
+- id: cli-no-session-persistence
+  group: cli
+  name: --no-session-persistence
+  syntax: --no-session-persistence
+  summary:
+    vi: Tắt lưu session vào ổ đĩa trong print mode để không thể resume sau này.
+    en: Prevents print mode sessions from being saved to disk or resumed later.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --no-session-persistence "query"
+- id: cli-output-format
+  group: cli
+  name: --output-format
+  syntax: --output-format
+  summary:
+    vi: Chỉ định định dạng đầu ra cho print mode giữa text, json hoặc stream-json.
+    en: Sets the format of the output in print mode to text, json, or stream-json.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "query" --output-format json
+- id: cli-permission-mode
+  group: cli
+  name: --permission-mode
+  syntax: --permission-mode
+  summary:
+    vi: Khởi động session với chế độ cấp quyền được chỉ định như auto, plan hoặc manual.
+    en: Selects the initial permission handling mode for the session, such as auto, plan, or manual.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --permission-mode plan
+- id: cli-permission-prompt-tool
+  group: cli
+  name: --permission-prompt-tool
+  syntax: --permission-prompt-tool
+  summary:
+    vi: Chỉ định một MCP tool để xử lý các yêu cầu cấp quyền trong chế độ non-interactive.
+    en: Designates an MCP tool to process authorization requests in non-interactive mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --mcp-config ./mcp.json --permission-prompt-tool mcp__permissions__approve "query"
+- id: cli-permission-prompts
+  group: cli
+  name: --permission-prompts
+  syntax: --permission-prompts
+  summary:
+    vi: Xác định phía phản hồi lời nhắc xin quyền trong print mode hoặc từ chối bằng none.
+    en: Configures how permission prompts are resolved in print mode, allowing host forwarding or denial
+      via none.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --permission-prompts none "query"
+- id: cli-plugin-dir
+  group: cli
+  name: --plugin-dir
+  syntax: --plugin-dir
+  summary:
+    vi: Tải plugin cho session này từ thư mục hoặc file zip.
+    en: Loads one or more plugins for the session from directory paths or zip files.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --plugin-dir ./my-plugin
+- id: cli-plugin-url
+  group: cli
+  name: --plugin-url
+  syntax: --plugin-url
+  summary:
+    vi: Tải plugin dạng file zip từ một hoặc nhiều URL cho session này.
+    en: Fetches and applies remote plugin zip archives from one or more URLs for the session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --plugin-url https://example.com/plugin.zip
+- id: cli-print
+  group: cli
+  name: --print
+  syntax: --print
+  summary:
+    vi: In phản hồi trực tiếp mà không mở chế độ tương tác.
+    en: Runs Claude Code non-interactively and prints the response directly to standard output.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "query"
+- id: cli-prompt-suggestions
+  group: cli
+  name: --prompt-suggestions
+  syntax: --prompt-suggestions
+  summary:
+    vi: Tạo gợi ý prompt tiếp theo của người dùng sau mỗi lượt khi chạy print mode với stream-json.
+    en: Outputs suggested follow-up user prompts after turns when streaming JSON in print mode.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --prompt-suggestions --output-format stream-json --verbose "query"
+- id: cli-ref
+  group: cli
+  name: --ref
+  syntax: --ref <branch>
+  summary:
+    vi: Chỉ định git ref để checkout cho session mới khi dùng kèm --environment.
+    en: Specifies a Git reference branch to check out when provisioning an environment session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "Run the smoke test" --environment ccpool_abc123 --ref main
+- id: cli-remote
+  group: cli
+  name: --remote
+  syntax: --remote
+  summary:
+    vi: Là alias đã lỗi thời của flag --cloud.
+    en: Serves as a deprecated alias for the --cloud flag.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --remote "Fix the login bug"
+- id: cli-remote-control
+  group: cli
+  name: --remote-control
+  syntax: --remote-control
+  summary:
+    vi: Khởi chạy session tương tác cho phép điều khiển từ claude.ai hoặc Claude app, kèm tùy chọn đặt
+      tên session.
+    en: Launches an interactive session manageable from claude.ai or the Claude app, with an optional
+      name for the session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --remote-control "My Project"
+- id: cli-remote-control-session-name-prefix
+  group: cli
+  name: --remote-control-session-name-prefix
+  syntax: --remote-control-session-name-prefix <prefix>
+  summary:
+    vi: Đặt tiền tố cho tên tự động tạo của các session Remote Control.
+    en: Sets a prefix for automatically generated Remote Control session identifiers.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude remote-control --remote-control-session-name-prefix dev-box
+- id: cli-replay-user-messages
+  group: cli
+  name: --replay-user-messages
+  syntax: --replay-user-messages
+  summary:
+    vi: Gửi lại các tin nhắn người dùng từ stdin ra stdout để xác nhận khi dùng stream-json.
+    en: Echoes user input messages from stdin back onto stdout when using stream-json I/O.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p --input-format stream-json --output-format stream-json --verbose --replay-user-messages
+- id: cli-restricted
+  group: cli
+  name: --restricted
+  syntax: --restricted
+  summary:
+    vi: Khởi chạy Claude Code ở chế độ giới hạn, tắt các công cụ chạy lệnh và chỉ cho phép truy cập tệp
+      trong thư mục làm việc.
+    en: Launches Claude Code in a restricted mode that disables command execution tools and limits file
+      access to working directories.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --restricted -p "query"
+- id: cli-resume
+  group: cli
+  name: --resume
+  syntax: --resume
+  summary:
+    vi: Khôi phục phiên làm việc trước bằng ID, tên, đường dẫn bản ghi hoặc mở danh sách tương tác để
+      chọn.
+    en: Restores a prior session using its ID, name, or transcript path, or opens an interactive list
+      to choose one.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --resume auth-refactor
+- id: cli-safe-mode
+  group: cli
+  name: --safe-mode
+  syntax: --safe-mode
+  summary:
+    vi: Khởi động Claude Code và tắt toàn bộ tùy biến để hỗ trợ khắc phục sự cố cấu hình.
+    en: Starts Claude Code with all customizations turned off to help debug broken configurations.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --safe-mode
+- id: cli-session-id
+  group: cli
+  name: --session-id
+  syntax: --session-id
+  summary:
+    vi: Chỉ định một UUID hợp lệ làm ID phiên cho cuộc trò chuyện.
+    en: Assigns a specific UUID to be used as the conversation session ID.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --session-id "550e8400-e29b-41d4-a716-446655440000"
+- id: cli-setting-sources
+  group: cli
+  name: --setting-sources
+  syntax: --setting-sources
+  summary:
+    vi: Chỉ định danh sách phân tách bằng dấu phẩy các nguồn cấu hình cần tải từ user, project và local.
+    en: Specifies a comma-separated list of configuration sources to load among user, project, and local.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --setting-sources user,project
+- id: cli-settings
+  group: cli
+  name: --settings
+  syntax: --settings
+  summary:
+    vi: Ghi đè cài đặt cho phiên bằng tệp JSON dưới 2 MiB hoặc chuỗi JSON trực tiếp.
+    en: Overrides settings using a JSON file under 2 MiB or an inline JSON string for the current session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --settings ./settings.json
+- id: cli-strict-mcp-config
+  group: cli
+  name: --strict-mcp-config
+  syntax: --strict-mcp-config
+  summary:
+    vi: Bỏ qua các MCP server cấu hình sẵn trong tệp hoặc plugin và chỉ tải các server từ --mcp-config.
+    en: Ignores existing MCP configurations from standard files or plugins and loads only the ones specified
+      via --mcp-config.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --strict-mcp-config --mcp-config ./mcp.json
+- id: cli-system-prompt
+  group: cli
+  name: --system-prompt
+  syntax: --system-prompt
+  summary:
+    vi: Thay thế toàn bộ system prompt mặc định bằng văn bản tùy chỉnh được cung cấp.
+    en: Substitutes the entire default system prompt with the provided custom text.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --system-prompt "You are a Python expert"
+- id: cli-system-prompt-file
+  group: cli
+  name: --system-prompt-file
+  syntax: --system-prompt-file
+  summary:
+    vi: Đọc nội dung system prompt từ một tệp để thay thế prompt mặc định.
+    en: Reads system prompt content from a file and replaces the default prompt.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --system-prompt-file ./custom-prompt.txt
+- id: cli-system-prompt-snapshot
+  group: cli
+  name: --system-prompt-snapshot
+  syntax: --system-prompt-snapshot
+  summary:
+    vi: Buộc tạo lại system prompt trên từng request thay vì dùng lại bản chụp prompt từ request đầu tiên.
+    en: Forces Claude Code to reconstruct the system prompt on each request instead of reusing the initial
+      prompt snapshot.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --system-prompt-snapshot off
+- id: cli-teammate-mode
+  group: cli
+  name: --teammate-mode
+  syntax: --teammate-mode
+  summary:
+    vi: Thiết lập cách hiển thị đồng đội trong agent team, ghi đè cài đặt teammateMode cho phiên.
+    en: Defines how agent teammates are shown on screen, overriding the teammateMode setting.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --teammate-mode auto
+- id: cli-teleport
+  group: cli
+  name: --teleport
+  syntax: --teleport
+  summary:
+    vi: Tiếp tục phiên làm việc trên cloud ngay trong terminal cục bộ của bạn.
+    en: Brings an active cloud session back into the local terminal.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --teleport
+- id: cli-tmux
+  group: cli
+  name: --tmux
+  syntax: --tmux
+  summary:
+    vi: Tạo một session tmux cho git worktree, tận dụng pane gốc của iTerm2 nếu khả dụng.
+    en: Launches a tmux session alongside a git worktree, using iTerm2 panes when supported.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -w feature-auth --tmux
+- id: cli-tools
+  group: cli
+  name: --tools
+  syntax: --tools
+  summary:
+    vi: Giới hạn danh sách các công cụ tích hợp sẵn mà Claude được phép sử dụng trong phiên.
+    en: Controls which built-in tools Claude is allowed to use during the session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --tools "Bash,Edit,Read"
+- id: cli-verbose
+  group: cli
+  name: --verbose
+  syntax: --verbose
+  summary:
+    vi: Bật ghi log chi tiết để hiển thị đầy đủ kết quả qua từng lượt tương tác.
+    en: Enables detailed logging to display the complete turn-by-turn output.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude --verbose
+- id: cli-version
+  group: cli
+  name: --version
+  syntax: --version
+  summary:
+    vi: Hiển thị số phiên bản hiện tại của Claude Code.
+    en: Displays the installed version number of Claude Code.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -v
+- id: cli-worktree
+  group: cli
+  name: --worktree
+  syntax: --worktree
+  summary:
+    vi: Khởi chạy Claude trong git worktree cô lập, có thể lấy nhánh từ một pull request hoặc merge request.
+    en: Launches Claude inside an isolated git worktree, optionally checked out from a pull request or
+      merge request.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -w feature-auth
+- id: cli-claude
+  group: cli
+  name: claude
+  syntax: claude
+  summary:
+    vi: Khởi chạy một session tương tác.
+    en: Launches an interactive working session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude
+- id: cli-claude-query
+  group: cli
+  name: claude "query"
+  syntax: claude "query"
+  summary:
+    vi: Bắt đầu một session tương tác với prompt nhập sẵn ban đầu.
+    en: Opens an interactive session preloaded with a starting prompt.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude "explain this project"
+- id: cli-claude-c
+  group: cli
+  name: claude -c
+  syntax: claude -c
+  summary:
+    vi: Tiếp tục cuộc trò chuyện gần nhất trong thư mục hiện tại.
+    en: Resumes the previous chat held within the current folder.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -c
+- id: cli-claude-c-p-query
+  group: cli
+  name: claude -c -p "query"
+  syntax: claude -c -p "query"
+  summary:
+    vi: Tiếp tục phiên làm việc trước đó thông qua SDK.
+    en: Carries on a previous interaction via SDK.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -c -p "Check for type errors"
+- id: cli-claude-p-query
+  group: cli
+  name: claude -p "query"
+  syntax: claude -p "query"
+  summary:
+    vi: Gửi truy vấn qua SDK rồi thoát ngay sau khi hoàn tất.
+    en: Sends a prompt via SDK and terminates upon completion.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -p "explain this function"
+- id: cli-claude-r-session-query
+  group: cli
+  name: claude -r "<session>" "query"
+  syntax: claude -r "<session>" "query"
+  summary:
+    vi: Khôi phục một session theo ID hoặc tên gọi cùng prompt mới.
+    en: Reopens a specific session using its identifier or title.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude -r "auth-refactor" "Finish this PR"
+- id: cli-claude-agents
+  group: cli
+  name: claude agents
+  syntax: claude agents
+  summary:
+    vi: Mở giao diện terminal để theo dõi và chạy đồng thời các background session.
+    en: Launches an interface in the terminal to inspect and spawn concurrent background sessions.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude agents --json
+- id: cli-claude-attach-id-name
+  group: cli
+  name: claude attach <id|name>
+  syntax: claude attach <id|name>
+  summary:
+    vi: Gắn terminal hiện tại vào một background session theo ID hoặc tên.
+    en: Binds the active terminal to a background task by identifier or name.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude attach 7c5dcf5d
+- id: cli-claude-auth-login
+  group: cli
+  name: claude auth login
+  syntax: claude auth login
+  summary:
+    vi: Đăng nhập tài khoản Anthropic với tùy chọn email, SSO, hoặc Console.
+    en: Authenticates to Anthropic with options for email, SSO, or Console billing.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude auth login --console
+- id: cli-claude-auth-logout
+  group: cli
+  name: claude auth logout
+  syntax: claude auth logout
+  summary:
+    vi: Đăng xuất khỏi tài khoản Anthropic hiện tại.
+    en: Signs out of the current Anthropic account.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude auth logout
+- id: cli-claude-auth-status
+  group: cli
+  name: claude auth status
+  syntax: claude auth status
+  summary:
+    vi: Hiển thị trạng thái xác thực dưới dạng JSON hoặc văn bản qua --text.
+    en: Outputs login details as JSON or formatted text via --text.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude auth status
+- id: cli-claude-auto-mode-defaults
+  group: cli
+  name: claude auto-mode defaults
+  syntax: claude auto-mode defaults
+  summary:
+    vi: In các quy tắc phân loại mặc định của auto mode dưới dạng JSON.
+    en: Outputs the built-in classification rules for auto mode in JSON format.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude auto-mode defaults --label 'Git Destructive'
+- id: cli-claude-auto-mode-reset
+  group: cli
+  name: claude auto-mode reset
+  syntax: claude auto-mode reset
+  summary:
+    vi: Xóa mục autoMode khỏi file cấu hình người dùng để khôi phục mặc định.
+    en: Deletes the autoMode section from user preferences to reinstate initial defaults.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude auto-mode reset --yes
+- id: cli-claude-daemon-logs
+  group: cli
+  name: claude daemon logs
+  syntax: claude daemon logs
+  summary:
+    vi: Theo dõi trực tiếp log của supervisor tại ~/.claude/daemon.log.
+    en: Streams live output from ~/.claude/daemon.log until interrupted.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude daemon logs
+- id: cli-claude-daemon-run
+  group: cli
+  name: claude daemon run
+  syntax: claude daemon run
+  summary:
+    vi: Chạy supervisor ở foreground của terminal này và in log.
+    en: Executes the background supervisor directly in the active terminal to display logs.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude daemon run
+- id: cli-claude-daemon-status
+  group: cli
+  name: claude daemon status
+  syntax: claude daemon status
+  summary:
+    vi: Hiển thị trạng thái, phiên bản, socket directory và số worker của supervisor.
+    en: Shows supervisor health, current version, socket path, and active worker count.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude daemon status
+- id: cli-claude-daemon-stop-any
+  group: cli
+  name: claude daemon stop --any
+  syntax: claude daemon stop --any
+  summary:
+    vi: Dừng supervisor và các session phụ thuộc, có thể giữ worker qua --keep-workers.
+    en: Halts the supervisor and its active tasks, optionally preserving workers via --keep-workers.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude daemon stop --any --keep-workers
+- id: cli-claude-doctor
+  group: cli
+  name: claude doctor
+  syntax: claude doctor
+  summary:
+    vi: Kiểm tra cài đặt, lỗi file cấu hình và tính năng Remote Control mà không mở session.
+    en: Evaluates setup health, configuration syntax, and Remote Control support without starting a session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude doctor
+- id: cli-claude-gateway
+  group: cli
+  name: claude gateway
+  syntax: claude gateway
+  summary:
+    vi: Khởi chạy gateway server tự host theo tệp --config gateway.yaml.
+    en: Launches a self-hosted gateway server using a mandatory --config gateway.yaml.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude gateway --config gateway.yaml
+- id: cli-claude-import-source
+  group: cli
+  name: claude import [source]
+  syntax: claude import [source]
+  summary:
+    vi: Mở một session thực thi /import để nhập cấu hình từ các coding agent khác.
+    en: Launches a session running /import to migrate configurations from external coding agents.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude import codex --dry-run
+- id: cli-claude-install-version
+  group: cli
+  name: claude install [version]
+  syntax: claude install [version]
+  summary:
+    vi: Cài đặt hoặc cài lại file nhị phân bằng số bản dựng, stable, hoặc latest.
+    en: Installs or replaces the native executable using a specific version, stable, or latest.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude install stable
+- id: cli-claude-logs-id-name
+  group: cli
+  name: claude logs <id|name>
+  syntax: claude logs <id|name>
+  summary:
+    vi: In các dòng log gần nhất từ một background session.
+    en: Displays the latest log entries generated by a background session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude logs 7c5dcf5d
+- id: cli-claude-mcp
+  group: cli
+  name: claude mcp
+  syntax: claude mcp
+  summary:
+    vi: Cấu hình các MCP server.
+    en: Manages configuration settings for MCP servers.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: See the Claude Code MCP documentation.
+- id: cli-claude-mcp-login-name
+  group: cli
+  name: claude mcp login <name>
+  syntax: claude mcp login <name>
+  summary:
+    vi: Chạy quy trình OAuth cho một MCP server trực tiếp từ dòng lệnh.
+    en: Executes OAuth authentication for a specified MCP server directly from the command line.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude mcp login sentry
+- id: cli-claude-mcp-logout-name
+  group: cli
+  name: claude mcp logout <name>
+  syntax: claude mcp logout <name>
+  summary:
+    vi: Xóa thông tin xác thực OAuth đã lưu cho một MCP server được chỉ định.
+    en: Removes saved OAuth authentication credentials for a specified MCP server.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude mcp logout sentry
+- id: cli-claude-plugin
+  group: cli
+  name: claude plugin
+  syntax: claude plugin
+  summary:
+    vi: Cung cấp các lệnh để quản lý plugin trong Claude Code.
+    en: Provides commands to handle Claude Code plugins.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude plugin install code-review@claude-plugins-official
+- id: cli-claude-purge-path
+  group: cli
+  name: claude purge [path]
+  syntax: claude purge [path]
+  summary:
+    vi: Xóa toàn bộ trạng thái cục bộ, lịch sử, log và cấu hình của một dự án.
+    en: Erases all local state, history, logs, and configuration records for a project.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude purge ~/work/repo --dry-run
+- id: cli-claude-remote-control
+  group: cli
+  name: claude remote-control
+  syntax: claude remote-control
+  summary:
+    vi: Khởi chạy phiên bản server mode cho phép claude.ai hoặc app điều khiển Claude Code.
+    en: Launches a server mode instance enabling claude.ai or the mobile app to operate Claude Code.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude remote-control --name "My Project"
+- id: cli-claude-respawn-id
+  group: cli
+  name: claude respawn <id>
+  syntax: claude respawn <id>
+  summary:
+    vi: Khởi động lại một session chạy ngầm đang chạy hoặc đã dừng mà vẫn giữ hội thoại.
+    en: Relaunches an active or inactive background session while preserving its conversation history.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude respawn 7c5dcf5d
+- id: cli-claude-rm-id
+  group: cli
+  name: claude rm <id>
+  syntax: claude rm <id>
+  summary:
+    vi: Xóa session chạy ngầm khỏi danh sách nhưng vẫn giữ lại bản ghi trên máy.
+    en: Deletes a background session from tracking while keeping transcripts stored locally.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude rm 7c5dcf5d
+- id: cli-claude-self-hosted-runner
+  group: cli
+  name: claude self-hosted-runner
+  syntax: claude self-hosted-runner
+  summary:
+    vi: Đăng ký máy chủ để vận hành các session Claude Code trên hạ tầng tự lưu trữ.
+    en: Registers the machine to host cloud-initiated Claude Code sessions on private infrastructure.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude self-hosted-runner setup
+- id: cli-claude-setup-token
+  group: cli
+  name: claude setup-token
+  syntax: claude setup-token
+  summary:
+    vi: Xuất token OAuth dài hạn ra terminal mà không lưu lại, dùng cho CI và script.
+    en: Outputs an unsaved, persistent OAuth token directly to the terminal for automation use.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude setup-token
+- id: cli-claude-stop-id
+  group: cli
+  name: claude stop <id>
+  syntax: claude stop <id>
+  summary:
+    vi: Dừng một session đang chạy ngầm.
+    en: Terminates an active background session.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude stop 7c5dcf5d
+- id: cli-claude-ultrareview-target
+  group: cli
+  name: claude ultrareview [target]
+  syntax: claude ultrareview [target]
+  summary:
+    vi: Chạy ultrareview tự động, xuất kết quả ra stdout và có thể đăng bình luận lên PR.
+    en: Performs an automated review, outputs results directly to stdout, and can submit comments to a
+      PR.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude ultrareview 1234 --json
+- id: cli-claude-update
+  group: cli
+  name: claude update
+  syntax: claude update
+  summary:
+    vi: Cập nhật ứng dụng lên phiên bản mới nhất.
+    en: Upgrades the application to the most recent release.
+  docs: https://code.claude.com/docs/en/cli-reference
+  verified_at: '2026-11-20'
+  reviewed: false
+  example: claude update
