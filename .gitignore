@@ -25,3 +25,4 @@ node_modules/
 
 # Export output (deployed to Cloudflare Pages, never committed)
 /out/
+/site/

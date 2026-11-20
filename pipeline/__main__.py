@@ -1,7 +1,7 @@
 """Command line entry point: `python -m pipeline <command>`.
 
-Commands so far: check-env, seeds-check, migrate, discover, classify, export.
-More jobs (refresh, the LLM step of classify, enrich…) arrive during P1.
+Commands: check-env, seeds-check, migrate, discover, classify, export, load, refresh, nightly.
+Still to come in P1: the LLM step of classify and enrich.
 """
 
 from __future__ import annotations
@@ -196,12 +196,95 @@ def _cmd_classify(args: argparse.Namespace) -> int:
 def _cmd_export(args: argparse.Namespace) -> int:
     from pipeline import export, seeds
 
-    candidates = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
-    classified = json.loads(Path(args.classified).read_text(encoding="utf-8"))
-    records = export.records_from_json(candidates, classified, seeds.load())
+    if args.db:
+        from datetime import UTC, datetime
+
+        from pipeline import db
+
+        with db.connect(_require_env("DATABASE_URL")) as conn:
+            records, skipped = db.records_for_export(conn, datetime.now(UTC).date())
+        if skipped:
+            print(f"skipped {len(skipped)} active repos without a strong category")
+    else:
+        if not (args.candidates and args.classified):
+            print("give --db, or both --candidates and --classified")
+            return 2
+        candidates = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
+        classified = json.loads(Path(args.classified).read_text(encoding="utf-8"))
+        records = export.records_from_json(candidates, classified, seeds.load())
     docs = export.build(records)
     export.write(docs, Path(args.out))
     print(f"wrote {len(docs)} files for {len(records)} active repos to {args.out}")
+    return 0
+
+
+def _require_env(name: str) -> str:
+    value = os.environ.get(name)
+    if not value:
+        raise SystemExit(f"{name} is not set (see .env.example)")
+    return value
+
+
+def _cmd_load(args: argparse.Namespace) -> int:
+    """One-off: put discover (and optionally classify) output into the database."""
+    from pipeline import db, nightly, seeds
+
+    candidates = json.loads(Path(args.candidates).read_text(encoding="utf-8"))["repos"]
+    with db.connect(_require_env("DATABASE_URL")) as conn:
+        inserted, updated, skipped = db.upsert_repos(conn, candidates)
+        conn.commit()
+        print(f"repos: {inserted} new, {updated} updated, {len(skipped)} skipped (name clash)")
+        if args.classified:
+            ids = {f"{c['owner']}/{c['name']}".lower(): c["id"] for c in candidates}
+            results = json.loads(Path(args.classified).read_text(encoding="utf-8"))
+            pairs = [
+                (ids[r["full_name"].lower()], nightly.result_from_dict(r))
+                for r in results
+                if r["full_name"].lower() in ids
+            ]
+            db.save_classification(conn, pairs)
+            conn.commit()
+            print(f"classification saved for {len(pairs)} repos")
+        print(f"excluded: {db.apply_exclusions(conn, seeds.load())}")
+        conn.commit()
+    return 0
+
+
+def _cmd_refresh(args: argparse.Namespace) -> int:
+    from datetime import UTC, datetime
+
+    from pipeline import db, nightly
+    from pipeline.discover import stderr_log
+    from pipeline.github import GitHubClient
+
+    url = _require_env("DATABASE_URL")
+    client = GitHubClient(token=_require_env("GITHUB_TOKEN"))
+    stats = nightly.refresh_all(lambda: db.connect(url), client, stderr_log)
+    day = datetime.now(UTC).date()
+    count = (
+        0 if args.no_snapshot else nightly.in_transaction(lambda: db.connect(url), db.snapshot, day)
+    )
+    print(f"{stats}, snapshot rows for {day}: {count}, {client.request_count} GitHub requests")
+    return 0
+
+
+def _cmd_nightly(args: argparse.Namespace) -> int:
+    from pipeline import db, nightly, seeds
+    from pipeline.discover import stderr_log
+    from pipeline.github import GitHubClient
+
+    url = _require_env("DATABASE_URL")
+    client = GitHubClient(token=_require_env("GITHUB_TOKEN"))
+    stats = nightly.run(
+        lambda: db.connect(url),
+        client,
+        seeds.load(),
+        Path(args.out),
+        do_discover=not args.no_discover,
+        classify_limit=args.classify_limit,
+        log=stderr_log,
+    )
+    print(json.dumps(stats, ensure_ascii=False, sort_keys=True))
     return 0
 
 
@@ -238,10 +321,26 @@ def build_parser() -> argparse.ArgumentParser:
     cls.set_defaults(func=_cmd_classify)
 
     exp = sub.add_parser("export", help="write /v1 Radar JSON from discover + classify output")
-    exp.add_argument("--candidates", required=True, help="JSON written by discover")
-    exp.add_argument("--classified", required=True, help="JSON written by classify")
+    exp.add_argument("--db", action="store_true", help="read from the database (DATABASE_URL)")
+    exp.add_argument("--candidates", help="JSON written by discover")
+    exp.add_argument("--classified", help="JSON written by classify")
     exp.add_argument("--out", required=True, help="output folder, e.g. out/v1")
     exp.set_defaults(func=_cmd_export)
+
+    load = sub.add_parser("load", help="store discover/classify JSON in the database")
+    load.add_argument("--candidates", required=True, help="JSON written by discover")
+    load.add_argument("--classified", help="JSON written by classify")
+    load.set_defaults(func=_cmd_load)
+
+    ref = sub.add_parser("refresh", help="update numbers of all tracked repos and snapshot")
+    ref.add_argument("--no-snapshot", action="store_true", help="update repos only")
+    ref.set_defaults(func=_cmd_refresh)
+
+    nig = sub.add_parser("nightly", help="the whole nightly job; logs to pipeline_runs")
+    nig.add_argument("--out", required=True, help="export folder, e.g. out/v1")
+    nig.add_argument("--no-discover", action="store_true", help="skip GitHub search")
+    nig.add_argument("--classify-limit", type=int, default=500, help="new repos per night")
+    nig.set_defaults(func=_cmd_nightly)
     return parser
 
 

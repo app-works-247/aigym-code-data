@@ -12,7 +12,7 @@ Not affiliated with Anthropic.
 
 ## Status
 
-P1 in progress: database migrations, discovery seeds, `discover`, rule-based `classify` and the Radar part of `export` are written and tested; storing results, refresh, the LLM step of classify and enrich come next. The roadmap lives in the private app repository.
+P1 in progress: database migrations, discovery seeds, `discover`, rule-based `classify`, the Radar part of `export`, the database layer, `refresh` and the nightly job are written and tested; the LLM step of classify and enrich come next. The roadmap lives in the private app repository.
 
 ## Run locally
 
@@ -38,13 +38,22 @@ python -m pipeline migrate                  # apply them, each in its own transa
 python -m pipeline discover --out repos.json   # search GitHub for Radar candidates
 python -m pipeline classify --in repos.json --out classified.json --limit 50
 python -m pipeline export --candidates repos.json --classified classified.json --out out/v1
+python -m pipeline load --candidates repos.json --classified classified.json   # into the database
+python -m pipeline refresh                  # today's numbers for every repo + star snapshot
+python -m pipeline nightly --out site/v1    # the whole nightly job (see below)
 ```
 
 `discover` uses `GITHUB_TOKEN` when set (30 searches/min); without it GitHub allows 10/min and a full run takes about half an hour. It writes JSON only; storing candidates in the database arrives with refresh.
 
 `classify` reads each repo's file list (1 request) and, for MCP-looking repos, up to 4 dependency files. A repo becomes `active` only with real evidence: `SKILL.md`, `.claude-plugin/` manifests, plugin agents/commands/hooks, or an MCP SDK dependency. Files inside hidden tool folders (`.claude/`, `.gemini/`…), examples and tests count as weak evidence. Repos tagged for Claude without evidence stay `pending` for the LLM step; repos with only a generic MCP or agent-skills topic are `hidden`.
 
-The Postgres test in `tests/test_migrate.py` runs only when `TEST_DATABASE_URL` points to a throwaway database (CI starts one). It drops and recreates the `public` schema, so never point it at a real database.
+## Nightly job
+
+`.github/workflows/nightly.yml` runs at 02:00 UTC (and by hand from the Actions tab): discover, classify new repos (500 a night at most), refresh every repo's numbers through GraphQL (100 per request), store the day's star snapshot, export `/v1` and deploy it to Cloudflare Pages at `aigym-code.pages.dev`, then checks the live `meta.json` shows the new run. Each run is logged in the `pipeline_runs` table. It needs three repository secrets: `DATABASE_URL` (role `pipeline_rw`), `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. GitHub calls use the workflow's own `GITHUB_TOKEN`.
+
+No database connection is held open while waiting on GitHub: Neon's free plan suspends after 5 idle minutes and drops open connections, so every step opens a short connection of its own.
+
+The Postgres test in `tests/test_migrate.py` runs only when `TEST_DATABASE_URL` points to a throwaway database (CI starts one), as do the end-to-end tests in `tests/test_nightly.py`. They drop and recreate the `public` schema, so never point them at a real database.
 
 ## Layout
 
@@ -56,7 +65,8 @@ tests/               unit tests (standard library unittest)
 content/             public reference, templates and model table (see content/README.md)
 docs/database.md     database design: tables, roles, migrations, backups
 docs/json-v1.md      the static JSON the app reads (fields and rules)
-.github/workflows/   ci.yml (lint + tests); data jobs from P1
+.github/workflows/   ci.yml (lint + tests), nightly.yml (data job)
+deploy/_headers      cache and CORS headers for Cloudflare Pages
 ```
 
 ## Data and licensing

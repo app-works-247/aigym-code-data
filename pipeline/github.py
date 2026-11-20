@@ -41,8 +41,9 @@ class GitHubError(Exception):
         self.status = status
 
 
-def urllib_transport(url: str, headers: Mapping[str, str]) -> Response:
-    request = urllib.request.Request(url, headers=dict(headers))
+def urllib_transport(url: str, headers: Mapping[str, str], body: bytes | None = None) -> Response:
+    """GET, or POST when `body` is given (GraphQL)."""
+    request = urllib.request.Request(url, data=body, headers=dict(headers))
     try:
         with urllib.request.urlopen(request, timeout=30) as resp:
             return Response(
@@ -94,21 +95,49 @@ class GitHubClient:
     def get(self, path: str, params: Mapping[str, object] | None = None) -> dict:
         return json.loads(self._request(path, params))
 
+    def graphql(
+        self, query: str, variables: Mapping[str, object], retries: int = _MAX_RETRIES
+    ) -> dict:
+        """Run one GraphQL query and return `data`.
+
+        GitHub answers 200 even when part of a query fails. Nodes that could not be found come
+        back as null and are left to the caller; any other error fails the call.
+        """
+        body = json.dumps({"query": query, "variables": dict(variables)}).encode()
+        reply = json.loads(self._request("/graphql", body=body, retries=retries))
+        errors = [e for e in reply.get("errors") or [] if e.get("type") != "NOT_FOUND"]
+        if errors or reply.get("data") is None:
+            message = "; ".join(str(e.get("message")) for e in errors) or "no data"
+            # GitHub reports its own query timeout as a 200 with an error message.
+            status = 504 if "timeout" in message.lower() else 200
+            raise GitHubError(status, f"GraphQL: {message[:300]}")
+        return reply["data"]
+
     def _request(
-        self, path: str, params: Mapping[str, object] | None = None, accept: str | None = None
+        self,
+        path: str,
+        params: Mapping[str, object] | None = None,
+        accept: str | None = None,
+        body: bytes | None = None,
+        retries: int = _MAX_RETRIES,
     ) -> bytes:
         url = API_ROOT + path
         if params:
             url += "?" + urllib.parse.urlencode(params)
         headers = dict(self._headers, Accept=accept) if accept else self._headers
-        for attempt in range(_MAX_RETRIES + 1):
-            resp = self._transport(url, headers)
+        for attempt in range(retries + 1):
+            if body is None:
+                resp = self._transport(url, headers)
+            else:
+                resp = self._transport(
+                    url, dict(headers, **{"Content-Type": "application/json"}), body
+                )
             self.request_count += 1
             if resp.status == 200:
                 self._respect_exhausted_limit(resp.headers)
                 return resp.body
             wait = self._retry_delay(resp, attempt)
-            if wait is None or attempt == _MAX_RETRIES:
+            if wait is None or attempt == retries:
                 raise GitHubError(resp.status, _error_message(resp))
             self._sleep(wait)
         raise AssertionError("unreachable")
