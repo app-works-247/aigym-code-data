@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 import tempfile
@@ -37,7 +38,8 @@ def gql_node(repo: dict, **changes) -> dict:
 class FakeGitHub:
     """Search, trees and GraphQL over one in-memory list of repos."""
 
-    def __init__(self, repos, trees=None, gone=(), star_bump=0):
+    def __init__(self, repos, trees=None, gone=(), star_bump=0, readmes=None):
+        self.readmes = readmes or {}
         self.repos = {r["node_id"]: r for r in repos}
         self.search = FakeSearch(repos)
         self.trees = trees or {}
@@ -61,6 +63,13 @@ class FakeGitHub:
             errors = [{"type": "NOT_FOUND", "message": "gone"}] if None in nodes else []
             payload = {"data": {"nodes": nodes}, "errors": errors}
             return Response(200, {}, json.dumps(payload).encode())
+        if url.endswith("/readme"):
+            name = url.split("/repos/", 1)[1].rsplit("/readme", 1)[0]
+            text = self.readmes.get(name)
+            if text is None:
+                return Response(404, {}, b'{"message":"Not Found"}')
+            body = {"sha": f"sha-{name}", "content": base64.b64encode(text.encode()).decode()}
+            return Response(200, {}, json.dumps(body).encode())
         if "/git/trees/" in url:
             name = url.split("/repos/", 1)[1].split("/git/", 1)[0]
             paths = self.trees.get(name, ["README.md"])
@@ -170,7 +179,7 @@ class NightlyDatabaseTest(unittest.TestCase):
 
         return psycopg.connect(self.url)
 
-    def run_night(self, fake, now, out):
+    def run_night(self, fake, now, out, provider=None):
         from pipeline import nightly
 
         opened = []
@@ -188,7 +197,9 @@ class NightlyDatabaseTest(unittest.TestCase):
             return conn
 
         try:
-            return nightly.run(connect, client, self.seeds, out, now=now, log=lambda m: None)
+            return nightly.run(
+                connect, client, self.seeds, out, now=now, provider=provider, log=lambda m: None
+            )
         finally:
             # No connection may be left open: Neon would drop it while GitHub work runs.
             self.assertTrue(all(c.closed for c in opened))
@@ -265,6 +276,59 @@ class NightlyDatabaseTest(unittest.TestCase):
         self.assertEqual(status, "failed")
         self.assertIn("Bad credentials", stats["error"])
         self.assertEqual(repos, 3)  # discover's work was committed before refresh failed
+
+    def test_summaries_are_stored_and_exported(self):
+        from tests.test_enrich import GOOD, FakeProvider
+
+        readme = "# Skills\n\n```\n/plugin marketplace add acme/skills\n```\nSet ACME_API_KEY.\n"
+        fake = FakeGitHub(self.repos, self.trees, readmes={"acme/skills": readme})
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp, "v1")
+            stats = self.run_night(fake, NOW, out, provider=FakeProvider([GOOD]))
+            detail = json.loads(Path(out, "repos/acme__skills.json").read_text())
+            again = self.run_night(fake, NOW, out, provider=FakeProvider([]))
+        self.assertEqual((stats["enriched"], stats["enrich_failed"]), (1, 0))
+        self.assertEqual(again["enriched"], 0)  # never summarised twice
+        self.assertEqual(detail["summary"], {"en": GOOD["summary_en"], "vi": GOOD["summary_vi"]})
+        self.assertEqual(detail["use_when"]["vi"], GOOD["use_when_vi"])
+        self.assertEqual(
+            detail["install"], [{"kind": "plugin", "cmd": "/plugin marketplace add acme/skills"}]
+        )
+        self.assertIn("needs_token", detail["cautions"])
+        with self.connect() as conn:
+            row = conn.execute("SELECT provider, model, source_sha FROM repo_i18n LIMIT 1")
+            self.assertEqual(row.fetchone(), ("fake", "fake-1", "sha-acme/skills"))
+
+    def test_quota_errors_stop_summaries_but_not_the_night(self):
+        from pipeline.llm import LLMError
+        from tests.test_enrich import FakeProvider
+
+        repos = self.repos + [
+            make_repo(i, 400 + i, ["claude-code"], owner="acme", name=f"s{i}") for i in range(5, 10)
+        ]
+        trees = {f"acme/s{i}": ["skills/a/SKILL.md"] for i in range(5, 10)} | self.trees
+        readmes = {f"acme/{n}": "# x" for n in ["skills"] + [f"s{i}" for i in range(5, 10)]}
+        quota = [LLMError("Gemini 429: quota")] * 20
+        self.repos = repos
+        with tempfile.TemporaryDirectory() as tmp:
+            stats = self.run_night(
+                FakeGitHub(repos, trees, readmes=readmes), NOW, Path(tmp, "v1"), FakeProvider(quota)
+            )
+        self.assertTrue(stats["enrich_stopped_early"])
+        self.assertEqual((stats["enriched"], stats["enrich_failed"]), (0, 3))
+        self.assertEqual(stats["exported"], 6)  # the night still finished
+        with self.connect() as conn:
+            self.assertEqual(conn.execute("SELECT status FROM pipeline_runs").fetchone()[0], "ok")
+
+    def test_repo_without_readme_is_not_retried(self):
+        from tests.test_enrich import FakeProvider
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp, "v1")
+            first = self.run_night(FakeGitHub(self.repos, self.trees), NOW, out, FakeProvider([]))
+            second = self.run_night(FakeGitHub(self.repos, self.trees), NOW, out, FakeProvider([]))
+        self.assertEqual(first["enrich_no_readme"], 1)
+        self.assertEqual(second["enrich_no_readme"], 0)
 
     def test_export_from_db_matches_classification_order(self):
         from pipeline import db

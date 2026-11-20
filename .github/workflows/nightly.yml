@@ -1,6 +1,6 @@
 name: nightly
 
-# PLAN.md 6.10: discover -> classify new repos -> refresh -> snapshot -> export -> deploy.
+# PLAN.md 6.10: discover -> classify new -> refresh -> snapshot -> summaries -> export -> deploy.
 # Runs only on schedule or by hand, never on pull requests, so forks never see the secrets.
 on:
   schedule:
@@ -37,6 +37,8 @@ jobs:
           # public repos, so no personal token is stored in this public repo.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Summaries (pipeline/ai.yaml). Without it the job skips summaries and does the rest.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python -m pipeline nightly --out site/v1 \
             ${{ inputs.skip_discover && '--no-discover' || '' }}

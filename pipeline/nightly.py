@@ -1,6 +1,8 @@
 """The nightly job (PLAN.md 6.10), run by .github/workflows/nightly.yml.
 
-Order: exclusions -> discover -> classify new repos -> refresh -> snapshot -> export.
+Order: exclusions -> discover -> classify new repos -> refresh -> snapshot -> summaries
+-> export. Summaries are optional: when the AI quota runs out the step stops for the night
+and the rest of the job carries on.
 Each step commits on its own, so a late failure never loses the day's star snapshot.
 Every run is logged in `pipeline_runs`; "7 nights in a row without error" is read from there.
 """
@@ -13,9 +15,9 @@ from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 
-from pipeline import classify, db, discover, export, refresh
+from pipeline import classify, db, discover, enrich, export, refresh
 from pipeline.classify import Match, Result
-from pipeline.github import GitHubClient
+from pipeline.github import GitHubClient, GitHubError
 from pipeline.seeds import Seeds
 
 
@@ -79,6 +81,53 @@ def refresh_all(connect: Callable, client: GitHubClient, log: Callable[[str], No
     return {"refreshed": len(updates), "missing": len(missing), "rename_kept": kept}
 
 
+def enrich_new(
+    connect: Callable,
+    client: GitHubClient,
+    provider,
+    limit: int,
+    max_readme_chars: int,
+    log: Callable[[str], None],
+    give_up_after: int = 3,
+) -> dict:
+    """Summaries for active repos that have none. Each result is saved as soon as it exists."""
+    repos = in_transaction(connect, db.repos_to_enrich, limit)
+    done = no_readme = failed = in_a_row = 0
+    stopped = False
+    for repo in repos:
+        name = f"{repo['owner']}/{repo['name']}"
+        try:
+            readme = enrich.fetch_readme(client, repo["owner"], repo["name"])
+        except GitHubError as err:  # one unreadable README never stops the night
+            failed += 1
+            log(f"enrich: {name} README unavailable: {err}")
+            continue
+        if readme is None or not readme.text.strip():
+            in_transaction(connect, db.mark_no_readme, repo["id"])
+            no_readme += 1
+            continue
+        try:
+            result = enrich.enrich(provider, repo, readme, max_readme_chars)
+        except enrich.EnrichError as err:
+            failed += 1
+            in_a_row += 1
+            log(f"enrich: {name} failed: {err}")
+            if in_a_row >= give_up_after:  # most likely the daily AI quota: try tomorrow
+                stopped = True
+                log(f"enrich: {give_up_after} failures in a row, stopping for tonight")
+                break
+            continue
+        in_a_row = 0
+        in_transaction(connect, db.save_enrichment, repo["id"], result)
+        done += 1
+    return {
+        "enriched": done,
+        "enrich_failed": failed,
+        "enrich_no_readme": no_readme,
+        "enrich_stopped_early": stopped,
+    }
+
+
 def run(
     connect: Callable,
     client: GitHubClient,
@@ -87,6 +136,9 @@ def run(
     *,
     do_discover: bool = True,
     classify_limit: int = 500,
+    provider=None,
+    enrich_limit: int = 150,
+    max_readme_chars: int = 30000,
     now: datetime | None = None,
     log: Callable[[str], None] = print,
 ) -> dict:
@@ -123,6 +175,10 @@ def run(
         log(f"refresh: {stats['refreshed']} updated, {stats['missing']} missing")
 
         stats["snapshot_rows"] = in_transaction(connect, db.snapshot, now.date())
+
+        if provider is not None and enrich_limit > 0:
+            stats.update(enrich_new(connect, client, provider, enrich_limit, max_readme_chars, log))
+            log(f"enrich: {stats['enriched']} summaries")
 
         records, skipped = in_transaction(connect, db.records_for_export, now.date())
         docs = export.build(records, now=now)

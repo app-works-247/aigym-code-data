@@ -269,12 +269,20 @@ def _cmd_refresh(args: argparse.Namespace) -> int:
 
 
 def _cmd_nightly(args: argparse.Namespace) -> int:
-    from pipeline import db, nightly, seeds
+    from pipeline import db, enrich, nightly, seeds
     from pipeline.discover import stderr_log
     from pipeline.github import GitHubClient
+    from pipeline.llm import make_provider
 
     url = _require_env("DATABASE_URL")
     client = GitHubClient(token=_require_env("GITHUB_TOKEN"))
+    config = enrich.load_config()
+    provider = None
+    if args.enrich_limit > 0:
+        try:
+            provider = make_provider(config, dict(os.environ))
+        except Exception as err:  # no AI key: run everything else, skip summaries
+            stderr_log(f"summaries skipped: {err}")
     stats = nightly.run(
         lambda: db.connect(url),
         client,
@@ -282,9 +290,35 @@ def _cmd_nightly(args: argparse.Namespace) -> int:
         Path(args.out),
         do_discover=not args.no_discover,
         classify_limit=args.classify_limit,
+        provider=provider,
+        enrich_limit=args.enrich_limit,
+        max_readme_chars=int(config["max_readme_chars"]),
         log=stderr_log,
     )
     print(json.dumps(stats, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _cmd_enrich(args: argparse.Namespace) -> int:
+    """Only the summary step of nightly, e.g. to fill the backlog from a laptop."""
+    from pipeline import db, enrich, nightly
+    from pipeline.discover import stderr_log
+    from pipeline.github import GitHubClient
+    from pipeline.llm import make_provider
+
+    url = _require_env("DATABASE_URL")
+    config = enrich.load_config()
+    provider = make_provider(config, dict(os.environ))
+    client = GitHubClient(token=os.environ.get("GITHUB_TOKEN"))
+
+    def log(message: str) -> None:
+        stderr_log(message)
+
+    stats = nightly.enrich_new(
+        lambda: db.connect(url), client, provider, args.limit, int(config["max_readme_chars"]), log
+    )
+    stats.update(model=provider.model, ai_calls=provider.calls)
+    print(json.dumps(stats, sort_keys=True))
     return 0
 
 
@@ -427,7 +461,12 @@ def build_parser() -> argparse.ArgumentParser:
     nig.add_argument("--out", required=True, help="export folder, e.g. out/v1")
     nig.add_argument("--no-discover", action="store_true", help="skip GitHub search")
     nig.add_argument("--classify-limit", type=int, default=500, help="new repos per night")
+    nig.add_argument("--enrich-limit", type=int, default=150, help="summaries per night (0 = none)")
     nig.set_defaults(func=_cmd_nightly)
+
+    enr = sub.add_parser("enrich", help="write summaries for active repos that have none")
+    enr.add_argument("--limit", type=int, default=50)
+    enr.set_defaults(func=_cmd_enrich)
 
     tri = sub.add_parser("enrich-trial", help="compare summary models on sample repos (JSON)")
     tri.add_argument("--models", required=True, help="comma-separated exact model names")

@@ -249,6 +249,74 @@ def records_for_export(conn, today: date) -> tuple[list[RepoRecord], list[str]]:
     return records, skipped
 
 
+NO_README = "none"  # repos.readme_sha for repos without a README: nothing to summarise
+
+
+def repos_to_enrich(conn, limit: int) -> list[dict]:
+    """Active repos with no summary yet, most stars first (they are seen first in the app)."""
+    rows = conn.execute(
+        """
+        SELECT r.id, r.owner, r.name, r.description, r.topics,
+               ARRAY(SELECT rc.slug FROM repo_categories rc
+                     WHERE rc.repo_id = r.id AND rc.confidence >= %s
+                     ORDER BY rc.confidence DESC, rc.slug)
+        FROM repos r
+        WHERE r.status = 'active' AND r.readme_sha IS DISTINCT FROM %s
+          AND NOT EXISTS (SELECT 1 FROM repo_i18n i WHERE i.repo_id = r.id)
+        ORDER BY r.stars DESC, r.id LIMIT %s
+        """,
+        (ACTIVE_CONFIDENCE, NO_README, limit),
+    ).fetchall()
+    return [
+        dict(id=i, owner=o, name=n, description=d, topics=list(t), categories=list(c))
+        for i, o, n, d, t, c in rows
+    ]
+
+
+def save_enrichment(conn, repo_id: int, enriched) -> None:
+    """Store one repo's summary (vi + en), install commands and needs_token flag."""
+    for lang in ("vi", "en"):
+        conn.execute(
+            """
+            INSERT INTO repo_i18n (repo_id, lang, summary, use_when, provider, model, source_sha)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (repo_id, lang) DO UPDATE SET summary = EXCLUDED.summary,
+              use_when = EXCLUDED.use_when, provider = EXCLUDED.provider,
+              model = EXCLUDED.model, source_sha = EXCLUDED.source_sha, generated_at = now()
+            """,
+            (
+                repo_id,
+                lang,
+                enriched.summary[lang],
+                Jsonb(enriched.use_when[lang]),
+                enriched.provider,
+                enriched.model,
+                enriched.source_sha,
+            ),
+        )
+    conn.execute("DELETE FROM repo_installs WHERE repo_id = %s", (repo_id,))
+    for ord_, item in enumerate(enriched.installs):
+        conn.execute(
+            "INSERT INTO repo_installs (repo_id, ord, kind, cmd) VALUES (%s, %s, %s, %s)",
+            (repo_id, ord_, item["kind"], item["cmd"]),
+        )
+    if enriched.needs_token:
+        conn.execute(
+            "INSERT INTO repo_flags (repo_id, flag) VALUES (%s, 'needs_token') "
+            "ON CONFLICT DO NOTHING",
+            (repo_id,),
+        )
+    else:
+        conn.execute(
+            "DELETE FROM repo_flags WHERE repo_id = %s AND flag = 'needs_token'", (repo_id,)
+        )
+    conn.execute("UPDATE repos SET readme_sha = %s WHERE id = %s", (enriched.source_sha, repo_id))
+
+
+def mark_no_readme(conn, repo_id: int) -> None:
+    conn.execute("UPDATE repos SET readme_sha = %s WHERE id = %s", (NO_README, repo_id))
+
+
 def start_run(conn, job: str) -> int:
     return conn.execute(
         "INSERT INTO pipeline_runs (job) VALUES (%s) RETURNING id", (job,)
