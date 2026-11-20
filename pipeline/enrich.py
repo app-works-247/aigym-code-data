@@ -121,7 +121,13 @@ def extract_installs(readme: str) -> list[dict[str, str]]:
     """Install commands quoted verbatim from the README, most specific kinds first."""
     found: dict[str, str] = {}
     for raw in readme.splitlines():
-        line = _PROMPT_PREFIX.sub("", raw).strip().strip("`").strip()
+        line = _PROMPT_PREFIX.sub("", raw).strip()
+        if line.startswith("`") and not line.startswith("```"):
+            # An inline code span in prose: keep only what is inside the backticks.
+            inner = re.match(r"`([^`]+)`", line)
+            if not inner:
+                continue
+            line = inner.group(1).strip()
         if not line or len(line) > 500:
             continue
         for kind, pattern in _INSTALL_PATTERNS:

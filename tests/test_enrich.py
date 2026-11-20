@@ -62,6 +62,14 @@ class RulesTest(unittest.TestCase):
         for item in installs:
             self.assertIn(item["cmd"], README)
 
+    def test_inline_code_in_prose_keeps_only_the_code(self):
+        # Found in the trial: a sentence that starts with an inline command.
+        text = "`uvx excel-mcp-server stdio --tools data,charts`. It combines with `--read-only`"
+        self.assertEqual(
+            enrich.extract_installs(text),
+            [{"kind": "pip", "cmd": "uvx excel-mcp-server stdio --tools data,charts"}],
+        )
+
     def test_no_commands_means_empty(self):
         self.assertEqual(enrich.extract_installs("Just prose. Run it however you like."), [])
 
