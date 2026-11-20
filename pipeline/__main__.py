@@ -29,6 +29,31 @@ OPTIONAL_ENV = (
 )
 
 
+def load_dotenv(path: Path, environ: dict[str, str] | None = None) -> int:
+    """Read KEY=value lines from a local .env file into the environment.
+
+    Variables already set (for example by GitHub Actions secrets) always win. Returns how many
+    were added. Only for local runs; CI never has a .env file.
+    """
+    env = os.environ if environ is None else environ
+    if not path.is_file():
+        return 0
+    added = 0
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.removeprefix("export ").strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        if key and value and not env.get(key):
+            env[key] = value
+            added += 1
+    return added
+
+
 def check_env(environ: dict[str, str] | None = None) -> dict[str, bool]:
     """Report which known variables are set (non-empty). Never returns the values."""
     env = os.environ if environ is None else environ
@@ -195,4 +220,5 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
+    load_dotenv(Path(".env"))
     sys.exit(main())
