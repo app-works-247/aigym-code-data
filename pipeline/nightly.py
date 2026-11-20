@@ -182,6 +182,7 @@ def run(
 
         records, skipped = in_transaction(connect, db.records_for_export, now.date())
         docs = export.build(records, now=now)
+        docs.update(export.reference_docs(now.strftime("%Y-%m-%dT%H:%M:%SZ")))
         export.write(docs, out_dir)
         stats.update(exported=len(records), export_files=len(docs), export_skipped=len(skipped))
         log(f"export: {len(records)} repos, {len(docs)} files")

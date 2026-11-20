@@ -213,6 +213,7 @@ def _cmd_export(args: argparse.Namespace) -> int:
         classified = json.loads(Path(args.classified).read_text(encoding="utf-8"))
         records = export.records_from_json(candidates, classified, seeds.load())
     docs = export.build(records)
+    docs.update(export.reference_docs(docs["meta.json"]["updated_at"]))
     export.write(docs, Path(args.out))
     print(f"wrote {len(docs)} files for {len(records)} active repos to {args.out}")
     return 0
@@ -322,6 +323,52 @@ def _cmd_enrich(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_reference_check(args: argparse.Namespace) -> int:
+    """Compare content/reference with the live docs: what is missing, what the docs dropped."""
+    from pipeline import docs, reference
+
+    status = 0
+    for group, spec in docs.GROUPS.items():
+        if args.group and group not in args.group:
+            continue
+        doc_items = docs.items(group, docs.fetch(spec.page))
+        entries = reference.load(group)
+        missing, gone = reference.missing_and_gone(entries, doc_items)
+        reviewed = sum(1 for e in entries if e.reviewed)
+        print(
+            f"{group:<9} docs {len(doc_items):>4} | ours {len(entries):>4} "
+            f"(reviewed {reviewed}) | missing {len(missing):>4} | gone from docs {len(gone)}"
+        )
+        for e in gone:
+            print(f"  gone: {e.name}")
+        if gone:
+            status = 1
+    return status
+
+
+def _cmd_reference_draft(args: argparse.Namespace) -> int:
+    """Draft descriptions for docs items we do not have yet (reviewed: false)."""
+    from datetime import UTC, datetime
+
+    from pipeline import docs, enrich, reference, reference_draft
+    from pipeline.discover import stderr_log
+    from pipeline.llm import make_provider
+
+    provider = make_provider(enrich.load_config(), dict(os.environ))
+    spec = docs.GROUPS[args.group]
+    doc_items = docs.items(args.group, docs.fetch(spec.page))
+    entries = reference.load(args.group)
+    missing, _ = reference.missing_and_gone(entries, doc_items)
+    todo = missing[: args.limit] if args.limit else missing
+    new, failed = reference_draft.draft(provider, todo, datetime.now(UTC).date(), stderr_log)
+    reference.save(args.group, entries + new)
+    print(
+        f"{args.group}: {len(new)} drafted, {len(failed)} failed, "
+        f"{len(missing) - len(todo)} left for later, {provider.calls} AI calls"
+    )
+    return 0
+
+
 def _cmd_enrich_trial(args: argparse.Namespace) -> int:
     """Compare models on a sample of active repos. Writes JSON only, never the database."""
     import random
@@ -409,6 +456,9 @@ def _cmd_enrich_trial(args: argparse.Namespace) -> int:
     return 0
 
 
+_REFERENCE_GROUPS = ("commands", "cli", "settings", "hooks", "env")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m pipeline", description=__doc__)
     parser.add_argument("--version", action="version", version=f"aigym-code-data {__version__}")
@@ -463,6 +513,15 @@ def build_parser() -> argparse.ArgumentParser:
     nig.add_argument("--classify-limit", type=int, default=500, help="new repos per night")
     nig.add_argument("--enrich-limit", type=int, default=150, help="summaries per night (0 = none)")
     nig.set_defaults(func=_cmd_nightly)
+
+    rch = sub.add_parser("reference-check", help="compare content/reference with the docs")
+    rch.add_argument("--group", action="append", choices=sorted(_REFERENCE_GROUPS))
+    rch.set_defaults(func=_cmd_reference_check)
+
+    rdr = sub.add_parser("reference-draft", help="draft descriptions for missing items")
+    rdr.add_argument("--group", required=True, choices=sorted(_REFERENCE_GROUPS))
+    rdr.add_argument("--limit", type=int, help="draft at most N items")
+    rdr.set_defaults(func=_cmd_reference_draft)
 
     enr = sub.add_parser("enrich", help="write summaries for active repos that have none")
     enr.add_argument("--limit", type=int, default=50)

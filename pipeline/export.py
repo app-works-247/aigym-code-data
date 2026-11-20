@@ -27,7 +27,7 @@ HISTORY_DAYS = 90
 ACTIVE_WITHIN = timedelta(days=90)  # PLAN.md 6.4
 SLOW_WITHIN = timedelta(days=365)
 # Files and folders export owns inside the output directory; nothing else is ever deleted.
-OWNED = ("meta.json", "trending.json", "top", "repos")
+OWNED = ("meta.json", "trending.json", "top", "repos", "reference")
 
 
 @dataclass
@@ -226,6 +226,18 @@ def build(records: Iterable[RepoRecord], now: datetime | None = None) -> dict[st
             (o for o in per_category[primary] if o.id != r.id), key=lambda o: (-o.stars, o.id)
         )[:RELATED_SIZE]
         docs[f"repos/{r.id}.json"] = _detail(r, computed, related, now, today)
+    return docs
+
+
+def reference_docs(generated_at: str) -> dict[str, dict]:
+    """/v1/reference/{group}.json from content/reference/*.yaml (no database involved)."""
+    from pipeline import reference
+
+    docs = {}
+    for group in reference.TITLES:
+        entries = reference.load(group)
+        if entries:
+            docs[f"reference/{group}.json"] = reference.to_json(group, entries, generated_at)
     return docs
 
 
