@@ -1,4 +1,4 @@
-# Static JSON /v1: Radar files
+# Static JSON /v1: Radar, Today and status files
 
 The app reads these files from Cloudflare Pages and ships a copy inside the app for offline
 use. `python -m pipeline export` writes them; `pipeline/export.py` is the reference.
@@ -75,7 +75,63 @@ Everything in a list item except `rank`, plus:
 | `history` | `[[YYYYMMDD, stars], …]` | Daily stars for the last 90 days, oldest first |
 | `related[]` | `{id, owner, name, stars}` | Up to 6 other repos from its primary category, most stars first |
 
-## Not yet produced
+## /v1/today.json
 
-`today.json`, `news/…`, `releases…` (P2), `reference/…`, `templates.json`, `models.json` (P3)
-and `status.json` (Cloudflare Worker, P2). Their shapes will be added here when built.
+Written by `pipeline/news.py` (`news_docs`) in the nightly and 3-hourly `official` jobs.
+
+| Field | Type | Meaning |
+|---|---|---|
+| `updated_at` | time | When the job wrote the file |
+| `claude_code` | news item or `null` | The newest Claude Code release with a verified summary |
+| `news` | news item[] | Up to 20 items from the last 21 days with `importance` 2 or more, newest first |
+| `rising` | repo[] | The first 5 entries of `trending.json` (empty until 7 days of star history exist) |
+| `tag_titles` | `{tag: {vi, en}}` | Display names for the tags below |
+
+## /v1/news/page/{n}.json and /v1/news/item/{id}.json
+
+Pages hold 30 items each, newest first: `{schema, updated_at, page, pages, items}`. An item file
+is one news item plus `schema` and `updated_at`.
+
+A **news item**:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `id` | string | 12 hex characters, from the source URL |
+| `source` | string | `claude-code-changelog`, `claude-api-release-notes`, `anthropic-news`, `mcp-blog` (`pipeline/sources.yaml`) |
+| `url` | string | The official page; the app always links to it |
+| `published_at` | time | |
+| `kind` | `release` or `news` | A release is one Claude Code version |
+| `version` | string or `null` | Set for releases |
+| `tags` | string[] | `claude-code`, `api-sdk`, `model`, `mcp`, `skills-plugins`, `anthropic` |
+| `importance` | 0–3 | 3 = new model, breaking change, price change or deprecation |
+| `title` | `{vi, en}` | AI title, or the original title (same in both) when `ai_summary` is false |
+| `summary` | `{vi, en}` or `null` | AI summary. Releases: up to 3 lines separated by `\n`. `null` when the safety net rejected it |
+| `ai_summary` | bool | false: show the original title and the link only |
+
+The safety net (`news.facts_missing`) rejects a summary when any version, Claude model name,
+`code` span, `/command`, `--flag`, CONSTANT_CASE name, `$` price or date in it is missing from
+the source, or when it is longer than the source. Summaries are plain text; only `` `code` ``
+spans may be styled. Text from sources is never rendered as HTML.
+
+## /v1/status.json
+
+Served live by the Pages Function `functions/v1/status.json.js` from
+`status.claude.com/api/v2`, cached 5 minutes. Not part of the exported files and never bundled in
+the app: an old status would mislead.
+
+| Field | Type | Meaning |
+|---|---|---|
+| `indicator` | string | `none`, `minor`, `major`, `critical`, `maintenance`, or `unknown` |
+| `description` | string | e.g. "All Systems Operational" |
+| `fetched_at`, `updated_at` | time | When we asked; when the status page last changed |
+| `components[]` | `{id, name, status}` | Group headers are left out |
+| `active_incidents[]`, `recent_incidents[]` | `{id, name, status, impact, started_at, resolved_at, url}` | Recent: the last 10 |
+| `page` | string | `https://status.claude.com` |
+
+When status.claude.com cannot be reached the function answers 502 with
+`{"schema": 1, "indicator": "unknown", "error": "…"}` and a 60-second cache.
+
+## Not yet documented here
+
+`reference/{group}.json` and `templates.json` (P3, see `pipeline/reference.py` and
+`pipeline/templates.py`), `releases…` and `models.json` (later).

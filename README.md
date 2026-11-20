@@ -41,6 +41,7 @@ python -m pipeline export --candidates repos.json --classified classified.json -
 python -m pipeline load --candidates repos.json --classified classified.json   # into the database
 python -m pipeline refresh                  # today's numbers for every repo + star snapshot
 python -m pipeline nightly --out site/v1    # the whole nightly job (see below)
+python -m pipeline official --out site/v1   # official news + full export (every 3 hours)
 ```
 
 `discover` uses `GITHUB_TOKEN` when set (30 searches/min); without it GitHub allows 10/min and a full run takes about half an hour. It writes JSON only; storing candidates in the database arrives with refresh.
@@ -54,6 +55,12 @@ python -m pipeline nightly --out site/v1    # the whole nightly job (see below)
 No database connection is held open while waiting on GitHub: Neon's free plan suspends after 5 idle minutes and drops open connections, so every step opens a short connection of its own.
 
 The Postgres test in `tests/test_migrate.py` runs only when `TEST_DATABASE_URL` points to a throwaway database (CI starts one), as do the end-to-end tests in `tests/test_nightly.py`. They drop and recreate the `public` schema, so never point them at a real database.
+
+## Official news job
+
+`.github/workflows/official.yml` runs every 3 hours (half past) and by hand: it reads the sources in `pipeline/sources.yaml`, stores what is new, asks Gemini (`pipeline/ai.yaml`, secret `GEMINI_API_KEY`) for vi/en titles and summaries of up to 30 items, then exports and deploys the whole site, since a Pages deploy replaces every file. A summary that fails the safety net is kept as title only. Both jobs share one concurrency group, so deploys never overlap. Why summaries were skipped or rejected is kept in `pipeline_runs.stats`.
+
+`/v1/status.json` is a Cloudflare Pages Function (`functions/`), tested with `node --test functions/status.test.mjs`.
 
 ## Layout
 
