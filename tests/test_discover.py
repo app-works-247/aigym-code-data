@@ -190,6 +190,22 @@ class GitHubClientTest(unittest.TestCase):
         self.client(Scripted([resp, resp, ok()])).get("/x")
         self.assertEqual(self.slept, [2.0, 4.0])
 
+    def test_body_cut_mid_read_is_a_network_error(self):
+        import http.client
+
+        from pipeline import github
+
+        def cut_urlopen(request, timeout):
+            raise http.client.IncompleteRead(b"partial", 100)
+
+        original = github.urllib.request.urlopen
+        github.urllib.request.urlopen = cut_urlopen
+        try:
+            resp = github.urllib_transport("https://api.github.com/x", {})
+        finally:
+            github.urllib.request.urlopen = original
+        self.assertEqual(resp.status, github.NETWORK_ERROR_STATUS)
+
     def test_permission_error_is_not_retried_and_hides_token(self):
         denied = Response(403, {"x-ratelimit-remaining": "4000"}, b'{"message":"Forbidden"}')
         transport = Scripted([denied])

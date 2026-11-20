@@ -6,6 +6,7 @@ and retries on server errors. The HTTP layer is injectable so tests never touch 
 
 from __future__ import annotations
 
+import http.client
 import json
 import time
 import urllib.error
@@ -51,7 +52,8 @@ def urllib_transport(url: str, headers: Mapping[str, str], body: bytes | None = 
             )
     except urllib.error.HTTPError as err:
         return Response(err.code, {k.lower(): v for k, v in err.headers.items()}, err.read())
-    except (urllib.error.URLError, TimeoutError, ConnectionError) as err:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException) as err:
+        # HTTPException covers a connection cut mid-body (IncompleteRead), seen 2026-11-20.
         # Timeouts and dropped connections are retried like a server error.
         return Response(NETWORK_ERROR_STATUS, {}, str(err).encode())
 
