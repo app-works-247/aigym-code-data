@@ -185,6 +185,11 @@ Claude API. You get one official source text (release notes, a changelog section
 
 Facts:
 - Use only the source text. Never add facts, numbers, dates, opinions or advice.
+- Keep each fact attached to exactly what the source attaches it to. If the source says
+  something about one model, product, platform or plan, never extend it to others ("both",
+  "all", "every").
+- Keep the conditions. If the source limits a change ("with telemetry off", "behind a
+  gateway", "on macOS", "in beta"), say so in the same line, or leave that change out.
 - Copy version numbers, model names, command names, flags, setting keys, environment variables
   and prices exactly as the source writes them, and put commands and flags in `backticks`.
 - Do not write any date in the title or summary; the app shows the date separately.
