@@ -3,10 +3,8 @@ name: nightly
 # PLAN.md 6.10: discover -> classify new -> refresh -> snapshot -> summaries -> export -> deploy.
 # Runs only on schedule or by hand, never on pull requests, so forks never see the secrets.
 on:
-  schedule:
-    # Off the top of the hour: GitHub delays or drops scheduled runs there under load (the
-    # first 02:00 run, 2026-11-21, never started).
-    - cron: "17 2 * * *" # 02:17 UTC = 09:17 in Vietnam
+  # Started on time by the Cloudflare Worker in scheduler/ (GitHub's own schedule ran late or
+  # not at all). The time lives in scheduler/wrangler.toml; this file only allows the dispatch.
   workflow_dispatch:
     inputs:
       skip_discover:

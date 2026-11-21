@@ -3,8 +3,8 @@ name: official
 # PLAN.md 6.10: official news every 3 hours, then the whole site is exported and deployed.
 # Runs only on schedule or by hand, never on pull requests, so forks never see the secrets.
 on:
-  schedule:
-    - cron: "30 */3 * * *" # every 3 hours, half past, away from the nightly run
+  # Started on time by the Cloudflare Worker in scheduler/ (GitHub's own schedule ran late or
+  # not at all). The time lives in scheduler/wrangler.toml; this file only allows the dispatch.
   workflow_dispatch:
 
 permissions:

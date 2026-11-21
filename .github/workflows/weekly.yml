@@ -5,8 +5,8 @@ name: weekly
 # BACKUP_PASSPHRASE, which lives only in GitHub Secrets and with the owner. Restore with
 # scripts/restore.sh into a new Neon branch, never into the live database.
 on:
-  schedule:
-    - cron: "47 3 * * 0" # Sunday 03:47 UTC, away from nightly (02:17) and official (:30)
+  # Started on time by the Cloudflare Worker in scheduler/ (GitHub's own schedule ran late or
+  # not at all). The time lives in scheduler/wrangler.toml; this file only allows the dispatch.
   workflow_dispatch:
 
 permissions:
