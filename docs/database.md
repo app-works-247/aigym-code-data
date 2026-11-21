@@ -280,6 +280,10 @@ Bảng `schema_migrations` do script migration tự tạo (mục 5).
 
 **Thử khôi phục:** một lần trong P1 (khôi phục bản dump vào một nhánh Neon, đếm số dòng từng bảng), một lần trước khi gửi duyệt, sau đó mỗi quý.
 
+**Cách làm (2026-11-21):** `scripts/backup.sh OUT` dump dạng custom, mã hóa AES-256 (khóa từ `BACKUP_PASSPHRASE` qua PBKDF2, 600.000 vòng), rồi giải mã và liệt kê lại để chắc bản backup đọc được. `scripts/restore.sh FILE URL` chỉ khôi phục vào database trống (từ chối nếu đã có bảng). Workflow `weekly.yml` chạy Chủ nhật 03:47 UTC, artifact `db-backup` giữ 90 ngày. **Mất `BACKUP_PASSPHRASE` là mất mọi bản backup:** chủ sở hữu giữ một bản trong trình quản lý mật khẩu.
+
+**Lần thử khôi phục đầu tiên (2026-11-21, chạy trên máy):** backup thật 2,5 MB, 29 giây; khôi phục vào database trống trên nhánh Neon tạm `restore-test-2026-11-21`; số dòng 16/16 bảng khớp bản đang chạy (repos 11.101, repo_snapshots 22.129); sai mật khẩu thì giải mã báo lỗi; khôi phục lần hai vào cùng database bị từ chối. Nhánh tạm đã xóa.
+
 ## 7. Dung lượng và giới hạn gói miễn phí
 
 Gói miễn phí của Neon (theo FAQ chính thức, tháng 10/2026): **1GB mỗi project**, **100 CU-giờ tính toán mỗi tháng**, 10 nhánh.
