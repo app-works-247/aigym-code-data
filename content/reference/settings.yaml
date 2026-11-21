@@ -945,7 +945,7 @@
   name: enableArtifact
   syntax: enableArtifact
   summary:
-    vi: Vô hiệu hóa công cụ Artifact vĩnh viễn nếu có bất kỳ tệp cấu hình nào đặt là false.
+    vi: Đặt false ở bất kỳ tệp cấu hình nào sẽ tắt công cụ Artifact, và không tệp nào bật lại được.
     en: Deactivates the Artifact tool permanently if any configuration file sets it to false.
   docs: https://code.claude.com/docs/en/settings-reference#enableartifact
   verified_at: '2026-11-20'

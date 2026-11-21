@@ -50,7 +50,7 @@ python -m pipeline official --out site/v1   # official news + full export (every
 
 ## Nightly job
 
-`.github/workflows/nightly.yml` runs at 02:00 UTC (and by hand from the Actions tab): discover, classify new repos (500 a night at most), refresh every repo's numbers through GraphQL (100 per request), store the day's star snapshot, export `/v1` and deploy it to Cloudflare Pages at `aigym-code.pages.dev`, then checks the live `meta.json` shows the new run. Each run is logged in the `pipeline_runs` table. It needs three repository secrets: `DATABASE_URL` (role `pipeline_rw`), `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. GitHub calls use the workflow's own `GITHUB_TOKEN`.
+`.github/workflows/nightly.yml` runs at 02:17 UTC (and by hand from the Actions tab): discover, classify new repos (500 a night at most), refresh every repo's numbers through GraphQL (100 per request), store the day's star snapshot, export `/v1` and deploy it to Cloudflare Pages at `aigym-code.pages.dev`, then checks the live `meta.json` shows the new run. Each run is logged in the `pipeline_runs` table. It needs three repository secrets: `DATABASE_URL` (role `pipeline_rw`), `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. GitHub calls use the workflow's own `GITHUB_TOKEN`.
 
 No database connection is held open while waiting on GitHub: Neon's free plan suspends after 5 idle minutes and drops open connections, so every step opens a short connection of its own.
 

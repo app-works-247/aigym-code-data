@@ -104,7 +104,7 @@
   name: /background
   syntax: /background [prompt]
   summary:
-    vi: Đưa session hiện tại chạy ngầm dưới dạng agent và giải phóng terminal.
+    vi: Đưa session hiện tại chạy ngầm dưới dạng agent và giải phóng terminal; viết tắt /bg.
     en: Detaches this session to keep running as a background agent, freeing the terminal; alias /bg.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
