@@ -13,6 +13,7 @@ from psycopg.types.json import Jsonb
 
 from pipeline.categories import BY_SLUG
 from pipeline.classify import ACTIVE_CONFIDENCE, Result
+from pipeline.enrich import clean_install
 from pipeline.export import HISTORY_DAYS, RepoRecord
 from pipeline.seeds import Seeds
 
@@ -211,7 +212,9 @@ def records_for_export(conn, today: date) -> tuple[list[RepoRecord], list[str]]:
         "WHERE repo_id = ANY(%s) ORDER BY repo_id, ord",
         (ids,),
     ):
-        installs.setdefault(rid, []).append({"kind": kind, "cmd": cmd})
+        # Rows stored before clean_install existed are cleaned here too, without re-summarizing.
+        if (cleaned := clean_install(cmd)) is not None:
+            installs.setdefault(rid, []).append({"kind": kind, "cmd": cleaned})
 
     records, skipped = [], []
     for row in rows:

@@ -117,6 +117,30 @@ def fetch_readme(client: GitHubClient, owner: str, name: str) -> Readme | None:
     return Readme(sha=data["sha"], text=raw.decode("utf-8", "replace"))
 
 
+_TRAILING_COMMENT = re.compile(r"\s+#\s.*$|\s+#$")
+# What makes a copied command do more than it shows, or fail when pasted (P6 security review,
+# 2026-11-21): placeholders and redirects (< >), pipes (| also hides `curl … | sh`), command
+# separators, backticks, and control or bidi characters that make the text read differently.
+_UNSAFE_INSTALL = re.compile(r"[<>|;`\x00-\x1f\x7f​-‏‪-‮⁦-⁩﻿]")
+
+
+def clean_install(cmd: str) -> str | None:
+    """The command as a user should copy it, or None when it must not be offered.
+
+    Drops a trailing shell comment ("npm i -g x   # or: curl … | sh") when the # is outside
+    quotes. Keeps `&&` and `$(…)`: they appear in real install lines and are visible in full.
+    """
+    cmd = cmd.strip()
+    match = _TRAILING_COMMENT.search(cmd)
+    if match:
+        before = cmd[: match.start()]
+        if before.count('"') % 2 == 0 and before.count("'") % 2 == 0:
+            cmd = before.rstrip()
+    if not cmd or _UNSAFE_INSTALL.search(cmd):
+        return None
+    return cmd
+
+
 def extract_installs(readme: str) -> list[dict[str, str]]:
     """Install commands quoted verbatim from the README, most specific kinds first."""
     found: dict[str, str] = {}
@@ -128,6 +152,7 @@ def extract_installs(readme: str) -> list[dict[str, str]]:
             if not inner:
                 continue
             line = inner.group(1).strip()
+        line = clean_install(line) if line else None
         if not line or len(line) > 500:
             continue
         for kind, pattern in _INSTALL_PATTERNS:
