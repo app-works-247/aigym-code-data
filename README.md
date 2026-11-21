@@ -66,6 +66,10 @@ The Postgres test in `tests/test_migrate.py` runs only when `TEST_DATABASE_URL` 
 
 `.github/workflows/docs-watch.yml` runs every day at 05:15 UTC: `python -m pipeline docs-watch` re-reads the five docs pages behind `content/reference/`. New items get an AI draft, items gone from the docs are removed, and items whose docs row changed (each entry keeps a `docs_hash` of the row it was written from) go back to `reviewed: false`. When anything changed the job opens or updates one pull request, `docs-watch`, with the list as its body. Nothing is deployed until it is merged. The repository setting *Actions → General → Allow GitHub Actions to create and approve pull requests* must be on.
 
+## Scheduler
+
+GitHub's own `schedule:` trigger can start late or not at all (on 2026-11-21 the 02:00 nightly never started and official skipped 03:30). `scheduler/` is a Cloudflare Worker whose Cron Triggers start `nightly.yml` (02:17 UTC), `official.yml` (every 3 hours at :30) and `docs-watch.yml` (05:15 UTC) and `weekly.yml` (Sunday 03:47 UTC) through `workflow_dispatch`, retrying once on a GitHub error. Its only secret is `GH_DISPATCH_TOKEN`, a fine-grained token for this repository with *Actions: Read and write* and nothing else. Deploy from `scheduler/` with `npx --yes wrangler@4.165.0 deploy`, then `npx --yes wrangler@4.165.0 secret put GH_DISPATCH_TOKEN`; runs show in the Worker's Cron Events. Tests: `node --test scheduler/`.
+
 ## Privacy and support pages
 
 `deploy/privacy/` and `deploy/support/` are copied into the site on every deploy and served at `/privacy/` and `/support/` (App Store links).

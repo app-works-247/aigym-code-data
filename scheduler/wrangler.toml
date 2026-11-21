@@ -1,0 +1,14 @@
+# Starts the data workflows on time (see src/index.js). Deploy from this folder:
+#   npx --yes wrangler@4.165.0 deploy
+#   npx --yes wrangler@4.165.0 secret put GH_DISPATCH_TOKEN
+name = "aigym-scheduler"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = false
+
+[triggers]
+# UTC. Keep in step with SCHEDULE in src/index.js (the test checks it).
+crons = ["17 2 * * *", "30 */3 * * *", "15 5 * * *", "47 3 * * SUN"]
+
+[observability]
+enabled = true
