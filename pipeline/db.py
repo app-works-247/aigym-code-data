@@ -213,8 +213,11 @@ def records_for_export(conn, today: date) -> tuple[list[RepoRecord], list[str]]:
         (ids,),
     ):
         # Rows stored before clean_install existed are cleaned here too, without re-summarizing.
-        if (cleaned := clean_install(cmd)) is not None:
-            installs.setdefault(rid, []).append({"kind": kind, "cmd": cleaned})
+        # Two stored lines that differed only by a trailing comment become one (P6 test).
+        cleaned = clean_install(cmd)
+        listed = installs.setdefault(rid, [])
+        if cleaned is not None and all(item["cmd"] != cleaned for item in listed):
+            listed.append({"kind": kind, "cmd": cleaned})
 
     records, skipped = [], []
     for row in rows:
