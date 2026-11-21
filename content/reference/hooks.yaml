@@ -9,7 +9,7 @@
     en: Executes whenever any configuration file gets modified in the middle of a session.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: bd315308cada
 - id: hooks-cwdchanged
   group: hooks
@@ -22,7 +22,7 @@
       tools like direnv.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 973070e44a08
 - id: hooks-directoryadded
   group: hooks
@@ -35,7 +35,7 @@
       control request.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5ee1f5c04255
 - id: hooks-elicitation
   group: hooks
@@ -46,7 +46,7 @@
     en: Triggers when an MCP server asks for user input during a tool call.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a54b2f8afdf1
 - id: hooks-elicitationresult
   group: hooks
@@ -57,7 +57,7 @@
     en: Fires after the user answers an MCP elicitation and before returning the response to the server.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 0cc378420154
 - id: hooks-filechanged
   group: hooks
@@ -68,7 +68,7 @@
     en: Fires when a monitored file updates on disk, using the matcher field to define targeted file names.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 322ac00d9cc1
 - id: hooks-instructionsloaded
   group: hooks
@@ -80,7 +80,7 @@
     en: Runs upon loading CLAUDE.md or .claude/rules/*.md files at startup or lazily during a session.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7c187efad2ad
 - id: hooks-messagedisplay
   group: hooks
@@ -91,7 +91,7 @@
     en: Executes while the assistant message text is being rendered on screen.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 94635c85b438
 - id: hooks-notification
   group: hooks
@@ -102,7 +102,7 @@
     en: Fires whenever Claude Code emits an alert or message.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: fe3835d9b45b
 - id: hooks-permissiondenied
   group: hooks
@@ -115,7 +115,7 @@
       when a classifier verdict exists.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 82c5324fd0d3
 - id: hooks-permissionrequest
   group: hooks
@@ -126,7 +126,7 @@
     en: Triggers when an invoked tool requires an approval decision.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e8329ac6e521
 - id: hooks-postcompact
   group: hooks
@@ -137,7 +137,7 @@
     en: Executes after context compaction finishes.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 89d79ee01220
 - id: hooks-postmodelswitch
   group: hooks
@@ -149,7 +149,7 @@
       on resume.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7872d1001c01
 - id: hooks-posttoolbatch
   group: hooks
@@ -161,7 +161,7 @@
       call.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 820cdb03eebf
 - id: hooks-posttooluse
   group: hooks
@@ -172,7 +172,7 @@
     en: Fires right after a tool call completes successfully.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8f5e8721aaed
 - id: hooks-posttoolusefailure
   group: hooks
@@ -183,7 +183,7 @@
     en: Triggers right after a tool call encounters an error.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 320cb01cbfea
 - id: hooks-precompact
   group: hooks
@@ -194,7 +194,7 @@
     en: Executes before context compaction starts.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a77f287c55e3
 - id: hooks-premodelswitch
   group: hooks
@@ -205,7 +205,7 @@
     en: Runs before applying a requested model change and can prevent the switch.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7024d2775636
 - id: hooks-pretooluse
   group: hooks
@@ -216,7 +216,7 @@
     en: Triggers prior to running a tool call and can prevent its execution.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 1d7807c79da0
 - id: hooks-sessionend
   group: hooks
@@ -227,7 +227,7 @@
     en: Fires when a session finishes.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ebac53493c40
 - id: hooks-sessionstart
   group: hooks
@@ -238,7 +238,7 @@
     en: Runs when starting a brand new session or resuming an existing one.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 538e258f1f54
 - id: hooks-setup
   group: hooks
@@ -251,7 +251,7 @@
       in -p mode, e.g. in CI.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2e12ed8f3479
 - id: hooks-stop
   group: hooks
@@ -262,7 +262,7 @@
     en: Triggers once Claude has completed generating its full response.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 923b7a47dea3
 - id: hooks-stopfailure
   group: hooks
@@ -273,7 +273,7 @@
     en: Fires when an ongoing turn stops abruptly due to an API error.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 516c99dc8441
 - id: hooks-subagentstart
   group: hooks
@@ -284,7 +284,7 @@
     en: Triggers whenever a new subagent is created and started.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e445d5b61a1f
 - id: hooks-subagentstop
   group: hooks
@@ -295,7 +295,7 @@
     en: Triggers when an active subagent concludes its execution.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8927a03a126a
 - id: hooks-taskcompleted
   group: hooks
@@ -306,7 +306,7 @@
     en: Executes while a task is being updated to completed status.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7960c2cc2238
 - id: hooks-taskcreated
   group: hooks
@@ -317,7 +317,7 @@
     en: Fires while a task is being generated through TaskCreate.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: f288d7d61579
 - id: hooks-teammateidle
   group: hooks
@@ -328,7 +328,7 @@
     en: Runs right before an agent team teammate enters an idle state.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 91450dab7223
 - id: hooks-userpromptexpansion
   group: hooks
@@ -341,7 +341,7 @@
       that from happening.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 64cb6b5a47ad
 - id: hooks-userpromptsubmit
   group: hooks
@@ -353,7 +353,7 @@
       Claude Code.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ea446aacb71e
 - id: hooks-worktreecreate
   group: hooks
@@ -366,7 +366,7 @@
       replaces git''s own step.'
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5212e492501f
 - id: hooks-worktreeremove
   group: hooks
@@ -377,5 +377,5 @@
     en: Runs when deleting a worktree generated by a WorktreeCreate hook.
   docs: https://code.claude.com/docs/en/hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ed85838bb553

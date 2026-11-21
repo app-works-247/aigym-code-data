@@ -9,7 +9,7 @@
     en: Grants file access to an extra directory and triggers DirectoryAdded hooks.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 3d43299cfe92
 - id: commands-advisor
   group: commands
@@ -20,7 +20,7 @@
     en: Controls a secondary advisor model to obtain guidance during complex steps.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 0f5a3541ded0
 - id: commands-agents
   group: commands
@@ -31,7 +31,7 @@
     en: Shows instructions on managing subagents or editing their directories.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 07d06d9a98a5
 - id: commands-artifact-capabilities
   group: commands
@@ -42,7 +42,7 @@
     en: Displays runtime capabilities and connectors available to published artifacts.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c5f826d17781
 - id: commands-artifact-diagramming
   group: commands
@@ -53,7 +53,7 @@
     en: Loads guidance for creating clear, theme-compatible inline SVG diagrams.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 164b085b7175
 - id: commands-artifacts
   group: commands
@@ -64,7 +64,7 @@
     en: Browses personal or shared artifacts to attach, view in browser, or copy links.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: db912dbfd285
 - id: commands-auto-mode-setup
   group: commands
@@ -75,7 +75,7 @@
     en: Generates and reviews autoMode.environment entries to save in user settings.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 4e7eef23c056
 - id: commands-autocompact
   group: commands
@@ -86,7 +86,7 @@
     en: Configures the token threshold that initiates automatic context compaction.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: b1c68267aa92
 - id: commands-autofix-pr
   group: commands
@@ -97,7 +97,7 @@
     en: Starts a cloud agent to monitor current PR activity and push corrective commits.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 733ebdf54bf7
 - id: commands-background
   group: commands
@@ -108,7 +108,7 @@
     en: Detaches this session to keep running as a background agent, freeing the terminal; alias /bg.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 89aa71e47540
 - id: commands-batch
   group: commands
@@ -119,7 +119,7 @@
     en: Splits massive codebase tasks across parallel subagents in isolated worktrees.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7b399f75449c
 - id: commands-branch
   group: commands
@@ -130,7 +130,7 @@
     en: Forks the current chat into an alternate path while keeping the original safe.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c169096b0976
 - id: commands-btw
   group: commands
@@ -141,7 +141,7 @@
     en: Asks a temporary query without recording it in the ongoing conversation history.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: befe24fc2aa3
 - id: commands-bug
   group: commands
@@ -152,7 +152,7 @@
     en: Submits diagnostic data and session transcripts to report unexpected issues.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: bc8029f7c394
 - id: commands-cd
   group: commands
@@ -163,7 +163,7 @@
     en: Switches the current working folder while preserving the ongoing conversation.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 80117f6d73d4
 - id: commands-chrome
   group: commands
@@ -174,7 +174,7 @@
     en: Configures options and preferences for Claude in Chrome.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2a4f3bd8789f
 - id: commands-claude-api
   group: commands
@@ -185,7 +185,7 @@
     en: Retrieves Claude API reference docs and implementation advice for your project.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2bb8fbee77ad
 - id: commands-claude-in-chrome
   group: commands
@@ -196,7 +196,7 @@
     en: Directs browser operations such as form submission and testing via Chrome.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2be5cbbb7a31
 - id: commands-clear
   group: commands
@@ -207,7 +207,7 @@
     en: Wipes current context to initiate a brand-new conversation session.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a3abcd62ec5e
 - id: commands-code-review
   group: commands
@@ -219,7 +219,7 @@
     en: Scans targeted code or diffs for bugs with optional automated fixing and PR posts.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cfc91987a75a
 - id: commands-color
   group: commands
@@ -230,7 +230,7 @@
     en: Customizes the tint of the prompt line for the active terminal session.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8641892c6af4
 - id: commands-compact
   group: commands
@@ -241,7 +241,7 @@
     en: Condenses earlier conversation history into a summary to reclaim token space.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a9d2c6f98ac4
 - id: commands-config
   group: commands
@@ -252,7 +252,7 @@
     en: Updates preferences or opens the settings dashboard via key-value parameters.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5b2cdca2e130
 - id: commands-context
   group: commands
@@ -263,7 +263,7 @@
     en: Visualizes token consumption across the context window with optimization tips.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a47efa2540f2
 - id: commands-copy
   group: commands
@@ -274,7 +274,7 @@
     en: Copies recent output snippets or the whole assistant message to the clipboard.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5ac4971829b9
 - id: commands-cost
   group: commands
@@ -285,7 +285,7 @@
     en: Acts as an alias for the /usage command.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 93560f9521d2
 - id: commands-dataviz
   group: commands
@@ -298,7 +298,7 @@
       standards.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 6f67920ae55c
 - id: commands-debug
   group: commands
@@ -309,7 +309,7 @@
     en: Activates debug logging for the active session and inspects logs to diagnose problems.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 25e400d707c3
 - id: commands-deep-research
   group: commands
@@ -322,7 +322,7 @@
       report.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5acf3e5cf36f
 - id: commands-design
   group: commands
@@ -335,7 +335,7 @@
       Design artifacts.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 74dd2ba1dc29
 - id: commands-design-login
   group: commands
@@ -346,7 +346,7 @@
     en: Authenticates your claude.ai credentials to permit design-system integration for /design-sync.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2f51fd7a2790
 - id: commands-design-sync
   group: commands
@@ -359,7 +359,7 @@
       mockups.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c9a6f8e1a76b
 - id: commands-desktop
   group: commands
@@ -370,7 +370,7 @@
     en: Transfers your active session to the Claude Code Desktop application.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c01cbab98868
 - id: commands-diff
   group: commands
@@ -381,7 +381,7 @@
     en: Displays uncommitted modifications in your working tree, including updates produced by Claude.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e08515d56433
 - id: commands-doctor
   group: commands
@@ -393,7 +393,7 @@
     en: Inspects your environment, configuration, and CLAUDE.md for issues, offering solutions upon approval.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a469c1a05600
 - id: commands-effort
   group: commands
@@ -404,7 +404,7 @@
     en: Configures reasoning effort, displays its status, or toggles ultracode for the session.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: b93818f314e9
 - id: commands-exit
   group: commands
@@ -415,7 +415,7 @@
     en: Closes the CLI or unlinks from a background session while leaving it active.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7c84b80ffdc5
 - id: commands-export
   group: commands
@@ -426,7 +426,7 @@
     en: Saves the active chat history as plain text directly to a target file or via an interactive dialog.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c5c57a7ec5ff
 - id: commands-fast
   group: commands
@@ -437,7 +437,7 @@
     en: Enables or disables fast mode, switching states immediately even while a reply is in progress.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 342cef8dd95a
 - id: commands-feedback
   group: commands
@@ -448,7 +448,7 @@
     en: Submits feedback about Claude Code, opening a report dialog or letting you review queued drafts.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8d8795db7591
 - id: commands-fewer-permission-prompts
   group: commands
@@ -459,7 +459,7 @@
     en: Analyzes session logs for frequent read-only operations and saves an allowlist to .claude/settings.json.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c678fdba1576
 - id: commands-focus
   group: commands
@@ -470,7 +470,7 @@
     en: Toggles a minimal view that keeps just the latest prompt, a short tool summary and the final answer.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c5eb3595cce9
 - id: commands-fork
   group: commands
@@ -481,7 +481,7 @@
     en: Duplicates the present session into a separate background instance while maintaining your workflow.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: afa3e21e1041
 - id: commands-goal
   group: commands
@@ -492,7 +492,7 @@
     en: Defines an objective that Claude pursues across turns, shows the active target, or dismisses it.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c7e3d024d7c6
 - id: commands-heapdump
   group: commands
@@ -503,7 +503,7 @@
     en: Exports a JavaScript memory snapshot and diagnostic breakdown to inspect heavy RAM consumption.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e0ccf86cba6f
 - id: commands-help
   group: commands
@@ -514,7 +514,7 @@
     en: Lists supported commands and general guidance for using the interface.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 99d8984c9fa1
 - id: commands-hooks
   group: commands
@@ -525,7 +525,7 @@
     en: Displays configured hooks currently set up in the environment.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8b8a4cc22897
 - id: commands-ide
   group: commands
@@ -536,7 +536,7 @@
     en: Controls integrations with code editors and reports their current connection state.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2a710fc2edde
 - id: commands-import
   group: commands
@@ -548,7 +548,7 @@
       Claude Code.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7a331933dcc1
 - id: commands-init
   group: commands
@@ -559,7 +559,7 @@
     en: Sets up a project by creating a CLAUDE.md file and optionally configuring skills and preferences.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 720e80c3503b
 - id: commands-insights
   group: commands
@@ -572,7 +572,7 @@
       encountered issues, and recommended features.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: f9837d1104f0
 - id: commands-install-github-app
   group: commands
@@ -585,7 +585,7 @@
       GitHub Actions workflows and secrets.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: af30d388329d
 - id: commands-install-slack-app
   group: commands
@@ -596,7 +596,7 @@
     en: Installs the Claude Slack app by launching a browser to finish the OAuth authorization.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 89478282eea5
 - id: commands-keybindings
   group: commands
@@ -607,7 +607,7 @@
     en: Opens your keyboard shortcuts configuration file.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a10d26d951bc
 - id: commands-list-agents
   group: commands
@@ -620,7 +620,7 @@
       to message them.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 3b2ed9c6dd55
 - id: commands-login
   group: commands
@@ -631,7 +631,7 @@
     en: Signs in to your Anthropic account.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: dbd97a117b7f
 - id: commands-logout
   group: commands
@@ -642,7 +642,7 @@
     en: Signs out of your Anthropic account.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 44a81be5ed6b
 - id: commands-loop
   group: commands
@@ -655,7 +655,7 @@
       parameters are omitted.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 708d3c31e074
 - id: commands-mcp
   group: commands
@@ -667,7 +667,7 @@
     en: Manages MCP server connections and OAuth authentication via an interactive menu or direct subcommands.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e0881fd6691a
 - id: commands-memory
   group: commands
@@ -678,7 +678,7 @@
     en: Edits CLAUDE.md files, toggles auto memory, and displays auto memory entries.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 3ac8489a7d91
 - id: commands-mobile
   group: commands
@@ -689,7 +689,7 @@
     en: Displays a QR code for downloading the Claude mobile application.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 9d599ecaf0f8
 - id: commands-model
   group: commands
@@ -702,7 +702,7 @@
       session only.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 833c4f662280
 - id: commands-output-style
   group: commands
@@ -713,7 +713,7 @@
     en: Lists available output styles or switches the current output style.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 4ff0d5c70063
 - id: commands-passes
   group: commands
@@ -724,7 +724,7 @@
     en: Shares a free one-week access pass for Claude Code with friends if your account is eligible.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: b5b60f4e2024
 - id: commands-permissions
   group: commands
@@ -737,7 +737,7 @@
       and auto mode settings.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2c482b5ba92f
 - id: commands-plan
   group: commands
@@ -749,7 +749,7 @@
       begin immediately.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c8fc869b4a8c
 - id: commands-plugin
   group: commands
@@ -762,7 +762,7 @@
       and disable.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cc6b8558ce6e
 - id: commands-plugin-authoring
   group: commands
@@ -773,7 +773,7 @@
     en: Loads the reference materials used by Claude when developing a mod.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2eb3ed605efc
 - id: commands-powerup
   group: commands
@@ -784,7 +784,7 @@
     en: Explores Claude Code features using brief interactive lessons and animated demonstrations.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 971c657f2100
 - id: commands-pr-comments
   group: commands
@@ -797,7 +797,7 @@
       branch PR or accepting a specific PR.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: fd3abf21eced
 - id: commands-privacy-settings
   group: commands
@@ -809,7 +809,7 @@
     en: Lets Pro, Max, and Ultra subscribers inspect and modify their privacy preferences.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 6df40f62ba33
 - id: commands-radio
   group: commands
@@ -820,7 +820,7 @@
     en: Opens Claude FM lo-fi radio in a web browser or displays the stream URL if unavailable.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 7025354a312a
 - id: commands-rate-limit-options
   group: commands
@@ -833,7 +833,7 @@
       or upgrading plans.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2a8dbfe3ba42
 - id: commands-recap
   group: commands
@@ -844,7 +844,7 @@
     en: Produces a one-line summary of the active session on demand.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 85006b117791
 - id: commands-release-notes
   group: commands
@@ -855,7 +855,7 @@
     en: Displays release notes or changelogs in the transcript through an interactive version selector.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 0221df52e6df
 - id: commands-reload-plugins
   group: commands
@@ -866,7 +866,7 @@
     en: Reloads all active plugins without restarting to apply pending updates and reports errors.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8f8a5db3de2e
 - id: commands-reload-skills
   group: commands
@@ -877,7 +877,7 @@
     en: Rescans skill and command directories to detect added or modified skills without restarting.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 603fe9b18ac6
 - id: commands-remote-control
   group: commands
@@ -888,7 +888,7 @@
     en: Enables the current session to be controlled remotely via claude.ai.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: c438679aaad4
 - id: commands-remote-env
   group: commands
@@ -899,7 +899,7 @@
     en: Selects the default cloud environment used when launching cloud sessions from the CLI.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cc2fa05df4ec
 - id: commands-rename
   group: commands
@@ -910,7 +910,7 @@
     en: Renames the current session or automatically generates a title from conversation history.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 5770d45d117a
 - id: commands-restart
   group: commands
@@ -921,7 +921,7 @@
     en: Restarts Claude Code and resumes the active session to apply an installed update.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: d95c895da4da
 - id: commands-resume
   group: commands
@@ -933,7 +933,7 @@
       sessions.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: f70234cc3a31
 - id: commands-review
   group: commands
@@ -945,7 +945,7 @@
     en: Reviews the current diff, a specified pull request, branch, or file path.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 8b82ad4c05e6
 - id: commands-rewind
   group: commands
@@ -956,7 +956,7 @@
     en: Rolls back the conversation and code changes to an earlier state or summarizes from a message.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2f271148cb4e
 - id: commands-run
   group: commands
@@ -967,7 +967,7 @@
     en: Starts and controls your application to observe and verify changes directly.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: afe61e686e1b
 - id: commands-run-skill-generator
   group: commands
@@ -980,7 +980,7 @@
       application in a fresh environment.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 111424bb8ef1
 - id: commands-sandbox
   group: commands
@@ -991,7 +991,7 @@
     en: Toggles sandbox mode on compatible platforms.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: b5059e4e8479
 - id: commands-schedule
   group: commands
@@ -1002,7 +1002,7 @@
     en: Manages, configures, and inspects scheduled cloud tasks through a guided conversation.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 6be70ab89a77
 - id: commands-scroll-speed
   group: commands
@@ -1013,7 +1013,7 @@
     en: Adjusts mouse wheel scrolling speed interactively in fullscreen mode.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 63b8f00fac5d
 - id: commands-security-review
   group: commands
@@ -1026,7 +1026,7 @@
       auth flaws, and exposed data.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: afcbab9f7787
 - id: commands-setup-bedrock
   group: commands
@@ -1037,7 +1037,7 @@
     en: Launches a setup wizard to configure Amazon Bedrock credentials, regions, and models.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: afa4142b661e
 - id: commands-setup-vertex
   group: commands
@@ -1048,7 +1048,7 @@
     en: Launches a setup wizard to configure Google Cloud Agent Platform auth, projects, and models.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a0deb3cfe360
 - id: commands-simplify
   group: commands
@@ -1059,7 +1059,7 @@
     en: Reviews modified code using parallel review agents to optimize and simplify implementations.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ae104bf9e251
 - id: commands-skill-doctor
   group: commands
@@ -1070,7 +1070,7 @@
     en: Displays context consumption and execution frequency for each registered skill.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cab5e950bc23
 - id: commands-skills
   group: commands
@@ -1081,7 +1081,7 @@
     en: Lists and filters available skills, letting you adjust their visibility or sort by token size.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 4d9a4f574df4
 - id: commands-slides
   group: commands
@@ -1092,7 +1092,7 @@
     en: Generates a presentation deck as a Claude Slides artifact based on a supplied brief.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 14bada100de0
 - id: commands-stats
   group: commands
@@ -1103,7 +1103,7 @@
     en: Navigates directly to the Stats tab within the usage interface.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ef3863be64a2
 - id: commands-status
   group: commands
@@ -1114,7 +1114,7 @@
     en: Shows current version, model, account details, and session state on the Settings Status tab.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 70cf4f2da645
 - id: commands-statusline
   group: commands
@@ -1125,7 +1125,7 @@
     en: Customizes the status line layout manually or matches it automatically to your shell prompt.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 1774a0f3f9b1
 - id: commands-stickers
   group: commands
@@ -1136,7 +1136,7 @@
     en: Checks the current availability of Claude Code stickers.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: dfa7cdc7847d
 - id: commands-stop
   group: commands
@@ -1149,7 +1149,7 @@
       and worktree.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 464216c54f2a
 - id: commands-subtask
   group: commands
@@ -1162,7 +1162,7 @@
       results here.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 19f1211199b7
 - id: commands-tasks
   group: commands
@@ -1173,7 +1173,7 @@
     en: Displays and controls background operations and finished subagents in the active session.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: f9a52d8043d5
 - id: commands-team-onboarding
   group: commands
@@ -1185,7 +1185,7 @@
     en: Analyzes the last 30 days of activity to create a markdown setup guide and share link for teammates.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 0d59f9c92e9a
 - id: commands-teleport
   group: commands
@@ -1196,7 +1196,7 @@
     en: Imports a cloud session, branch, and chat history into the local terminal via an interactive picker.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cc944674ef80
 - id: commands-terminal-setup
   group: commands
@@ -1208,7 +1208,7 @@
     en: Configures terminal-specific capabilities like newline shortcuts, alert sounds, or clipboard integration.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: cbe63b9627f6
 - id: commands-theme
   group: commands
@@ -1220,7 +1220,7 @@
       options.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 251f7b8254ba
 - id: commands-tui
   group: commands
@@ -1232,7 +1232,7 @@
       one.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a50b975c89ab
 - id: commands-ultraplan
   group: commands
@@ -1243,7 +1243,7 @@
     en: Deprecated planning command replaced by plan mode.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 559517a17383
 - id: commands-ultrareview
   group: commands
@@ -1255,7 +1255,7 @@
     en: Sends a PR or branch for an in-depth cloud review by several agents; same as /code-review ultra.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: a2069b6d439f
 - id: commands-update-config
   group: commands
@@ -1266,7 +1266,7 @@
     en: Instructs Claude to apply specific preferences, hooks, or environment variables to settings.json.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 2705a70d2dc3
 - id: commands-upgrade
   group: commands
@@ -1277,7 +1277,7 @@
     en: Navigates to the plan upgrade screen in a browser or outputs the link directly to the console.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: e834de3c30f5
 - id: commands-usage
   group: commands
@@ -1288,7 +1288,7 @@
     en: Presents consumption metrics, quota details, session expenses, and gateway spending reports.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 3476f09baf17
 - id: commands-usage-credits
   group: commands
@@ -1299,7 +1299,7 @@
     en: Opens credit purchase settings or asks organization administrators to allocate more credits.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 9426e7a3611b
 - id: commands-verify
   group: commands
@@ -1310,7 +1310,7 @@
     en: Validates modifications by compiling and executing the application directly to check behavior.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 3686f436b0fe
 - id: commands-vim
   group: commands
@@ -1321,7 +1321,7 @@
     en: Deprecated command superseded by the Editor mode option inside /config.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 94fe82ce4b7a
 - id: commands-voice
   group: commands
@@ -1332,7 +1332,7 @@
     en: Controls speech dictation features and switches between input behaviors.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: d0491a82812b
 - id: commands-web-setup
   group: commands
@@ -1343,7 +1343,7 @@
     en: Links cloud sessions to GitHub using authenticated credentials from the local gh CLI.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: ac104fd06921
 - id: commands-workflow-authoring
   group: commands
@@ -1354,7 +1354,7 @@
     en: Loads documentation, API details, and sample patterns for authoring dynamic workflow scripts.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: 144e25b5bd8f
 - id: commands-workflows
   group: commands
@@ -1365,5 +1365,5 @@
     en: Displays an interface to track, halt, continue, or record workflow runs.
   docs: https://code.claude.com/docs/en/commands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   docs_hash: bbd9e481a7a1

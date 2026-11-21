@@ -9,7 +9,7 @@
     en: Grants Claude file read and write permissions in extra folders.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --add-dir ../apps ../lib
   docs_hash: a908b78fc8ce
 - id: cli-advisor
@@ -21,7 +21,7 @@
     en: Activates the server advisor feature for the session using a chosen model alias or identifier.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --advisor opus
   docs_hash: cbbc7e401ae9
 - id: cli-agent
@@ -33,7 +33,7 @@
     en: Selects a specific agent implementation for the current session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --agent my-custom-agent
   docs_hash: 8f555409b3b0
 - id: cli-agents
@@ -45,7 +45,7 @@
     en: Passes custom subagent specifications dynamically using raw JSON or a JSON file path.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --agents '{"reviewer":{"description":"Reviews code","prompt":"You are a code reviewer"}}'
   docs_hash: 98cb5e69cc40
 - id: cli-allow-dangerously-skip-permissions
@@ -57,7 +57,7 @@
     en: Permits cycling into the bypassPermissions option during Shift+Tab mode changes.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --permission-mode default --allow-dangerously-skip-permissions
   docs_hash: 155ffad439fd
 - id: cli-allowedtools
@@ -69,7 +69,7 @@
     en: Specifies tools that can run automatically without prompting for authorization.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: '"Bash(git log *)" "Bash(git diff *)" "Read"'
   docs_hash: fd8bc58f9ec8
 - id: cli-append-subagent-system-prompt
@@ -81,7 +81,7 @@
     en: Adds extra instructions to the end of system prompts across all subagents in non-interactive runs.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --append-subagent-system-prompt "Cite file paths in every answer" "query"
   docs_hash: b34fd2d7161e
 - id: cli-append-subagent-system-prompt-file
@@ -93,7 +93,7 @@
     en: Reads text from a file to append to subagent system prompts during non-interactive runs.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --append-subagent-system-prompt-file ./subagent-rules.txt "query"
   docs_hash: 323ff1be30f3
 - id: cli-append-system-prompt
@@ -105,7 +105,7 @@
     en: Adds user-defined instructions to the conclusion of the standard system prompt.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --append-system-prompt "Always use TypeScript"
   docs_hash: 451427c3b3f4
 - id: cli-append-system-prompt-file
@@ -117,7 +117,7 @@
     en: Loads a file to attach its contents to the default system prompt.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --append-system-prompt-file ./extra-rules.txt
   docs_hash: 45e6715c2590
 - id: cli-autocompact
@@ -129,7 +129,7 @@
     en: Configures the auto-compact threshold for the active session without altering stored settings.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --autocompact 500k
   docs_hash: 990b5e876040
 - id: cli-ax-screen-reader
@@ -141,7 +141,7 @@
     en: Switches output to plain text without decorative formatting to aid screen reader software.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --ax-screen-reader
   docs_hash: 7e174e644326
 - id: cli-bare
@@ -153,7 +153,7 @@
     en: Disables loading project configuration, hooks, plugins, and MCP servers for faster startup.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --bare -p "query"
   docs_hash: 8ba81b4fdfc6
 - id: cli-betas
@@ -165,7 +165,7 @@
     en: Includes custom beta feature headers when dispatching API calls.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --betas interleaved-thinking
   docs_hash: 618f96574bd6
 - id: cli-bg
@@ -177,7 +177,7 @@
     en: Spawns the agent as a background task and immediately returns control to the shell.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --bg "investigate the flaky test"
   docs_hash: b6d7818d1d8c
 - id: cli-channels
@@ -189,7 +189,7 @@
     en: Listens for MCP server channel notifications from specified plugins during the session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --channels plugin:my-notifier@my-marketplace
   docs_hash: a54032c1564f
 - id: cli-chrome
@@ -201,7 +201,7 @@
     en: Turns on Chrome integration to perform automated web actions and tests.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --chrome
   docs_hash: 2e6fd90b2cec
 - id: cli-cloud
@@ -213,7 +213,7 @@
     en: Starts a new cloud session with a prompt or pushes a message to an existing session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --cloud "Fix the login bug"
   docs_hash: 9d5bf7bb637a
 - id: cli-continue
@@ -225,7 +225,7 @@
     en: Restores the latest conversation found in the current working directory.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --continue
   docs_hash: 0d3e68893008
 - id: cli-correlation-id
@@ -237,7 +237,7 @@
     en: Provides an identifier to the spawn-runner hook alongside the environment option.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "Run the build" --environment ccpool_abc123 --correlation-id build-4821
   docs_hash: 9fafe29e6087
 - id: cli-dangerously-load-development-channels
@@ -249,7 +249,7 @@
     en: Permits unapproved channels for local development after interactive confirmation.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --dangerously-load-development-channels server:webhook
   docs_hash: 96a14c01270e
 - id: cli-dangerously-skip-permissions
@@ -261,7 +261,7 @@
     en: Bypasses all permission confirmations throughout the session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --dangerously-skip-permissions
   docs_hash: cca1abd2bf50
 - id: cli-debug
@@ -273,7 +273,7 @@
     en: Activates debugging output with optional category inclusions or exclusions.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --debug='mcp,startup'
   docs_hash: 5ccffd741554
 - id: cli-debug-file
@@ -285,7 +285,7 @@
     en: Directs debug output to a designated file and turns on debug mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --debug-file /tmp/claude-debug.log
   docs_hash: 4c69a1ab9d41
 - id: cli-desktop
@@ -297,7 +297,7 @@
     en: Launches the Claude Desktop application in this directory without running in terminal.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --desktop
   docs_hash: 7467c33ddf7f
 - id: cli-disable-slash-commands
@@ -309,7 +309,7 @@
     en: Deactivates all skills and slash commands for the active session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --disable-slash-commands
   docs_hash: d5c7d0af95ac
 - id: cli-disallowedtools
@@ -321,7 +321,7 @@
     en: Sets tool restriction rules by hiding tools or blocking specific invocations.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: '"Bash(git log *)" "Bash(git diff *)" "Edit"'
   docs_hash: 660e208bf961
 - id: cli-effort
@@ -333,7 +333,7 @@
     en: Specifies the reasoning effort level applied to the primary conversation model.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --effort high
   docs_hash: 752bbd264236
 - id: cli-enable-auto-mode
@@ -345,7 +345,7 @@
     en: Indicates an obsolete flag replaced by auto permission mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --permission-mode auto
   docs_hash: b11b9b511fb2
 - id: cli-environment
@@ -357,7 +357,7 @@
     en: Initializes a cloud session targeting the designated self-hosted runner pool.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "Fix the login bug" --environment ccpool_abc123
   docs_hash: b2eab8b7dbc7
 - id: cli-exclude-dynamic-system-prompt-sections
@@ -369,7 +369,7 @@
     en: Shifts per-user context to the initial user prompt to improve prompt caching.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --exclude-dynamic-system-prompt-sections "query"
   docs_hash: deac798aa774
 - id: cli-exec
@@ -381,7 +381,7 @@
     en: Executes a shell command as a background PTY process instead of running Claude.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --bg --exec 'pytest -x'
   docs_hash: d1d68ee674ec
 - id: cli-fallback-model
@@ -393,7 +393,7 @@
     en: Configures ordered alternative models to handle outages of the primary model.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --fallback-model sonnet,haiku
   docs_hash: 2bb8b0a76ec7
 - id: cli-fork-session
@@ -405,7 +405,7 @@
     en: Generates a fresh session ID when reopening an existing conversation.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --resume abc123 --fork-session
   docs_hash: 168bad4f2c70
 - id: cli-forward-subagent-text
@@ -417,7 +417,7 @@
     en: Streams text and reasoning outputs from subagents into the main stream.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --output-format stream-json --verbose --forward-subagent-text "query"
   docs_hash: e6550855c460
 - id: cli-from-pr
@@ -429,7 +429,7 @@
     en: Filters the session selector to conversations linked with a given pull request.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --from-pr 123
   docs_hash: 1c97935c9663
 - id: cli-ide
@@ -441,7 +441,7 @@
     en: Connects automatically to the IDE when a single valid instance is present.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --ide
   docs_hash: bb6519d12546
 - id: cli-include-hook-events
@@ -453,7 +453,7 @@
     en: Streams hook lifecycle progress and responses in JSON streaming output.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --output-format stream-json --verbose --include-hook-events "query"
   docs_hash: 73bde0b535d4
 - id: cli-include-partial-messages
@@ -465,7 +465,7 @@
     en: Outputs streaming events incrementally when running in print mode with stream-json output.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --output-format stream-json --verbose --include-partial-messages "query"
   docs_hash: 9d59239a2192
 - id: cli-init
@@ -477,7 +477,7 @@
     en: Triggers init Setup hooks prior to starting the session in print mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --init "query"
   docs_hash: 2ebdfd7e1564
 - id: cli-init-only
@@ -489,7 +489,7 @@
     en: Executes Setup and SessionStart hooks then immediately exits.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --init-only
   docs_hash: 0d5d9efdc72e
 - id: cli-input-format
@@ -501,7 +501,7 @@
     en: Chooses the input format for print mode between text and stream-json.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --input-format stream-json --output-format stream-json --verbose
   docs_hash: 8620ac19f428
 - id: cli-json-schema
@@ -514,7 +514,7 @@
       mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --json-schema '{"type":"object","properties":{...}}' "query"
   docs_hash: f0bb828a8ee9
 - id: cli-maintenance
@@ -526,7 +526,7 @@
     en: Triggers Setup hooks configured with the maintenance matcher prior to starting a print mode session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --maintenance "query"
   docs_hash: c496c0dae5e0
 - id: cli-max-budget-usd
@@ -538,7 +538,7 @@
     en: Halts print mode execution when client-side estimated API expenses reach the given dollar threshold.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --max-budget-usd 5.00 "query"
   docs_hash: ffda4c41f4fc
 - id: cli-max-turns
@@ -550,7 +550,7 @@
     en: Restricts the total number of agent interaction turns allowed in print mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --max-turns 3 "query"
   docs_hash: 5cdeebd801c9
 - id: cli-mcp-config
@@ -562,7 +562,7 @@
     en: Loads MCP servers from provided JSON configuration files or raw JSON strings.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --mcp-config ./mcp.json
   docs_hash: ab2fd24ddca5
 - id: cli-metadata
@@ -575,7 +575,7 @@
       labels.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "Run the build" --environment ccpool_abc123 --metadata size=large
   docs_hash: c7cbff15731c
 - id: cli-model
@@ -587,7 +587,7 @@
     en: Selects the model for the session using a full identifier or an alias like sonnet or opus.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --model claude-sonnet-5
   docs_hash: c0a4a23ff74a
 - id: cli-name
@@ -599,7 +599,7 @@
     en: Assigns a custom title to the session for display in resume lists and the terminal bar.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -n "my-feature-work"
   docs_hash: 9ef24e6495a1
 - id: cli-no-chrome
@@ -611,7 +611,7 @@
     en: Turns off Chrome browser integration for the active session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --no-chrome
   docs_hash: 44a2a4f47550
 - id: cli-no-session-persistence
@@ -623,7 +623,7 @@
     en: Prevents print mode sessions from being saved to disk or resumed later.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --no-session-persistence "query"
   docs_hash: 61d92863eaf2
 - id: cli-output-format
@@ -635,7 +635,7 @@
     en: Sets the format of the output in print mode to text, json, or stream-json.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "query" --output-format json
   docs_hash: b319e53f95af
 - id: cli-permission-mode
@@ -647,7 +647,7 @@
     en: Selects the initial permission handling mode for the session, such as auto, plan, or manual.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --permission-mode plan
   docs_hash: 7d0cfa0e70fe
 - id: cli-permission-prompt-tool
@@ -659,7 +659,7 @@
     en: Designates an MCP tool to process authorization requests in non-interactive mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --mcp-config ./mcp.json --permission-prompt-tool mcp__permissions__approve "query"
   docs_hash: 1e1ca924019b
 - id: cli-permission-prompts
@@ -672,7 +672,7 @@
       via none.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --permission-prompts none "query"
   docs_hash: 5f7fd28ff8e2
 - id: cli-plugin-dir
@@ -684,7 +684,7 @@
     en: Loads one or more plugins for the session from directory paths or zip files.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --plugin-dir ./my-plugin
   docs_hash: ff6f0ececaee
 - id: cli-plugin-url
@@ -696,7 +696,7 @@
     en: Fetches and applies remote plugin zip archives from one or more URLs for the session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --plugin-url https://example.com/plugin.zip
   docs_hash: 971e62a26f5c
 - id: cli-print
@@ -708,7 +708,7 @@
     en: Runs Claude Code non-interactively and prints the response directly to standard output.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "query"
   docs_hash: 7bcf44eddbf1
 - id: cli-prompt-suggestions
@@ -720,7 +720,7 @@
     en: Outputs suggested follow-up user prompts after turns when streaming JSON in print mode.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --prompt-suggestions --output-format stream-json --verbose "query"
   docs_hash: 456a8c584156
 - id: cli-ref
@@ -732,7 +732,7 @@
     en: Specifies a Git reference branch to check out when provisioning an environment session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "Run the smoke test" --environment ccpool_abc123 --ref main
   docs_hash: 564c61841233
 - id: cli-remote
@@ -744,7 +744,7 @@
     en: Serves as a deprecated alias for the --cloud flag.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --remote "Fix the login bug"
   docs_hash: 095ded2e8a3b
 - id: cli-remote-control
@@ -758,7 +758,7 @@
       name for the session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --remote-control "My Project"
   docs_hash: 8f367afa005a
 - id: cli-remote-control-session-name-prefix
@@ -770,7 +770,7 @@
     en: Sets a prefix for automatically generated Remote Control session identifiers.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude remote-control --remote-control-session-name-prefix dev-box
   docs_hash: 9adf973f3c06
 - id: cli-replay-user-messages
@@ -782,7 +782,7 @@
     en: Echoes user input messages from stdin back onto stdout when using stream-json I/O.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p --input-format stream-json --output-format stream-json --verbose --replay-user-messages
   docs_hash: d808986f7199
 - id: cli-restricted
@@ -796,7 +796,7 @@
       access to working directories.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --restricted -p "query"
   docs_hash: 6e91707166b8
 - id: cli-resume
@@ -810,7 +810,7 @@
       to choose one.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --resume auth-refactor
   docs_hash: a1e24c14dc89
 - id: cli-safe-mode
@@ -822,7 +822,7 @@
     en: Starts Claude Code with all customizations turned off to help debug broken configurations.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --safe-mode
   docs_hash: f742d7af85ec
 - id: cli-session-id
@@ -834,7 +834,7 @@
     en: Assigns a specific UUID to be used as the conversation session ID.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --session-id "550e8400-e29b-41d4-a716-446655440000"
   docs_hash: 9dd917016fc1
 - id: cli-setting-sources
@@ -846,7 +846,7 @@
     en: Specifies a comma-separated list of configuration sources to load among user, project, and local.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --setting-sources user,project
   docs_hash: 17c4f0eac91f
 - id: cli-settings
@@ -858,7 +858,7 @@
     en: Overrides settings using a JSON file under 2 MiB or an inline JSON string for the current session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --settings ./settings.json
   docs_hash: 04c90689a90c
 - id: cli-strict-mcp-config
@@ -871,7 +871,7 @@
       via --mcp-config.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --strict-mcp-config --mcp-config ./mcp.json
   docs_hash: 5cd019c68e5d
 - id: cli-system-prompt
@@ -883,7 +883,7 @@
     en: Substitutes the entire default system prompt with the provided custom text.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --system-prompt "You are a Python expert"
   docs_hash: 28fee0d85906
 - id: cli-system-prompt-file
@@ -895,7 +895,7 @@
     en: Reads system prompt content from a file and replaces the default prompt.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --system-prompt-file ./custom-prompt.txt
   docs_hash: 3d0320439a72
 - id: cli-system-prompt-snapshot
@@ -908,7 +908,7 @@
       prompt snapshot.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --system-prompt-snapshot off
   docs_hash: b40f008e603e
 - id: cli-teammate-mode
@@ -920,7 +920,7 @@
     en: Defines how agent teammates are shown on screen, overriding the teammateMode setting.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --teammate-mode auto
   docs_hash: 7b27b4c2f117
 - id: cli-teleport
@@ -932,7 +932,7 @@
     en: Brings an active cloud session back into the local terminal.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --teleport
   docs_hash: 58f602b60b91
 - id: cli-tmux
@@ -944,7 +944,7 @@
     en: Launches a tmux session alongside a git worktree, using iTerm2 panes when supported.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -w feature-auth --tmux
   docs_hash: cd718acc6623
 - id: cli-tools
@@ -956,7 +956,7 @@
     en: Controls which built-in tools Claude is allowed to use during the session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --tools "Bash,Edit,Read"
   docs_hash: 38b131667062
 - id: cli-verbose
@@ -968,7 +968,7 @@
     en: Enables detailed logging to display the complete turn-by-turn output.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude --verbose
   docs_hash: b223855d20bd
 - id: cli-version
@@ -980,7 +980,7 @@
     en: Displays the installed version number of Claude Code.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -v
   docs_hash: 639c7b34d5f1
 - id: cli-worktree
@@ -993,7 +993,7 @@
       merge request.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -w feature-auth
   docs_hash: ed037c6d894f
 - id: cli-claude
@@ -1005,7 +1005,7 @@
     en: Launches an interactive working session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude
   docs_hash: 387cd9e7a382
 - id: cli-claude-query
@@ -1017,7 +1017,7 @@
     en: Opens an interactive session preloaded with a starting prompt.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude "explain this project"
   docs_hash: 5c3f75287f52
 - id: cli-claude-c
@@ -1029,7 +1029,7 @@
     en: Resumes the previous chat held within the current folder.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -c
   docs_hash: 12317ee0fe83
 - id: cli-claude-c-p-query
@@ -1041,7 +1041,7 @@
     en: Carries on a previous interaction via SDK.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -c -p "Check for type errors"
   docs_hash: 93f9bea3b556
 - id: cli-claude-p-query
@@ -1053,7 +1053,7 @@
     en: Sends a prompt via SDK and terminates upon completion.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -p "explain this function"
   docs_hash: c9c52ad12bbd
 - id: cli-claude-r-session-query
@@ -1065,7 +1065,7 @@
     en: Reopens a specific session using its identifier or title.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude -r "auth-refactor" "Finish this PR"
   docs_hash: 47d54d3a34ef
 - id: cli-claude-agents
@@ -1077,7 +1077,7 @@
     en: Launches an interface in the terminal to inspect and spawn concurrent background sessions.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude agents --json
   docs_hash: 39591ee877f3
 - id: cli-claude-attach-id-name
@@ -1089,7 +1089,7 @@
     en: Binds the active terminal to a background task by identifier or name.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude attach 7c5dcf5d
   docs_hash: d45307cfb203
 - id: cli-claude-auth-login
@@ -1101,7 +1101,7 @@
     en: Authenticates to Anthropic with options for email, SSO, or Console billing.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude auth login --console
   docs_hash: cb309b1e6381
 - id: cli-claude-auth-logout
@@ -1113,7 +1113,7 @@
     en: Signs out of the current Anthropic account.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude auth logout
   docs_hash: c75ebdb3f95d
 - id: cli-claude-auth-status
@@ -1125,7 +1125,7 @@
     en: Outputs login details as JSON or formatted text via --text.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude auth status
   docs_hash: 86e7e53e73be
 - id: cli-claude-auto-mode-defaults
@@ -1137,7 +1137,7 @@
     en: Outputs the built-in classification rules for auto mode in JSON format.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude auto-mode defaults --label 'Git Destructive'
   docs_hash: 549fe5e74645
 - id: cli-claude-auto-mode-reset
@@ -1149,7 +1149,7 @@
     en: Deletes the autoMode section from user preferences to reinstate initial defaults.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude auto-mode reset --yes
   docs_hash: 606684f93d1d
 - id: cli-claude-daemon-logs
@@ -1161,7 +1161,7 @@
     en: Streams live output from ~/.claude/daemon.log until interrupted.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude daemon logs
   docs_hash: 3b4f3a3a9e69
 - id: cli-claude-daemon-run
@@ -1173,7 +1173,7 @@
     en: Executes the background supervisor directly in the active terminal to display logs.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude daemon run
   docs_hash: 3cc8783ac6fa
 - id: cli-claude-daemon-status
@@ -1185,7 +1185,7 @@
     en: Shows supervisor health, current version, socket path, and active worker count.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude daemon status
   docs_hash: 0242e9cdebc5
 - id: cli-claude-daemon-stop-any
@@ -1197,7 +1197,7 @@
     en: Halts the supervisor and its active tasks, optionally preserving workers via --keep-workers.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude daemon stop --any --keep-workers
   docs_hash: 2b8e8fb71a8a
 - id: cli-claude-doctor
@@ -1209,7 +1209,7 @@
     en: Evaluates setup health, configuration syntax, and Remote Control support without starting a session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude doctor
   docs_hash: 045c648ed2ec
 - id: cli-claude-gateway
@@ -1221,7 +1221,7 @@
     en: Launches a self-hosted gateway server using a mandatory --config gateway.yaml.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude gateway --config gateway.yaml
   docs_hash: 387decf09625
 - id: cli-claude-import-source
@@ -1233,7 +1233,7 @@
     en: Launches a session running /import to migrate configurations from external coding agents.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude import codex --dry-run
   docs_hash: 4805f0cda2e0
 - id: cli-claude-install-version
@@ -1245,7 +1245,7 @@
     en: Installs or replaces the native executable using a specific version, stable, or latest.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude install stable
   docs_hash: b4a580b290cc
 - id: cli-claude-logs-id-name
@@ -1257,7 +1257,7 @@
     en: Displays the latest log entries generated by a background session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude logs 7c5dcf5d
   docs_hash: d8493defc2cb
 - id: cli-claude-mcp
@@ -1269,7 +1269,7 @@
     en: Manages configuration settings for MCP servers.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: See the Claude Code MCP documentation.
   docs_hash: 903f146d5705
 - id: cli-claude-mcp-login-name
@@ -1281,7 +1281,7 @@
     en: Executes OAuth authentication for a specified MCP server directly from the command line.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude mcp login sentry
   docs_hash: 7a2dc9f897f3
 - id: cli-claude-mcp-logout-name
@@ -1293,7 +1293,7 @@
     en: Removes saved OAuth authentication credentials for a specified MCP server.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude mcp logout sentry
   docs_hash: 8cef5ba34fe9
 - id: cli-claude-plugin
@@ -1305,7 +1305,7 @@
     en: Provides commands to handle Claude Code plugins.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude plugin install code-review@claude-plugins-official
   docs_hash: 8f7cf07bc3ce
 - id: cli-claude-purge-path
@@ -1317,7 +1317,7 @@
     en: Erases all local state, history, logs, and configuration records for a project.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude purge ~/work/repo --dry-run
   docs_hash: 9fbfa92b6067
 - id: cli-claude-remote-control
@@ -1329,7 +1329,7 @@
     en: Launches a server mode instance enabling claude.ai or the mobile app to operate Claude Code.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude remote-control --name "My Project"
   docs_hash: 126c4d52026d
 - id: cli-claude-respawn-id
@@ -1341,7 +1341,7 @@
     en: Relaunches an active or inactive background session while preserving its conversation history.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude respawn 7c5dcf5d
   docs_hash: 737bd9e7ff9c
 - id: cli-claude-rm-id
@@ -1353,7 +1353,7 @@
     en: Deletes a background session from tracking while keeping transcripts stored locally.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude rm 7c5dcf5d
   docs_hash: 6223bd9435c0
 - id: cli-claude-self-hosted-runner
@@ -1365,7 +1365,7 @@
     en: Registers the machine to host cloud-initiated Claude Code sessions on private infrastructure.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude self-hosted-runner setup
   docs_hash: 230dd4da79c6
 - id: cli-claude-setup-token
@@ -1377,7 +1377,7 @@
     en: Outputs an unsaved, persistent OAuth token directly to the terminal for automation use.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude setup-token
   docs_hash: 2dbdbf6c5040
 - id: cli-claude-stop-id
@@ -1389,7 +1389,7 @@
     en: Terminates an active background session.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude stop 7c5dcf5d
   docs_hash: ae1c5540df37
 - id: cli-claude-ultrareview-target
@@ -1402,7 +1402,7 @@
       PR.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude ultrareview 1234 --json
   docs_hash: 80bcf1b31855
 - id: cli-claude-update
@@ -1414,6 +1414,6 @@
     en: Upgrades the application to the most recent release.
   docs: https://code.claude.com/docs/en/cli-reference
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   example: claude update
   docs_hash: 0d573d85451d

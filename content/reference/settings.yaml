@@ -9,7 +9,7 @@
     en: Selects the model to use whenever Claude consults the advisor tool.
   docs: https://code.claude.com/docs/en/settings-reference#advisormodel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: bb33326ff253
 - id: settings-agent
@@ -21,7 +21,7 @@
     en: Launches each session as a designated subagent using its prompt, tools, and model.
   docs: https://code.claude.com/docs/en/settings-reference#agent
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 19dc9dc0f785
 - id: settings-agentpushnotifenabled
@@ -33,7 +33,7 @@
     en: Permits Claude to send mobile push notifications at its discretion.
   docs: https://code.claude.com/docs/en/settings-reference#agentpushnotifenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: fca6bfa0f32a
 - id: settings-allowallclaudeaimcps
@@ -45,7 +45,7 @@
     en: Imports auto-retrieved claude.ai connectors together with a deployed managed-mcp.json.
   docs: https://code.claude.com/docs/en/settings-reference#allowallclaudeaimcps
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 6314d0aeef5f
 - id: settings-allowclaudeinchromewithmanagedmcp
@@ -57,7 +57,7 @@
     en: Enables the integrated Claude in Chrome server to operate alongside managed-mcp.json.
   docs: https://code.claude.com/docs/en/settings-reference#allowclaudeinchromewithmanagedmcp
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 7a6ce813e3c1
 - id: settings-allowedchannelplugins
@@ -69,7 +69,7 @@
     en: Overrides the built-in permit list of channel plugins authorized to dispatch messages.
   docs: https://code.claude.com/docs/en/settings-reference#allowedchannelplugins
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 259abba31a83
 - id: settings-allowedhttphookurls
@@ -81,7 +81,7 @@
     en: Restricts the destination web addresses that HTTP hooks are permitted to call.
   docs: https://code.claude.com/docs/en/settings-reference#allowedhttphookurls
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a2d057ee8319
 - id: settings-allowedmcpservers
@@ -93,7 +93,7 @@
     en: Defines an approved list specifying which MCP servers users may configure.
   docs: https://code.claude.com/docs/en/settings-reference#allowedmcpservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 08b7e101607b
 - id: settings-allowedproviders
@@ -105,7 +105,7 @@
     en: Constrains which API providers the current system is authorized to contact.
   docs: https://code.claude.com/docs/en/settings-reference#allowedproviders
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: d4e5508e7623
 - id: settings-allowmanagedhooksonly
@@ -117,7 +117,7 @@
     en: Executes exclusively the hooks distributed by your organization.
   docs: https://code.claude.com/docs/en/settings-reference#allowmanagedhooksonly
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 210b254cb9e1
 - id: settings-allowmanagedmcpserversonly
@@ -129,7 +129,7 @@
     en: Enforces the managed MCP permit list as the sole active policy.
   docs: https://code.claude.com/docs/en/settings-reference#allowmanagedmcpserversonly
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 5908a243bedd
 - id: settings-allowmanagedpermissionrulesonly
@@ -141,7 +141,7 @@
     en: Restricts valid permission rules to those defined in managed settings.
   docs: https://code.claude.com/docs/en/settings-reference#allowmanagedpermissionrulesonly
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: edadbf5b58d7
 - id: settings-alwaysthinkingenabled
@@ -153,7 +153,7 @@
     en: Deactivates extended thinking capabilities across all sessions.
   docs: https://code.claude.com/docs/en/settings-reference#alwaysthinkingenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 6af801917219
 - id: settings-apikeyhelper
@@ -165,7 +165,7 @@
     en: Executes a custom shell command to supply API authentication credentials.
   docs: https://code.claude.com/docs/en/settings-reference#apikeyhelper
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3aee062acb65
 - id: settings-appendplugins
@@ -177,7 +177,7 @@
     en: Applies organizational modifications following every user-added modification.
   docs: https://code.claude.com/docs/en/settings-reference#appendplugins
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: b7d6dfbaa84d
 - id: settings-askuserquestiontimeout
@@ -189,7 +189,7 @@
     en: Proceeds automatically when a prompt awaiting user input stays idle too long.
   docs: https://code.claude.com/docs/en/settings-reference#askuserquestiontimeout
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: a32e6cac58f8
 - id: settings-attribution
@@ -201,7 +201,7 @@
     en: Modifies the attribution text appended by Claude Code to commits and pull requests.
   docs: https://code.claude.com/docs/en/settings-reference#attribution
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ea2e7a2758f2
 - id: settings-attribution-commit
@@ -213,7 +213,7 @@
     en: Adjusts or suppresses the trailer lines Claude Code places in commits.
   docs: https://code.claude.com/docs/en/settings-reference#attribution.commit
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0e9e2aa9b70a
 - id: settings-attribution-pr
@@ -225,7 +225,7 @@
     en: Edits or removes the credit notice inserted into pull request descriptions.
   docs: https://code.claude.com/docs/en/settings-reference#attribution.pr
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: bf37fbcc1df3
 - id: settings-attribution-sessionurl
@@ -237,7 +237,7 @@
     en: Removes the claude.ai session link from commits made via cloud or Remote Control.
   docs: https://code.claude.com/docs/en/settings-reference#attribution.sessionurl
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 638588262a2c
 - id: settings-autocompactenabled
@@ -249,7 +249,7 @@
     en: Toggles automated compaction functionality on or off.
   docs: https://code.claude.com/docs/en/settings-reference#autocompactenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a91edc5da103
 - id: settings-autocompactwindow
@@ -261,7 +261,7 @@
     en: Configures context fullness threshold required to trigger Claude Code compaction.
   docs: https://code.claude.com/docs/en/settings-reference#autocompactwindow
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 358471dfb04c
 - id: settings-autoconnectide
@@ -273,7 +273,7 @@
     en: Links to an active VS Code or JetBrains environment directly from outside terminals.
   docs: https://code.claude.com/docs/en/settings-reference#autoconnectide
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: bf6f7a1486c5
 - id: settings-autocontinueatusagelimit
@@ -285,7 +285,7 @@
     en: Pauses within the session and resumes tasks once claude.ai usage limits refresh.
   docs: https://code.claude.com/docs/en/settings-reference#autocontinueatusagelimit
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: ca1520dfe21b
 - id: settings-autoinstallideextension
@@ -297,7 +297,7 @@
     en: Allows the /ide command to set up the editor extension via an external terminal.
   docs: https://code.claude.com/docs/en/settings-reference#autoinstallideextension
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: ed3ba536762c
 - id: settings-automemorydirectory
@@ -309,7 +309,7 @@
     en: Specifies a custom directory for saving auto memory.
   docs: https://code.claude.com/docs/en/settings-reference#automemorydirectory
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 08bb6fdbf051
 - id: settings-automemoryenabled
@@ -321,7 +321,7 @@
     en: Toggles the auto memory feature on or off.
   docs: https://code.claude.com/docs/en/settings-reference#automemoryenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: e0030bb95bdb
 - id: settings-automode
@@ -333,7 +333,7 @@
     en: Configures custom allow and deny rules for the auto mode classifier.
   docs: https://code.claude.com/docs/en/settings-reference#automode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: a7783dba004e
 - id: settings-automode-classifyallshell
@@ -346,7 +346,7 @@
       allow rules.
   docs: https://code.claude.com/docs/en/settings-reference#automode.classifyallshell
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 4255f2a1e215
 - id: settings-autoscrollenabled
@@ -358,7 +358,7 @@
     en: Scrolls down automatically to track incoming output during fullscreen rendering.
   docs: https://code.claude.com/docs/en/settings-reference#autoscrollenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 95220f08ccc9
 - id: settings-autoupdateschannel
@@ -370,7 +370,7 @@
     en: Switches the update stream from latest to the stable release track.
   docs: https://code.claude.com/docs/en/settings-reference#autoupdateschannel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a372f00b8366
 - id: settings-availablemodels
@@ -382,7 +382,7 @@
     en: Limits the selection of models that users can choose.
   docs: https://code.claude.com/docs/en/settings-reference#availablemodels
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: cbc8d3993b2c
 - id: settings-availablemodelsmatch
@@ -394,7 +394,7 @@
     en: Restricts each model ID in availableModels strictly to its exact specified version.
   docs: https://code.claude.com/docs/en/settings-reference#availablemodelsmatch
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: e94843b7abd3
 - id: settings-awaysummaryenabled
@@ -406,7 +406,7 @@
     en: Disables the session overview displayed upon returning to the terminal.
   docs: https://code.claude.com/docs/en/settings-reference#awaysummaryenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 464beb038452
 - id: settings-awsauthrefresh
@@ -418,7 +418,7 @@
     en: Executes a custom command to renew expired Bedrock credentials stored in .aws.
   docs: https://code.claude.com/docs/en/settings-reference#awsauthrefresh
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0a0affc38cb2
 - id: settings-awscredentialexport
@@ -430,7 +430,7 @@
     en: Provides Bedrock credentials formatted as JSON using a custom command.
   docs: https://code.claude.com/docs/en/settings-reference#awscredentialexport
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0b2f8b8e1b38
 - id: settings-axscreenreader
@@ -442,7 +442,7 @@
     en: Formats console output for compatibility with screen readers.
   docs: https://code.claude.com/docs/en/settings-reference#axscreenreader
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 5c2b86ab0312
 - id: settings-basheditdiffenabled
@@ -454,7 +454,7 @@
     en: Tracks modified files during Bash command execution across all permission modes.
   docs: https://code.claude.com/docs/en/settings-reference#basheditdiffenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 1b9c252f77c7
 - id: settings-bashoutputmaxchars
@@ -466,7 +466,7 @@
     en: Controls the maximum characters of successful command output passed inline to Claude.
   docs: https://code.claude.com/docs/en/settings-reference#bashoutputmaxchars
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 974ada70143f
 - id: settings-blockedmarketplaces
@@ -478,7 +478,7 @@
     en: Disallows specific plugin marketplace sources across an organization.
   docs: https://code.claude.com/docs/en/settings-reference#blockedmarketplaces
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 9c7174d5d051
 - id: settings-browserexternalpagetools
@@ -490,7 +490,7 @@
     en: Prevents tools from running on external websites inside the desktop Browser pane.
   docs: https://code.claude.com/docs/en/settings-reference#browserexternalpagetools
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 4330ee5a4078
 - id: settings-channelsenabled
@@ -502,7 +502,7 @@
     en: Permits the use of channels within your organization.
   docs: https://code.claude.com/docs/en/settings-reference#channelsenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: ae65a64c34a3
 - id: settings-claudeinchromedefaultenabled
@@ -514,7 +514,7 @@
     en: Activates Chrome integration at session launch across both interactive CLI and VS Code extension.
   docs: https://code.claude.com/docs/en/settings-reference#claudeinchromedefaultenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: 78f68b4b5ab7
 - id: settings-claudemd
@@ -526,7 +526,7 @@
     en: Applies organization-level CLAUDE.md guidelines through managed configuration settings.
   docs: https://code.claude.com/docs/en/settings-reference#claudemd
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 308ada67cc7c
 - id: settings-claudemdexcludes
@@ -538,7 +538,7 @@
     en: Omits designated CLAUDE.md files during memory loading.
   docs: https://code.claude.com/docs/en/settings-reference#claudemdexcludes
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 8df9a3972800
 - id: settings-cleanupperioddays
@@ -550,7 +550,7 @@
     en: Defines the number of days Claude Code retains transcripts prior to removal.
   docs: https://code.claude.com/docs/en/settings-reference#cleanupperioddays
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: d1a12c3d988f
 - id: settings-companyannouncements
@@ -562,7 +562,7 @@
     en: Displays corporate notices whenever the application launches.
   docs: https://code.claude.com/docs/en/settings-reference#companyannouncements
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 83cc599d70b1
 - id: settings-copyfullresponse
@@ -574,7 +574,7 @@
     en: Configures /copy to capture the entire answer directly without presenting a picker.
   docs: https://code.claude.com/docs/en/settings-reference#copyfullresponse
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: f2bd176d88b5
 - id: settings-copyonselect
@@ -586,7 +586,7 @@
     en: Disables auto-copying highlighted mouse selections in fullscreen rendering and agent view.
   docs: https://code.claude.com/docs/en/settings-reference#copyonselect
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: e16f5be6b854
 - id: settings-crosssessioninbound
@@ -599,7 +599,7 @@
       Claude Code.
   docs: https://code.claude.com/docs/en/settings-reference#crosssessioninbound
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 475864575f75
 - id: settings-defaultshell
@@ -611,7 +611,7 @@
     en: Selects Bash or PowerShell to execute shell instructions prefixed with !.
   docs: https://code.claude.com/docs/en/settings-reference#defaultshell
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1aca6521a83b
 - id: settings-defaulttoagentsview
@@ -624,7 +624,7 @@
       inputs.
   docs: https://code.claude.com/docs/en/settings-reference#defaulttoagentsview
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: dc9c8bd294a7
 - id: settings-deniedmcpservers
@@ -636,7 +636,7 @@
     en: Restricts designated MCP servers based on their address, launch command, or identifier.
   docs: https://code.claude.com/docs/en/settings-reference#deniedmcpservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1f3169d07988
 - id: settings-deniedmodels
@@ -648,7 +648,7 @@
     en: Disallows designated models regardless of whether availableModels includes them.
   docs: https://code.claude.com/docs/en/settings-reference#deniedmodels
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 438757c8b405
 - id: settings-desktopsessioncleanupperioddays
@@ -660,7 +660,7 @@
     en: Specifies the maximum retention timeframe in days for Cowork and Claude Desktop transcripts.
   docs: https://code.claude.com/docs/en/settings-reference#desktopsessioncleanupperioddays
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 8f636488d954
 - id: settings-dialogexpiry
@@ -673,7 +673,7 @@
       aborting prompts.
   docs: https://code.claude.com/docs/en/settings-reference#dialogexpiry
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 44ae23154bca
 - id: settings-difftool
@@ -685,7 +685,7 @@
     en: Selects whether file modifications appear inside JetBrains, VS Code, or remain within the terminal.
   docs: https://code.claude.com/docs/en/settings-reference#difftool
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: bf6806916e3d
 - id: settings-disableagentview
@@ -697,7 +697,7 @@
     en: Deactivates both the agent view interface and tasks running in the background.
   docs: https://code.claude.com/docs/en/settings-reference#disableagentview
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 478a4fe152d2
 - id: settings-disableallhooks
@@ -709,7 +709,7 @@
     en: Simultaneously turns off hooks, custom @ file suggestions, and custom status lines.
   docs: https://code.claude.com/docs/en/settings-reference#disableallhooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: d24de3128199
 - id: settings-disableartifact
@@ -721,7 +721,7 @@
     en: Marks the obsolete setting superseded by enableArtifact for deactivating the Artifact feature.
   docs: https://code.claude.com/docs/en/settings-reference#disableartifact
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 06a3d6bc7170
 - id: settings-disableautomode
@@ -733,7 +733,7 @@
     en: Excludes auto mode from selectable permission cycles.
   docs: https://code.claude.com/docs/en/settings-reference#disableautomode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0cc114bd29dc
 - id: settings-disablebrowserexternalnavigation
@@ -745,7 +745,7 @@
     en: Restricts navigation within the desktop Browser pane strictly to localhost for users and Claude.
   docs: https://code.claude.com/docs/en/settings-reference#disablebrowserexternalnavigation
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 333d04ab86bb
 - id: settings-disablebundledskills
@@ -757,7 +757,7 @@
     en: Disables built-in skills along with workflows shipped natively with Claude Code.
   docs: https://code.claude.com/docs/en/settings-reference#disablebundledskills
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 08541027a835
 - id: settings-disableclaudeaiconnectors
@@ -769,7 +769,7 @@
     en: Halts retrieval of claude.ai connectors by Claude Code.
   docs: https://code.claude.com/docs/en/settings-reference#disableclaudeaiconnectors
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: '994885846592'
 - id: settings-disablecommandpluginsources
@@ -781,7 +781,7 @@
     en: Prevents installation of plugins executed via marketplace command declarations.
   docs: https://code.claude.com/docs/en/settings-reference#disablecommandpluginsources
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 01349e1d4395
 - id: settings-disabledeeplinkregistration
@@ -793,7 +793,7 @@
     en: Prevents Claude Code from binding the claude-cli:// URI scheme.
   docs: https://code.claude.com/docs/en/settings-reference#disabledeeplinkregistration
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: fa3d7da26c70
 - id: settings-disabledesktoplocalsessions
@@ -805,7 +805,7 @@
     en: Stops on-device Desktop Code sessions while preserving cloud and SSH connections.
   docs: https://code.claude.com/docs/en/settings-reference#disabledesktoplocalsessions
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: fc390dd7837f
 - id: settings-disabledmcpjsonservers
@@ -817,7 +817,7 @@
     en: Disallows designated entries declared inside a project-level .mcp.json.
   docs: https://code.claude.com/docs/en/settings-reference#disabledmcpjsonservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 679b98819532
 - id: settings-disablemobilesimulatortools
@@ -829,7 +829,7 @@
     en: Disables Claude tools residing within the desktop app iOS Simulator section.
   docs: https://code.claude.com/docs/en/settings-reference#disablemobilesimulatortools
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 6e4bcf71f0fb
 - id: settings-disableremotecontrol
@@ -841,7 +841,7 @@
     en: Suppresses Remote Control initialization across every launch point.
   docs: https://code.claude.com/docs/en/settings-reference#disableremotecontrol
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: f64abb167011
 - id: settings-disableremotepreviewscripts
@@ -853,7 +853,7 @@
     en: Prevents script execution within HTML previews in the Browser pane during WSL and SSH sessions.
   docs: https://code.claude.com/docs/en/settings-reference#disableremotepreviewscripts
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 3efe80a7b71d
 - id: settings-disablesideloadflags
@@ -865,7 +865,7 @@
     en: Disallows command-line arguments that inject external plugins, MCP servers, or subagents.
   docs: https://code.claude.com/docs/en/settings-reference#disablesideloadflags
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 3668e71aa402
 - id: settings-disableskillshellexecution
@@ -877,7 +877,7 @@
     en: Blocks inline shell invocations initiated by custom commands and skills.
   docs: https://code.claude.com/docs/en/settings-reference#disableskillshellexecution
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: b8f40a5c222b
 - id: settings-disableworkflows
@@ -889,7 +889,7 @@
     en: Deactivates dynamic workflows globally while individual users can turn them on via enableWorkflows.
   docs: https://code.claude.com/docs/en/settings-reference#disableworkflows
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a4b3b120af68
 - id: settings-editormode
@@ -901,7 +901,7 @@
     en: Enables vim navigation keys within the interactive input field.
   docs: https://code.claude.com/docs/en/settings-reference#editormode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 12138043997a
 - id: settings-effortlevel
@@ -913,7 +913,7 @@
     en: Configures a baseline effort level for models lacking their own stored setting.
   docs: https://code.claude.com/docs/en/settings-reference#effortlevel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 80588a60b145
 - id: settings-emojicompletionenabled
@@ -925,7 +925,7 @@
     en: 'Disables :shortcode: emoji auto-completions and replacements within prompt text.'
   docs: https://code.claude.com/docs/en/settings-reference#emojicompletionenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0ee3c75a6402
 - id: settings-enableallprojectmcpservers
@@ -937,7 +937,7 @@
     en: Automatically accepts each server defined in project .mcp.json files without asking.
   docs: https://code.claude.com/docs/en/settings-reference#enableallprojectmcpservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 628d9bda6e23
 - id: settings-enableartifact
@@ -949,7 +949,7 @@
     en: Deactivates the Artifact tool permanently if any configuration file sets it to false.
   docs: https://code.claude.com/docs/en/settings-reference#enableartifact
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 73bf358f79d9
 - id: settings-enabledmcpjsonservers
@@ -961,7 +961,7 @@
     en: Grants authorization to selected servers listed in the project .mcp.json file.
   docs: https://code.claude.com/docs/en/settings-reference#enabledmcpjsonservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: f8efe66921b5
 - id: settings-enabledplugins
@@ -973,7 +973,7 @@
     en: Toggles specific plugins at different configuration scopes.
   docs: https://code.claude.com/docs/en/settings-reference#enabledplugins
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5e3ea82387c8
 - id: settings-enableworkflows
@@ -985,7 +985,7 @@
     en: Overrides your plan default to activate or deactivate dynamic workflows.
   docs: https://code.claude.com/docs/en/settings-reference#enableworkflows
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 7d3578343e1c
 - id: settings-enforceavailablemodels
@@ -997,7 +997,7 @@
     en: Restricts the /model Default selection to models allowed in availableModels.
   docs: https://code.claude.com/docs/en/settings-reference#enforceavailablemodels
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ea6d8ebc0342
 - id: settings-env
@@ -1009,7 +1009,7 @@
     en: Defines environment variables applied to each session and all of its child processes.
   docs: https://code.claude.com/docs/en/settings-reference#env
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 550c80871071
 - id: settings-externaleditorcontext
@@ -1021,7 +1021,7 @@
     en: Inserts the latest response from Claude as commented text upon pressing Ctrl+G.
   docs: https://code.claude.com/docs/en/settings-reference#externaleditorcontext
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: af1f5a06d949
 - id: settings-extraknownmarketplaces
@@ -1033,7 +1033,7 @@
     en: Registers custom marketplaces scoped to an organization or a repo.
   docs: https://code.claude.com/docs/en/settings-reference#extraknownmarketplaces
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 02df39237ca8
 - id: settings-fallbackmodel
@@ -1045,7 +1045,7 @@
     en: Specifies alternate models to take over whenever the primary model is overloaded.
   docs: https://code.claude.com/docs/en/settings-reference#fallbackmodel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 04350502b439
 - id: settings-fastmode
@@ -1057,7 +1057,7 @@
     en: Enables fast mode across sessions that support it.
   docs: https://code.claude.com/docs/en/settings-reference#fastmode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0e4a544b5e44
 - id: settings-fastmodepersessionoptin
@@ -1069,7 +1069,7 @@
     en: Forces users to manually activate fast mode for every new session.
   docs: https://code.claude.com/docs/en/settings-reference#fastmodepersessionoptin
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3cbdb0f40dea
 - id: settings-feedbackdrafts
@@ -1081,7 +1081,7 @@
     en: Determines if Claude stages draft feedback for user inspection.
   docs: https://code.claude.com/docs/en/settings-reference#feedbackdrafts
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 8a435a595b00
 - id: settings-feedbacksurveyrate
@@ -1093,7 +1093,7 @@
     en: Adjusts the frequency of prompts asking for session quality evaluations.
   docs: https://code.claude.com/docs/en/settings-reference#feedbacksurveyrate
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 99b0400c9c32
 - id: settings-filecheckpointingenabled
@@ -1105,7 +1105,7 @@
     en: Controls whether file snapshots used by /rewind are captured.
   docs: https://code.claude.com/docs/en/settings-reference#filecheckpointingenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: cd371dc1d57e
 - id: settings-filesuggestion
@@ -1117,7 +1117,7 @@
     en: Uses a custom command to populate file autocompletion for the @ symbol.
   docs: https://code.claude.com/docs/en/settings-reference#filesuggestion
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: b41925048967
 - id: settings-footerlinksregexes
@@ -1129,7 +1129,7 @@
     en: Converts review or issue identifiers in output into clickable footer links.
   docs: https://code.claude.com/docs/en/settings-reference#footerlinksregexes
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: d6735bb467ff
 - id: settings-forcelogingatewayurl
@@ -1141,7 +1141,7 @@
     en: Specifies the target gateway address used during the login flow.
   docs: https://code.claude.com/docs/en/settings-reference#forcelogingatewayurl
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 071bdea7ac5f
 - id: settings-forceloginmethod
@@ -1153,7 +1153,7 @@
     en: 'Limits sign-in to a single method: a claude.ai account, the Claude Console, or a cloud gateway.'
   docs: https://code.claude.com/docs/en/settings-reference#forceloginmethod
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c8c2afea9a69
 - id: settings-forceloginorguuid
@@ -1165,7 +1165,7 @@
     en: Binds claude.ai sign-ins to an organization identifier via managed settings.
   docs: https://code.claude.com/docs/en/settings-reference#forceloginorguuid
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0ed8bcb937b1
 - id: settings-forceremotesettingsrefresh
@@ -1177,7 +1177,7 @@
     en: Halts the startup process until updated managed settings are downloaded.
   docs: https://code.claude.com/docs/en/settings-reference#forceremotesettingsrefresh
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 02130b405b21
 - id: settings-gatewayinternalnetworks
@@ -1189,7 +1189,7 @@
     en: Permits /login to access cloud gateways hosted on internal public IPv4 ranges.
   docs: https://code.claude.com/docs/en/settings-reference#gatewayinternalnetworks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 4a54b2168c40
 - id: settings-gcpauthrefresh
@@ -1201,7 +1201,7 @@
     en: Executes a tailored command to renew Google Cloud authentication tokens.
   docs: https://code.claude.com/docs/en/settings-reference#gcpauthrefresh
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 18184bf8786b
 - id: settings-hooks
@@ -1213,7 +1213,7 @@
     en: Executes custom commands at specific stages of the Claude Code lifecycle.
   docs: https://code.claude.com/docs/en/settings-reference#hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 179a0bd015db
 - id: settings-httphookallowedenvvars
@@ -1225,7 +1225,7 @@
     en: Restricts the environment variables that HTTP hooks may insert into headers.
   docs: https://code.claude.com/docs/en/settings-reference#httphookallowedenvvars
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: efd853ce0b72
 - id: settings-idlecompaction
@@ -1237,7 +1237,7 @@
     en: Prevents Claude Code from automatically compacting an inactive chat session.
   docs: https://code.claude.com/docs/en/settings-reference#idlecompaction
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a3c3923a6db9
 - id: settings-includecoauthoredby
@@ -1249,7 +1249,7 @@
     en: Controls commit and PR attribution, but is deprecated in favor of attribution.
   docs: https://code.claude.com/docs/en/settings-reference#includecoauthoredby
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 8cfbd42ad7bb
 - id: settings-includegitinstructions
@@ -1261,7 +1261,7 @@
     en: Omits default instructions for commits and PRs from the context.
   docs: https://code.claude.com/docs/en/settings-reference#includegitinstructions
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1987369fc754
 - id: settings-inputneedednotifenabled
@@ -1273,7 +1273,7 @@
     en: Sends a push alert whenever Claude needs your response to continue.
   docs: https://code.claude.com/docs/en/settings-reference#inputneedednotifenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1a261e7d3b36
 - id: settings-isolatepeermachines
@@ -1285,7 +1285,7 @@
     en: Prompts for confirmation before Claude communicates with sessions on other devices.
   docs: https://code.claude.com/docs/en/settings-reference#isolatepeermachines
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 924e1c48df21
 - id: settings-keybindingflavor
@@ -1297,7 +1297,7 @@
     en: Has no effect because text navigation shortcuts permanently use readline style.
   docs: https://code.claude.com/docs/en/settings-reference#keybindingflavor
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3d4164c6edc9
 - id: settings-language
@@ -1309,7 +1309,7 @@
     en: Instructs Claude to write replies using a language besides English.
   docs: https://code.claude.com/docs/en/settings-reference#language
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: db6b2d04423b
 - id: settings-leftarrowopensagents
@@ -1321,7 +1321,7 @@
     en: Disables using the left arrow key to open agent view and background the session.
   docs: https://code.claude.com/docs/en/settings-reference#leftarrowopensagents
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: af30b5f2dda2
 - id: settings-managedmcpservers
@@ -1333,7 +1333,7 @@
     en: Supplies remote MCP servers to all users in addition to their own servers.
   docs: https://code.claude.com/docs/en/settings-reference#managedmcpservers
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 9f7b2430b6e8
 - id: settings-managedsourcesbehavior
@@ -1345,7 +1345,7 @@
     en: Combines all deployed managed sources instead of picking only the top one.
   docs: https://code.claude.com/docs/en/settings-reference#managedsourcesbehavior
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: f5b78f284dcf
 - id: settings-maxeffortlevel
@@ -1357,7 +1357,7 @@
     en: Sets an upper bound for effort level globally or per model across all providers.
   docs: https://code.claude.com/docs/en/settings-reference#maxeffortlevel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: e29b6d660fc8
 - id: settings-maxprosewidth
@@ -1369,7 +1369,7 @@
     en: Restricts the text line width of Claude's output on wider terminal screens.
   docs: https://code.claude.com/docs/en/settings-reference#maxprosewidth
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 9c65fccf4327
 - id: settings-minimumversion
@@ -1381,7 +1381,7 @@
     en: Prevents the updater from installing any release older than specified.
   docs: https://code.claude.com/docs/en/settings-reference#minimumversion
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 97c82013bb75
 - id: settings-model
@@ -1393,7 +1393,7 @@
     en: Specifies the initial model Claude Code uses upon launch.
   docs: https://code.claude.com/docs/en/settings-reference#model
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 083c27aef4bc
 - id: settings-modeloverrides
@@ -1405,7 +1405,7 @@
     en: Translates standard model IDs into custom provider IDs like Bedrock ARNs.
   docs: https://code.claude.com/docs/en/settings-reference#modeloverrides
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5855d57a0af0
 - id: settings-modelpicker
@@ -1417,7 +1417,7 @@
     en: Customizes the model choices, order, and labels shown in the /model menu.
   docs: https://code.claude.com/docs/en/settings-reference#modelpicker
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: b707914d5776
 - id: settings-modelpricing
@@ -1429,7 +1429,7 @@
     en: Calculates usage expenses using negotiated organization rates instead of standard prices.
   docs: https://code.claude.com/docs/en/settings-reference#modelpricing
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 796f1a866de6
 - id: settings-modelsettings
@@ -1441,7 +1441,7 @@
     en: Configures effort limits, effort values, or auto-compaction rules per model.
   docs: https://code.claude.com/docs/en/settings-reference#modelsettings
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 36fa9364e59b
 - id: settings-otelheadershelper
@@ -1453,7 +1453,7 @@
     en: Executes a custom command to produce dynamic OpenTelemetry headers.
   docs: https://code.claude.com/docs/en/settings-reference#otelheadershelper
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 78fca9f819ab
 - id: settings-outputstyle
@@ -1465,7 +1465,7 @@
     en: Adjusts Claude's persona, tone, and formatting through an output style.
   docs: https://code.claude.com/docs/en/settings-reference#outputstyle
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 04c878627b69
 - id: settings-parentsettingsbehavior
@@ -1477,7 +1477,7 @@
     en: Controls whether constraints from host IDEs or SDKs apply to managed settings.
   docs: https://code.claude.com/docs/en/settings-reference#parentsettingsbehavior
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 3afc7ee4cf17
 - id: settings-permissionexplainerenabled
@@ -1489,7 +1489,7 @@
     en: Was removed in v2.1.257 alongside the Ctrl+E shell prompt explanation shortcut.
   docs: https://code.claude.com/docs/en/settings-reference#permissionexplainerenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: 81b45c1e6784
 - id: settings-permissions
@@ -1501,7 +1501,7 @@
     en: Defines allow, ask, and deny policies along with the default access mode.
   docs: https://code.claude.com/docs/en/settings-reference#permissions
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c6ac07134d8b
 - id: settings-permissions-additionaldirectories
@@ -1513,7 +1513,7 @@
     en: Grants Claude access to files located in extra folders beyond the active workspace.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.additionaldirectories
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c78b1afc8e66
 - id: settings-permissions-allow
@@ -1525,7 +1525,7 @@
     en: Permits specified tools to run automatically without requesting user confirmation.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.allow
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ad1cb4b955a4
 - id: settings-permissions-ask
@@ -1537,7 +1537,7 @@
     en: Requests user confirmation whenever the specified tools are invoked.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.ask
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 2fe940f993eb
 - id: settings-permissions-blockreadsoutsideworkingdirectories
@@ -1549,7 +1549,7 @@
     en: Prevents file tools from reading content beyond the working directories across all modes.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.blockreadsoutsideworkingdirectories
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 7d2bc3db37d0
 - id: settings-permissions-blockwritesoutsideworkingdirectories
@@ -1563,7 +1563,7 @@
       certain internal files.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.blockwritesoutsideworkingdirectories
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 77b7f4233c85
 - id: settings-permissions-defaultmode
@@ -1575,7 +1575,7 @@
     en: Configures the initial permission mode applied when starting a new session.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.defaultmode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: e0704160174c
 - id: settings-permissions-deny
@@ -1587,7 +1587,7 @@
     en: Prohibits the execution of designated tools, such as reading files containing secrets.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.deny
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: dffb3cbf45c1
 - id: settings-permissions-denyinsteadofprompting
@@ -1599,7 +1599,7 @@
     en: Rejects tool invocations that require prompts to maintain unattended session progress.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.denyinsteadofprompting
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: fbd35276f218
 - id: settings-permissions-disablebypasspermissionsmode
@@ -1611,7 +1611,7 @@
     en: Restricts users from enabling the bypassPermissions mode.
   docs: https://code.claude.com/docs/en/settings-reference#permissions.disablebypasspermissionsmode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 761c8c2e0af2
 - id: settings-plansdirectory
@@ -1623,7 +1623,7 @@
     en: Designates the directory where plan mode stores generated plan files.
   docs: https://code.claude.com/docs/en/settings-reference#plansdirectory
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 529fab528f04
 - id: settings-pluginconfigs
@@ -1635,7 +1635,7 @@
     en: Saves user inputs provided during a plugin configuration dialog.
   docs: https://code.claude.com/docs/en/settings-reference#pluginconfigs
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 97dd28614d9b
 - id: settings-pluginsuggestionmarketplaces
@@ -1647,7 +1647,7 @@
     en: Specifies which marketplaces can display plugin installation suggestions inside /plugin.
   docs: https://code.claude.com/docs/en/settings-reference#pluginsuggestionmarketplaces
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 34ba265d6910
 - id: settings-plugintrustmessage
@@ -1659,7 +1659,7 @@
     en: Appends custom wording to the security warning displayed for plugin trust.
   docs: https://code.claude.com/docs/en/settings-reference#plugintrustmessage
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 6d44b463a46b
 - id: settings-policyhelper
@@ -1671,7 +1671,7 @@
     en: Executes a binary upon startup to calculate managed settings.
   docs: https://code.claude.com/docs/en/settings-reference#policyhelper
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 8388ad11bb6c
 - id: settings-policyhelper-path
@@ -1683,7 +1683,7 @@
     en: Specifies the path to the executable helper invoked by Claude Code.
   docs: https://code.claude.com/docs/en/settings-reference#policyhelper.path
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: c378721671c5
 - id: settings-policyhelper-refreshintervalms
@@ -1695,7 +1695,7 @@
     en: Periodically executes the helper program in the background at a defined interval.
   docs: https://code.claude.com/docs/en/settings-reference#policyhelper.refreshintervalms
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 54d5c964edb3
 - id: settings-policyhelper-timeoutms
@@ -1707,7 +1707,7 @@
     en: Specifies the maximum time Claude Code will wait for helper responses.
   docs: https://code.claude.com/docs/en/settings-reference#policyhelper.timeoutms
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 9ba922e42be3
 - id: settings-preferrednotifchannel
@@ -1719,7 +1719,7 @@
     en: Selects either a desktop notification or a terminal bell to signal completed tasks.
   docs: https://code.claude.com/docs/en/settings-reference#preferrednotifchannel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ee868940ac55
 - id: settings-prefersreducedmotion
@@ -1731,7 +1731,7 @@
     en: Limits or disables visual animations such as spinners, flashes, and shimmers.
   docs: https://code.claude.com/docs/en/settings-reference#prefersreducedmotion
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: cf721ff1bb53
 - id: settings-prependplugins
@@ -1743,7 +1743,7 @@
     en: Executes organizational modifications ahead of any plugins installed by users.
   docs: https://code.claude.com/docs/en/settings-reference#prependplugins
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 107b211c3e5c
 - id: settings-processwrapper
@@ -1755,7 +1755,7 @@
     en: Launches background processes of Claude Code via an enterprise wrapper on Linux and macOS.
   docs: https://code.claude.com/docs/en/settings-reference#processwrapper
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 35959a236744
 - id: settings-promptcachettl
@@ -1767,7 +1767,7 @@
     en: Configures how long prompt cache entries persist for the primary conversation.
   docs: https://code.claude.com/docs/en/settings-reference#promptcachettl
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0ffffd96cba1
 - id: settings-promptsuggestionenabled
@@ -1779,7 +1779,7 @@
     en: Toggles visibility of grayed-out prompt recommendations shown in the input area.
   docs: https://code.claude.com/docs/en/settings-reference#promptsuggestionenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5f787726254b
 - id: settings-prstatusfooterenabled
@@ -1792,7 +1792,7 @@
     en: Disables the PR review status badge in the prompt footer and its underlying pull request check.
   docs: https://code.claude.com/docs/en/settings-reference#prstatusfooterenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: d31f8716de8d
 - id: settings-prurltemplate
@@ -1804,7 +1804,7 @@
     en: Redirects pull request links to an in-house code review platform rather than github.com.
   docs: https://code.claude.com/docs/en/settings-reference#prurltemplate
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 60b96d7db2ec
 - id: settings-remote-defaultenvironmentid
@@ -1816,7 +1816,7 @@
     en: Selects the default cloud environment ID used when running claude --cloud.
   docs: https://code.claude.com/docs/en/settings-reference#remote.defaultenvironmentid
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 2bf49ef46213
 - id: settings-remotecontrolatstartup
@@ -1828,7 +1828,7 @@
     en: Establishes a Remote Control connection automatically at session launch.
   docs: https://code.claude.com/docs/en/settings-reference#remotecontrolatstartup
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 04052247bdf3
 - id: settings-requiredmaximumversion
@@ -1840,7 +1840,7 @@
     en: Prevents startup if the installed version exceeds the organization limit.
   docs: https://code.claude.com/docs/en/settings-reference#requiredmaximumversion
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 01499a019e46
 - id: settings-requiredminimumversion
@@ -1852,7 +1852,7 @@
     en: Prevents startup if the installed version is below organization requirements.
   docs: https://code.claude.com/docs/en/settings-reference#requiredminimumversion
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 11c7f62c0ea6
 - id: settings-respectgitignore
@@ -1864,7 +1864,7 @@
     en: Excludes items listed in .gitignore from appearing in the @ file selector.
   docs: https://code.claude.com/docs/en/settings-reference#respectgitignore
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ed942d897c8e
 - id: settings-respondtobashcommands
@@ -1876,7 +1876,7 @@
     en: Controls whether Claude replies after executing a ! shell command.
   docs: https://code.claude.com/docs/en/settings-reference#respondtobashcommands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: aeb427ee9c46
 - id: settings-sandbox
@@ -1888,7 +1888,7 @@
     en: Separates Bash executions from network and disk resources on supported OSes.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 2800dd5c9caa
 - id: settings-sandbox-allowappleevents
@@ -1900,7 +1900,7 @@
     en: Permits sandboxed processes to dispatch Apple Events on macOS.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.allowappleevents
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 04b3c6c1f186
 - id: settings-sandbox-allownestedusernamespaces
@@ -1912,7 +1912,7 @@
     en: Enables creation of user namespaces inside sandboxes on Linux and WSL2.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.allownestedusernamespaces
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 7fbd2d3eb1d8
 - id: settings-sandbox-allowunsandboxedcommands
@@ -1924,7 +1924,7 @@
     en: Configures whether Claude may execute blocked commands without sandboxing.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.allowunsandboxedcommands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 27416a7888f6
 - id: settings-sandbox-autoallowbashifsandboxed
@@ -1936,7 +1936,7 @@
     en: Executes sandboxed commands immediately without asking for confirmation.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.autoallowbashifsandboxed
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 9c53bc44469f
 - id: settings-sandbox-bwrappath
@@ -1948,7 +1948,7 @@
     en: Specifies a custom location for the bubblewrap executable.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.bwrappath
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: bc3b8ff9111a
 - id: settings-sandbox-credentials
@@ -1960,7 +1960,7 @@
     en: Conceals or obfuscates secret variables and files within the sandbox.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 75e9f1302c7f
 - id: settings-sandbox-credentials-allowplaintextinject
@@ -1972,7 +1972,7 @@
     en: Authorizes sending masked secrets to unencrypted HTTP targets on test nets.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.allowplaintextinject
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 130bf0933442
 - id: settings-sandbox-credentials-awspairs
@@ -1984,7 +1984,7 @@
     en: Associates custom AWS key variables into a unified pair for signing.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.awspairs
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 0d2f64a54e99
 - id: settings-sandbox-credentials-envvars
@@ -1996,7 +1996,7 @@
     en: Removes or masks selected environment variables in the sandboxed runtime.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.envvars
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 60b97527cd6d
 - id: settings-sandbox-credentials-files
@@ -2008,7 +2008,7 @@
     en: Restricts or disguises access to credential files from within the sandbox.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.files
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: f065b81d7c51
 - id: settings-sandbox-credentials-sigv4
@@ -2020,7 +2020,7 @@
     en: Governs handling for streaming, presigned, or SigV4A AWS network calls.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.credentials.sigv4
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 07ad21eefbde
 - id: settings-sandbox-enabled
@@ -2032,7 +2032,7 @@
     en: Activates Bash command isolation on macOS, Linux, and WSL2 environments.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.enabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 6edf2af9130e
 - id: settings-sandbox-enableweakernestedsandbox
@@ -2044,7 +2044,7 @@
     en: Allows running the Linux sandbox mechanism inside unprivileged containers.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.enableweakernestedsandbox
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 21eff862ed40
 - id: settings-sandbox-enableweakernetworkisolation
@@ -2056,7 +2056,7 @@
     en: Permits tools like gh and terraform to validate TLS through macOS proxies.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.enableweakernetworkisolation
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 351ddbfde0a3
 - id: settings-sandbox-excludedcommands
@@ -2068,7 +2068,7 @@
     en: Lists specific commands that Claude Code is permitted to run unsandboxed.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.excludedcommands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 09329af15f2a
 - id: settings-sandbox-failifunavailable
@@ -2080,7 +2080,7 @@
     en: Halts launch instead of running unisolated when sandboxing cannot start.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.failifunavailable
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 19b148d2361e
 - id: settings-sandbox-filesystem
@@ -2092,7 +2092,7 @@
     en: Manages read and write filesystem permissions granted to sandboxed tasks.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: fa71b5e4e235
 - id: settings-sandbox-filesystem-allowmanagedreadpathsonly
@@ -2104,7 +2104,7 @@
     en: Prevents users from accessing read locations forbidden by organizational rule.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowmanagedreadpathsonly
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 23cf1f3b0bdb
 - id: settings-sandbox-filesystem-allowread
@@ -2116,7 +2116,7 @@
     en: Restores read permissions for locations otherwise restricted by denyRead.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowread
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c950f8174711
 - id: settings-sandbox-filesystem-allowwrite
@@ -2128,7 +2128,7 @@
     en: Grants write permissions to specific locations for sandboxed commands.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.allowwrite
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 7b1ae87a393f
 - id: settings-sandbox-filesystem-denyread
@@ -2140,7 +2140,7 @@
     en: Prevents sandboxed commands from accessing specific paths for reading.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.denyread
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: da3c9ead7b6c
 - id: settings-sandbox-filesystem-denywrite
@@ -2152,7 +2152,7 @@
     en: Prevents sandboxed commands from modifying specific paths.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.denywrite
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 43fecdb3a025
 - id: settings-sandbox-filesystem-disabled
@@ -2164,7 +2164,7 @@
     en: Disables filesystem restrictions while preserving network sandboxing.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.filesystem.disabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: a3c872153121
 - id: settings-sandbox-ignoreviolations
@@ -2176,7 +2176,7 @@
     en: Suppresses violation alerts for paths that a command is anticipated to inspect.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.ignoreviolations
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c61029338a86
 - id: settings-sandbox-network
@@ -2188,7 +2188,7 @@
     en: Manages accessible hosts, ports, and sockets for sandboxed executions.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 88de46ed86af
 - id: settings-sandbox-network-allowallunixsockets
@@ -2200,7 +2200,7 @@
     en: Permits sandboxed processes to establish connections to any Unix socket.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowallunixsockets
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a868af07862e
 - id: settings-sandbox-network-alloweddomains
@@ -2212,7 +2212,7 @@
     en: Whitelists domains in advance to avoid approval prompts during execution.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.alloweddomains
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3e893eb44777
 - id: settings-sandbox-network-allowlocalbinding
@@ -2224,7 +2224,7 @@
     en: Enables port binding and localhost access for sandboxed tools on macOS.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowlocalbinding
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 265c9e6a589a
 - id: settings-sandbox-network-allowmachlookup
@@ -2236,7 +2236,7 @@
     en: Allows sandboxed macOS utilities to access their required XPC services.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowmachlookup
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: eb7e947bcc8d
 - id: settings-sandbox-network-allowmanageddomainsonly
@@ -2248,7 +2248,7 @@
     en: Restricts network destinations strictly to centrally managed entries.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowmanageddomainsonly
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 9c3fc65ad76e
 - id: settings-sandbox-network-allowunixsockets
@@ -2260,7 +2260,7 @@
     en: Specifies permitted Unix socket locations for sandboxed tools on macOS.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.allowunixsockets
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3fbda1a85f48
 - id: settings-sandbox-network-denieddomains
@@ -2272,7 +2272,7 @@
     en: Prohibits access to selected domains even when matched by wildcards.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.denieddomains
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5fbed38783f9
 - id: settings-sandbox-network-httpproxyport
@@ -2284,7 +2284,7 @@
     en: Directs sandbox HTTP traffic through a custom proxy server.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.httpproxyport
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: eca4d5e32658
 - id: settings-sandbox-network-socksproxyport
@@ -2296,7 +2296,7 @@
     en: Directs sandbox SOCKS connections through a custom proxy server.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.socksproxyport
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: f6a6c5f6976e
 - id: settings-sandbox-network-strictallowlist
@@ -2308,7 +2308,7 @@
     en: Rejects unlisted hosts automatically without asking for user approval.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.strictallowlist
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 6721c4824e11
 - id: settings-sandbox-network-tlsterminate
@@ -2320,7 +2320,7 @@
     en: Enables the sandbox proxy to end TLS sessions to inspect HTTPS content.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.network.tlsterminate
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 000858bd9d1a
 - id: settings-sandbox-ripgrep
@@ -2332,7 +2332,7 @@
     en: Configures a custom ripgrep executable to run inside the sandbox.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.ripgrep
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 9171b1be9685
 - id: settings-sandbox-socatpath
@@ -2344,7 +2344,7 @@
     en: Specifies a custom socat executable location outside system PATH.
   docs: https://code.claude.com/docs/en/settings-reference#sandbox.socatpath
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: d65aaec24145
 - id: settings-showclearcontextonplanaccept
@@ -2356,7 +2356,7 @@
     en: Displays a choice to wipe context when accepting a proposed plan.
   docs: https://code.claude.com/docs/en/settings-reference#showclearcontextonplanaccept
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 2614b22a8582
 - id: settings-showthinkingsummaries
@@ -2368,7 +2368,7 @@
     en: Replaces the collapsed placeholder with summaries of Claude thought steps.
   docs: https://code.claude.com/docs/en/settings-reference#showthinkingsummaries
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5d7a82991d68
 - id: settings-showturnduration
@@ -2380,7 +2380,7 @@
     en: Suppresses the Cooked for execution time display below responses.
   docs: https://code.claude.com/docs/en/settings-reference#showturnduration
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 4cea515b38f8
 - id: settings-skilllistingbudgetfraction
@@ -2392,7 +2392,7 @@
     en: Adjusts the portion of the context window dedicated to showing skills.
   docs: https://code.claude.com/docs/en/settings-reference#skilllistingbudgetfraction
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: d97036cc5338
 - id: settings-skilllistingmaxdescchars
@@ -2404,7 +2404,7 @@
     en: Sets the maximum character limit for individual skill descriptions.
   docs: https://code.claude.com/docs/en/settings-reference#skilllistingmaxdescchars
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 5c6616643cfd
 - id: settings-skilloverrides
@@ -2416,7 +2416,7 @@
     en: Hides or folds a skill without modifying its SKILL.md file.
   docs: https://code.claude.com/docs/en/settings-reference#skilloverrides
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ea00c8c3988c
 - id: settings-skipautopermissionprompt
@@ -2429,7 +2429,7 @@
       settings.
   docs: https://code.claude.com/docs/en/settings-reference#skipautopermissionprompt
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 4346e38f2117
 - id: settings-skipdangerousmodepermissionprompt
@@ -2441,7 +2441,7 @@
     en: Omits the confirmation step shown prior to entering bypassPermissions mode.
   docs: https://code.claude.com/docs/en/settings-reference#skipdangerousmodepermissionprompt
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User, local, or managed
   docs_hash: 576d46438706
 - id: settings-skipwebfetchpreflight
@@ -2453,7 +2453,7 @@
     en: Disables the WebFetch hostname verification step if Anthropic cannot be contacted.
   docs: https://code.claude.com/docs/en/settings-reference#skipwebfetchpreflight
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 480603aebf7a
 - id: settings-spellcheck
@@ -2465,7 +2465,7 @@
     en: Highlights typing errors in prompt inputs using an external spell-checking tool you set up.
   docs: https://code.claude.com/docs/en/settings-reference#spellcheck
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 4fcc565ab8bb
 - id: settings-spinnertipsenabled
@@ -2477,7 +2477,7 @@
     en: Controls whether advice shown in the waiting spinner is hidden while Claude executes tasks.
   docs: https://code.claude.com/docs/en/settings-reference#spinnertipsenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 160199ec4ae6
 - id: settings-spinnertipsoverride
@@ -2489,7 +2489,7 @@
     en: Supplies custom messages to augment or substitute the standard rotation of spinner tips.
   docs: https://code.claude.com/docs/en/settings-reference#spinnertipsoverride
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 503f05f0f25b
 - id: settings-spinnerverbs
@@ -2501,7 +2501,7 @@
     en: Customizes or substitutes the status verbs displayed during an active turn.
   docs: https://code.claude.com/docs/en/settings-reference#spinnerverbs
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 92c36fd5e4dc
 - id: settings-sshconfigs
@@ -2513,7 +2513,7 @@
     en: Populates the Desktop environment picker with additional SSH connection options.
   docs: https://code.claude.com/docs/en/settings-reference#sshconfigs
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: c69d4637db7d
 - id: settings-sshhostallowlist
@@ -2525,7 +2525,7 @@
     en: Restricts the destination hosts that Desktop SSH sessions are permitted to access.
   docs: https://code.claude.com/docs/en/settings-reference#sshhostallowlist
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 50bfe1dd3896
 - id: settings-sshhostcommands
@@ -2537,7 +2537,7 @@
     en: Inserts Desktop environment SSH entries whose target host is evaluated from a CLI command.
   docs: https://code.claude.com/docs/en/settings-reference#sshhostcommands
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 5d5be4877a26
 - id: settings-statusline
@@ -2549,7 +2549,7 @@
     en: Executes a custom CLI command to generate a status display beneath the prompt.
   docs: https://code.claude.com/docs/en/settings-reference#statusline
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ed5bbc5f6dc4
 - id: settings-strictknownmarketplaces
@@ -2561,7 +2561,7 @@
     en: Restricts allowable marketplace locations from which users can discover and install extensions.
   docs: https://code.claude.com/docs/en/settings-reference#strictknownmarketplaces
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: a44c5bcf8159
 - id: settings-strictpluginonlycustomization
@@ -2573,7 +2573,7 @@
     en: Only plugins may supply skills, agents, hooks or MCP servers; user and project sources are ignored.
   docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: df7ca3b10ed6
 - id: settings-strictpluginonlycustomization-agents
@@ -2585,7 +2585,7 @@
     en: Disallows agents supplied from project and user configurations.
   docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.agents
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 4da8ac75de0b
 - id: settings-strictpluginonlycustomization-hooks
@@ -2597,7 +2597,7 @@
     en: Disallows hooks supplied from project and user configurations.
   docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.hooks
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 7ad7684dde85
 - id: settings-strictpluginonlycustomization-mcp
@@ -2609,7 +2609,7 @@
     en: Disallows MCP servers defined within project and user scopes.
   docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.mcp
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 171e03fefd38
 - id: settings-strictpluginonlycustomization-skills
@@ -2621,7 +2621,7 @@
     en: Disallows skills defined within project and user directories.
   docs: https://code.claude.com/docs/en/settings-reference#strictpluginonlycustomization.skills
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 10d117e9990c
 - id: settings-subagentpromptcachettl
@@ -2633,7 +2633,7 @@
     en: Determines prompt cache duration for subagents and external secondary requests.
   docs: https://code.claude.com/docs/en/settings-reference#subagentpromptcachettl
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: ab371c3895f3
 - id: settings-switchmodelsonflag
@@ -2645,7 +2645,7 @@
     en: Controls whether to alternate models or hold execution when safety filters flag a prompt.
   docs: https://code.claude.com/docs/en/settings-reference#switchmodelsonflag
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 3c521376b780
 - id: settings-syncclaudeaiplugins
@@ -2657,7 +2657,7 @@
     en: Prevents pulling existing plugins from claude.ai and halts fetching newer ones.
   docs: https://code.claude.com/docs/en/settings-reference#syncclaudeaiplugins
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User, local, or managed
   docs_hash: fe4c80de6916
 - id: settings-syncclaudeaiskills
@@ -2669,7 +2669,7 @@
     en: Prevents pulling existing skills from claude.ai and halts fetching newer ones.
   docs: https://code.claude.com/docs/en/settings-reference#syncclaudeaiskills
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User, local, or managed
   docs_hash: eb01753d8ea7
 - id: settings-syntaxhighlightingdisabled
@@ -2681,7 +2681,7 @@
     en: Disables colored code formatting across diffs and syntax-styled code blocks.
   docs: https://code.claude.com/docs/en/settings-reference#syntaxhighlightingdisabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 819bb57f2225
 - id: settings-taskoutputmaxchars
@@ -2693,7 +2693,7 @@
     en: Designates an obsolete configuration dropped in v2.1.277 alongside the TaskOutput tool.
   docs: https://code.claude.com/docs/en/settings-reference#taskoutputmaxchars
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: e61aced098f0
 - id: settings-teammatedefaultmodel
@@ -2705,7 +2705,7 @@
     en: Designates an obsolete setting eliminated in v2.1.234 for choosing teammate model configurations.
   docs: https://code.claude.com/docs/en/settings-reference#teammatedefaultmodel
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Global config
   docs_hash: e05be0815933
 - id: settings-teammatemode
@@ -2717,7 +2717,7 @@
     en: Selects the presentation style for members of an agent team.
   docs: https://code.claude.com/docs/en/settings-reference#teammatemode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: fff8798fe1c0
 - id: settings-terminalprogressbarenabled
@@ -2729,7 +2729,7 @@
     en: Hides the progress indicator on compatible terminal emulators.
   docs: https://code.claude.com/docs/en/settings-reference#terminalprogressbarenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: be0e764f792f
 - id: settings-terminaltitlefromrename
@@ -2741,7 +2741,7 @@
     en: Prevents /rename and --name from modifying the title of the terminal tab.
   docs: https://code.claude.com/docs/en/settings-reference#terminaltitlefromrename
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0fb0fa378061
 - id: settings-theme
@@ -2753,7 +2753,7 @@
     en: Selects a prebuilt or personalized color palette for the interface.
   docs: https://code.claude.com/docs/en/settings-reference#theme
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: d22bb25e764b
 - id: settings-timeformat
@@ -2765,7 +2765,7 @@
     en: Formats interface timestamps using 12-hour, 24-hour, UTC, or a custom strftime string.
   docs: https://code.claude.com/docs/en/settings-reference#timeformat
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: bf47c6a7055c
 - id: settings-timezone
@@ -2777,7 +2777,7 @@
     en: Displays interface timestamps in a specified time zone instead of the system local zone.
   docs: https://code.claude.com/docs/en/settings-reference#timezone
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: a014da76ece3
 - id: settings-tui
@@ -2789,7 +2789,7 @@
     en: Selects either the fullscreen interface or the classic terminal output renderer.
   docs: https://code.claude.com/docs/en/settings-reference#tui
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 8c9fd242f01e
 - id: settings-ultracode
@@ -2801,7 +2801,7 @@
     en: Instructs Claude to automatically outline a workflow for every major task.
   docs: https://code.claude.com/docs/en/settings-reference#ultracode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 48c7f7dab88f
 - id: settings-useautomodeduringplan
@@ -2814,7 +2814,7 @@
       false.
   docs: https://code.claude.com/docs/en/settings-reference#useautomodeduringplan
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User, local, or managed
   docs_hash: 26fb5f69fa34
 - id: settings-verbose
@@ -2826,7 +2826,7 @@
     en: Prints complete tool execution details rather than shortened summaries unless viewMode is set.
   docs: https://code.claude.com/docs/en/settings-reference#verbose
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 78239eb9f4bc
 - id: settings-viewmode
@@ -2838,7 +2838,7 @@
     en: Configures initial sessions to open in default, verbose, or focus viewing modes.
   docs: https://code.claude.com/docs/en/settings-reference#viewmode
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1b8d0dad2cef
 - id: settings-viminsertmoderemaps
@@ -2850,7 +2850,7 @@
     en: Assigns an INSERT-mode double-key shortcut like jj to trigger Escape.
   docs: https://code.claude.com/docs/en/settings-reference#viminsertmoderemaps
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User or managed
   docs_hash: 81348ba2add4
 - id: settings-voice
@@ -2862,7 +2862,7 @@
     en: Activates spoken input and selects either hold-to-talk or tap-to-talk interaction.
   docs: https://code.claude.com/docs/en/settings-reference#voice
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 1a8a73d779c1
 - id: settings-voiceenabled
@@ -2874,7 +2874,7 @@
     en: Enables spoken dictation via the legacy single-key configuration format.
   docs: https://code.claude.com/docs/en/settings-reference#voiceenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: f573632c5500
 - id: settings-wheelscrollaccelerationenabled
@@ -2886,7 +2886,7 @@
     en: Disables mouse-wheel speed acceleration when using the fullscreen renderer.
   docs: https://code.claude.com/docs/en/settings-reference#wheelscrollaccelerationenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 0fa631b1ec2e
 - id: settings-workflowkeywordtriggerenabled
@@ -2898,7 +2898,7 @@
     en: Controls whether including ultracode in a prompt automatically launches a workflow.
   docs: https://code.claude.com/docs/en/settings-reference#workflowkeywordtriggerenabled
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: eba7cd45f240
 - id: settings-workflowsizeguideline
@@ -2910,7 +2910,7 @@
     en: Defines the target number of agents Claude should aim for when generating workflows.
   docs: https://code.claude.com/docs/en/settings-reference#workflowsizeguideline
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 8a724e3dee28
 - id: settings-worktree
@@ -2922,7 +2922,7 @@
     en: Configures how Claude Code manages and provisions git worktrees.
   docs: https://code.claude.com/docs/en/settings-reference#worktree
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: 6a2e21bab7ff
 - id: settings-worktree-baseref
@@ -2934,7 +2934,7 @@
     en: Determines whether new worktrees branch off the remote default branch or the local HEAD.
   docs: https://code.claude.com/docs/en/settings-reference#worktree.baseref
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: b151b05b277f
 - id: settings-worktree-bgisolation
@@ -2947,7 +2947,7 @@
       worktree.
   docs: https://code.claude.com/docs/en/settings-reference#worktree.bgisolation
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: b4af770e27c1
 - id: settings-worktree-location
@@ -2959,7 +2959,7 @@
     en: Specifies the path where Desktop SSH sessions establish their worktrees on the remote host.
   docs: https://code.claude.com/docs/en/settings-reference#worktree.location
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: User
   docs_hash: dd2f7b944e48
 - id: settings-worktree-sparsepaths
@@ -2971,7 +2971,7 @@
     en: Restricts checkouts in each worktree to only the targeted folders.
   docs: https://code.claude.com/docs/en/settings-reference#worktree.sparsepaths
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: e01e3edc2b86
 - id: settings-worktree-symlinkdirectories
@@ -2983,7 +2983,7 @@
     en: Links bulky folders into worktrees via symlinks rather than making copies.
   docs: https://code.claude.com/docs/en/settings-reference#worktree.symlinkdirectories
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Any file
   docs_hash: c0db30fd0464
 - id: settings-wslinheritswindowssettings
@@ -2995,6 +2995,6 @@
     en: Allows WSL to load managed settings defined across the Windows policy hierarchy.
   docs: https://code.claude.com/docs/en/settings-reference#wslinheritswindowssettings
   verified_at: '2026-11-20'
-  reviewed: false
+  reviewed: true
   scope: Managed
   docs_hash: 9089a408801b
