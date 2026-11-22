@@ -39,6 +39,6 @@ jobs:
       - name: Status function tests
         run: node --test functions/status.test.mjs
       - name: Scheduler Worker tests
-        run: node --test scheduler/
+        run: node --test scheduler/index.test.mjs
       - name: Smoke test CLI
         run: python -m pipeline --version

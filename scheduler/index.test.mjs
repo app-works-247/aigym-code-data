@@ -1,4 +1,4 @@
-// node --test scheduler/  (no packages needed)
+// node --test scheduler/index.test.mjs  (no packages needed)
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
