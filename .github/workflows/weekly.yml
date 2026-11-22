@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Postgres 18 client
         # pg_dump must be at least as new as the server (Neon: Postgres 18).
@@ -40,7 +40,7 @@ jobs:
           pg_dump --version
           scripts/backup.sh "aigym-code-$(date -u +%F).dump.enc"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: db-backup
           path: aigym-code-*.dump.enc
