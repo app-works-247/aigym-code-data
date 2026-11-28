@@ -20,10 +20,10 @@
     vi: Khởi động mỗi session dưới dạng một subagent cụ thể với prompt, công cụ và model riêng.
     en: Launches each session as a designated subagent using its prompt, tools, and model.
   docs: https://code.claude.com/docs/en/settings-reference#agent
-  verified_at: '2026-11-20'
-  reviewed: true
+  verified_at: '2026-11-28'
+  reviewed: false
   scope: Any file
-  docs_hash: 19dc9dc0f785
+  docs_hash: c6d6be427a48
 - id: settings-agentpushnotifenabled
   group: settings
   name: agentPushNotifEnabled
