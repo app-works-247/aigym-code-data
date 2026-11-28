@@ -41,9 +41,9 @@
     vi: Tải tài liệu về các quyền hạn runtime và connector dùng cho artifact đã xuất bản.
     en: Displays runtime capabilities and connectors available to published artifacts.
   docs: https://code.claude.com/docs/en/commands
-  verified_at: '2026-11-20'
-  reviewed: true
-  docs_hash: c5f826d17781
+  verified_at: '2026-11-28'
+  reviewed: false
+  docs_hash: 52260fe1b1b9
 - id: commands-artifact-diagramming
   group: commands
   name: /artifact-diagramming
@@ -107,9 +107,9 @@
     vi: Đưa session hiện tại chạy ngầm dưới dạng agent và giải phóng terminal; viết tắt /bg.
     en: Detaches this session to keep running as a background agent, freeing the terminal; alias /bg.
   docs: https://code.claude.com/docs/en/commands
-  verified_at: '2026-11-20'
-  reviewed: true
-  docs_hash: 89aa71e47540
+  verified_at: '2026-11-28'
+  reviewed: false
+  docs_hash: 034d91167f98
 - id: commands-batch
   group: commands
   name: /batch
@@ -425,9 +425,9 @@
     vi: Lưu lịch sử trò chuyện hiện tại thành văn bản thuần ra tập tin chỉ định hoặc qua hộp thoại.
     en: Saves the active chat history as plain text directly to a target file or via an interactive dialog.
   docs: https://code.claude.com/docs/en/commands
-  verified_at: '2026-11-20'
-  reviewed: true
-  docs_hash: c5c57a7ec5ff
+  verified_at: '2026-11-28'
+  reviewed: false
+  docs_hash: 910b75c4d99a
 - id: commands-fast
   group: commands
   name: /fast
@@ -808,9 +808,9 @@
       tư.
     en: Lets Pro, Max, and Ultra subscribers inspect and modify their privacy preferences.
   docs: https://code.claude.com/docs/en/commands
-  verified_at: '2026-11-20'
-  reviewed: true
-  docs_hash: 6df40f62ba33
+  verified_at: '2026-11-28'
+  reviewed: false
+  docs_hash: 4842256b4fcc
 - id: commands-radio
   group: commands
   name: /radio
@@ -1195,9 +1195,9 @@
     vi: Kéo một cloud session, branch và hội thoại về terminal cục bộ thông qua giao diện chọn.
     en: Imports a cloud session, branch, and chat history into the local terminal via an interactive picker.
   docs: https://code.claude.com/docs/en/commands
-  verified_at: '2026-11-20'
-  reviewed: true
-  docs_hash: cc944674ef80
+  verified_at: '2026-11-28'
+  reviewed: false
+  docs_hash: 5abfb89dca1b
 - id: commands-terminal-setup
   group: commands
   name: /terminal-setup

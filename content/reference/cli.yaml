@@ -56,10 +56,10 @@
     vi: Cho phép thêm bypassPermissions vào vòng lặp chuyển chế độ khi nhấn Shift+Tab.
     en: Permits cycling into the bypassPermissions option during Shift+Tab mode changes.
   docs: https://code.claude.com/docs/en/cli-reference
-  verified_at: '2026-11-20'
-  reviewed: true
+  verified_at: '2026-11-28'
+  reviewed: false
   example: claude --permission-mode default --allow-dangerously-skip-permissions
-  docs_hash: 155ffad439fd
+  docs_hash: 3cc387db28b6
 - id: cli-allowedtools
   group: cli
   name: --allowedTools
